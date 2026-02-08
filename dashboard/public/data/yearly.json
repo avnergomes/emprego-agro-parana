@@ -1,0 +1,44 @@
+[
+  {
+    "ano": 2020,
+    "admissoes": 24783,
+    "demissoes": 22478,
+    "salario_medio": 1448.43425234337,
+    "saldo": 2305
+  },
+  {
+    "ano": 2021,
+    "admissoes": 43745,
+    "demissoes": 39466,
+    "salario_medio": 1547.0250553412409,
+    "saldo": 4279
+  },
+  {
+    "ano": 2022,
+    "admissoes": 54587,
+    "demissoes": 52695,
+    "salario_medio": 1730.2618616555094,
+    "saldo": 1892
+  },
+  {
+    "ano": 2023,
+    "admissoes": 58848,
+    "demissoes": 55675,
+    "salario_medio": 1869.6793533975156,
+    "saldo": 3173
+  },
+  {
+    "ano": 2024,
+    "admissoes": 58553,
+    "demissoes": 58511,
+    "salario_medio": 2025.6031815929748,
+    "saldo": 42
+  },
+  {
+    "ano": 2025,
+    "admissoes": 59786,
+    "demissoes": 57975,
+    "salario_medio": 2156.9361987415186,
+    "saldo": 1811
+  }
+]

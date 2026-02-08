@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-neutral-800 antialiased m-0;
+    @apply bg-gradient-to-br from-primary-50 via-accent-50/30 to-neutral-50;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white/90 backdrop-blur-md rounded-2xl shadow-soft border border-primary-100/50;
+  }
+
+  .stat-card {
+    @apply card p-6 relative overflow-hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-primary-500 to-primary-700;
+  }
+
+  .chart-container {
+    @apply card p-6;
+  }
+
+  .kpi-label {
+    @apply text-xs uppercase tracking-wider text-neutral-500 font-medium mb-1;
+  }
+
+  .kpi-value {
+    @apply text-3xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
+  }
+
+  .filter-label {
+    @apply text-xs uppercase tracking-wider text-neutral-500 font-medium mb-2 block;
+  }
+
+  .filter-select {
+    @apply w-full px-4 py-2.5 bg-white border border-neutral-200 rounded-xl text-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400;
+    @apply transition-all duration-200;
+  }
+
+  .tab-button {
+    @apply flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-2 md:py-3;
+    @apply rounded-lg md:rounded-xl text-xs md:text-sm font-medium;
+    @apply transition-all duration-200 flex-shrink-0;
+    @apply text-neutral-600 hover:text-primary-700 hover:bg-white/80;
+  }
+
+  .tab-button.active {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-green {
+    @apply bg-primary-100 text-primary-800;
+  }
+
+  .badge-yellow {
+    @apply bg-accent-100 text-accent-800;
+  }
+
+  .badge-red {
+    @apply bg-red-100 text-red-800;
+  }
+}
+
+/* Recharts customization */
+.recharts-default-tooltip {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07) !important;
+  border: none !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}

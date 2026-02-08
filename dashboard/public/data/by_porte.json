@@ -1,0 +1,101 @@
+[
+  {
+    "porte": "1000 ou mais",
+    "admissoes": 12023,
+    "demissoes": 12565,
+    "salario_medio": 1544.6367748474152,
+    "salario_mediana": 1644.43,
+    "saldo": -542,
+    "pct": 4.0
+  },
+  {
+    "porte": "De 1 a 4",
+    "admissoes": 40760,
+    "demissoes": 45051,
+    "salario_medio": 1925.456796540837,
+    "salario_mediana": 1803.0,
+    "saldo": -4291,
+    "pct": 13.6
+  },
+  {
+    "porte": "De 10 a 19",
+    "admissoes": 27011,
+    "demissoes": 28200,
+    "salario_medio": 1889.6657412385214,
+    "salario_mediana": 1780.0,
+    "saldo": -1189,
+    "pct": 9.0
+  },
+  {
+    "porte": "De 100 a 249",
+    "admissoes": 30619,
+    "demissoes": 29352,
+    "salario_medio": 1832.9546525892515,
+    "salario_mediana": 1731.02,
+    "saldo": 1267,
+    "pct": 10.2
+  },
+  {
+    "porte": "De 20 a 49",
+    "admissoes": 33095,
+    "demissoes": 33177,
+    "salario_medio": 1890.2543482796348,
+    "salario_mediana": 1731.02,
+    "saldo": -82,
+    "pct": 11.0
+  },
+  {
+    "porte": "De 250 a 499",
+    "admissoes": 8979,
+    "demissoes": 8479,
+    "salario_medio": 1663.3669911888876,
+    "salario_mediana": 1577.1,
+    "saldo": 500,
+    "pct": 3.0
+  },
+  {
+    "porte": "De 5 a 9",
+    "admissoes": 25145,
+    "demissoes": 26396,
+    "salario_medio": 1913.8997419207267,
+    "salario_mediana": 1800.0,
+    "saldo": -1251,
+    "pct": 8.4
+  },
+  {
+    "porte": "De 50 a 99",
+    "admissoes": 24866,
+    "demissoes": 24387,
+    "salario_medio": 1849.3502084681327,
+    "salario_mediana": 1731.02,
+    "saldo": 479,
+    "pct": 8.3
+  },
+  {
+    "porte": "De 500 a 999",
+    "admissoes": 23373,
+    "demissoes": 21935,
+    "salario_medio": 1801.4500812124668,
+    "salario_mediana": 1684.0,
+    "saldo": 1438,
+    "pct": 7.8
+  },
+  {
+    "porte": "Não informado",
+    "admissoes": 7603,
+    "demissoes": 7131,
+    "salario_medio": 1584.6685930500882,
+    "salario_mediana": 1501.0,
+    "saldo": 472,
+    "pct": 2.5
+  },
+  {
+    "porte": "Zero",
+    "admissoes": 66828,
+    "demissoes": 50127,
+    "salario_medio": 1894.6991046928094,
+    "salario_mediana": 1731.02,
+    "saldo": 16701,
+    "pct": 22.3
+  }
+]

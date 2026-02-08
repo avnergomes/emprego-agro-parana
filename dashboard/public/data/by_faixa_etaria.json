@@ -1,0 +1,74 @@
+[
+  {
+    "faixa": "Menor de 18",
+    "admissoes": 4715,
+    "demissoes": 2306,
+    "salario_medio": 1499.276286960547,
+    "salario_mediana": 1302.0,
+    "saldo": 2409,
+    "pct": 1.6
+  },
+  {
+    "faixa": "18 a 24 anos",
+    "admissoes": 82498,
+    "demissoes": 69571,
+    "salario_medio": 1701.9444247958063,
+    "salario_mediana": 1650.0,
+    "saldo": 12927,
+    "pct": 27.5
+  },
+  {
+    "faixa": "25 a 29 anos",
+    "admissoes": 51397,
+    "demissoes": 49515,
+    "salario_medio": 1833.309652402204,
+    "salario_mediana": 1736.29,
+    "saldo": 1882,
+    "pct": 17.1
+  },
+  {
+    "faixa": "30 a 39 anos",
+    "admissoes": 76050,
+    "demissoes": 74322,
+    "salario_medio": 1904.3523443931997,
+    "salario_mediana": 1749.02,
+    "saldo": 1728,
+    "pct": 25.3
+  },
+  {
+    "faixa": "40 a 49 anos",
+    "admissoes": 53195,
+    "demissoes": 52756,
+    "salario_medio": 1949.8154403472813,
+    "salario_mediana": 1763.79,
+    "saldo": 439,
+    "pct": 17.7
+  },
+  {
+    "faixa": "50 a 64 anos",
+    "admissoes": 31089,
+    "demissoes": 35499,
+    "salario_medio": 1981.1792413407804,
+    "salario_mediana": 1763.98,
+    "saldo": -4410,
+    "pct": 10.4
+  },
+  {
+    "faixa": "65 anos ou mais",
+    "admissoes": 1335,
+    "demissoes": 2827,
+    "salario_medio": 2117.450298050949,
+    "salario_mediana": 1820.0,
+    "saldo": -1492,
+    "pct": 0.4
+  },
+  {
+    "faixa": "Não informado",
+    "admissoes": 23,
+    "demissoes": 4,
+    "salario_medio": 1463.162962962963,
+    "salario_mediana": 1461.2,
+    "saldo": 19,
+    "pct": 0.0
+  }
+]

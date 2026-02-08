@@ -1,0 +1,119 @@
+[
+  {
+    "escolaridade": "Médio Completo",
+    "admissoes": 143594,
+    "demissoes": 131421,
+    "salario_medio": 1860.4344578508956,
+    "salario_mediana": 1749.02,
+    "saldo": 12173,
+    "pct": 47.8
+  },
+  {
+    "escolaridade": "Fundamental Completo",
+    "admissoes": 48535,
+    "demissoes": 47108,
+    "salario_medio": 1738.674823408341,
+    "salario_mediana": 1700.0,
+    "saldo": 1427,
+    "pct": 16.2
+  },
+  {
+    "escolaridade": "6ª a 9ª Fundamental",
+    "admissoes": 34369,
+    "demissoes": 34680,
+    "salario_medio": 1712.8083552137996,
+    "salario_mediana": 1659.96,
+    "saldo": -311,
+    "pct": 11.4
+  },
+  {
+    "escolaridade": "Médio Incompleto",
+    "admissoes": 30423,
+    "demissoes": 28586,
+    "salario_medio": 1702.6725978392428,
+    "salario_mediana": 1684.0,
+    "saldo": 1837,
+    "pct": 10.1
+  },
+  {
+    "escolaridade": "Até 5ª Incompleto",
+    "admissoes": 15355,
+    "demissoes": 16390,
+    "salario_medio": 1762.4393752592428,
+    "salario_mediana": 1700.0,
+    "saldo": -1035,
+    "pct": 5.1
+  },
+  {
+    "escolaridade": "5ª Completo Fundamental",
+    "admissoes": 13842,
+    "demissoes": 14961,
+    "salario_medio": 1851.2000069348426,
+    "salario_mediana": 1700.0,
+    "saldo": -1119,
+    "pct": 4.6
+  },
+  {
+    "escolaridade": "Superior Completo",
+    "admissoes": 6503,
+    "demissoes": 6272,
+    "salario_medio": 3581.1112560547945,
+    "salario_mediana": 2500.0,
+    "saldo": 231,
+    "pct": 2.2
+  },
+  {
+    "escolaridade": "Superior Incompleto",
+    "admissoes": 4598,
+    "demissoes": 4167,
+    "salario_medio": 2143.1524324164293,
+    "salario_mediana": 1828.0,
+    "saldo": 431,
+    "pct": 1.5
+  },
+  {
+    "escolaridade": "Analfabeto",
+    "admissoes": 2581,
+    "demissoes": 2712,
+    "salario_medio": 2111.9373417343095,
+    "salario_mediana": 1650.0,
+    "saldo": -131,
+    "pct": 0.9
+  },
+  {
+    "escolaridade": "Pós-Graduação completa",
+    "admissoes": 359,
+    "demissoes": 367,
+    "salario_medio": 5107.176694352617,
+    "salario_mediana": 3526.6549999999997,
+    "saldo": -8,
+    "pct": 0.1
+  },
+  {
+    "escolaridade": "Mestrado",
+    "admissoes": 90,
+    "demissoes": 88,
+    "salario_medio": 9764.75387752809,
+    "salario_mediana": 5254.5599999999995,
+    "saldo": 2,
+    "pct": 0.0
+  },
+  {
+    "escolaridade": "Doutorado",
+    "admissoes": 53,
+    "demissoes": 47,
+    "salario_medio": 9533.655601999999,
+    "salario_mediana": 5771.985000000001,
+    "saldo": 6,
+    "pct": 0.0
+  },
+  {
+    "escolaridade": "Não informado",
+    "admissoes": 0,
+    "demissoes": 1,
+    "salario_medio": 1461.2,
+    "salario_mediana": 1461.2,
+    "saldo": -1,
+    "pct": 0.0
+  }
+]

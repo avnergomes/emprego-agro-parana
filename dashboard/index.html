@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dashboard de emprego no agronegocio do Parana - dados CAGED por municipio, cadeia produtiva e atividade economica. Admissoes, demissoes e saldo de empregos formais no setor agropecuario." />
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="emprego agronegocio Parana, CAGED agropecuaria, dashboard emprego rural, mercado trabalho agro, admissoes demissoes agro, saldo empregos rurais, emprego formal agricultura, emprego pecuaria Parana, cadeias produtivas emprego, CNAE agropecuaria, emprego por municipio Parana, dados MTE agro, agricultural employment Brazil, farm jobs dashboard, rural labor market, agribusiness employment, employment data agriculture, empleo agropecuario, mercado laboral rural, empleo formal agricultura" />
+    <meta name="author" content="Avner Gomes" />
+    <meta name="geo.region" content="BR-PR" />
+    <meta name="geo.placename" content="Parana, Brasil" />
+    <link rel="canonical" href="https://avnergomes.github.io/emprego-agro-parana/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Emprego Agro Parana - Dashboard CAGED Agropecuario" />
+    <meta property="og:description" content="Dashboard de emprego no agronegocio do Parana com dados CAGED por municipio, cadeia produtiva e atividade economica." />
+    <meta property="og:url" content="https://avnergomes.github.io/emprego-agro-parana/" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Emprego Agro Parana" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Emprego Agro Parana - Dashboard CAGED Agropecuario" />
+    <meta name="twitter:description" content="Dashboard de emprego no agronegocio do Parana com dados CAGED por municipio, cadeia produtiva e atividade economica." />
+    <title>Emprego Agro Parana - Dashboard de Emprego no Agronegocio</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Emprego Agro Parana",
+      "description": "Dashboard de emprego no agronegocio do Parana com dados CAGED por municipio, cadeia produtiva e atividade economica CNAE. Ferramenta de BI para analise do mercado de trabalho agropecuario.",
+      "url": "https://avnergomes.github.io/emprego-agro-parana/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+      "areaServed": { "@type": "AdministrativeArea", "name": "Parana", "addressCountry": "BR" },
+      "author": { "@type": "Person", "name": "Avner Gomes", "url": "https://avnergomes.github.io/portfolio/" },
+      "keywords": ["emprego agronegocio", "CAGED agropecuaria", "dashboard emprego rural", "mercado trabalho agro", "agricultural employment", "farm jobs dashboard"]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Analytics Tracking Script -->
+    <script>
+    (function() {
+      // IMPORTANTE: Substitua pela URL do seu Google Apps Script implantado
+      const TRACKING_URL = 'SEU_TRACKING_URL_AQUI';
+
+      function getSessionId() {
+        let sessionId = sessionStorage.getItem('eap_session_id');
+        if (!sessionId) {
+          sessionId = 'sess_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+          sessionStorage.setItem('eap_session_id', sessionId);
+          sessionStorage.setItem('eap_session_start', new Date().toISOString());
+          sessionStorage.setItem('eap_page_views', '0');
+        }
+        return sessionId;
+      }
+
+      function isReturningVisitor() {
+        const hasVisited = localStorage.getItem('eap_has_visited');
+        if (!hasVisited) {
+          localStorage.setItem('eap_has_visited', 'true');
+          localStorage.setItem('eap_first_visit', new Date().toISOString());
+          return false;
+        }
+        return true;
+      }
+
+      function getBrowserInfo() {
+        const ua = navigator.userAgent;
+        let browser = 'Unknown', version = '';
+        if (ua.indexOf('Firefox') > -1) { browser = 'Firefox'; version = (ua.match(/Firefox\/([0-9.]+)/) || [])[1] || ''; }
+        else if (ua.indexOf('Edg') > -1) { browser = 'Edge'; version = (ua.match(/Edg\/([0-9.]+)/) || [])[1] || ''; }
+        else if (ua.indexOf('Chrome') > -1) { browser = 'Chrome'; version = (ua.match(/Chrome\/([0-9.]+)/) || [])[1] || ''; }
+        else if (ua.indexOf('Safari') > -1) { browser = 'Safari'; version = (ua.match(/Version\/([0-9.]+)/) || [])[1] || ''; }
+        return { browser, version };
+      }
+
+      function getOS() {
+        const ua = navigator.userAgent;
+        if (ua.indexOf('Win') > -1) return 'Windows';
+        if (ua.indexOf('Mac') > -1) return 'macOS';
+        if (ua.indexOf('Linux') > -1) return 'Linux';
+        if (ua.indexOf('Android') > -1) return 'Android';
+        if (ua.indexOf('like Mac') > -1) return 'iOS';
+        return 'Unknown';
+      }
+
+      function trackVisitor() {
+        // Nao rastrear se URL nao estiver configurada
+        if (TRACKING_URL === 'SEU_TRACKING_URL_AQUI') {
+          console.log('[Tracking] URL nao configurada - tracking desabilitado');
+          return;
+        }
+
+        try {
+          const browserInfo = getBrowserInfo();
+          const isMobile = /Mobile|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+          const pageViews = parseInt(sessionStorage.getItem('eap_page_views') || '0') + 1;
+          sessionStorage.setItem('eap_page_views', pageViews.toString());
+
+          const data = {
+            origin: window.location.origin,
+            timestamp: new Date().toISOString(),
+            page: window.location.pathname + window.location.hash,
+            referrer: document.referrer || 'Direct',
+            language: navigator.language,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            sessionId: getSessionId(),
+            returningVisitor: isReturningVisitor(),
+            browser: browserInfo.browser,
+            browserVersion: browserInfo.version,
+            os: getOS(),
+            screenWidth: screen.width,
+            screenHeight: screen.height,
+            viewportWidth: window.innerWidth,
+            viewportHeight: window.innerHeight,
+            isMobile: isMobile,
+            pageViewsInSession: pageViews,
+            pageTitle: document.title
+          };
+
+          fetch(TRACKING_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          }).then(function() {
+            console.log('[Tracking] Visitor data sent');
+          }).catch(function(err) {
+            console.error('[Tracking] Error:', err);
+          });
+        } catch (e) {
+          console.error('[Tracking] Exception:', e);
+        }
+      }
+
+      // Track on page load
+      if (document.readyState === 'complete') {
+        trackVisitor();
+      } else {
+        window.addEventListener('load', trackVisitor);
+      }
+    })();
+    </script>
+  </body>
+</html>

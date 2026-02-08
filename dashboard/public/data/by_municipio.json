@@ -1,0 +1,3584 @@
+[
+  {
+    "codigo": "411760",
+    "admissoes": 14167,
+    "demissoes": 13728,
+    "salario_medio": 1890.7249890933858,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 439,
+    "nome": "Palmas"
+  },
+  {
+    "codigo": "410480",
+    "admissoes": 9010,
+    "demissoes": 8577,
+    "salario_medio": 1857.1596604754322,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 433,
+    "nome": "Cascavel"
+  },
+  {
+    "codigo": "410940",
+    "admissoes": 8506,
+    "demissoes": 8063,
+    "salario_medio": 1913.5936703657653,
+    "cadeia_dominante": "Grãos",
+    "saldo": 443,
+    "nome": "Guarapuava"
+  },
+  {
+    "codigo": "410490",
+    "admissoes": 7765,
+    "demissoes": 7188,
+    "salario_medio": 1929.8025969107812,
+    "cadeia_dominante": "Grãos",
+    "saldo": 577,
+    "nome": "Castro"
+  },
+  {
+    "codigo": "411840",
+    "admissoes": 6232,
+    "demissoes": 5821,
+    "salario_medio": 1619.8313174977186,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 411,
+    "nome": "Paranavaí"
+  },
+  {
+    "codigo": "411730",
+    "admissoes": 5981,
+    "demissoes": 5517,
+    "salario_medio": 1829.1653324867355,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 464,
+    "nome": "Ortigueira"
+  },
+  {
+    "codigo": "410465",
+    "admissoes": 5896,
+    "demissoes": 5493,
+    "salario_medio": 1844.8688598937197,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": 403,
+    "nome": "Carambeí"
+  },
+  {
+    "codigo": "410980",
+    "admissoes": 5728,
+    "demissoes": 5612,
+    "salario_medio": 1610.0423712186948,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 116,
+    "nome": "Ibiporã"
+  },
+  {
+    "codigo": "411850",
+    "admissoes": 5264,
+    "demissoes": 5186,
+    "salario_medio": 1660.7828498564593,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 78,
+    "nome": "Pato Branco"
+  },
+  {
+    "codigo": "411990",
+    "admissoes": 5177,
+    "demissoes": 4917,
+    "salario_medio": 1760.1263712026948,
+    "cadeia_dominante": "Grãos",
+    "saldo": 260,
+    "nome": "Ponta Grossa"
+  },
+  {
+    "codigo": "412710",
+    "admissoes": 5083,
+    "demissoes": 4377,
+    "salario_medio": 1891.9754386892175,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 706,
+    "nome": "Telêmaco Borba"
+  },
+  {
+    "codigo": "412770",
+    "admissoes": 5062,
+    "demissoes": 4916,
+    "salario_medio": 2008.2975655832834,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 146,
+    "nome": "Toledo"
+  },
+  {
+    "codigo": "410970",
+    "admissoes": 4843,
+    "demissoes": 4567,
+    "salario_medio": 1734.2005845467106,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 276,
+    "nome": "Ibaiti"
+  },
+  {
+    "codigo": "412570",
+    "admissoes": 4462,
+    "demissoes": 4130,
+    "salario_medio": 1801.614327269553,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 332,
+    "nome": "São Miguel do Iguaçu"
+  },
+  {
+    "codigo": "411320",
+    "admissoes": 3482,
+    "demissoes": 3368,
+    "salario_medio": 1864.7887591357664,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 114,
+    "nome": "Lapa"
+  },
+  {
+    "codigo": "410720",
+    "admissoes": 3482,
+    "demissoes": 3242,
+    "salario_medio": 1831.6083863652589,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 240,
+    "nome": "Dois Vizinhos"
+  },
+  {
+    "codigo": "412350",
+    "admissoes": 3441,
+    "demissoes": 3012,
+    "salario_medio": 1755.0317852998605,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 429,
+    "nome": "Santa Helena"
+  },
+  {
+    "codigo": "411930",
+    "admissoes": 3362,
+    "demissoes": 3051,
+    "salario_medio": 1891.554614079214,
+    "cadeia_dominante": "Grãos",
+    "saldo": 311,
+    "nome": "Pinhão"
+  },
+  {
+    "codigo": "411800",
+    "admissoes": 2781,
+    "demissoes": 2648,
+    "salario_medio": 956.4447374293055,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": 133,
+    "nome": "Paraíso do Norte"
+  },
+  {
+    "codigo": "412853",
+    "admissoes": 2746,
+    "demissoes": 2362,
+    "salario_medio": 1929.8195009436179,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 384,
+    "nome": "Ventania"
+  },
+  {
+    "codigo": "411190",
+    "admissoes": 2679,
+    "demissoes": 2695,
+    "salario_medio": 1611.731905284704,
+    "cadeia_dominante": "Outros",
+    "saldo": -16,
+    "nome": "Jaguapitã"
+  },
+  {
+    "codigo": "410160",
+    "admissoes": 2669,
+    "demissoes": 2543,
+    "salario_medio": 1981.5478280890252,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 126,
+    "nome": "Arapoti"
+  },
+  {
+    "codigo": "410550",
+    "admissoes": 2658,
+    "demissoes": 2724,
+    "salario_medio": 1697.5528021553325,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -66,
+    "nome": "Cianorte"
+  },
+  {
+    "codigo": "412750",
+    "admissoes": 2535,
+    "demissoes": 2452,
+    "salario_medio": 2173.0840444756363,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 83,
+    "nome": "Tibagi"
+  },
+  {
+    "codigo": "411790",
+    "admissoes": 2513,
+    "demissoes": 2200,
+    "salario_medio": 2045.3455869722045,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 313,
+    "nome": "Palotina"
+  },
+  {
+    "codigo": "410890",
+    "admissoes": 2435,
+    "demissoes": 2271,
+    "salario_medio": 1670.592186634084,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 164,
+    "nome": "Guairaçá"
+  },
+  {
+    "codigo": "410150",
+    "admissoes": 2409,
+    "demissoes": 2525,
+    "salario_medio": 1861.1712548124874,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -116,
+    "nome": "Arapongas"
+  },
+  {
+    "codigo": "411940",
+    "admissoes": 2307,
+    "demissoes": 2091,
+    "salario_medio": 2061.303394199636,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 216,
+    "nome": "Piraí do Sul"
+  },
+  {
+    "codigo": "410690",
+    "admissoes": 2299,
+    "demissoes": 1863,
+    "salario_medio": 3384.568738404613,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 436,
+    "nome": "Curitiba"
+  },
+  {
+    "codigo": "410060",
+    "admissoes": 2265,
+    "demissoes": 2118,
+    "salario_medio": 1695.0648961898244,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 147,
+    "nome": "Alto Paraná"
+  },
+  {
+    "codigo": "411460",
+    "admissoes": 2261,
+    "demissoes": 2180,
+    "salario_medio": 1629.6928870074307,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 81,
+    "nome": "Marechal Cândido Rondon"
+  },
+  {
+    "codigo": "410660",
+    "admissoes": 2238,
+    "demissoes": 1920,
+    "salario_medio": 863.8953655603656,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 318,
+    "nome": "Cruzeiro do Oeste"
+  },
+  {
+    "codigo": "411180",
+    "admissoes": 2158,
+    "demissoes": 1926,
+    "salario_medio": 1714.8219051174337,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": 232,
+    "nome": "Jacarezinho"
+  },
+  {
+    "codigo": "411520",
+    "admissoes": 2154,
+    "demissoes": 2044,
+    "salario_medio": 2096.303639899952,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 110,
+    "nome": "Maringá"
+  },
+  {
+    "codigo": "412560",
+    "admissoes": 2150,
+    "demissoes": 2162,
+    "salario_medio": 1824.444257792208,
+    "cadeia_dominante": "Grãos",
+    "saldo": -12,
+    "nome": "São Mateus do Sul"
+  },
+  {
+    "codigo": "411370",
+    "admissoes": 2105,
+    "demissoes": 2168,
+    "salario_medio": 2094.1367744873596,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -63,
+    "nome": "Londrina"
+  },
+  {
+    "codigo": "410580",
+    "admissoes": 2053,
+    "demissoes": 1959,
+    "salario_medio": 1812.9433698404787,
+    "cadeia_dominante": "Horticultura",
+    "saldo": 94,
+    "nome": "Colombo"
+  },
+  {
+    "codigo": "410360",
+    "admissoes": 1997,
+    "demissoes": 2166,
+    "salario_medio": 2226.5564977179915,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -169,
+    "nome": "Cambará"
+  },
+  {
+    "codigo": "411200",
+    "admissoes": 1943,
+    "demissoes": 1934,
+    "salario_medio": 2025.511942274955,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 9,
+    "nome": "Jaguariaíva"
+  },
+  {
+    "codigo": "412630",
+    "admissoes": 1917,
+    "demissoes": 1693,
+    "salario_medio": 1808.6164487257618,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 224,
+    "nome": "Sengés"
+  },
+  {
+    "codigo": "412240",
+    "admissoes": 1837,
+    "demissoes": 1434,
+    "salario_medio": 1943.797456435341,
+    "cadeia_dominante": "Outros",
+    "saldo": 403,
+    "nome": "Rolândia"
+  },
+  {
+    "codigo": "410430",
+    "admissoes": 1834,
+    "demissoes": 1693,
+    "salario_medio": 1968.1925511634506,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 141,
+    "nome": "Campo Mourão"
+  },
+  {
+    "codigo": "410110",
+    "admissoes": 1732,
+    "demissoes": 1685,
+    "salario_medio": 1740.5636465027803,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 47,
+    "nome": "Andirá"
+  },
+  {
+    "codigo": "410590",
+    "admissoes": 1647,
+    "demissoes": 1770,
+    "salario_medio": 1456.1443790275337,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": -123,
+    "nome": "Colorado"
+  },
+  {
+    "codigo": "410290",
+    "admissoes": 1646,
+    "demissoes": 1589,
+    "salario_medio": 1907.9593942812983,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 57,
+    "nome": "Bituruna"
+  },
+  {
+    "codigo": "412170",
+    "admissoes": 1624,
+    "demissoes": 1568,
+    "salario_medio": 1844.7200812656642,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 56,
+    "nome": "Reserva"
+  },
+  {
+    "codigo": "410850",
+    "admissoes": 1595,
+    "demissoes": 1567,
+    "salario_medio": 1870.572789373814,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 28,
+    "nome": "General Carneiro"
+  },
+  {
+    "codigo": "410840",
+    "admissoes": 1470,
+    "demissoes": 1706,
+    "salario_medio": 1605.9885395151134,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -236,
+    "nome": "Francisco Beltrão"
+  },
+  {
+    "codigo": "412440",
+    "admissoes": 1456,
+    "demissoes": 1329,
+    "salario_medio": 1796.5898132854577,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 127,
+    "nome": "Santo Antônio do Sudoeste"
+  },
+  {
+    "codigo": "410753",
+    "admissoes": 1444,
+    "demissoes": 1331,
+    "salario_medio": 2201.756285261261,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 113,
+    "nome": "Entre Rios do Oeste"
+  },
+  {
+    "codigo": "410050",
+    "admissoes": 1414,
+    "demissoes": 1172,
+    "salario_medio": 1370.1977726218097,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 242,
+    "nome": "Altônia"
+  },
+  {
+    "codigo": "410442",
+    "admissoes": 1397,
+    "demissoes": 1269,
+    "salario_medio": 1812.3632083001876,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 128,
+    "nome": "Candói"
+  },
+  {
+    "codigo": "411580",
+    "admissoes": 1379,
+    "demissoes": 1270,
+    "salario_medio": 1818.1358021215551,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 109,
+    "nome": "Medianeira"
+  },
+  {
+    "codigo": "411725",
+    "admissoes": 1373,
+    "demissoes": 1186,
+    "salario_medio": 1839.4408908987887,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 187,
+    "nome": "Nova Prata do Iguaçu"
+  },
+  {
+    "codigo": "412650",
+    "admissoes": 1289,
+    "demissoes": 1124,
+    "salario_medio": 2050.827384873601,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 165,
+    "nome": "Sertanópolis"
+  },
+  {
+    "codigo": "412788",
+    "admissoes": 1242,
+    "demissoes": 1169,
+    "salario_medio": 1572.8460672749895,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 73,
+    "nome": "Tunas do Paraná"
+  },
+  {
+    "codigo": "412580",
+    "admissoes": 1219,
+    "demissoes": 1367,
+    "salario_medio": 1450.4782289078112,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": -148,
+    "nome": "São Pedro do Ivaí"
+  },
+  {
+    "codigo": "411095",
+    "admissoes": 1210,
+    "demissoes": 988,
+    "salario_medio": 1789.9621930391263,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 222,
+    "nome": "Itaipulândia"
+  },
+  {
+    "codigo": "412810",
+    "admissoes": 1210,
+    "demissoes": 1195,
+    "salario_medio": 1997.4706420725604,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 15,
+    "nome": "Umuarama"
+  },
+  {
+    "codigo": "411530",
+    "admissoes": 1180,
+    "demissoes": 1155,
+    "salario_medio": 1549.7317689507495,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 25,
+    "nome": "Mariópolis"
+  },
+  {
+    "codigo": "411770",
+    "admissoes": 1154,
+    "demissoes": 1200,
+    "salario_medio": 2129.8537085811386,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": -46,
+    "nome": "Palmeira"
+  },
+  {
+    "codigo": "411373",
+    "admissoes": 1148,
+    "demissoes": 1087,
+    "salario_medio": 1911.6427740939598,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 61,
+    "nome": "Luiziana"
+  },
+  {
+    "codigo": "411345",
+    "admissoes": 1127,
+    "demissoes": 1035,
+    "salario_medio": 1871.0651986586493,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 92,
+    "nome": "Lindoeste"
+  },
+  {
+    "codigo": "411330",
+    "admissoes": 1123,
+    "demissoes": 1101,
+    "salario_medio": 1614.0267041816546,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 22,
+    "nome": "Laranjeiras do Sul"
+  },
+  {
+    "codigo": "412490",
+    "admissoes": 1116,
+    "demissoes": 922,
+    "salario_medio": 1681.5210009813543,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 194,
+    "nome": "São João do Caiuá"
+  },
+  {
+    "codigo": "410320",
+    "admissoes": 1106,
+    "demissoes": 1046,
+    "salario_medio": 2080.985560865519,
+    "cadeia_dominante": "Outros",
+    "saldo": 60,
+    "nome": "Bom Sucesso"
+  },
+  {
+    "codigo": "410860",
+    "admissoes": 1056,
+    "demissoes": 988,
+    "salario_medio": 1854.3315215264188,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 68,
+    "nome": "Goioerê"
+  },
+  {
+    "codigo": "410530",
+    "admissoes": 1041,
+    "demissoes": 954,
+    "salario_medio": 1984.9942111779449,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 87,
+    "nome": "Céu Azul"
+  },
+  {
+    "codigo": "412450",
+    "admissoes": 1039,
+    "demissoes": 1184,
+    "salario_medio": 1403.5421592442647,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": -145,
+    "nome": "Santo Inácio"
+  },
+  {
+    "codigo": "410650",
+    "admissoes": 1023,
+    "demissoes": 928,
+    "salario_medio": 2046.5216042593543,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 95,
+    "nome": "Coronel Vivida"
+  },
+  {
+    "codigo": "412300",
+    "admissoes": 1021,
+    "demissoes": 1035,
+    "salario_medio": 1709.4218969357978,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -14,
+    "nome": "Salto do Lontra"
+  },
+  {
+    "codigo": "412820",
+    "admissoes": 1019,
+    "demissoes": 917,
+    "salario_medio": 1914.5931819834711,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 102,
+    "nome": "União da Vitória"
+  },
+  {
+    "codigo": "410760",
+    "admissoes": 1017,
+    "demissoes": 1002,
+    "salario_medio": 1907.4927191728577,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 15,
+    "nome": "Faxinal"
+  },
+  {
+    "codigo": "412250",
+    "admissoes": 995,
+    "demissoes": 1008,
+    "salario_medio": 1803.306021717424,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -13,
+    "nome": "Roncador"
+  },
+  {
+    "codigo": "411670",
+    "admissoes": 965,
+    "demissoes": 908,
+    "salario_medio": 1803.831591137213,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 57,
+    "nome": "Nova Aurora"
+  },
+  {
+    "codigo": "411100",
+    "admissoes": 959,
+    "demissoes": 1116,
+    "salario_medio": 1820.1056915180725,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -157,
+    "nome": "Itambaracá"
+  },
+  {
+    "codigo": "410310",
+    "admissoes": 946,
+    "demissoes": 970,
+    "salario_medio": 1776.6301459812107,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -24,
+    "nome": "Bocaiúva do Sul"
+  },
+  {
+    "codigo": "410645",
+    "admissoes": 944,
+    "demissoes": 932,
+    "salario_medio": 1956.3639392324094,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 12,
+    "nome": "Coronel Domingos Soares"
+  },
+  {
+    "codigo": "412410",
+    "admissoes": 939,
+    "demissoes": 921,
+    "salario_medio": 1609.940688188172,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 18,
+    "nome": "Santo Antônio da Platina"
+  },
+  {
+    "codigo": "410800",
+    "admissoes": 923,
+    "demissoes": 1062,
+    "salario_medio": 1542.1300705289673,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": -139,
+    "nome": "Florestópolis"
+  },
+  {
+    "codigo": "410210",
+    "admissoes": 912,
+    "demissoes": 882,
+    "salario_medio": 1846.9145150501672,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 30,
+    "nome": "Astorga"
+  },
+  {
+    "codigo": "412390",
+    "admissoes": 906,
+    "demissoes": 925,
+    "salario_medio": 8076.04960655598,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -19,
+    "nome": "Santa Mariana"
+  },
+  {
+    "codigo": "411690",
+    "admissoes": 885,
+    "demissoes": 870,
+    "salario_medio": 1607.2324444444444,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 15,
+    "nome": "Nova Esperança"
+  },
+  {
+    "codigo": "412730",
+    "admissoes": 865,
+    "demissoes": 762,
+    "salario_medio": 2039.1505471419791,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 103,
+    "nome": "Terra Rica"
+  },
+  {
+    "codigo": "411550",
+    "admissoes": 845,
+    "demissoes": 556,
+    "salario_medio": 1543.2614917915776,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 289,
+    "nome": "Marumbi"
+  },
+  {
+    "codigo": "410240",
+    "admissoes": 838,
+    "demissoes": 936,
+    "salario_medio": 1836.171527621195,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": -98,
+    "nome": "Bandeirantes"
+  },
+  {
+    "codigo": "411010",
+    "admissoes": 827,
+    "demissoes": 804,
+    "salario_medio": 1957.265524218271,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 23,
+    "nome": "Imbituva"
+  },
+  {
+    "codigo": "410410",
+    "admissoes": 825,
+    "demissoes": 689,
+    "salario_medio": 1904.3243394980186,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 136,
+    "nome": "Campo do Tenente"
+  },
+  {
+    "codigo": "412680",
+    "admissoes": 822,
+    "demissoes": 676,
+    "salario_medio": 1667.1836048064085,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 146,
+    "nome": "Tapejara"
+  },
+  {
+    "codigo": "410140",
+    "admissoes": 804,
+    "demissoes": 751,
+    "salario_medio": 2052.1466170418007,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 53,
+    "nome": "Apucarana"
+  },
+  {
+    "codigo": "411500",
+    "admissoes": 801,
+    "demissoes": 821,
+    "salario_medio": 1462.0887237484587,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -20,
+    "nome": "Marilena"
+  },
+  {
+    "codigo": "410200",
+    "admissoes": 793,
+    "demissoes": 850,
+    "salario_medio": 1854.3648387705416,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -57,
+    "nome": "Assis Chateaubriand"
+  },
+  {
+    "codigo": "410130",
+    "admissoes": 771,
+    "demissoes": 688,
+    "salario_medio": 1731.4993968471556,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 83,
+    "nome": "Antônio Olinto"
+  },
+  {
+    "codigo": "412260",
+    "admissoes": 764,
+    "demissoes": 645,
+    "salario_medio": 1648.8039886444285,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 119,
+    "nome": "Rondon"
+  },
+  {
+    "codigo": "411400",
+    "admissoes": 756,
+    "demissoes": 810,
+    "salario_medio": 1817.4239146871007,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -54,
+    "nome": "Mamborê"
+  },
+  {
+    "codigo": "410930",
+    "admissoes": 748,
+    "demissoes": 753,
+    "salario_medio": 1955.8499800133243,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -5,
+    "nome": "Guaraniaçu"
+  },
+  {
+    "codigo": "411540",
+    "admissoes": 734,
+    "demissoes": 735,
+    "salario_medio": 1763.6944381347855,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -1,
+    "nome": "Marmeleiro"
+  },
+  {
+    "codigo": "412700",
+    "admissoes": 728,
+    "demissoes": 680,
+    "salario_medio": 1935.9186718750002,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 48,
+    "nome": "Teixeira Soares"
+  },
+  {
+    "codigo": "412060",
+    "admissoes": 727,
+    "demissoes": 637,
+    "salario_medio": 1890.6341497947215,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 90,
+    "nome": "Prudentópolis"
+  },
+  {
+    "codigo": "411440",
+    "admissoes": 713,
+    "demissoes": 661,
+    "salario_medio": 1967.0896433770015,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 52,
+    "nome": "Mangueirinha"
+  },
+  {
+    "codigo": "412175",
+    "admissoes": 711,
+    "demissoes": 745,
+    "salario_medio": 1512.7079394917582,
+    "cadeia_dominante": "Grãos",
+    "saldo": -34,
+    "nome": "Reserva do Iguaçu"
+  },
+  {
+    "codigo": "411960",
+    "admissoes": 709,
+    "demissoes": 699,
+    "salario_medio": 1833.180206044034,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 10,
+    "nome": "Pitanga"
+  },
+  {
+    "codigo": "410780",
+    "admissoes": 698,
+    "demissoes": 623,
+    "salario_medio": 865.0344284708555,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 75,
+    "nome": "Floraí"
+  },
+  {
+    "codigo": "410420",
+    "admissoes": 689,
+    "demissoes": 609,
+    "salario_medio": 2149.503325617284,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 80,
+    "nome": "Campo Largo"
+  },
+  {
+    "codigo": "410470",
+    "admissoes": 682,
+    "demissoes": 708,
+    "salario_medio": 1729.969611582734,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": -26,
+    "nome": "Carlópolis"
+  },
+  {
+    "codigo": "410345",
+    "admissoes": 678,
+    "demissoes": 625,
+    "salario_medio": 1878.2548197237145,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 53,
+    "nome": "Cafelândia"
+  },
+  {
+    "codigo": "410640",
+    "admissoes": 662,
+    "demissoes": 775,
+    "salario_medio": 1842.4416562282534,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -113,
+    "nome": "Cornélio Procópio"
+  },
+  {
+    "codigo": "412010",
+    "admissoes": 659,
+    "demissoes": 558,
+    "salario_medio": 1821.797740345111,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 101,
+    "nome": "Porto Amazonas"
+  },
+  {
+    "codigo": "411060",
+    "admissoes": 641,
+    "demissoes": 498,
+    "salario_medio": 1982.1463561018436,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 143,
+    "nome": "Iporã"
+  },
+  {
+    "codigo": "410725",
+    "admissoes": 637,
+    "demissoes": 598,
+    "salario_medio": 1715.5537975951418,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 39,
+    "nome": "Douradina"
+  },
+  {
+    "codigo": "412380",
+    "admissoes": 637,
+    "demissoes": 599,
+    "salario_medio": 1915.2875889967638,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 38,
+    "nome": "Santa Izabel do Oeste"
+  },
+  {
+    "codigo": "410170",
+    "admissoes": 636,
+    "demissoes": 506,
+    "salario_medio": 1714.9577147110333,
+    "cadeia_dominante": "Outros",
+    "saldo": 130,
+    "nome": "Araruna"
+  },
+  {
+    "codigo": "411470",
+    "admissoes": 626,
+    "demissoes": 622,
+    "salario_medio": 1777.5936858173077,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 4,
+    "nome": "Maria Helena"
+  },
+  {
+    "codigo": "410600",
+    "admissoes": 625,
+    "demissoes": 562,
+    "salario_medio": 1759.2578686604886,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 63,
+    "nome": "Congonhinhas"
+  },
+  {
+    "codigo": "412667",
+    "admissoes": 625,
+    "demissoes": 587,
+    "salario_medio": 1741.9244967821783,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 38,
+    "nome": "Tamarana"
+  },
+  {
+    "codigo": "412085",
+    "admissoes": 623,
+    "demissoes": 551,
+    "salario_medio": 1681.413126064736,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 72,
+    "nome": "Quatro Pontes"
+  },
+  {
+    "codigo": "411480",
+    "admissoes": 623,
+    "demissoes": 537,
+    "salario_medio": 1889.0245,
+    "cadeia_dominante": "Outros",
+    "saldo": 86,
+    "nome": "Marialva"
+  },
+  {
+    "codigo": "411020",
+    "admissoes": 617,
+    "demissoes": 638,
+    "salario_medio": 1781.3233068525894,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -21,
+    "nome": "Inácio Martins"
+  },
+  {
+    "codigo": "411275",
+    "admissoes": 616,
+    "demissoes": 501,
+    "salario_medio": 1895.5423812891675,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 115,
+    "nome": "Jesuítas"
+  },
+  {
+    "codigo": "412065",
+    "admissoes": 613,
+    "demissoes": 566,
+    "salario_medio": 2150.658948176421,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 47,
+    "nome": "Quarto Centenário"
+  },
+  {
+    "codigo": "411420",
+    "admissoes": 610,
+    "demissoes": 633,
+    "salario_medio": 1896.9072888978278,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -23,
+    "nome": "Mandaguari"
+  },
+  {
+    "codigo": "410570",
+    "admissoes": 609,
+    "demissoes": 571,
+    "salario_medio": 1976.4543729745762,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 38,
+    "nome": "Clevelândia"
+  },
+  {
+    "codigo": "412862",
+    "admissoes": 608,
+    "demissoes": 522,
+    "salario_medio": 2100.2091417699116,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 86,
+    "nome": "Alto Paraíso"
+  },
+  {
+    "codigo": "411390",
+    "admissoes": 606,
+    "demissoes": 558,
+    "salario_medio": 1970.5796647766322,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 48,
+    "nome": "Mallet"
+  },
+  {
+    "codigo": "410990",
+    "admissoes": 600,
+    "demissoes": 554,
+    "salario_medio": 1882.0693495229834,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 46,
+    "nome": "Icaraíma"
+  },
+  {
+    "codigo": "410180",
+    "admissoes": 599,
+    "demissoes": 628,
+    "salario_medio": 2165.3453707416465,
+    "cadeia_dominante": "Horticultura",
+    "saldo": -29,
+    "nome": "Araucária"
+  },
+  {
+    "codigo": "411610",
+    "admissoes": 592,
+    "demissoes": 544,
+    "salario_medio": 1707.978565140845,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 48,
+    "nome": "Moreira Sales"
+  },
+  {
+    "codigo": "412796",
+    "admissoes": 592,
+    "demissoes": 566,
+    "salario_medio": 1603.4297929188256,
+    "cadeia_dominante": "Outras Culturas Permanentes",
+    "saldo": 26,
+    "nome": "Turvo"
+  },
+  {
+    "codigo": "411950",
+    "admissoes": 590,
+    "demissoes": 522,
+    "salario_medio": 3222.645521528777,
+    "cadeia_dominante": "Grãos",
+    "saldo": 68,
+    "nome": "Piraquara"
+  },
+  {
+    "codigo": "411722",
+    "admissoes": 586,
+    "demissoes": 540,
+    "salario_medio": 1848.9861101420959,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 46,
+    "nome": "Nova Santa Rosa"
+  },
+  {
+    "codigo": "412550",
+    "admissoes": 584,
+    "demissoes": 844,
+    "salario_medio": 1896.6105321988796,
+    "cadeia_dominante": "Horticultura",
+    "saldo": -260,
+    "nome": "São José dos Pinhais"
+  },
+  {
+    "codigo": "411490",
+    "admissoes": 583,
+    "demissoes": 529,
+    "salario_medio": 1905.1246312949638,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 54,
+    "nome": "Marilândia do Sul"
+  },
+  {
+    "codigo": "410370",
+    "admissoes": 575,
+    "demissoes": 556,
+    "salario_medio": 2034.9702740937223,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 19,
+    "nome": "Cambé"
+  },
+  {
+    "codigo": "411120",
+    "admissoes": 571,
+    "demissoes": 607,
+    "salario_medio": 1728.3472155348047,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -36,
+    "nome": "Itapejara d'Oeste"
+  },
+  {
+    "codigo": "410620",
+    "admissoes": 568,
+    "demissoes": 708,
+    "salario_medio": 1890.4714810344828,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -140,
+    "nome": "Contenda"
+  },
+  {
+    "codigo": "410670",
+    "admissoes": 565,
+    "demissoes": 536,
+    "salario_medio": 1588.6248501362397,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 29,
+    "nome": "Cruzeiro do Sul"
+  },
+  {
+    "codigo": "410560",
+    "admissoes": 558,
+    "demissoes": 498,
+    "salario_medio": 1716.2375095643938,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 60,
+    "nome": "Cidade Gaúcha"
+  },
+  {
+    "codigo": "412140",
+    "admissoes": 542,
+    "demissoes": 510,
+    "salario_medio": 1821.8949714828898,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 32,
+    "nome": "Realeza"
+  },
+  {
+    "codigo": "410520",
+    "admissoes": 541,
+    "demissoes": 464,
+    "salario_medio": 1695.5776418905452,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 77,
+    "nome": "Cerro Azul"
+  },
+  {
+    "codigo": "411745",
+    "admissoes": 537,
+    "demissoes": 471,
+    "salario_medio": 1953.545168452381,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 66,
+    "nome": "Ouro Verde do Oeste"
+  },
+  {
+    "codigo": "410630",
+    "admissoes": 536,
+    "demissoes": 560,
+    "salario_medio": 1972.6548268248175,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -24,
+    "nome": "Corbélia"
+  },
+  {
+    "codigo": "411590",
+    "admissoes": 534,
+    "demissoes": 524,
+    "salario_medio": 1450.02893194707,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 10,
+    "nome": "Mirador"
+  },
+  {
+    "codigo": "412270",
+    "admissoes": 531,
+    "demissoes": 521,
+    "salario_medio": 1791.4951434410646,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 10,
+    "nome": "Sabáudia"
+  },
+  {
+    "codigo": "412520",
+    "admissoes": 528,
+    "demissoes": 443,
+    "salario_medio": 1916.5464265705457,
+    "cadeia_dominante": "Aquicultura",
+    "saldo": 85,
+    "nome": "São Jorge d'Oeste"
+  },
+  {
+    "codigo": "412800",
+    "admissoes": 519,
+    "demissoes": 446,
+    "salario_medio": 1884.9250051813474,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 73,
+    "nome": "Ubiratã"
+  },
+  {
+    "codigo": "411070",
+    "admissoes": 516,
+    "demissoes": 551,
+    "salario_medio": 1859.9151920337395,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -35,
+    "nome": "Irati"
+  },
+  {
+    "codigo": "412855",
+    "admissoes": 508,
+    "demissoes": 508,
+    "salario_medio": 1813.3508061023622,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 0,
+    "nome": "Vera Cruz do Oeste"
+  },
+  {
+    "codigo": "410500",
+    "admissoes": 499,
+    "demissoes": 489,
+    "salario_medio": 1797.3586741093118,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 10,
+    "nome": "Catanduvas"
+  },
+  {
+    "codigo": "410740",
+    "admissoes": 491,
+    "demissoes": 469,
+    "salario_medio": 1693.7330311458334,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 22,
+    "nome": "Enéas Marques"
+  },
+  {
+    "codigo": "412040",
+    "admissoes": 489,
+    "demissoes": 500,
+    "salario_medio": 937.4505155611729,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -11,
+    "nome": "Presidente Castelo Branco"
+  },
+  {
+    "codigo": "411350",
+    "admissoes": 473,
+    "demissoes": 490,
+    "salario_medio": 1810.5116509865004,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -17,
+    "nome": "Loanda"
+  },
+  {
+    "codigo": "412870",
+    "admissoes": 469,
+    "demissoes": 486,
+    "salario_medio": 1656.938859172775,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -17,
+    "nome": "Vitorino"
+  },
+  {
+    "codigo": "412402",
+    "admissoes": 458,
+    "demissoes": 441,
+    "salario_medio": 2052.038008787542,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 17,
+    "nome": "Santa Tereza do Oeste"
+  },
+  {
+    "codigo": "410230",
+    "admissoes": 451,
+    "demissoes": 436,
+    "salario_medio": 1775.870969447576,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 15,
+    "nome": "Balsa Nova"
+  },
+  {
+    "codigo": "412760",
+    "admissoes": 451,
+    "demissoes": 468,
+    "salario_medio": 1718.7810661588683,
+    "cadeia_dominante": "Ovinocaprinocultura",
+    "saldo": -17,
+    "nome": "Tijucas do Sul"
+  },
+  {
+    "codigo": "411050",
+    "admissoes": 443,
+    "demissoes": 475,
+    "salario_medio": 1987.4361654684096,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -32,
+    "nome": "Ipiranga"
+  },
+  {
+    "codigo": "410080",
+    "admissoes": 442,
+    "demissoes": 503,
+    "salario_medio": 2288.183725291005,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -61,
+    "nome": "Alvorada do Sul"
+  },
+  {
+    "codigo": "412510",
+    "admissoes": 441,
+    "demissoes": 406,
+    "salario_medio": 1839.3970246753247,
+    "cadeia_dominante": "Outras Culturas Permanentes",
+    "saldo": 35,
+    "nome": "São João do Triunfo"
+  },
+  {
+    "codigo": "410540",
+    "admissoes": 440,
+    "demissoes": 426,
+    "salario_medio": 1765.5141799076212,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 14,
+    "nome": "Chopinzinho"
+  },
+  {
+    "codigo": "412180",
+    "admissoes": 438,
+    "demissoes": 443,
+    "salario_medio": 1640.3625652667422,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -5,
+    "nome": "Ribeirão Claro"
+  },
+  {
+    "codigo": "410880",
+    "admissoes": 434,
+    "demissoes": 422,
+    "salario_medio": 1689.8384800233646,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 12,
+    "nome": "Guaíra"
+  },
+  {
+    "codigo": "411710",
+    "admissoes": 434,
+    "demissoes": 412,
+    "salario_medio": 1807.5860400709219,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 22,
+    "nome": "Nova Londrina"
+  },
+  {
+    "codigo": "411410",
+    "admissoes": 423,
+    "demissoes": 428,
+    "salario_medio": 1752.8345947121036,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -5,
+    "nome": "Mandaguaçu"
+  },
+  {
+    "codigo": "410870",
+    "admissoes": 422,
+    "demissoes": 424,
+    "salario_medio": 1505.8808865248227,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -2,
+    "nome": "Grandes Rios"
+  },
+  {
+    "codigo": "410220",
+    "admissoes": 416,
+    "demissoes": 397,
+    "salario_medio": 1669.7469864698649,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 19,
+    "nome": "Atalaia"
+  },
+  {
+    "codigo": "410657",
+    "admissoes": 411,
+    "demissoes": 396,
+    "salario_medio": 1806.5061337050806,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 15,
+    "nome": "Cruzeiro do Iguaçu"
+  },
+  {
+    "codigo": "410395",
+    "admissoes": 405,
+    "demissoes": 396,
+    "salario_medio": 1694.051573158552,
+    "cadeia_dominante": "Grãos",
+    "saldo": 9,
+    "nome": "Campina do Simão"
+  },
+  {
+    "codigo": "411880",
+    "admissoes": 405,
+    "demissoes": 355,
+    "salario_medio": 1807.0048553947368,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 50,
+    "nome": "Peabiru"
+  },
+  {
+    "codigo": "412640",
+    "admissoes": 399,
+    "demissoes": 410,
+    "salario_medio": 2455.5084305315204,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -11,
+    "nome": "Sertaneja"
+  },
+  {
+    "codigo": "411845",
+    "admissoes": 397,
+    "demissoes": 425,
+    "salario_medio": 1718.0977250608273,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": -28,
+    "nome": "Pato Bragado"
+  },
+  {
+    "codigo": "412720",
+    "admissoes": 395,
+    "demissoes": 428,
+    "salario_medio": 1856.2114218712027,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -33,
+    "nome": "Terra Boa"
+  },
+  {
+    "codigo": "410390",
+    "admissoes": 394,
+    "demissoes": 397,
+    "salario_medio": 1957.5147915297093,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -3,
+    "nome": "Campina da Lagoa"
+  },
+  {
+    "codigo": "412190",
+    "admissoes": 391,
+    "demissoes": 388,
+    "salario_medio": 1702.5535301668806,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 3,
+    "nome": "Ribeirão do Pinhal"
+  },
+  {
+    "codigo": "412033",
+    "admissoes": 386,
+    "demissoes": 408,
+    "salario_medio": 1669.5581989924433,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -22,
+    "nome": "Prado Ferreira"
+  },
+  {
+    "codigo": "412850",
+    "admissoes": 383,
+    "demissoes": 361,
+    "salario_medio": 1875.951948655914,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 22,
+    "nome": "Wenceslau Braz"
+  },
+  {
+    "codigo": "412635",
+    "admissoes": 369,
+    "demissoes": 354,
+    "salario_medio": 1751.344619502075,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 15,
+    "nome": "Serranópolis do Iguaçu"
+  },
+  {
+    "codigo": "410020",
+    "admissoes": 365,
+    "demissoes": 275,
+    "salario_medio": 1716.292140625,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 90,
+    "nome": "Adrianópolis"
+  },
+  {
+    "codigo": "412090",
+    "admissoes": 362,
+    "demissoes": 341,
+    "salario_medio": 2069.9352347083927,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 21,
+    "nome": "Quedas do Iguaçu"
+  },
+  {
+    "codigo": "412740",
+    "admissoes": 354,
+    "demissoes": 339,
+    "salario_medio": 1860.0242135642136,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 15,
+    "nome": "Terra Roxa"
+  },
+  {
+    "codigo": "411780",
+    "admissoes": 353,
+    "demissoes": 310,
+    "salario_medio": 1649.7109818882175,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 43,
+    "nome": "Palmital"
+  },
+  {
+    "codigo": "412100",
+    "admissoes": 351,
+    "demissoes": 339,
+    "salario_medio": 2556.360753768116,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 12,
+    "nome": "Querência do Norte"
+  },
+  {
+    "codigo": "411860",
+    "admissoes": 351,
+    "demissoes": 342,
+    "salario_medio": 1758.8384847041848,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 9,
+    "nome": "Paula Freitas"
+  },
+  {
+    "codigo": "411705",
+    "admissoes": 351,
+    "demissoes": 300,
+    "salario_medio": 1835.4523041474654,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 51,
+    "nome": "Nova Laranjeiras"
+  },
+  {
+    "codigo": "410165",
+    "admissoes": 349,
+    "demissoes": 326,
+    "salario_medio": 2594.5645185185185,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 23,
+    "nome": "Arapuã"
+  },
+  {
+    "codigo": "411630",
+    "admissoes": 346,
+    "demissoes": 307,
+    "salario_medio": 1497.4079019908115,
+    "cadeia_dominante": "Outros",
+    "saldo": 39,
+    "nome": "Munhoz de Melo"
+  },
+  {
+    "codigo": "411007",
+    "admissoes": 339,
+    "demissoes": 304,
+    "salario_medio": 1885.4497045101086,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 35,
+    "nome": "Imbaú"
+  },
+  {
+    "codigo": "411970",
+    "admissoes": 339,
+    "demissoes": 327,
+    "salario_medio": 1904.49003003003,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 12,
+    "nome": "Planaltina do Paraná"
+  },
+  {
+    "codigo": "411125",
+    "admissoes": 337,
+    "demissoes": 349,
+    "salario_medio": 1710.7268221574345,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -12,
+    "nome": "Itaperuçu"
+  },
+  {
+    "codigo": "412385",
+    "admissoes": 336,
+    "demissoes": 314,
+    "salario_medio": 2122.7066923384614,
+    "cadeia_dominante": "Grãos",
+    "saldo": 22,
+    "nome": "Santa Maria do Oeste"
+  },
+  {
+    "codigo": "410280",
+    "admissoes": 335,
+    "demissoes": 387,
+    "salario_medio": 1870.6843770083103,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -52,
+    "nome": "Bela Vista do Paraíso"
+  },
+  {
+    "codigo": "410610",
+    "admissoes": 334,
+    "demissoes": 293,
+    "salario_medio": 1695.1116271132378,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 41,
+    "nome": "Conselheiro Mairinck"
+  },
+  {
+    "codigo": "410865",
+    "admissoes": 333,
+    "demissoes": 356,
+    "salario_medio": 1857.6318722786648,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -23,
+    "nome": "Goioxim"
+  },
+  {
+    "codigo": "411720",
+    "admissoes": 331,
+    "demissoes": 292,
+    "salario_medio": 1757.2845906902087,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 39,
+    "nome": "Nova Olímpia"
+  },
+  {
+    "codigo": "410115",
+    "admissoes": 324,
+    "demissoes": 260,
+    "salario_medio": 1822.247859417808,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 64,
+    "nome": "Ângulo"
+  },
+  {
+    "codigo": "412790",
+    "admissoes": 323,
+    "demissoes": 278,
+    "salario_medio": 1624.2198169717137,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 45,
+    "nome": "Tuneiras do Oeste"
+  },
+  {
+    "codigo": "411140",
+    "admissoes": 323,
+    "demissoes": 304,
+    "salario_medio": 1604.9678309409887,
+    "cadeia_dominante": "Outras Culturas Permanentes",
+    "saldo": 19,
+    "nome": "Ivaí"
+  },
+  {
+    "codigo": "410010",
+    "admissoes": 321,
+    "demissoes": 303,
+    "salario_medio": 1642.236875,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 18,
+    "nome": "Abatiá"
+  },
+  {
+    "codigo": "411000",
+    "admissoes": 310,
+    "demissoes": 329,
+    "salario_medio": 2039.0381843505477,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -19,
+    "nome": "Iguaraçu"
+  },
+  {
+    "codigo": "410960",
+    "admissoes": 298,
+    "demissoes": 310,
+    "salario_medio": 1900.703552631579,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": -12,
+    "nome": "Guaratuba"
+  },
+  {
+    "codigo": "411150",
+    "admissoes": 290,
+    "demissoes": 279,
+    "salario_medio": 2004.067381370826,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 11,
+    "nome": "Ivaiporã"
+  },
+  {
+    "codigo": "410965",
+    "admissoes": 289,
+    "demissoes": 250,
+    "salario_medio": 2048.2688499072356,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": 39,
+    "nome": "Honório Serpa"
+  },
+  {
+    "codigo": "412430",
+    "admissoes": 288,
+    "demissoes": 285,
+    "salario_medio": 2515.036404886562,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 3,
+    "nome": "Santo Antônio do Paraíso"
+  },
+  {
+    "codigo": "412150",
+    "admissoes": 288,
+    "demissoes": 325,
+    "salario_medio": 1600.6916961337683,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -37,
+    "nome": "Rebouças"
+  },
+  {
+    "codigo": "412555",
+    "admissoes": 285,
+    "demissoes": 265,
+    "salario_medio": 1477.0777818545453,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 20,
+    "nome": "São Manoel do Paraná"
+  },
+  {
+    "codigo": "410090",
+    "admissoes": 283,
+    "demissoes": 303,
+    "salario_medio": 2085.2065527303753,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -20,
+    "nome": "Amaporã"
+  },
+  {
+    "codigo": "412575",
+    "admissoes": 283,
+    "demissoes": 263,
+    "salario_medio": 1856.3815384615386,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 20,
+    "nome": "São Pedro do Iguaçu"
+  },
+  {
+    "codigo": "412230",
+    "admissoes": 280,
+    "demissoes": 320,
+    "salario_medio": 1747.3991335,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -40,
+    "nome": "Rio Negro"
+  },
+  {
+    "codigo": "410304",
+    "admissoes": 278,
+    "demissoes": 279,
+    "salario_medio": 1857.833447037702,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -1,
+    "nome": "Boa Ventura de São Roque"
+  },
+  {
+    "codigo": "412470",
+    "admissoes": 278,
+    "demissoes": 274,
+    "salario_medio": 1771.083405652174,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 4,
+    "nome": "São Jerônimo da Serra"
+  },
+  {
+    "codigo": "412690",
+    "admissoes": 276,
+    "demissoes": 260,
+    "salario_medio": 1893.1639550373136,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 16,
+    "nome": "Tapira"
+  },
+  {
+    "codigo": "412545",
+    "admissoes": 275,
+    "demissoes": 258,
+    "salario_medio": 1778.3167167542215,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 17,
+    "nome": "São José das Palmeiras"
+  },
+  {
+    "codigo": "412785",
+    "admissoes": 274,
+    "demissoes": 285,
+    "salario_medio": 1746.682397316637,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -11,
+    "nome": "Três Barras do Paraná"
+  },
+  {
+    "codigo": "411295",
+    "admissoes": 274,
+    "demissoes": 243,
+    "salario_medio": 1978.998162475822,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 31,
+    "nome": "Juranda"
+  },
+  {
+    "codigo": "410773",
+    "admissoes": 273,
+    "demissoes": 252,
+    "salario_medio": 1819.367828952381,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 21,
+    "nome": "Fernandes Pinheiro"
+  },
+  {
+    "codigo": "411290",
+    "admissoes": 271,
+    "demissoes": 267,
+    "salario_medio": 1756.2421933085502,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 4,
+    "nome": "Jundiaí do Sul"
+  },
+  {
+    "codigo": "410750",
+    "admissoes": 270,
+    "demissoes": 296,
+    "salario_medio": 1903.2507946996468,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -26,
+    "nome": "Engenheiro Beltrão"
+  },
+  {
+    "codigo": "411560",
+    "admissoes": 264,
+    "demissoes": 250,
+    "salario_medio": 1899.173229766537,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 14,
+    "nome": "Matelândia"
+  },
+  {
+    "codigo": "411585",
+    "admissoes": 258,
+    "demissoes": 241,
+    "salario_medio": 1714.1384172344688,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 17,
+    "nome": "Mercedes"
+  },
+  {
+    "codigo": "412795",
+    "admissoes": 257,
+    "demissoes": 225,
+    "salario_medio": 1778.1751657676348,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 32,
+    "nome": "Tupãssi"
+  },
+  {
+    "codigo": "410900",
+    "admissoes": 255,
+    "demissoes": 245,
+    "salario_medio": 1822.0088600000001,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 10,
+    "nome": "Guapirama"
+  },
+  {
+    "codigo": "412480",
+    "admissoes": 253,
+    "demissoes": 264,
+    "salario_medio": 1837.9555512572533,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -11,
+    "nome": "São João"
+  },
+  {
+    "codigo": "410335",
+    "admissoes": 248,
+    "demissoes": 233,
+    "salario_medio": 1699.2823883575884,
+    "cadeia_dominante": "Outros",
+    "saldo": 15,
+    "nome": "Braganey"
+  },
+  {
+    "codigo": "412405",
+    "admissoes": 247,
+    "demissoes": 263,
+    "salario_medio": 1916.5241956862744,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -16,
+    "nome": "Santa Terezinha de Itaipu"
+  },
+  {
+    "codigo": "411695",
+    "admissoes": 247,
+    "demissoes": 225,
+    "salario_medio": 1875.9614406779663,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 22,
+    "nome": "Nova Esperança do Sudoeste"
+  },
+  {
+    "codigo": "411340",
+    "admissoes": 246,
+    "demissoes": 244,
+    "salario_medio": 2091.0307551020405,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 2,
+    "nome": "Leópolis"
+  },
+  {
+    "codigo": "411700",
+    "admissoes": 245,
+    "demissoes": 275,
+    "salario_medio": 2048.1626925,
+    "cadeia_dominante": "Grãos",
+    "saldo": -30,
+    "nome": "Nova Fátima"
+  },
+  {
+    "codigo": "410100",
+    "admissoes": 244,
+    "demissoes": 212,
+    "salario_medio": 1874.0108771929824,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 32,
+    "nome": "Ampére"
+  },
+  {
+    "codigo": "411220",
+    "admissoes": 242,
+    "demissoes": 256,
+    "salario_medio": 1786.8264658634537,
+    "cadeia_dominante": "Grãos",
+    "saldo": -14,
+    "nome": "Janiópolis"
+  },
+  {
+    "codigo": "411660",
+    "admissoes": 242,
+    "demissoes": 239,
+    "salario_medio": 1808.1420804573804,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": 3,
+    "nome": "Nova América da Colina"
+  },
+  {
+    "codigo": "412840",
+    "admissoes": 237,
+    "demissoes": 267,
+    "salario_medio": 1812.833789484127,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -30,
+    "nome": "Uraí"
+  },
+  {
+    "codigo": "412780",
+    "admissoes": 235,
+    "demissoes": 275,
+    "salario_medio": 1865.221195882353,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -40,
+    "nome": "Tomazina"
+  },
+  {
+    "codigo": "411430",
+    "admissoes": 233,
+    "demissoes": 253,
+    "salario_medio": 1839.8592796296298,
+    "cadeia_dominante": "Horticultura",
+    "saldo": -20,
+    "nome": "Mandirituba"
+  },
+  {
+    "codigo": "411885",
+    "admissoes": 230,
+    "demissoes": 216,
+    "salario_medio": 1993.117399103139,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 14,
+    "nome": "Perobal"
+  },
+  {
+    "codigo": "411535",
+    "admissoes": 228,
+    "demissoes": 213,
+    "salario_medio": 1875.4016099773241,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 15,
+    "nome": "Maripá"
+  },
+  {
+    "codigo": "412627",
+    "admissoes": 227,
+    "demissoes": 217,
+    "salario_medio": 1699.0813963963965,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 10,
+    "nome": "Saudade do Iguaçu"
+  },
+  {
+    "codigo": "412530",
+    "admissoes": 227,
+    "demissoes": 287,
+    "salario_medio": 1905.1855056420234,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -60,
+    "nome": "São Jorge do Ivaí"
+  },
+  {
+    "codigo": "412330",
+    "admissoes": 218,
+    "demissoes": 215,
+    "salario_medio": 2072.019769053118,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 3,
+    "nome": "Santa Cruz de Monte Castelo"
+  },
+  {
+    "codigo": "410920",
+    "admissoes": 218,
+    "demissoes": 212,
+    "salario_medio": 2029.144372093023,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 6,
+    "nome": "Guaraci"
+  },
+  {
+    "codigo": "412860",
+    "admissoes": 217,
+    "demissoes": 214,
+    "salario_medio": 1841.3212993039442,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": 3,
+    "nome": "Verê"
+  },
+  {
+    "codigo": "412370",
+    "admissoes": 217,
+    "demissoes": 225,
+    "salario_medio": 1834.5660633484163,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -8,
+    "nome": "Santa Isabel do Ivaí"
+  },
+  {
+    "codigo": "410440",
+    "admissoes": 216,
+    "demissoes": 253,
+    "salario_medio": 1840.8754582089553,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -37,
+    "nome": "Cândido de Abreu"
+  },
+  {
+    "codigo": "410754",
+    "admissoes": 215,
+    "demissoes": 191,
+    "salario_medio": 1978.9536206896553,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 24,
+    "nome": "Espigão Alto do Iguaçu"
+  },
+  {
+    "codigo": "412400",
+    "admissoes": 211,
+    "demissoes": 177,
+    "salario_medio": 1770.2242525773197,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 34,
+    "nome": "Santana do Itararé"
+  },
+  {
+    "codigo": "412660",
+    "admissoes": 207,
+    "demissoes": 206,
+    "salario_medio": 1835.2177479418885,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 1,
+    "nome": "Siqueira Campos"
+  },
+  {
+    "codigo": "412620",
+    "admissoes": 205,
+    "demissoes": 212,
+    "salario_medio": 1752.1109352517985,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -7,
+    "nome": "Sapopema"
+  },
+  {
+    "codigo": "410450",
+    "admissoes": 204,
+    "demissoes": 191,
+    "salario_medio": 1776.353670886076,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 13,
+    "nome": "Capanema"
+  },
+  {
+    "codigo": "411450",
+    "admissoes": 202,
+    "demissoes": 233,
+    "salario_medio": 1934.8355167816094,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -31,
+    "nome": "Manoel Ribas"
+  },
+  {
+    "codigo": "410040",
+    "admissoes": 200,
+    "demissoes": 262,
+    "salario_medio": 2188.2746538961037,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -62,
+    "nome": "Almirante Tamandaré"
+  },
+  {
+    "codigo": "411240",
+    "admissoes": 199,
+    "demissoes": 211,
+    "salario_medio": 1916.7438048780486,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -12,
+    "nome": "Japurá"
+  },
+  {
+    "codigo": "411080",
+    "admissoes": 196,
+    "demissoes": 207,
+    "salario_medio": 1923.7965260545905,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -11,
+    "nome": "Iretama"
+  },
+  {
+    "codigo": "410975",
+    "admissoes": 195,
+    "demissoes": 202,
+    "salario_medio": 1496.7842823677584,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -7,
+    "nome": "Ibema"
+  },
+  {
+    "codigo": "412540",
+    "admissoes": 192,
+    "demissoes": 196,
+    "salario_medio": 1610.3729381443297,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -4,
+    "nome": "São José da Boa Vista"
+  },
+  {
+    "codigo": "411920",
+    "admissoes": 190,
+    "demissoes": 144,
+    "salario_medio": 1902.4857488023954,
+    "cadeia_dominante": "Cafeicultura",
+    "saldo": 46,
+    "nome": "Pinhalão"
+  },
+  {
+    "codigo": "411605",
+    "admissoes": 190,
+    "demissoes": 184,
+    "salario_medio": 1974.0863639037434,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 6,
+    "nome": "Missal"
+  },
+  {
+    "codigo": "412420",
+    "admissoes": 189,
+    "demissoes": 217,
+    "salario_medio": 1950.6141871921182,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -28,
+    "nome": "Santo Antônio do Caiuá"
+  },
+  {
+    "codigo": "412863",
+    "admissoes": 186,
+    "demissoes": 156,
+    "salario_medio": 1915.1120175438598,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 30,
+    "nome": "Doutor Ulysses"
+  },
+  {
+    "codigo": "410830",
+    "admissoes": 185,
+    "demissoes": 211,
+    "salario_medio": 2191.798282828283,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -26,
+    "nome": "Foz do Iguaçu"
+  },
+  {
+    "codigo": "410755",
+    "admissoes": 183,
+    "demissoes": 158,
+    "salario_medio": 1935.417302052786,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 25,
+    "nome": "Farol"
+  },
+  {
+    "codigo": "410680",
+    "admissoes": 179,
+    "demissoes": 199,
+    "salario_medio": 1699.2515873015873,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -20,
+    "nome": "Cruz Machado"
+  },
+  {
+    "codigo": "411325",
+    "admissoes": 179,
+    "demissoes": 147,
+    "salario_medio": 1876.6427914110432,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 32,
+    "nome": "Laranjal"
+  },
+  {
+    "codigo": "412460",
+    "admissoes": 179,
+    "demissoes": 178,
+    "salario_medio": 2274.576638655462,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 1,
+    "nome": "São Carlos do Ivaí"
+  },
+  {
+    "codigo": "412220",
+    "admissoes": 177,
+    "demissoes": 151,
+    "salario_medio": 1995.4998475609755,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 26,
+    "nome": "Rio Branco do Sul"
+  },
+  {
+    "codigo": "412500",
+    "admissoes": 174,
+    "demissoes": 163,
+    "salario_medio": 1826.7911869436202,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 11,
+    "nome": "São João do Ivaí"
+  },
+  {
+    "codigo": "410322",
+    "admissoes": 173,
+    "demissoes": 145,
+    "salario_medio": 1963.2911006289307,
+    "cadeia_dominante": "Outros",
+    "saldo": 28,
+    "nome": "Bom Sucesso do Sul"
+  },
+  {
+    "codigo": "411680",
+    "admissoes": 172,
+    "demissoes": 172,
+    "salario_medio": 3337.2781979651163,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 0,
+    "nome": "Nova Cantú"
+  },
+  {
+    "codigo": "410070",
+    "admissoes": 172,
+    "demissoes": 161,
+    "salario_medio": 2061.406366366366,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 11,
+    "nome": "Alto Piquiri"
+  },
+  {
+    "codigo": "411620",
+    "admissoes": 171,
+    "demissoes": 196,
+    "salario_medio": 1741.4023703008174,
+    "cadeia_dominante": "Horticultura",
+    "saldo": -25,
+    "nome": "Morretes"
+  },
+  {
+    "codigo": "410510",
+    "admissoes": 170,
+    "demissoes": 153,
+    "salario_medio": 1865.1053869969041,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 17,
+    "nome": "Centenário do Sul"
+  },
+  {
+    "codigo": "411965",
+    "admissoes": 170,
+    "demissoes": 159,
+    "salario_medio": 1907.3192705167176,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 11,
+    "nome": "Pitangueiras"
+  },
+  {
+    "codigo": "410700",
+    "admissoes": 169,
+    "demissoes": 169,
+    "salario_medio": 1804.9950592011835,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": 0,
+    "nome": "Curiúva"
+  },
+  {
+    "codigo": "412340",
+    "admissoes": 169,
+    "demissoes": 164,
+    "salario_medio": 1760.1684084084084,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 5,
+    "nome": "Santa Fé"
+  },
+  {
+    "codigo": "411380",
+    "admissoes": 168,
+    "demissoes": 149,
+    "salario_medio": 1834.0017665615144,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 19,
+    "nome": "Lupionópolis"
+  },
+  {
+    "codigo": "410120",
+    "admissoes": 168,
+    "demissoes": 157,
+    "salario_medio": 1690.5697846153848,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 11,
+    "nome": "Antonina"
+  },
+  {
+    "codigo": "410300",
+    "admissoes": 167,
+    "demissoes": 148,
+    "salario_medio": 2168.0641587301584,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 19,
+    "nome": "Boa Esperança"
+  },
+  {
+    "codigo": "412880",
+    "admissoes": 166,
+    "demissoes": 139,
+    "salario_medio": 1899.5760983606556,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 27,
+    "nome": "Xambrê"
+  },
+  {
+    "codigo": "410820",
+    "admissoes": 166,
+    "demissoes": 158,
+    "salario_medio": 1595.8770370370369,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 8,
+    "nome": "Formosa do Oeste"
+  },
+  {
+    "codigo": "410260",
+    "admissoes": 164,
+    "demissoes": 163,
+    "salario_medio": 1752.1297862385322,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 1,
+    "nome": "Barracão"
+  },
+  {
+    "codigo": "412395",
+    "admissoes": 164,
+    "demissoes": 140,
+    "salario_medio": 2169.7425983552635,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 24,
+    "nome": "Santa Mônica"
+  },
+  {
+    "codigo": "411510",
+    "admissoes": 163,
+    "demissoes": 125,
+    "salario_medio": 1976.9443059027778,
+    "cadeia_dominante": "Grãos",
+    "saldo": 38,
+    "nome": "Mariluz"
+  },
+  {
+    "codigo": "411575",
+    "admissoes": 162,
+    "demissoes": 177,
+    "salario_medio": 2169.8776115044247,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -15,
+    "nome": "Mauá da Serra"
+  },
+  {
+    "codigo": "410330",
+    "admissoes": 161,
+    "demissoes": 159,
+    "salario_medio": 2016.39571875,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 2,
+    "nome": "Borrazópolis"
+  },
+  {
+    "codigo": "410685",
+    "admissoes": 161,
+    "demissoes": 161,
+    "salario_medio": 1888.4433850931678,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 0,
+    "nome": "Cruzmaltina"
+  },
+  {
+    "codigo": "411280",
+    "admissoes": 159,
+    "demissoes": 168,
+    "salario_medio": 1799.8789296636087,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -9,
+    "nome": "Joaquim Távora"
+  },
+  {
+    "codigo": "411110",
+    "admissoes": 155,
+    "demissoes": 144,
+    "salario_medio": 2174.761270568562,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 11,
+    "nome": "Itambé"
+  },
+  {
+    "codigo": "412015",
+    "admissoes": 153,
+    "demissoes": 142,
+    "salario_medio": 1885.3014237288137,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 11,
+    "nome": "Porto Barreiro"
+  },
+  {
+    "codigo": "412110",
+    "admissoes": 152,
+    "demissoes": 149,
+    "salario_medio": 1875.753288372093,
+    "cadeia_dominante": "Grãos",
+    "saldo": 3,
+    "nome": "Quinta do Sol"
+  },
+  {
+    "codigo": "411065",
+    "admissoes": 152,
+    "demissoes": 140,
+    "salario_medio": 1790.5276373287672,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 12,
+    "nome": "Iracema do Oeste"
+  },
+  {
+    "codigo": "410190",
+    "admissoes": 151,
+    "demissoes": 146,
+    "salario_medio": 1697.003872053872,
+    "cadeia_dominante": "Grãos",
+    "saldo": 5,
+    "nome": "Assaí"
+  },
+  {
+    "codigo": "411270",
+    "admissoes": 149,
+    "demissoes": 195,
+    "salario_medio": 1629.3802325581396,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -46,
+    "nome": "Jataizinho"
+  },
+  {
+    "codigo": "412625",
+    "admissoes": 147,
+    "demissoes": 156,
+    "salario_medio": 1953.3732343234321,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -9,
+    "nome": "Sarandi"
+  },
+  {
+    "codigo": "410250",
+    "admissoes": 146,
+    "demissoes": 155,
+    "salario_medio": 1823.199334883721,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -9,
+    "nome": "Barbosa Ferraz"
+  },
+  {
+    "codigo": "411870",
+    "admissoes": 142,
+    "demissoes": 134,
+    "salario_medio": 1735.4635144927536,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 8,
+    "nome": "Paulo Frontin"
+  },
+  {
+    "codigo": "410710",
+    "admissoes": 140,
+    "demissoes": 135,
+    "salario_medio": 2202.6785818181816,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 5,
+    "nome": "Diamante do Norte"
+  },
+  {
+    "codigo": "412200",
+    "admissoes": 137,
+    "demissoes": 154,
+    "salario_medio": 1643.7776629209623,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -17,
+    "nome": "Rio Azul"
+  },
+  {
+    "codigo": "411925",
+    "admissoes": 136,
+    "demissoes": 110,
+    "salario_medio": 1766.2728455284553,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 26,
+    "nome": "Pinhal de São Bento"
+  },
+  {
+    "codigo": "412215",
+    "admissoes": 135,
+    "demissoes": 144,
+    "salario_medio": 1642.709605734767,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": -9,
+    "nome": "Rio Bonito do Iguaçu"
+  },
+  {
+    "codigo": "411727",
+    "admissoes": 135,
+    "demissoes": 139,
+    "salario_medio": 1804.8539416058393,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -4,
+    "nome": "Nova Tebas"
+  },
+  {
+    "codigo": "411830",
+    "admissoes": 135,
+    "demissoes": 142,
+    "salario_medio": 1960.130144765343,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": -7,
+    "nome": "Paranapoema"
+  },
+  {
+    "codigo": "411600",
+    "admissoes": 133,
+    "demissoes": 104,
+    "salario_medio": 2178.2996202531644,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 29,
+    "nome": "Miraselva"
+  },
+  {
+    "codigo": "411810",
+    "admissoes": 132,
+    "demissoes": 123,
+    "salario_medio": 1860.8530980392156,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 9,
+    "nome": "Paranacity"
+  },
+  {
+    "codigo": "410460",
+    "admissoes": 131,
+    "demissoes": 141,
+    "salario_medio": 2036.095845588235,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -10,
+    "nome": "Capitão Leônidas Marques"
+  },
+  {
+    "codigo": "411890",
+    "admissoes": 130,
+    "demissoes": 119,
+    "salario_medio": 1730.8742570281124,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": 11,
+    "nome": "Pérola"
+  },
+  {
+    "codigo": "412135",
+    "admissoes": 128,
+    "demissoes": 120,
+    "salario_medio": 2043.2549999999999,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 8,
+    "nome": "Rancho Alegre D'Oeste"
+  },
+  {
+    "codigo": "411342",
+    "admissoes": 128,
+    "demissoes": 118,
+    "salario_medio": 3088.9297971544715,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 10,
+    "nome": "Lidianópolis"
+  },
+  {
+    "codigo": "412670",
+    "admissoes": 125,
+    "demissoes": 128,
+    "salario_medio": 1820.0341106719368,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -3,
+    "nome": "Tamboara"
+  },
+  {
+    "codigo": "410790",
+    "admissoes": 125,
+    "demissoes": 120,
+    "salario_medio": 1728.0945714285713,
+    "cadeia_dominante": "Grãos",
+    "saldo": 5,
+    "nome": "Floresta"
+  },
+  {
+    "codigo": "410445",
+    "admissoes": 124,
+    "demissoes": 120,
+    "salario_medio": 1889.890942622951,
+    "cadeia_dominante": "Grãos",
+    "saldo": 4,
+    "nome": "Cantagalo"
+  },
+  {
+    "codigo": "410405",
+    "admissoes": 123,
+    "demissoes": 121,
+    "salario_medio": 1766.4983196721312,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 2,
+    "nome": "Campo Bonito"
+  },
+  {
+    "codigo": "410832",
+    "admissoes": 120,
+    "demissoes": 131,
+    "salario_medio": 1994.9120717131473,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": -11,
+    "nome": "Francisco Alves"
+  },
+  {
+    "codigo": "412600",
+    "admissoes": 119,
+    "demissoes": 153,
+    "salario_medio": 1906.6073158088236,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -34,
+    "nome": "São Sebastião da Amoreira"
+  },
+  {
+    "codigo": "411650",
+    "admissoes": 118,
+    "demissoes": 118,
+    "salario_medio": 1836.504872881356,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 0,
+    "nome": "Nova Aliança do Ivaí"
+  },
+  {
+    "codigo": "412535",
+    "admissoes": 117,
+    "demissoes": 91,
+    "salario_medio": 1684.1748557692308,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 26,
+    "nome": "São Jorge do Patrocínio"
+  },
+  {
+    "codigo": "410302",
+    "admissoes": 116,
+    "demissoes": 120,
+    "salario_medio": 1921.8854237288137,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -4,
+    "nome": "Boa Esperança do Iguaçu"
+  },
+  {
+    "codigo": "412050",
+    "admissoes": 115,
+    "demissoes": 118,
+    "salario_medio": 2045.7458369957083,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -3,
+    "nome": "Primeiro de Maio"
+  },
+  {
+    "codigo": "412865",
+    "admissoes": 114,
+    "demissoes": 109,
+    "salario_medio": 1450.7370403587443,
+    "cadeia_dominante": "Grãos",
+    "saldo": 5,
+    "nome": "Virmond"
+  },
+  {
+    "codigo": "411155",
+    "admissoes": 113,
+    "demissoes": 96,
+    "salario_medio": 1727.1372248803827,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 17,
+    "nome": "Ivaté"
+  },
+  {
+    "codigo": "410845",
+    "admissoes": 113,
+    "demissoes": 107,
+    "salario_medio": 2166.012135909091,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 6,
+    "nome": "Foz do Jordão"
+  },
+  {
+    "codigo": "410045",
+    "admissoes": 112,
+    "demissoes": 102,
+    "salario_medio": 1857.1372892523364,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 10,
+    "nome": "Altamira do Paraná"
+  },
+  {
+    "codigo": "412265",
+    "admissoes": 111,
+    "demissoes": 106,
+    "salario_medio": 1711.1278801843318,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 5,
+    "nome": "Rosário do Ivaí"
+  },
+  {
+    "codigo": "411300",
+    "admissoes": 110,
+    "demissoes": 85,
+    "salario_medio": 1790.0903620512822,
+    "cadeia_dominante": "Horticultura",
+    "saldo": 25,
+    "nome": "Jussara"
+  },
+  {
+    "codigo": "411910",
+    "admissoes": 109,
+    "demissoes": 109,
+    "salario_medio": 2264.7711472477063,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 0,
+    "nome": "Piên"
+  },
+  {
+    "codigo": "412130",
+    "admissoes": 108,
+    "demissoes": 134,
+    "salario_medio": 1884.9649586776861,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -26,
+    "nome": "Rancho Alegre"
+  },
+  {
+    "codigo": "410337",
+    "admissoes": 107,
+    "demissoes": 89,
+    "salario_medio": 1778.0511224489796,
+    "cadeia_dominante": "Aquicultura",
+    "saldo": 18,
+    "nome": "Brasilândia do Sul"
+  },
+  {
+    "codigo": "410425",
+    "admissoes": 107,
+    "demissoes": 98,
+    "salario_medio": 1818.9109268292682,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 9,
+    "nome": "Campo Magro"
+  },
+  {
+    "codigo": "411210",
+    "admissoes": 106,
+    "demissoes": 120,
+    "salario_medio": 1946.5545132743364,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -14,
+    "nome": "Jandaia do Sul"
+  },
+  {
+    "codigo": "412020",
+    "admissoes": 106,
+    "demissoes": 122,
+    "salario_medio": 1999.0174122807016,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -16,
+    "nome": "Porto Rico"
+  },
+  {
+    "codigo": "410270",
+    "admissoes": 104,
+    "demissoes": 96,
+    "salario_medio": 1732.89725,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 8,
+    "nome": "Barra do Jacaré"
+  },
+  {
+    "codigo": "411090",
+    "admissoes": 101,
+    "demissoes": 108,
+    "salario_medio": 1837.9900478468899,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": -7,
+    "nome": "Itaguajé"
+  },
+  {
+    "codigo": "412125",
+    "admissoes": 99,
+    "demissoes": 101,
+    "salario_medio": 1850.0551,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -2,
+    "nome": "Ramilândia"
+  },
+  {
+    "codigo": "412830",
+    "admissoes": 98,
+    "demissoes": 104,
+    "salario_medio": 1896.704306930693,
+    "cadeia_dominante": "Horticultura",
+    "saldo": -6,
+    "nome": "Uniflor"
+  },
+  {
+    "codigo": "410380",
+    "admissoes": 97,
+    "demissoes": 105,
+    "salario_medio": 1860.83505,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -8,
+    "nome": "Cambira"
+  },
+  {
+    "codigo": "412160",
+    "admissoes": 94,
+    "demissoes": 72,
+    "salario_medio": 2103.071626506024,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 22,
+    "nome": "Renascença"
+  },
+  {
+    "codigo": "411740",
+    "admissoes": 94,
+    "demissoes": 92,
+    "salario_medio": 1995.4766672580645,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 2,
+    "nome": "Ourizona"
+  },
+  {
+    "codigo": "412310",
+    "admissoes": 94,
+    "demissoes": 137,
+    "salario_medio": 1690.8593935064935,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -43,
+    "nome": "Santa Amélia"
+  },
+  {
+    "codigo": "412030",
+    "admissoes": 93,
+    "demissoes": 94,
+    "salario_medio": 1788.2272203208556,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -1,
+    "nome": "Porto Vitória"
+  },
+  {
+    "codigo": "410712",
+    "admissoes": 90,
+    "demissoes": 87,
+    "salario_medio": 1933.5118644067795,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 3,
+    "nome": "Diamante do Sul"
+  },
+  {
+    "codigo": "412080",
+    "admissoes": 90,
+    "demissoes": 70,
+    "salario_medio": 2246.2750625,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 20,
+    "nome": "Quatro Barras"
+  },
+  {
+    "codigo": "410775",
+    "admissoes": 83,
+    "demissoes": 75,
+    "salario_medio": 1676.2573417721517,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 8,
+    "nome": "Figueira"
+  },
+  {
+    "codigo": "411640",
+    "admissoes": 82,
+    "demissoes": 79,
+    "salario_medio": 2159.9854037267082,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 3,
+    "nome": "Nossa Senhora das Graças"
+  },
+  {
+    "codigo": "411435",
+    "admissoes": 81,
+    "demissoes": 63,
+    "salario_medio": 2186.469722222222,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 18,
+    "nome": "Manfrinópolis"
+  },
+  {
+    "codigo": "410340",
+    "admissoes": 81,
+    "demissoes": 88,
+    "salario_medio": 2603.2678680473373,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -7,
+    "nome": "Cafeara"
+  },
+  {
+    "codigo": "410715",
+    "admissoes": 80,
+    "demissoes": 92,
+    "salario_medio": 2038.0981976744188,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -12,
+    "nome": "Diamante d'Oeste"
+  },
+  {
+    "codigo": "410400",
+    "admissoes": 79,
+    "demissoes": 93,
+    "salario_medio": 1759.2190697674419,
+    "cadeia_dominante": "Horticultura",
+    "saldo": -14,
+    "nome": "Campina Grande do Sul"
+  },
+  {
+    "codigo": "411230",
+    "admissoes": 78,
+    "demissoes": 95,
+    "salario_medio": 1707.4170520231214,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -17,
+    "nome": "Japira"
+  },
+  {
+    "codigo": "411980",
+    "admissoes": 77,
+    "demissoes": 91,
+    "salario_medio": 1942.302261904762,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -14,
+    "nome": "Planalto"
+  },
+  {
+    "codigo": "412035",
+    "admissoes": 74,
+    "demissoes": 60,
+    "salario_medio": 2015.242014925373,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 14,
+    "nome": "Pranchita"
+  },
+  {
+    "codigo": "412590",
+    "admissoes": 73,
+    "demissoes": 72,
+    "salario_medio": 2087.7591731034486,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 1,
+    "nome": "São Pedro do Paraná"
+  },
+  {
+    "codigo": "410347",
+    "admissoes": 70,
+    "demissoes": 65,
+    "salario_medio": 1980.5147414814815,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 5,
+    "nome": "Cafezal do Sul"
+  },
+  {
+    "codigo": "412665",
+    "admissoes": 68,
+    "demissoes": 60,
+    "salario_medio": 1794.843125,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 8,
+    "nome": "Sulina"
+  },
+  {
+    "codigo": "411360",
+    "admissoes": 67,
+    "demissoes": 56,
+    "salario_medio": 2014.3714634146343,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 11,
+    "nome": "Lobato"
+  },
+  {
+    "codigo": "411729",
+    "admissoes": 65,
+    "demissoes": 70,
+    "salario_medio": 1920.6695555555557,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -5,
+    "nome": "Novo Itacolomi"
+  },
+  {
+    "codigo": "411545",
+    "admissoes": 65,
+    "demissoes": 82,
+    "salario_medio": 1519.4797278911565,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -17,
+    "nome": "Marquinho"
+  },
+  {
+    "codigo": "411573",
+    "admissoes": 64,
+    "demissoes": 62,
+    "salario_medio": 1811.2823015873016,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 2,
+    "nome": "Mato Rico"
+  },
+  {
+    "codigo": "411170",
+    "admissoes": 63,
+    "demissoes": 60,
+    "salario_medio": 1794.47918699187,
+    "cadeia_dominante": "Cafeicultura",
+    "saldo": 3,
+    "nome": "Jaboti"
+  },
+  {
+    "codigo": "411750",
+    "admissoes": 61,
+    "demissoes": 53,
+    "salario_medio": 1847.7525438596492,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 8,
+    "nome": "Paiçandu"
+  },
+  {
+    "codigo": "412360",
+    "admissoes": 60,
+    "demissoes": 88,
+    "salario_medio": 1569.5158783783784,
+    "cadeia_dominante": "Fumo",
+    "saldo": -28,
+    "nome": "Santa Inês"
+  },
+  {
+    "codigo": "412320",
+    "admissoes": 59,
+    "demissoes": 57,
+    "salario_medio": 1809.9289655172415,
+    "cadeia_dominante": "Horticultura",
+    "saldo": 2,
+    "nome": "Santa Cecília do Pavão"
+  },
+  {
+    "codigo": "410350",
+    "admissoes": 57,
+    "demissoes": 69,
+    "salario_medio": 1905.2233333333334,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -12,
+    "nome": "Califórnia"
+  },
+  {
+    "codigo": "411820",
+    "admissoes": 57,
+    "demissoes": 59,
+    "salario_medio": 3034.578275862069,
+    "cadeia_dominante": "Aquicultura",
+    "saldo": -2,
+    "nome": "Paranaguá"
+  },
+  {
+    "codigo": "410305",
+    "admissoes": 56,
+    "demissoes": 76,
+    "salario_medio": 1829.5581818181818,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -20,
+    "nome": "Boa Vista da Aparecida"
+  },
+  {
+    "codigo": "412070",
+    "admissoes": 56,
+    "demissoes": 80,
+    "salario_medio": 1697.2584558823528,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -24,
+    "nome": "Quatiguá"
+  },
+  {
+    "codigo": "412280",
+    "admissoes": 54,
+    "demissoes": 62,
+    "salario_medio": 1709.125172413793,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -8,
+    "nome": "Salgado Filho"
+  },
+  {
+    "codigo": "411250",
+    "admissoes": 54,
+    "demissoes": 61,
+    "salario_medio": 2074.8155652173914,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -7,
+    "nome": "Jardim Alegre"
+  },
+  {
+    "codigo": "410752",
+    "admissoes": 53,
+    "demissoes": 68,
+    "salario_medio": 1904.8556198347108,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -15,
+    "nome": "Esperança Nova"
+  },
+  {
+    "codigo": "412210",
+    "admissoes": 51,
+    "demissoes": 63,
+    "salario_medio": 1799.413245614035,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -12,
+    "nome": "Rio Bom"
+  },
+  {
+    "codigo": "411375",
+    "admissoes": 51,
+    "demissoes": 55,
+    "salario_medio": 1725.8435849056605,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -4,
+    "nome": "Lunardelli"
+  },
+  {
+    "codigo": "410185",
+    "admissoes": 50,
+    "demissoes": 51,
+    "salario_medio": 1854.9535643564357,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -1,
+    "nome": "Ariranha do Ivaí"
+  },
+  {
+    "codigo": "412217",
+    "admissoes": 48,
+    "demissoes": 57,
+    "salario_medio": 1977.968285714286,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -9,
+    "nome": "Rio Branco do Ivaí"
+  },
+  {
+    "codigo": "410785",
+    "admissoes": 48,
+    "demissoes": 41,
+    "salario_medio": 1647.5056179775281,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 7,
+    "nome": "Flor da Serra do Sul"
+  },
+  {
+    "codigo": "411721",
+    "admissoes": 47,
+    "demissoes": 57,
+    "salario_medio": 1704.0094230769232,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": -10,
+    "nome": "Nova Santa Bárbara"
+  },
+  {
+    "codigo": "410910",
+    "admissoes": 47,
+    "demissoes": 61,
+    "salario_medio": 1879.4722222222222,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -14,
+    "nome": "Guaporema"
+  },
+  {
+    "codigo": "411130",
+    "admissoes": 46,
+    "demissoes": 47,
+    "salario_medio": 2090.699139784946,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -1,
+    "nome": "Itaúna do Sul"
+  },
+  {
+    "codigo": "411310",
+    "admissoes": 46,
+    "demissoes": 50,
+    "salario_medio": 1857.188125,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -4,
+    "nome": "Kaloré"
+  },
+  {
+    "codigo": "411030",
+    "admissoes": 45,
+    "demissoes": 49,
+    "salario_medio": 1474.7287234042553,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -4,
+    "nome": "Inajá"
+  },
+  {
+    "codigo": "412290",
+    "admissoes": 45,
+    "demissoes": 41,
+    "salario_medio": 2018.5461627906977,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 4,
+    "nome": "Salto do Itararé"
+  },
+  {
+    "codigo": "411260",
+    "admissoes": 44,
+    "demissoes": 58,
+    "salario_medio": 1883.3689215686275,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -14,
+    "nome": "Jardim Olinda"
+  },
+  {
+    "codigo": "410105",
+    "admissoes": 41,
+    "demissoes": 48,
+    "salario_medio": 2052.9420213483145,
+    "cadeia_dominante": "Avicultura",
+    "saldo": -7,
+    "nome": "Anahy"
+  },
+  {
+    "codigo": "412000",
+    "admissoes": 41,
+    "demissoes": 54,
+    "salario_medio": 1824.309262105263,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -13,
+    "nome": "Porecatu"
+  },
+  {
+    "codigo": "410770",
+    "admissoes": 39,
+    "demissoes": 42,
+    "salario_medio": 1928.9014814814814,
+    "cadeia_dominante": "Grãos",
+    "saldo": -3,
+    "nome": "Fênix"
+  },
+  {
+    "codigo": "410655",
+    "admissoes": 37,
+    "demissoes": 29,
+    "salario_medio": 1985.035303030303,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 8,
+    "nome": "Corumbataí do Sul"
+  },
+  {
+    "codigo": "410030",
+    "admissoes": 37,
+    "demissoes": 37,
+    "salario_medio": 1724.1287837837838,
+    "cadeia_dominante": "Horticultura",
+    "saldo": 0,
+    "nome": "Agudos do Sul"
+  },
+  {
+    "codigo": "410950",
+    "admissoes": 26,
+    "demissoes": 46,
+    "salario_medio": 1748.6277777777777,
+    "cadeia_dominante": "Outras Culturas Permanentes",
+    "saldo": -20,
+    "nome": "Guaraqueçaba"
+  },
+  {
+    "codigo": "411040",
+    "admissoes": 24,
+    "demissoes": 26,
+    "salario_medio": 1837.182,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -2,
+    "nome": "Indianópolis"
+  },
+  {
+    "codigo": "410730",
+    "admissoes": 23,
+    "demissoes": 21,
+    "salario_medio": 2044.1477272727273,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 2,
+    "nome": "Doutor Camargo"
+  },
+  {
+    "codigo": "410810",
+    "admissoes": 22,
+    "demissoes": 14,
+    "salario_medio": 1960.6280555555556,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 8,
+    "nome": "Flórida"
+  },
+  {
+    "codigo": "410895",
+    "admissoes": 22,
+    "demissoes": 22,
+    "salario_medio": 1710.5775,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 0,
+    "nome": "Guamiranga"
+  },
+  {
+    "codigo": "412120",
+    "admissoes": 22,
+    "demissoes": 32,
+    "salario_medio": 1719.6679629629632,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -10,
+    "nome": "Quitandinha"
+  },
+  {
+    "codigo": "411900",
+    "admissoes": 22,
+    "demissoes": 27,
+    "salario_medio": 1712.6522448979592,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": -5,
+    "nome": "Pérola d'Oeste"
+  },
+  {
+    "codigo": "411160",
+    "admissoes": 22,
+    "demissoes": 26,
+    "salario_medio": 1940.4533333333331,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -4,
+    "nome": "Ivatuba"
+  },
+  {
+    "codigo": "410315",
+    "admissoes": 19,
+    "demissoes": 17,
+    "salario_medio": 1654.312222222222,
+    "cadeia_dominante": "Horticultura",
+    "saldo": 2,
+    "nome": "Bom Jesus do Sul"
+  },
+  {
+    "codigo": "412610",
+    "admissoes": 14,
+    "demissoes": 19,
+    "salario_medio": 2187.146663636364,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": -5,
+    "nome": "São Tomé"
+  },
+  {
+    "codigo": "412382",
+    "admissoes": 13,
+    "demissoes": 17,
+    "salario_medio": 1890.3523333333333,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -4,
+    "nome": "Santa Lúcia"
+  },
+  {
+    "codigo": "411995",
+    "admissoes": 12,
+    "demissoes": 7,
+    "salario_medio": 1603.1352631578948,
+    "cadeia_dominante": "Aquicultura",
+    "saldo": 5,
+    "nome": "Pontal do Paraná"
+  },
+  {
+    "codigo": "411915",
+    "admissoes": 12,
+    "demissoes": 7,
+    "salario_medio": 1794.5121052631578,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 5,
+    "nome": "Pinhais"
+  },
+  {
+    "codigo": "411005",
+    "admissoes": 10,
+    "demissoes": 12,
+    "salario_medio": 1776.055,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -2,
+    "nome": "Iguatu"
+  },
+  {
+    "codigo": "410765",
+    "admissoes": 8,
+    "demissoes": 9,
+    "salario_medio": 2323.113529411765,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": -1,
+    "nome": "Fazenda Rio Grande"
+  },
+  {
+    "codigo": "410855",
+    "admissoes": 4,
+    "demissoes": 2,
+    "salario_medio": 1859.6733333333334,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 2,
+    "nome": "Godoy Moreira"
+  },
+  {
+    "codigo": "410275",
+    "admissoes": 3,
+    "demissoes": 3,
+    "salario_medio": 1951.9166666666667,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 0,
+    "nome": "Bela Vista da Caroba"
+  }
+]

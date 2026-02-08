@@ -1,0 +1,32 @@
+[
+  {
+    "divisao_cnae": "01",
+    "divisao_nome": "Agricultura e Pecuária",
+    "admissoes": 248955,
+    "demissoes": 238657,
+    "saldo": 10298,
+    "salario_medio": 1788.21,
+    "percentual_admissoes": 82.9,
+    "estoque_estimado": 135545
+  },
+  {
+    "divisao_cnae": "02",
+    "divisao_nome": "Silvicultura",
+    "admissoes": 48940,
+    "demissoes": 46015,
+    "saldo": 2925,
+    "salario_medio": 1833.25,
+    "percentual_admissoes": 16.3,
+    "estoque_estimado": 26645
+  },
+  {
+    "divisao_cnae": "03",
+    "divisao_nome": "Pesca e Aquicultura",
+    "admissoes": 2407,
+    "demissoes": 2128,
+    "saldo": 279,
+    "salario_medio": 2067.31,
+    "percentual_admissoes": 0.8,
+    "estoque_estimado": 1310
+  }
+]

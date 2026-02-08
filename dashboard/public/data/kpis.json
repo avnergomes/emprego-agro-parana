@@ -1,0 +1,21 @@
+{
+  "periodo_referencia": "2025-12",
+  "ultimo_mes": {
+    "admissoes": 4642,
+    "demissoes": 4934,
+    "saldo": -292
+  },
+  "acumulado": {
+    "admissoes": 300302,
+    "demissoes": 286800,
+    "saldo": 13502
+  },
+  "salario": {
+    "media": 1853.28,
+    "mediana": 1731.02
+  },
+  "perfil": {
+    "pct_masculino": 78.0,
+    "idade_media": 33.7
+  }
+}

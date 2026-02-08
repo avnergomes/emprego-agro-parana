@@ -1,0 +1,650 @@
+[
+  {
+    "periodo": "2020-01",
+    "admissoes": 2167,
+    "demissoes": 1775,
+    "salario_medio": 1546.0906621004565,
+    "salario_mediana": 1313.4,
+    "saldo": 392,
+    "saldo_acumulado": 392
+  },
+  {
+    "periodo": "2020-02",
+    "admissoes": 2628,
+    "demissoes": 1734,
+    "salario_medio": 1293.0716162310866,
+    "salario_mediana": 1329.73,
+    "saldo": 894,
+    "saldo_acumulado": 1286
+  },
+  {
+    "periodo": "2020-03",
+    "admissoes": 2465,
+    "demissoes": 1610,
+    "salario_medio": 1404.0950503067486,
+    "salario_mediana": 1383.8,
+    "saldo": 855,
+    "saldo_acumulado": 2141
+  },
+  {
+    "periodo": "2020-04",
+    "admissoes": 2069,
+    "demissoes": 1623,
+    "salario_medio": 1446.3854279523293,
+    "salario_mediana": 1355.4,
+    "saldo": 446,
+    "saldo_acumulado": 2587
+  },
+  {
+    "periodo": "2020-05",
+    "admissoes": 1253,
+    "demissoes": 1612,
+    "salario_medio": 1481.5114973821992,
+    "salario_mediana": 1383.8,
+    "saldo": -359,
+    "saldo_acumulado": 2228
+  },
+  {
+    "periodo": "2020-06",
+    "admissoes": 1537,
+    "demissoes": 1485,
+    "salario_medio": 1416.1744804765058,
+    "salario_mediana": 1383.8,
+    "saldo": 52,
+    "saldo_acumulado": 2280
+  },
+  {
+    "periodo": "2020-07",
+    "admissoes": 2570,
+    "demissoes": 2027,
+    "salario_medio": 1502.119310419839,
+    "salario_mediana": 1383.8,
+    "saldo": 543,
+    "saldo_acumulado": 2823
+  },
+  {
+    "periodo": "2020-08",
+    "admissoes": 2126,
+    "demissoes": 1636,
+    "salario_medio": 1374.553591174907,
+    "salario_mediana": 1383.8,
+    "saldo": 490,
+    "saldo_acumulado": 3313
+  },
+  {
+    "periodo": "2020-09",
+    "admissoes": 1905,
+    "demissoes": 1817,
+    "salario_medio": 1505.0032455668995,
+    "salario_mediana": 1383.8,
+    "saldo": 88,
+    "saldo_acumulado": 3401
+  },
+  {
+    "periodo": "2020-10",
+    "admissoes": 1694,
+    "demissoes": 2019,
+    "salario_medio": 1466.8839563695126,
+    "salario_mediana": 1383.8,
+    "saldo": -325,
+    "saldo_acumulado": 3076
+  },
+  {
+    "periodo": "2020-11",
+    "admissoes": 1582,
+    "demissoes": 2826,
+    "salario_medio": 1460.194119782214,
+    "salario_mediana": 1383.8,
+    "saldo": -1244,
+    "saldo_acumulado": 1832
+  },
+  {
+    "periodo": "2020-12",
+    "admissoes": 2787,
+    "demissoes": 2314,
+    "salario_medio": 1484.4972358361106,
+    "salario_mediana": 1383.8,
+    "saldo": 473,
+    "saldo_acumulado": 2305
+  },
+  {
+    "periodo": "2021-01",
+    "admissoes": 2280,
+    "demissoes": 1904,
+    "salario_medio": 1529.9032050669216,
+    "salario_mediana": 1411.64,
+    "saldo": 376,
+    "saldo_acumulado": 2681
+  },
+  {
+    "periodo": "2021-02",
+    "admissoes": 3003,
+    "demissoes": 1875,
+    "salario_medio": 1454.1080258302584,
+    "salario_mediana": 1434.0,
+    "saldo": 1128,
+    "saldo_acumulado": 3809
+  },
+  {
+    "periodo": "2021-03",
+    "admissoes": 3380,
+    "demissoes": 2087,
+    "salario_medio": 1509.4709292116336,
+    "salario_mediana": 1455.7,
+    "saldo": 1293,
+    "saldo_acumulado": 5102
+  },
+  {
+    "periodo": "2021-04",
+    "admissoes": 4487,
+    "demissoes": 3342,
+    "salario_medio": 1547.438282028356,
+    "salario_mediana": 1467.4,
+    "saldo": 1145,
+    "saldo_acumulado": 6247
+  },
+  {
+    "periodo": "2021-05",
+    "admissoes": 3961,
+    "demissoes": 3327,
+    "salario_medio": 1534.4361388583973,
+    "salario_mediana": 1467.4,
+    "saldo": 634,
+    "saldo_acumulado": 6881
+  },
+  {
+    "periodo": "2021-06",
+    "admissoes": 4176,
+    "demissoes": 3357,
+    "salario_medio": 1514.4282543475376,
+    "salario_mediana": 1467.4,
+    "saldo": 819,
+    "saldo_acumulado": 7700
+  },
+  {
+    "periodo": "2021-07",
+    "admissoes": 3745,
+    "demissoes": 3637,
+    "salario_medio": 1569.232862367922,
+    "salario_mediana": 1467.4,
+    "saldo": 108,
+    "saldo_acumulado": 7808
+  },
+  {
+    "periodo": "2021-08",
+    "admissoes": 3670,
+    "demissoes": 4031,
+    "salario_medio": 1528.5550720685624,
+    "salario_mediana": 1467.4,
+    "saldo": -361,
+    "saldo_acumulado": 7447
+  },
+  {
+    "periodo": "2021-09",
+    "admissoes": 3346,
+    "demissoes": 3709,
+    "salario_medio": 1557.7298639262933,
+    "salario_mediana": 1467.4,
+    "saldo": -363,
+    "saldo_acumulado": 7084
+  },
+  {
+    "periodo": "2021-10",
+    "admissoes": 3787,
+    "demissoes": 3488,
+    "salario_medio": 1559.4467573883162,
+    "salario_mediana": 1467.4,
+    "saldo": 299,
+    "saldo_acumulado": 7383
+  },
+  {
+    "periodo": "2021-11",
+    "admissoes": 3909,
+    "demissoes": 4260,
+    "salario_medio": 1629.695675113233,
+    "salario_mediana": 1467.4,
+    "saldo": -351,
+    "saldo_acumulado": 7032
+  },
+  {
+    "periodo": "2021-12",
+    "admissoes": 4001,
+    "demissoes": 4449,
+    "salario_medio": 1570.8514201183432,
+    "salario_mediana": 1467.4,
+    "saldo": -448,
+    "saldo_acumulado": 6584
+  },
+  {
+    "periodo": "2022-01",
+    "admissoes": 4817,
+    "demissoes": 3887,
+    "salario_medio": 1612.8815877757352,
+    "salario_mediana": 1490.0,
+    "saldo": 930,
+    "saldo_acumulado": 7514
+  },
+  {
+    "periodo": "2022-02",
+    "admissoes": 5785,
+    "demissoes": 4458,
+    "salario_medio": 1622.0119115493508,
+    "salario_mediana": 1600.0,
+    "saldo": 1327,
+    "saldo_acumulado": 8841
+  },
+  {
+    "periodo": "2022-03",
+    "admissoes": 5180,
+    "demissoes": 4731,
+    "salario_medio": 1662.3128890010091,
+    "salario_mediana": 1606.645,
+    "saldo": 449,
+    "saldo_acumulado": 9290
+  },
+  {
+    "periodo": "2022-04",
+    "admissoes": 4986,
+    "demissoes": 4236,
+    "salario_medio": 1672.1213112798264,
+    "salario_mediana": 1617.0,
+    "saldo": 750,
+    "saldo_acumulado": 10040
+  },
+  {
+    "periodo": "2022-05",
+    "admissoes": 4125,
+    "demissoes": 4323,
+    "salario_medio": 1699.453315571344,
+    "salario_mediana": 1617.0,
+    "saldo": -198,
+    "saldo_acumulado": 9842
+  },
+  {
+    "periodo": "2022-06",
+    "admissoes": 4964,
+    "demissoes": 5266,
+    "salario_medio": 1696.5182123997652,
+    "salario_mediana": 1617.0,
+    "saldo": -302,
+    "saldo_acumulado": 9540
+  },
+  {
+    "periodo": "2022-07",
+    "admissoes": 4611,
+    "demissoes": 4711,
+    "salario_medio": 1718.4805277837374,
+    "salario_mediana": 1617.0,
+    "saldo": -100,
+    "saldo_acumulado": 9440
+  },
+  {
+    "periodo": "2022-08",
+    "admissoes": 3922,
+    "demissoes": 4086,
+    "salario_medio": 1750.116406893968,
+    "salario_mediana": 1617.0,
+    "saldo": -164,
+    "saldo_acumulado": 9276
+  },
+  {
+    "periodo": "2022-09",
+    "admissoes": 4241,
+    "demissoes": 4090,
+    "salario_medio": 1857.5654147161206,
+    "salario_mediana": 1617.0,
+    "saldo": 151,
+    "saldo_acumulado": 9427
+  },
+  {
+    "periodo": "2022-10",
+    "admissoes": 4178,
+    "demissoes": 3790,
+    "salario_medio": 1898.3725269897063,
+    "salario_mediana": 1617.0,
+    "saldo": 388,
+    "saldo_acumulado": 9815
+  },
+  {
+    "periodo": "2022-11",
+    "admissoes": 4182,
+    "demissoes": 4024,
+    "salario_medio": 1894.4427817073172,
+    "salario_mediana": 1617.0,
+    "saldo": 158,
+    "saldo_acumulado": 9973
+  },
+  {
+    "periodo": "2022-12",
+    "admissoes": 3596,
+    "demissoes": 5093,
+    "salario_medio": 1747.5411601382489,
+    "salario_mediana": 1617.0,
+    "saldo": -1497,
+    "saldo_acumulado": 8476
+  },
+  {
+    "periodo": "2023-01",
+    "admissoes": 5489,
+    "demissoes": 4893,
+    "salario_medio": 1804.2575573107301,
+    "salario_mediana": 1646.93,
+    "saldo": 596,
+    "saldo_acumulado": 9072
+  },
+  {
+    "periodo": "2023-02",
+    "admissoes": 5476,
+    "demissoes": 4159,
+    "salario_medio": 1775.604647638817,
+    "salario_mediana": 1731.02,
+    "saldo": 1317,
+    "saldo_acumulado": 10389
+  },
+  {
+    "periodo": "2023-03",
+    "admissoes": 5663,
+    "demissoes": 4816,
+    "salario_medio": 1823.7509105660017,
+    "salario_mediana": 1731.02,
+    "saldo": 847,
+    "saldo_acumulado": 11236
+  },
+  {
+    "periodo": "2023-04",
+    "admissoes": 4703,
+    "demissoes": 4382,
+    "salario_medio": 1958.425156851954,
+    "salario_mediana": 1731.02,
+    "saldo": 321,
+    "saldo_acumulado": 11557
+  },
+  {
+    "periodo": "2023-05",
+    "admissoes": 5231,
+    "demissoes": 5251,
+    "salario_medio": 1830.4330969650696,
+    "salario_mediana": 1731.02,
+    "saldo": -20,
+    "saldo_acumulado": 11537
+  },
+  {
+    "periodo": "2023-06",
+    "admissoes": 4796,
+    "demissoes": 4891,
+    "salario_medio": 1780.0495457830082,
+    "salario_mediana": 1731.02,
+    "saldo": -95,
+    "saldo_acumulado": 11442
+  },
+  {
+    "periodo": "2023-07",
+    "admissoes": 4717,
+    "demissoes": 4479,
+    "salario_medio": 1842.3463070900393,
+    "salario_mediana": 1749.02,
+    "saldo": 238,
+    "saldo_acumulado": 11680
+  },
+  {
+    "periodo": "2023-08",
+    "admissoes": 5008,
+    "demissoes": 4425,
+    "salario_medio": 1946.8495261912115,
+    "salario_mediana": 1749.02,
+    "saldo": 583,
+    "saldo_acumulado": 12263
+  },
+  {
+    "periodo": "2023-09",
+    "admissoes": 4299,
+    "demissoes": 4176,
+    "salario_medio": 1881.3329300839646,
+    "salario_mediana": 1749.02,
+    "saldo": 123,
+    "saldo_acumulado": 12386
+  },
+  {
+    "periodo": "2023-10",
+    "admissoes": 4799,
+    "demissoes": 4372,
+    "salario_medio": 1920.2178224839165,
+    "salario_mediana": 1749.02,
+    "saldo": 427,
+    "saldo_acumulado": 12813
+  },
+  {
+    "periodo": "2023-11",
+    "admissoes": 4521,
+    "demissoes": 4509,
+    "salario_medio": 2059.1482779623475,
+    "salario_mediana": 1749.02,
+    "saldo": 12,
+    "saldo_acumulado": 12825
+  },
+  {
+    "periodo": "2023-12",
+    "admissoes": 4146,
+    "demissoes": 5322,
+    "salario_medio": 1847.5282625686523,
+    "salario_mediana": 1749.02,
+    "saldo": -1176,
+    "saldo_acumulado": 11649
+  },
+  {
+    "periodo": "2024-01",
+    "admissoes": 6472,
+    "demissoes": 5440,
+    "salario_medio": 1920.5362214573538,
+    "salario_mediana": 1773.79,
+    "saldo": 1032,
+    "saldo_acumulado": 12681
+  },
+  {
+    "periodo": "2024-02",
+    "admissoes": 5721,
+    "demissoes": 5448,
+    "salario_medio": 1941.7565055063121,
+    "salario_mediana": 1856.94,
+    "saldo": 273,
+    "saldo_acumulado": 12954
+  },
+  {
+    "periodo": "2024-03",
+    "admissoes": 5474,
+    "demissoes": 5089,
+    "salario_medio": 1967.142255987882,
+    "salario_mediana": 1856.94,
+    "saldo": 385,
+    "saldo_acumulado": 13339
+  },
+  {
+    "periodo": "2024-04",
+    "admissoes": 5217,
+    "demissoes": 5080,
+    "salario_medio": 2052.5799465863843,
+    "salario_mediana": 1856.94,
+    "saldo": 137,
+    "saldo_acumulado": 13476
+  },
+  {
+    "periodo": "2024-05",
+    "admissoes": 5056,
+    "demissoes": 5673,
+    "salario_medio": 2026.033202535185,
+    "salario_mediana": 1856.94,
+    "saldo": -617,
+    "saldo_acumulado": 12859
+  },
+  {
+    "periodo": "2024-06",
+    "admissoes": 4574,
+    "demissoes": 4922,
+    "salario_medio": 1917.5177158803708,
+    "salario_mediana": 1856.94,
+    "saldo": -348,
+    "saldo_acumulado": 12511
+  },
+  {
+    "periodo": "2024-07",
+    "admissoes": 4490,
+    "demissoes": 4786,
+    "salario_medio": 1992.6882438551097,
+    "salario_mediana": 1856.94,
+    "saldo": -296,
+    "saldo_acumulado": 12215
+  },
+  {
+    "periodo": "2024-08",
+    "admissoes": 4604,
+    "demissoes": 4393,
+    "salario_medio": 2127.6741825052795,
+    "salario_mediana": 1856.94,
+    "saldo": 211,
+    "saldo_acumulado": 12426
+  },
+  {
+    "periodo": "2024-09",
+    "admissoes": 4088,
+    "demissoes": 4186,
+    "salario_medio": 2050.8147425670777,
+    "salario_mediana": 1856.94,
+    "saldo": -98,
+    "saldo_acumulado": 12328
+  },
+  {
+    "periodo": "2024-10",
+    "admissoes": 4279,
+    "demissoes": 4616,
+    "salario_medio": 2266.272688026981,
+    "salario_mediana": 1856.94,
+    "saldo": -337,
+    "saldo_acumulado": 11991
+  },
+  {
+    "periodo": "2024-11",
+    "admissoes": 4466,
+    "demissoes": 4641,
+    "salario_medio": 2106.8748105852637,
+    "salario_mediana": 1856.94,
+    "saldo": -175,
+    "saldo_acumulado": 11816
+  },
+  {
+    "periodo": "2024-12",
+    "admissoes": 4112,
+    "demissoes": 4237,
+    "salario_medio": 2007.2823978919632,
+    "salario_mediana": 1856.94,
+    "saldo": -125,
+    "saldo_acumulado": 11691
+  },
+  {
+    "periodo": "2025-01",
+    "admissoes": 6241,
+    "demissoes": 5212,
+    "salario_medio": 2020.975031869379,
+    "salario_mediana": 1900.0,
+    "saldo": 1029,
+    "saldo_acumulado": 12720
+  },
+  {
+    "periodo": "2025-02",
+    "admissoes": 5732,
+    "demissoes": 5175,
+    "salario_medio": 2111.1753561932705,
+    "salario_mediana": 1984.16,
+    "saldo": 557,
+    "saldo_acumulado": 13277
+  },
+  {
+    "periodo": "2025-03",
+    "admissoes": 5096,
+    "demissoes": 4933,
+    "salario_medio": 2121.7890467643833,
+    "salario_mediana": 1984.16,
+    "saldo": 163,
+    "saldo_acumulado": 13440
+  },
+  {
+    "periodo": "2025-04",
+    "admissoes": 5181,
+    "demissoes": 4564,
+    "salario_medio": 2162.212440225757,
+    "salario_mediana": 1984.16,
+    "saldo": 617,
+    "saldo_acumulado": 14057
+  },
+  {
+    "periodo": "2025-05",
+    "admissoes": 4918,
+    "demissoes": 5078,
+    "salario_medio": 2129.294232693077,
+    "salario_mediana": 1984.16,
+    "saldo": -160,
+    "saldo_acumulado": 13897
+  },
+  {
+    "periodo": "2025-06",
+    "admissoes": 4896,
+    "demissoes": 4950,
+    "salario_medio": 2089.679875076173,
+    "salario_mediana": 1984.16,
+    "saldo": -54,
+    "saldo_acumulado": 13843
+  },
+  {
+    "periodo": "2025-07",
+    "admissoes": 4536,
+    "demissoes": 5165,
+    "salario_medio": 2159.2183640861767,
+    "salario_mediana": 1984.16,
+    "saldo": -629,
+    "saldo_acumulado": 13214
+  },
+  {
+    "periodo": "2025-08",
+    "admissoes": 4573,
+    "demissoes": 4709,
+    "salario_medio": 2192.0874197371254,
+    "salario_mediana": 1984.16,
+    "saldo": -136,
+    "saldo_acumulado": 13078
+  },
+  {
+    "periodo": "2025-09",
+    "admissoes": 4885,
+    "demissoes": 4415,
+    "salario_medio": 2404.4005537634407,
+    "salario_mediana": 1984.16,
+    "saldo": 470,
+    "saldo_acumulado": 13548
+  },
+  {
+    "periodo": "2025-10",
+    "admissoes": 4798,
+    "demissoes": 4620,
+    "salario_medio": 2202.4008749203654,
+    "salario_mediana": 1984.16,
+    "saldo": 178,
+    "saldo_acumulado": 13726
+  },
+  {
+    "periodo": "2025-11",
+    "admissoes": 4288,
+    "demissoes": 4220,
+    "salario_medio": 2200.2318770568877,
+    "salario_mediana": 1984.5,
+    "saldo": 68,
+    "saldo_acumulado": 13794
+  },
+  {
+    "periodo": "2025-12",
+    "admissoes": 4642,
+    "demissoes": 4934,
+    "salario_medio": 2141.2185766499583,
+    "salario_mediana": 1984.16,
+    "saldo": -292,
+    "saldo_acumulado": 13502
+  }
+]

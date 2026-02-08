@@ -1,0 +1,2536 @@
+{
+  "metadata": {
+    "titulo": "Emprego Agrícola - Paraná",
+    "subtitulo": "Movimentações de emprego formal na agropecuária paranaense",
+    "fonte": "CAGED/MTE - Microdados do Novo CAGED",
+    "atualizacao": "2026-02-07",
+    "periodo_inicial": "2020-01",
+    "periodo_final": "2025-12",
+    "uf": "PR",
+    "cnae_secao": "A - Agricultura, Pecuária, Silvicultura, Pesca",
+    "divisoes": [
+      {
+        "codigo": "01",
+        "nome": "Agricultura e Pecuária"
+      },
+      {
+        "codigo": "02",
+        "nome": "Silvicultura"
+      },
+      {
+        "codigo": "03",
+        "nome": "Pesca e Aquicultura"
+      }
+    ],
+    "notas": [
+      "Dados oficiais do Ministério do Trabalho e Emprego",
+      "Microdados baixados via FTP do PDET/MTE",
+      "CNAE Seção A: Agricultura, Pecuária, Silvicultura e Pesca"
+    ],
+    "dados_reais": true
+  },
+  "kpis": {
+    "periodo_referencia": "2025-12",
+    "ultimo_mes": {
+      "admissoes": 4642,
+      "demissoes": 4934,
+      "saldo": -292,
+      "salario_medio": 2169.35
+    },
+    "acumulado": {
+      "total_admissoes": 300302,
+      "total_demissoes": 286800,
+      "total_saldo": 13502
+    },
+    "variacao_saldo_pct": -529.4,
+    "estoque_estimado": 163502
+  },
+  "timeseries": [
+    {
+      "periodo": "2020-01",
+      "admissoes": 2167,
+      "demissoes": 1775,
+      "saldo": 392,
+      "salario_medio": 2126.11,
+      "saldo_acumulado": 392
+    },
+    {
+      "periodo": "2020-02",
+      "admissoes": 2628,
+      "demissoes": 1734,
+      "saldo": 894,
+      "salario_medio": 1341.42,
+      "saldo_acumulado": 1286
+    },
+    {
+      "periodo": "2020-03",
+      "admissoes": 2465,
+      "demissoes": 1610,
+      "saldo": 855,
+      "salario_medio": 1406.75,
+      "saldo_acumulado": 2141
+    },
+    {
+      "periodo": "2020-04",
+      "admissoes": 2069,
+      "demissoes": 1623,
+      "saldo": 446,
+      "salario_medio": 1494.96,
+      "saldo_acumulado": 2587
+    },
+    {
+      "periodo": "2020-05",
+      "admissoes": 1253,
+      "demissoes": 1612,
+      "saldo": -359,
+      "salario_medio": 1564.48,
+      "saldo_acumulado": 2228
+    },
+    {
+      "periodo": "2020-06",
+      "admissoes": 1537,
+      "demissoes": 1485,
+      "saldo": 52,
+      "salario_medio": 1528.62,
+      "saldo_acumulado": 2280
+    },
+    {
+      "periodo": "2020-07",
+      "admissoes": 2570,
+      "demissoes": 2027,
+      "saldo": 543,
+      "salario_medio": 1561.25,
+      "saldo_acumulado": 2823
+    },
+    {
+      "periodo": "2020-08",
+      "admissoes": 2126,
+      "demissoes": 1636,
+      "saldo": 490,
+      "salario_medio": 1489.01,
+      "saldo_acumulado": 3313
+    },
+    {
+      "periodo": "2020-09",
+      "admissoes": 1905,
+      "demissoes": 1817,
+      "saldo": 88,
+      "salario_medio": 1591.63,
+      "saldo_acumulado": 3401
+    },
+    {
+      "periodo": "2020-10",
+      "admissoes": 1694,
+      "demissoes": 2019,
+      "saldo": -325,
+      "salario_medio": 1417.96,
+      "saldo_acumulado": 3076
+    },
+    {
+      "periodo": "2020-11",
+      "admissoes": 1582,
+      "demissoes": 2826,
+      "saldo": -1244,
+      "salario_medio": 1649.63,
+      "saldo_acumulado": 1832
+    },
+    {
+      "periodo": "2020-12",
+      "admissoes": 2787,
+      "demissoes": 2314,
+      "saldo": 473,
+      "salario_medio": 1598.46,
+      "saldo_acumulado": 2305
+    },
+    {
+      "periodo": "2021-01",
+      "admissoes": 2280,
+      "demissoes": 1904,
+      "saldo": 376,
+      "salario_medio": 1494.26,
+      "saldo_acumulado": 2681
+    },
+    {
+      "periodo": "2021-02",
+      "admissoes": 3003,
+      "demissoes": 1875,
+      "saldo": 1128,
+      "salario_medio": 1436.49,
+      "saldo_acumulado": 3809
+    },
+    {
+      "periodo": "2021-03",
+      "admissoes": 3380,
+      "demissoes": 2087,
+      "saldo": 1293,
+      "salario_medio": 1522.11,
+      "saldo_acumulado": 5102
+    },
+    {
+      "periodo": "2021-04",
+      "admissoes": 4487,
+      "demissoes": 3342,
+      "saldo": 1145,
+      "salario_medio": 1593.38,
+      "saldo_acumulado": 6247
+    },
+    {
+      "periodo": "2021-05",
+      "admissoes": 3961,
+      "demissoes": 3327,
+      "saldo": 634,
+      "salario_medio": 1714.76,
+      "saldo_acumulado": 6881
+    },
+    {
+      "periodo": "2021-06",
+      "admissoes": 4176,
+      "demissoes": 3357,
+      "saldo": 819,
+      "salario_medio": 1744.38,
+      "saldo_acumulado": 7700
+    },
+    {
+      "periodo": "2021-07",
+      "admissoes": 3745,
+      "demissoes": 3637,
+      "saldo": 108,
+      "salario_medio": 2399.83,
+      "saldo_acumulado": 7808
+    },
+    {
+      "periodo": "2021-08",
+      "admissoes": 3670,
+      "demissoes": 4031,
+      "saldo": -361,
+      "salario_medio": 1540.38,
+      "saldo_acumulado": 7447
+    },
+    {
+      "periodo": "2021-09",
+      "admissoes": 3346,
+      "demissoes": 3709,
+      "saldo": -363,
+      "salario_medio": 1587.53,
+      "saldo_acumulado": 7084
+    },
+    {
+      "periodo": "2021-10",
+      "admissoes": 3787,
+      "demissoes": 3488,
+      "saldo": 299,
+      "salario_medio": 1567.08,
+      "saldo_acumulado": 7383
+    },
+    {
+      "periodo": "2021-11",
+      "admissoes": 3909,
+      "demissoes": 4260,
+      "saldo": -351,
+      "salario_medio": 1927.49,
+      "saldo_acumulado": 7032
+    },
+    {
+      "periodo": "2021-12",
+      "admissoes": 4001,
+      "demissoes": 4449,
+      "saldo": -448,
+      "salario_medio": 1871.14,
+      "saldo_acumulado": 6584
+    },
+    {
+      "periodo": "2022-01",
+      "admissoes": 4817,
+      "demissoes": 3887,
+      "saldo": 930,
+      "salario_medio": 1661.44,
+      "saldo_acumulado": 7514
+    },
+    {
+      "periodo": "2022-02",
+      "admissoes": 5785,
+      "demissoes": 4458,
+      "saldo": 1327,
+      "salario_medio": 1636.91,
+      "saldo_acumulado": 8841
+    },
+    {
+      "periodo": "2022-03",
+      "admissoes": 5180,
+      "demissoes": 4731,
+      "saldo": 449,
+      "salario_medio": 1733.05,
+      "saldo_acumulado": 9290
+    },
+    {
+      "periodo": "2022-04",
+      "admissoes": 4986,
+      "demissoes": 4236,
+      "saldo": 750,
+      "salario_medio": 2001.12,
+      "saldo_acumulado": 10040
+    },
+    {
+      "periodo": "2022-05",
+      "admissoes": 4125,
+      "demissoes": 4323,
+      "saldo": -198,
+      "salario_medio": 1736.68,
+      "saldo_acumulado": 9842
+    },
+    {
+      "periodo": "2022-06",
+      "admissoes": 4964,
+      "demissoes": 5266,
+      "saldo": -302,
+      "salario_medio": 1885.39,
+      "saldo_acumulado": 9540
+    },
+    {
+      "periodo": "2022-07",
+      "admissoes": 4611,
+      "demissoes": 4711,
+      "saldo": -100,
+      "salario_medio": 1901.66,
+      "saldo_acumulado": 9440
+    },
+    {
+      "periodo": "2022-08",
+      "admissoes": 3922,
+      "demissoes": 4086,
+      "saldo": -164,
+      "salario_medio": 1850.36,
+      "saldo_acumulado": 9276
+    },
+    {
+      "periodo": "2022-09",
+      "admissoes": 4241,
+      "demissoes": 4090,
+      "saldo": 151,
+      "salario_medio": 1820.79,
+      "saldo_acumulado": 9427
+    },
+    {
+      "periodo": "2022-10",
+      "admissoes": 4178,
+      "demissoes": 3790,
+      "saldo": 388,
+      "salario_medio": 1863.05,
+      "saldo_acumulado": 9815
+    },
+    {
+      "periodo": "2022-11",
+      "admissoes": 4182,
+      "demissoes": 4024,
+      "saldo": 158,
+      "salario_medio": 3767.39,
+      "saldo_acumulado": 9973
+    },
+    {
+      "periodo": "2022-12",
+      "admissoes": 3596,
+      "demissoes": 5093,
+      "saldo": -1497,
+      "salario_medio": 1845.36,
+      "saldo_acumulado": 8476
+    },
+    {
+      "periodo": "2023-01",
+      "admissoes": 5489,
+      "demissoes": 4893,
+      "saldo": 596,
+      "salario_medio": 1873.53,
+      "saldo_acumulado": 9072
+    },
+    {
+      "periodo": "2023-02",
+      "admissoes": 5476,
+      "demissoes": 4159,
+      "saldo": 1317,
+      "salario_medio": 1827.9,
+      "saldo_acumulado": 10389
+    },
+    {
+      "periodo": "2023-03",
+      "admissoes": 5663,
+      "demissoes": 4816,
+      "saldo": 847,
+      "salario_medio": 1953.7,
+      "saldo_acumulado": 11236
+    },
+    {
+      "periodo": "2023-04",
+      "admissoes": 4703,
+      "demissoes": 4382,
+      "saldo": 321,
+      "salario_medio": 2069.22,
+      "saldo_acumulado": 11557
+    },
+    {
+      "periodo": "2023-05",
+      "admissoes": 5231,
+      "demissoes": 5251,
+      "saldo": -20,
+      "salario_medio": 1873.35,
+      "saldo_acumulado": 11537
+    },
+    {
+      "periodo": "2023-06",
+      "admissoes": 4796,
+      "demissoes": 4891,
+      "saldo": -95,
+      "salario_medio": 1833.03,
+      "saldo_acumulado": 11442
+    },
+    {
+      "periodo": "2023-07",
+      "admissoes": 4717,
+      "demissoes": 4479,
+      "saldo": 238,
+      "salario_medio": 1873.47,
+      "saldo_acumulado": 11680
+    },
+    {
+      "periodo": "2023-08",
+      "admissoes": 5008,
+      "demissoes": 4425,
+      "saldo": 583,
+      "salario_medio": 1943.34,
+      "saldo_acumulado": 12263
+    },
+    {
+      "periodo": "2023-09",
+      "admissoes": 4299,
+      "demissoes": 4176,
+      "saldo": 123,
+      "salario_medio": 1884.38,
+      "saldo_acumulado": 12386
+    },
+    {
+      "periodo": "2023-10",
+      "admissoes": 4799,
+      "demissoes": 4372,
+      "saldo": 427,
+      "salario_medio": 1926.11,
+      "saldo_acumulado": 12813
+    },
+    {
+      "periodo": "2023-11",
+      "admissoes": 4521,
+      "demissoes": 4509,
+      "saldo": 12,
+      "salario_medio": 2060.53,
+      "saldo_acumulado": 12825
+    },
+    {
+      "periodo": "2023-12",
+      "admissoes": 4146,
+      "demissoes": 5322,
+      "saldo": -1176,
+      "salario_medio": 1906.37,
+      "saldo_acumulado": 11649
+    },
+    {
+      "periodo": "2024-01",
+      "admissoes": 6472,
+      "demissoes": 5440,
+      "saldo": 1032,
+      "salario_medio": 1931.21,
+      "saldo_acumulado": 12681
+    },
+    {
+      "periodo": "2024-02",
+      "admissoes": 5721,
+      "demissoes": 5448,
+      "saldo": 273,
+      "salario_medio": 1944.33,
+      "saldo_acumulado": 12954
+    },
+    {
+      "periodo": "2024-03",
+      "admissoes": 5474,
+      "demissoes": 5089,
+      "saldo": 385,
+      "salario_medio": 2027.21,
+      "saldo_acumulado": 13339
+    },
+    {
+      "periodo": "2024-04",
+      "admissoes": 5217,
+      "demissoes": 5080,
+      "saldo": 137,
+      "salario_medio": 1983.33,
+      "saldo_acumulado": 13476
+    },
+    {
+      "periodo": "2024-05",
+      "admissoes": 5056,
+      "demissoes": 5673,
+      "saldo": -617,
+      "salario_medio": 2245.19,
+      "saldo_acumulado": 12859
+    },
+    {
+      "periodo": "2024-06",
+      "admissoes": 4574,
+      "demissoes": 4922,
+      "saldo": -348,
+      "salario_medio": 2051.74,
+      "saldo_acumulado": 12511
+    },
+    {
+      "periodo": "2024-07",
+      "admissoes": 4490,
+      "demissoes": 4786,
+      "saldo": -296,
+      "salario_medio": 1992.88,
+      "saldo_acumulado": 12215
+    },
+    {
+      "periodo": "2024-08",
+      "admissoes": 4604,
+      "demissoes": 4393,
+      "saldo": 211,
+      "salario_medio": 2034.21,
+      "saldo_acumulado": 12426
+    },
+    {
+      "periodo": "2024-09",
+      "admissoes": 4088,
+      "demissoes": 4186,
+      "saldo": -98,
+      "salario_medio": 2039.96,
+      "saldo_acumulado": 12328
+    },
+    {
+      "periodo": "2024-10",
+      "admissoes": 4279,
+      "demissoes": 4616,
+      "saldo": -337,
+      "salario_medio": 2121.07,
+      "saldo_acumulado": 11991
+    },
+    {
+      "periodo": "2024-11",
+      "admissoes": 4466,
+      "demissoes": 4641,
+      "saldo": -175,
+      "salario_medio": 2029.89,
+      "saldo_acumulado": 11816
+    },
+    {
+      "periodo": "2024-12",
+      "admissoes": 4112,
+      "demissoes": 4237,
+      "saldo": -125,
+      "salario_medio": 1980.71,
+      "saldo_acumulado": 11691
+    },
+    {
+      "periodo": "2025-01",
+      "admissoes": 6241,
+      "demissoes": 5212,
+      "saldo": 1029,
+      "salario_medio": 2143.06,
+      "saldo_acumulado": 12720
+    },
+    {
+      "periodo": "2025-02",
+      "admissoes": 5732,
+      "demissoes": 5175,
+      "saldo": 557,
+      "salario_medio": 2130.88,
+      "saldo_acumulado": 13277
+    },
+    {
+      "periodo": "2025-03",
+      "admissoes": 5096,
+      "demissoes": 4933,
+      "saldo": 163,
+      "salario_medio": 2217.6,
+      "saldo_acumulado": 13440
+    },
+    {
+      "periodo": "2025-04",
+      "admissoes": 5181,
+      "demissoes": 4564,
+      "saldo": 617,
+      "salario_medio": 2218.58,
+      "saldo_acumulado": 14057
+    },
+    {
+      "periodo": "2025-05",
+      "admissoes": 4918,
+      "demissoes": 5078,
+      "saldo": -160,
+      "salario_medio": 2219.46,
+      "saldo_acumulado": 13897
+    },
+    {
+      "periodo": "2025-06",
+      "admissoes": 4896,
+      "demissoes": 4950,
+      "saldo": -54,
+      "salario_medio": 2105.05,
+      "saldo_acumulado": 13843
+    },
+    {
+      "periodo": "2025-07",
+      "admissoes": 4536,
+      "demissoes": 5165,
+      "saldo": -629,
+      "salario_medio": 2190.33,
+      "saldo_acumulado": 13214
+    },
+    {
+      "periodo": "2025-08",
+      "admissoes": 4573,
+      "demissoes": 4709,
+      "saldo": -136,
+      "salario_medio": 2237.55,
+      "saldo_acumulado": 13078
+    },
+    {
+      "periodo": "2025-09",
+      "admissoes": 4885,
+      "demissoes": 4415,
+      "saldo": 470,
+      "salario_medio": 2217.84,
+      "saldo_acumulado": 13548
+    },
+    {
+      "periodo": "2025-10",
+      "admissoes": 4798,
+      "demissoes": 4620,
+      "saldo": 178,
+      "salario_medio": 2221.78,
+      "saldo_acumulado": 13726
+    },
+    {
+      "periodo": "2025-11",
+      "admissoes": 4288,
+      "demissoes": 4220,
+      "saldo": 68,
+      "salario_medio": 2180.05,
+      "saldo_acumulado": 13794
+    },
+    {
+      "periodo": "2025-12",
+      "admissoes": 4642,
+      "demissoes": 4934,
+      "saldo": -292,
+      "salario_medio": 2169.35,
+      "saldo_acumulado": 13502
+    }
+  ],
+  "byDivisao": [
+    {
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 248955,
+      "demissoes": 238657,
+      "saldo": 10298,
+      "salario_medio": 1788.21,
+      "percentual_admissoes": 82.9,
+      "estoque_estimado": 135545
+    },
+    {
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 48940,
+      "demissoes": 46015,
+      "saldo": 2925,
+      "salario_medio": 1833.25,
+      "percentual_admissoes": 16.3,
+      "estoque_estimado": 26645
+    },
+    {
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 2407,
+      "demissoes": 2128,
+      "saldo": 279,
+      "salario_medio": 2067.31,
+      "percentual_admissoes": 0.8,
+      "estoque_estimado": 1310
+    }
+  ],
+  "timeseriesDivisao": [
+    {
+      "periodo": "2020-01",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1713,
+      "demissoes": 1405,
+      "saldo": 308
+    },
+    {
+      "periodo": "2020-01",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 442,
+      "demissoes": 365,
+      "saldo": 77
+    },
+    {
+      "periodo": "2020-01",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 12,
+      "demissoes": 5,
+      "saldo": 7
+    },
+    {
+      "periodo": "2020-02",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 2120,
+      "demissoes": 1321,
+      "saldo": 799
+    },
+    {
+      "periodo": "2020-02",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 489,
+      "demissoes": 404,
+      "saldo": 85
+    },
+    {
+      "periodo": "2020-02",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 19,
+      "demissoes": 9,
+      "saldo": 10
+    },
+    {
+      "periodo": "2020-03",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1815,
+      "demissoes": 1232,
+      "saldo": 583
+    },
+    {
+      "periodo": "2020-03",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 640,
+      "demissoes": 362,
+      "saldo": 278
+    },
+    {
+      "periodo": "2020-03",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 10,
+      "demissoes": 16,
+      "saldo": -6
+    },
+    {
+      "periodo": "2020-04",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1868,
+      "demissoes": 1287,
+      "saldo": 581
+    },
+    {
+      "periodo": "2020-04",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 191,
+      "demissoes": 329,
+      "saldo": -138
+    },
+    {
+      "periodo": "2020-04",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 10,
+      "demissoes": 7,
+      "saldo": 3
+    },
+    {
+      "periodo": "2020-05",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 937,
+      "demissoes": 1240,
+      "saldo": -303
+    },
+    {
+      "periodo": "2020-05",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 313,
+      "demissoes": 354,
+      "saldo": -41
+    },
+    {
+      "periodo": "2020-05",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 3,
+      "demissoes": 18,
+      "saldo": -15
+    },
+    {
+      "periodo": "2020-06",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1152,
+      "demissoes": 1172,
+      "saldo": -20
+    },
+    {
+      "periodo": "2020-06",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 384,
+      "demissoes": 305,
+      "saldo": 79
+    },
+    {
+      "periodo": "2020-06",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 1,
+      "demissoes": 8,
+      "saldo": -7
+    },
+    {
+      "periodo": "2020-07",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1980,
+      "demissoes": 1657,
+      "saldo": 323
+    },
+    {
+      "periodo": "2020-07",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 578,
+      "demissoes": 355,
+      "saldo": 223
+    },
+    {
+      "periodo": "2020-07",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 12,
+      "demissoes": 15,
+      "saldo": -3
+    },
+    {
+      "periodo": "2020-08",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1365,
+      "demissoes": 1260,
+      "saldo": 105
+    },
+    {
+      "periodo": "2020-08",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 756,
+      "demissoes": 371,
+      "saldo": 385
+    },
+    {
+      "periodo": "2020-08",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 5,
+      "demissoes": 5,
+      "saldo": 0
+    },
+    {
+      "periodo": "2020-09",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1155,
+      "demissoes": 1307,
+      "saldo": -152
+    },
+    {
+      "periodo": "2020-09",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 737,
+      "demissoes": 504,
+      "saldo": 233
+    },
+    {
+      "periodo": "2020-09",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 13,
+      "demissoes": 6,
+      "saldo": 7
+    },
+    {
+      "periodo": "2020-10",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1153,
+      "demissoes": 1508,
+      "saldo": -355
+    },
+    {
+      "periodo": "2020-10",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 529,
+      "demissoes": 506,
+      "saldo": 23
+    },
+    {
+      "periodo": "2020-10",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 12,
+      "demissoes": 5,
+      "saldo": 7
+    },
+    {
+      "periodo": "2020-11",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1152,
+      "demissoes": 2373,
+      "saldo": -1221
+    },
+    {
+      "periodo": "2020-11",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 420,
+      "demissoes": 448,
+      "saldo": -28
+    },
+    {
+      "periodo": "2020-11",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 10,
+      "demissoes": 5,
+      "saldo": 5
+    },
+    {
+      "periodo": "2020-12",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 2365,
+      "demissoes": 1858,
+      "saldo": 507
+    },
+    {
+      "periodo": "2020-12",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 402,
+      "demissoes": 441,
+      "saldo": -39
+    },
+    {
+      "periodo": "2020-12",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 20,
+      "demissoes": 15,
+      "saldo": 5
+    },
+    {
+      "periodo": "2021-01",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 1537,
+      "demissoes": 1293,
+      "saldo": 244
+    },
+    {
+      "periodo": "2021-01",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 732,
+      "demissoes": 599,
+      "saldo": 133
+    },
+    {
+      "periodo": "2021-01",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 11,
+      "demissoes": 12,
+      "saldo": -1
+    },
+    {
+      "periodo": "2021-02",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 2171,
+      "demissoes": 1345,
+      "saldo": 826
+    },
+    {
+      "periodo": "2021-02",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 819,
+      "demissoes": 518,
+      "saldo": 301
+    },
+    {
+      "periodo": "2021-02",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 13,
+      "demissoes": 12,
+      "saldo": 1
+    },
+    {
+      "periodo": "2021-03",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 2496,
+      "demissoes": 1545,
+      "saldo": 951
+    },
+    {
+      "periodo": "2021-03",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 877,
+      "demissoes": 534,
+      "saldo": 343
+    },
+    {
+      "periodo": "2021-03",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 7,
+      "demissoes": 8,
+      "saldo": -1
+    },
+    {
+      "periodo": "2021-04",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3724,
+      "demissoes": 2765,
+      "saldo": 959
+    },
+    {
+      "periodo": "2021-04",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 744,
+      "demissoes": 558,
+      "saldo": 186
+    },
+    {
+      "periodo": "2021-04",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 19,
+      "demissoes": 19,
+      "saldo": 0
+    },
+    {
+      "periodo": "2021-05",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3152,
+      "demissoes": 2722,
+      "saldo": 430
+    },
+    {
+      "periodo": "2021-05",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 788,
+      "demissoes": 595,
+      "saldo": 193
+    },
+    {
+      "periodo": "2021-05",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 21,
+      "demissoes": 10,
+      "saldo": 11
+    },
+    {
+      "periodo": "2021-06",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3383,
+      "demissoes": 2779,
+      "saldo": 604
+    },
+    {
+      "periodo": "2021-06",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 772,
+      "demissoes": 566,
+      "saldo": 206
+    },
+    {
+      "periodo": "2021-06",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 21,
+      "demissoes": 12,
+      "saldo": 9
+    },
+    {
+      "periodo": "2021-07",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3041,
+      "demissoes": 3008,
+      "saldo": 33
+    },
+    {
+      "periodo": "2021-07",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 675,
+      "demissoes": 610,
+      "saldo": 65
+    },
+    {
+      "periodo": "2021-07",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 29,
+      "demissoes": 19,
+      "saldo": 10
+    },
+    {
+      "periodo": "2021-08",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 2966,
+      "demissoes": 3368,
+      "saldo": -402
+    },
+    {
+      "periodo": "2021-08",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 681,
+      "demissoes": 644,
+      "saldo": 37
+    },
+    {
+      "periodo": "2021-08",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 23,
+      "demissoes": 19,
+      "saldo": 4
+    },
+    {
+      "periodo": "2021-09",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 2820,
+      "demissoes": 3055,
+      "saldo": -235
+    },
+    {
+      "periodo": "2021-09",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 495,
+      "demissoes": 628,
+      "saldo": -133
+    },
+    {
+      "periodo": "2021-09",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 31,
+      "demissoes": 26,
+      "saldo": 5
+    },
+    {
+      "periodo": "2021-10",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3011,
+      "demissoes": 2858,
+      "saldo": 153
+    },
+    {
+      "periodo": "2021-10",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 750,
+      "demissoes": 609,
+      "saldo": 141
+    },
+    {
+      "periodo": "2021-10",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 26,
+      "demissoes": 21,
+      "saldo": 5
+    },
+    {
+      "periodo": "2021-11",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3287,
+      "demissoes": 3600,
+      "saldo": -313
+    },
+    {
+      "periodo": "2021-11",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 601,
+      "demissoes": 639,
+      "saldo": -38
+    },
+    {
+      "periodo": "2021-11",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 21,
+      "demissoes": 21,
+      "saldo": 0
+    },
+    {
+      "periodo": "2021-12",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3400,
+      "demissoes": 3868,
+      "saldo": -468
+    },
+    {
+      "periodo": "2021-12",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 556,
+      "demissoes": 561,
+      "saldo": -5
+    },
+    {
+      "periodo": "2021-12",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 45,
+      "demissoes": 20,
+      "saldo": 25
+    },
+    {
+      "periodo": "2022-01",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3893,
+      "demissoes": 3032,
+      "saldo": 861
+    },
+    {
+      "periodo": "2022-01",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 904,
+      "demissoes": 830,
+      "saldo": 74
+    },
+    {
+      "periodo": "2022-01",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 20,
+      "demissoes": 25,
+      "saldo": -5
+    },
+    {
+      "periodo": "2022-02",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4631,
+      "demissoes": 3627,
+      "saldo": 1004
+    },
+    {
+      "periodo": "2022-02",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 1117,
+      "demissoes": 798,
+      "saldo": 319
+    },
+    {
+      "periodo": "2022-02",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 37,
+      "demissoes": 33,
+      "saldo": 4
+    },
+    {
+      "periodo": "2022-03",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4235,
+      "demissoes": 3901,
+      "saldo": 334
+    },
+    {
+      "periodo": "2022-03",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 920,
+      "demissoes": 801,
+      "saldo": 119
+    },
+    {
+      "periodo": "2022-03",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 25,
+      "demissoes": 29,
+      "saldo": -4
+    },
+    {
+      "periodo": "2022-04",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4253,
+      "demissoes": 3557,
+      "saldo": 696
+    },
+    {
+      "periodo": "2022-04",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 696,
+      "demissoes": 656,
+      "saldo": 40
+    },
+    {
+      "periodo": "2022-04",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 37,
+      "demissoes": 23,
+      "saldo": 14
+    },
+    {
+      "periodo": "2022-05",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3245,
+      "demissoes": 3527,
+      "saldo": -282
+    },
+    {
+      "periodo": "2022-05",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 851,
+      "demissoes": 752,
+      "saldo": 99
+    },
+    {
+      "periodo": "2022-05",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 29,
+      "demissoes": 44,
+      "saldo": -15
+    },
+    {
+      "periodo": "2022-06",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4280,
+      "demissoes": 4249,
+      "saldo": 31
+    },
+    {
+      "periodo": "2022-06",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 665,
+      "demissoes": 970,
+      "saldo": -305
+    },
+    {
+      "periodo": "2022-06",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 19,
+      "demissoes": 47,
+      "saldo": -28
+    },
+    {
+      "periodo": "2022-07",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3900,
+      "demissoes": 3679,
+      "saldo": 221
+    },
+    {
+      "periodo": "2022-07",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 679,
+      "demissoes": 1014,
+      "saldo": -335
+    },
+    {
+      "periodo": "2022-07",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 32,
+      "demissoes": 18,
+      "saldo": 14
+    },
+    {
+      "periodo": "2022-08",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3268,
+      "demissoes": 3196,
+      "saldo": 72
+    },
+    {
+      "periodo": "2022-08",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 623,
+      "demissoes": 863,
+      "saldo": -240
+    },
+    {
+      "periodo": "2022-08",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 31,
+      "demissoes": 27,
+      "saldo": 4
+    },
+    {
+      "periodo": "2022-09",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3606,
+      "demissoes": 3393,
+      "saldo": 213
+    },
+    {
+      "periodo": "2022-09",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 597,
+      "demissoes": 669,
+      "saldo": -72
+    },
+    {
+      "periodo": "2022-09",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 38,
+      "demissoes": 28,
+      "saldo": 10
+    },
+    {
+      "periodo": "2022-10",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3361,
+      "demissoes": 3089,
+      "saldo": 272
+    },
+    {
+      "periodo": "2022-10",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 779,
+      "demissoes": 673,
+      "saldo": 106
+    },
+    {
+      "periodo": "2022-10",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 38,
+      "demissoes": 28,
+      "saldo": 10
+    },
+    {
+      "periodo": "2022-11",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3475,
+      "demissoes": 3419,
+      "saldo": 56
+    },
+    {
+      "periodo": "2022-11",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 665,
+      "demissoes": 581,
+      "saldo": 84
+    },
+    {
+      "periodo": "2022-11",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 42,
+      "demissoes": 24,
+      "saldo": 18
+    },
+    {
+      "periodo": "2022-12",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3115,
+      "demissoes": 4476,
+      "saldo": -1361
+    },
+    {
+      "periodo": "2022-12",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 456,
+      "demissoes": 589,
+      "saldo": -133
+    },
+    {
+      "periodo": "2022-12",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 25,
+      "demissoes": 28,
+      "saldo": -3
+    },
+    {
+      "periodo": "2023-01",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4736,
+      "demissoes": 4153,
+      "saldo": 583
+    },
+    {
+      "periodo": "2023-01",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 726,
+      "demissoes": 705,
+      "saldo": 21
+    },
+    {
+      "periodo": "2023-01",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 27,
+      "demissoes": 35,
+      "saldo": -8
+    },
+    {
+      "periodo": "2023-02",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4561,
+      "demissoes": 3431,
+      "saldo": 1130
+    },
+    {
+      "periodo": "2023-02",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 878,
+      "demissoes": 706,
+      "saldo": 172
+    },
+    {
+      "periodo": "2023-02",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 37,
+      "demissoes": 22,
+      "saldo": 15
+    },
+    {
+      "periodo": "2023-03",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4933,
+      "demissoes": 4046,
+      "saldo": 887
+    },
+    {
+      "periodo": "2023-03",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 707,
+      "demissoes": 735,
+      "saldo": -28
+    },
+    {
+      "periodo": "2023-03",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 23,
+      "demissoes": 35,
+      "saldo": -12
+    },
+    {
+      "periodo": "2023-04",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3931,
+      "demissoes": 3761,
+      "saldo": 170
+    },
+    {
+      "periodo": "2023-04",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 722,
+      "demissoes": 596,
+      "saldo": 126
+    },
+    {
+      "periodo": "2023-04",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 50,
+      "demissoes": 25,
+      "saldo": 25
+    },
+    {
+      "periodo": "2023-05",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4341,
+      "demissoes": 4507,
+      "saldo": -166
+    },
+    {
+      "periodo": "2023-05",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 868,
+      "demissoes": 723,
+      "saldo": 145
+    },
+    {
+      "periodo": "2023-05",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 22,
+      "demissoes": 21,
+      "saldo": 1
+    },
+    {
+      "periodo": "2023-06",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4103,
+      "demissoes": 4171,
+      "saldo": -68
+    },
+    {
+      "periodo": "2023-06",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 666,
+      "demissoes": 696,
+      "saldo": -30
+    },
+    {
+      "periodo": "2023-06",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 27,
+      "demissoes": 24,
+      "saldo": 3
+    },
+    {
+      "periodo": "2023-07",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4067,
+      "demissoes": 3837,
+      "saldo": 230
+    },
+    {
+      "periodo": "2023-07",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 618,
+      "demissoes": 620,
+      "saldo": -2
+    },
+    {
+      "periodo": "2023-07",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 32,
+      "demissoes": 22,
+      "saldo": 10
+    },
+    {
+      "periodo": "2023-08",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4155,
+      "demissoes": 3760,
+      "saldo": 395
+    },
+    {
+      "periodo": "2023-08",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 796,
+      "demissoes": 637,
+      "saldo": 159
+    },
+    {
+      "periodo": "2023-08",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 57,
+      "demissoes": 28,
+      "saldo": 29
+    },
+    {
+      "periodo": "2023-09",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3645,
+      "demissoes": 3513,
+      "saldo": 132
+    },
+    {
+      "periodo": "2023-09",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 624,
+      "demissoes": 631,
+      "saldo": -7
+    },
+    {
+      "periodo": "2023-09",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 30,
+      "demissoes": 32,
+      "saldo": -2
+    },
+    {
+      "periodo": "2023-10",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3902,
+      "demissoes": 3608,
+      "saldo": 294
+    },
+    {
+      "periodo": "2023-10",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 845,
+      "demissoes": 723,
+      "saldo": 122
+    },
+    {
+      "periodo": "2023-10",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 52,
+      "demissoes": 41,
+      "saldo": 11
+    },
+    {
+      "periodo": "2023-11",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3681,
+      "demissoes": 3864,
+      "saldo": -183
+    },
+    {
+      "periodo": "2023-11",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 802,
+      "demissoes": 615,
+      "saldo": 187
+    },
+    {
+      "periodo": "2023-11",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 38,
+      "demissoes": 30,
+      "saldo": 8
+    },
+    {
+      "periodo": "2023-12",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3460,
+      "demissoes": 4634,
+      "saldo": -1174
+    },
+    {
+      "periodo": "2023-12",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 653,
+      "demissoes": 646,
+      "saldo": 7
+    },
+    {
+      "periodo": "2023-12",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 33,
+      "demissoes": 42,
+      "saldo": -9
+    },
+    {
+      "periodo": "2024-01",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 5443,
+      "demissoes": 4547,
+      "saldo": 896
+    },
+    {
+      "periodo": "2024-01",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 996,
+      "demissoes": 855,
+      "saldo": 141
+    },
+    {
+      "periodo": "2024-01",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 33,
+      "demissoes": 38,
+      "saldo": -5
+    },
+    {
+      "periodo": "2024-02",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4722,
+      "demissoes": 4599,
+      "saldo": 123
+    },
+    {
+      "periodo": "2024-02",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 958,
+      "demissoes": 805,
+      "saldo": 153
+    },
+    {
+      "periodo": "2024-02",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 41,
+      "demissoes": 44,
+      "saldo": -3
+    },
+    {
+      "periodo": "2024-03",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4628,
+      "demissoes": 4302,
+      "saldo": 326
+    },
+    {
+      "periodo": "2024-03",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 804,
+      "demissoes": 759,
+      "saldo": 45
+    },
+    {
+      "periodo": "2024-03",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 42,
+      "demissoes": 28,
+      "saldo": 14
+    },
+    {
+      "periodo": "2024-04",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4277,
+      "demissoes": 4284,
+      "saldo": -7
+    },
+    {
+      "periodo": "2024-04",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 910,
+      "demissoes": 766,
+      "saldo": 144
+    },
+    {
+      "periodo": "2024-04",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 30,
+      "demissoes": 30,
+      "saldo": 0
+    },
+    {
+      "periodo": "2024-05",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4153,
+      "demissoes": 4829,
+      "saldo": -676
+    },
+    {
+      "periodo": "2024-05",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 879,
+      "demissoes": 816,
+      "saldo": 63
+    },
+    {
+      "periodo": "2024-05",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 24,
+      "demissoes": 28,
+      "saldo": -4
+    },
+    {
+      "periodo": "2024-06",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3818,
+      "demissoes": 4233,
+      "saldo": -415
+    },
+    {
+      "periodo": "2024-06",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 732,
+      "demissoes": 658,
+      "saldo": 74
+    },
+    {
+      "periodo": "2024-06",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 24,
+      "demissoes": 31,
+      "saldo": -7
+    },
+    {
+      "periodo": "2024-07",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3699,
+      "demissoes": 4026,
+      "saldo": -327
+    },
+    {
+      "periodo": "2024-07",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 757,
+      "demissoes": 732,
+      "saldo": 25
+    },
+    {
+      "periodo": "2024-07",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 34,
+      "demissoes": 28,
+      "saldo": 6
+    },
+    {
+      "periodo": "2024-08",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3799,
+      "demissoes": 3671,
+      "saldo": 128
+    },
+    {
+      "periodo": "2024-08",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 778,
+      "demissoes": 689,
+      "saldo": 89
+    },
+    {
+      "periodo": "2024-08",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 27,
+      "demissoes": 33,
+      "saldo": -6
+    },
+    {
+      "periodo": "2024-09",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3394,
+      "demissoes": 3544,
+      "saldo": -150
+    },
+    {
+      "periodo": "2024-09",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 659,
+      "demissoes": 608,
+      "saldo": 51
+    },
+    {
+      "periodo": "2024-09",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 35,
+      "demissoes": 34,
+      "saldo": 1
+    },
+    {
+      "periodo": "2024-10",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3506,
+      "demissoes": 3834,
+      "saldo": -328
+    },
+    {
+      "periodo": "2024-10",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 728,
+      "demissoes": 752,
+      "saldo": -24
+    },
+    {
+      "periodo": "2024-10",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 45,
+      "demissoes": 30,
+      "saldo": 15
+    },
+    {
+      "periodo": "2024-11",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3789,
+      "demissoes": 3939,
+      "saldo": -150
+    },
+    {
+      "periodo": "2024-11",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 643,
+      "demissoes": 673,
+      "saldo": -30
+    },
+    {
+      "periodo": "2024-11",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 34,
+      "demissoes": 29,
+      "saldo": 5
+    },
+    {
+      "periodo": "2024-12",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3698,
+      "demissoes": 3526,
+      "saldo": 172
+    },
+    {
+      "periodo": "2024-12",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 385,
+      "demissoes": 684,
+      "saldo": -299
+    },
+    {
+      "periodo": "2024-12",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 29,
+      "demissoes": 27,
+      "saldo": 2
+    },
+    {
+      "periodo": "2025-01",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 5367,
+      "demissoes": 4395,
+      "saldo": 972
+    },
+    {
+      "periodo": "2025-01",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 823,
+      "demissoes": 773,
+      "saldo": 50
+    },
+    {
+      "periodo": "2025-01",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 51,
+      "demissoes": 44,
+      "saldo": 7
+    },
+    {
+      "periodo": "2025-02",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4757,
+      "demissoes": 4326,
+      "saldo": 431
+    },
+    {
+      "periodo": "2025-02",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 941,
+      "demissoes": 706,
+      "saldo": 235
+    },
+    {
+      "periodo": "2025-02",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 34,
+      "demissoes": 143,
+      "saldo": -109
+    },
+    {
+      "periodo": "2025-03",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4256,
+      "demissoes": 4187,
+      "saldo": 69
+    },
+    {
+      "periodo": "2025-03",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 791,
+      "demissoes": 703,
+      "saldo": 88
+    },
+    {
+      "periodo": "2025-03",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 49,
+      "demissoes": 43,
+      "saldo": 6
+    },
+    {
+      "periodo": "2025-04",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4388,
+      "demissoes": 3783,
+      "saldo": 605
+    },
+    {
+      "periodo": "2025-04",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 632,
+      "demissoes": 737,
+      "saldo": -105
+    },
+    {
+      "periodo": "2025-04",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 161,
+      "demissoes": 44,
+      "saldo": 117
+    },
+    {
+      "periodo": "2025-05",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4139,
+      "demissoes": 4195,
+      "saldo": -56
+    },
+    {
+      "periodo": "2025-05",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 702,
+      "demissoes": 820,
+      "saldo": -118
+    },
+    {
+      "periodo": "2025-05",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 77,
+      "demissoes": 63,
+      "saldo": 14
+    },
+    {
+      "periodo": "2025-06",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4253,
+      "demissoes": 4242,
+      "saldo": 11
+    },
+    {
+      "periodo": "2025-06",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 583,
+      "demissoes": 664,
+      "saldo": -81
+    },
+    {
+      "periodo": "2025-06",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 60,
+      "demissoes": 44,
+      "saldo": 16
+    },
+    {
+      "periodo": "2025-07",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3934,
+      "demissoes": 4424,
+      "saldo": -490
+    },
+    {
+      "periodo": "2025-07",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 529,
+      "demissoes": 689,
+      "saldo": -160
+    },
+    {
+      "periodo": "2025-07",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 73,
+      "demissoes": 52,
+      "saldo": 21
+    },
+    {
+      "periodo": "2025-08",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3971,
+      "demissoes": 3832,
+      "saldo": 139
+    },
+    {
+      "periodo": "2025-08",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 542,
+      "demissoes": 814,
+      "saldo": -272
+    },
+    {
+      "periodo": "2025-08",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 60,
+      "demissoes": 63,
+      "saldo": -3
+    },
+    {
+      "periodo": "2025-09",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4255,
+      "demissoes": 3760,
+      "saldo": 495
+    },
+    {
+      "periodo": "2025-09",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 570,
+      "demissoes": 613,
+      "saldo": -43
+    },
+    {
+      "periodo": "2025-09",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 60,
+      "demissoes": 42,
+      "saldo": 18
+    },
+    {
+      "periodo": "2025-10",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4155,
+      "demissoes": 3919,
+      "saldo": 236
+    },
+    {
+      "periodo": "2025-10",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 557,
+      "demissoes": 639,
+      "saldo": -82
+    },
+    {
+      "periodo": "2025-10",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 86,
+      "demissoes": 62,
+      "saldo": 24
+    },
+    {
+      "periodo": "2025-11",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 3754,
+      "demissoes": 3638,
+      "saldo": 116
+    },
+    {
+      "periodo": "2025-11",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 476,
+      "demissoes": 522,
+      "saldo": -46
+    },
+    {
+      "periodo": "2025-11",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 58,
+      "demissoes": 60,
+      "saldo": -2
+    },
+    {
+      "periodo": "2025-12",
+      "divisao_cnae": "01",
+      "divisao_nome": "Agricultura e Pecuária",
+      "admissoes": 4260,
+      "demissoes": 4366,
+      "saldo": -106
+    },
+    {
+      "periodo": "2025-12",
+      "divisao_cnae": "02",
+      "divisao_nome": "Silvicultura",
+      "admissoes": 337,
+      "demissoes": 504,
+      "saldo": -167
+    },
+    {
+      "periodo": "2025-12",
+      "divisao_cnae": "03",
+      "divisao_nome": "Pesca e Aquicultura",
+      "admissoes": 45,
+      "demissoes": 64,
+      "saldo": -19
+    }
+  ],
+  "seasonality": [
+    {
+      "mes": 1,
+      "admissoes": 1525.888888888889,
+      "demissoes": 1283.9444444444443,
+      "saldo": 241.94444444444446,
+      "mes_nome": "Jan",
+      "indice_sazonal": 109.8
+    },
+    {
+      "mes": 2,
+      "admissoes": 1574.7222222222222,
+      "demissoes": 1269.388888888889,
+      "saldo": 305.3333333333333,
+      "mes_nome": "Fev",
+      "indice_sazonal": 113.3
+    },
+    {
+      "mes": 3,
+      "admissoes": 1514.3333333333333,
+      "demissoes": 1292.5555555555557,
+      "saldo": 221.77777777777777,
+      "mes_nome": "Mar",
+      "indice_sazonal": 108.9
+    },
+    {
+      "mes": 4,
+      "admissoes": 1480.1666666666667,
+      "demissoes": 1290.388888888889,
+      "saldo": 189.77777777777777,
+      "mes_nome": "Abr",
+      "indice_sazonal": 106.5
+    },
+    {
+      "mes": 5,
+      "admissoes": 1363.5555555555557,
+      "demissoes": 1403.5555555555557,
+      "saldo": -40.0,
+      "mes_nome": "Mai",
+      "indice_sazonal": 98.1
+    },
+    {
+      "mes": 6,
+      "admissoes": 1385.7222222222222,
+      "demissoes": 1381.7222222222222,
+      "saldo": 4.0,
+      "mes_nome": "Jun",
+      "indice_sazonal": 99.7
+    },
+    {
+      "mes": 7,
+      "admissoes": 1370.5,
+      "demissoes": 1378.0555555555557,
+      "saldo": -7.555555555555555,
+      "mes_nome": "Jul",
+      "indice_sazonal": 98.6
+    },
+    {
+      "mes": 8,
+      "admissoes": 1327.9444444444443,
+      "demissoes": 1293.3333333333333,
+      "saldo": 34.611111111111114,
+      "mes_nome": "Ago",
+      "indice_sazonal": 95.5
+    },
+    {
+      "mes": 9,
+      "admissoes": 1264.6666666666667,
+      "demissoes": 1244.0555555555557,
+      "saldo": 20.61111111111111,
+      "mes_nome": "Set",
+      "indice_sazonal": 91.0
+    },
+    {
+      "mes": 10,
+      "admissoes": 1307.5,
+      "demissoes": 1272.5,
+      "saldo": 35.0,
+      "mes_nome": "Out",
+      "indice_sazonal": 94.0
+    },
+    {
+      "mes": 11,
+      "admissoes": 1274.888888888889,
+      "demissoes": 1360.0,
+      "saldo": -85.11111111111111,
+      "mes_nome": "Nov",
+      "indice_sazonal": 91.7
+    },
+    {
+      "mes": 12,
+      "admissoes": 1293.5555555555557,
+      "demissoes": 1463.8333333333333,
+      "saldo": -170.27777777777777,
+      "mes_nome": "Dez",
+      "indice_sazonal": 93.0
+    }
+  ],
+  "yearly": [
+    {
+      "ano": 2020,
+      "admissoes": 24783,
+      "demissoes": 22478,
+      "saldo": 2305,
+      "salario_medio": 1564.19,
+      "variacao_saldo_yoy": 0.0
+    },
+    {
+      "ano": 2021,
+      "admissoes": 43745,
+      "demissoes": 39466,
+      "saldo": 4279,
+      "salario_medio": 1699.9,
+      "variacao_saldo_yoy": 85.6
+    },
+    {
+      "ano": 2022,
+      "admissoes": 54587,
+      "demissoes": 52695,
+      "saldo": 1892,
+      "salario_medio": 1975.27,
+      "variacao_saldo_yoy": -55.8
+    },
+    {
+      "ano": 2023,
+      "admissoes": 58848,
+      "demissoes": 55675,
+      "saldo": 3173,
+      "salario_medio": 1918.74,
+      "variacao_saldo_yoy": 67.7
+    },
+    {
+      "ano": 2024,
+      "admissoes": 58553,
+      "demissoes": 58511,
+      "saldo": 42,
+      "salario_medio": 2031.81,
+      "variacao_saldo_yoy": -98.7
+    },
+    {
+      "ano": 2025,
+      "admissoes": 59786,
+      "demissoes": 57975,
+      "saldo": 1811,
+      "salario_medio": 2187.63,
+      "variacao_saldo_yoy": 4211.9
+    }
+  ]
+}

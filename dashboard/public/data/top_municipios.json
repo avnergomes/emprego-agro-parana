@@ -1,0 +1,182 @@
+[
+  {
+    "codigo": "411760",
+    "admissoes": 14167,
+    "demissoes": 13728,
+    "salario_medio": 1890.7249890933858,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 439,
+    "nome": "Palmas"
+  },
+  {
+    "codigo": "410480",
+    "admissoes": 9010,
+    "demissoes": 8577,
+    "salario_medio": 1857.1596604754322,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 433,
+    "nome": "Cascavel"
+  },
+  {
+    "codigo": "410940",
+    "admissoes": 8506,
+    "demissoes": 8063,
+    "salario_medio": 1913.5936703657653,
+    "cadeia_dominante": "Grãos",
+    "saldo": 443,
+    "nome": "Guarapuava"
+  },
+  {
+    "codigo": "410490",
+    "admissoes": 7765,
+    "demissoes": 7188,
+    "salario_medio": 1929.8025969107812,
+    "cadeia_dominante": "Grãos",
+    "saldo": 577,
+    "nome": "Castro"
+  },
+  {
+    "codigo": "411840",
+    "admissoes": 6232,
+    "demissoes": 5821,
+    "salario_medio": 1619.8313174977186,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 411,
+    "nome": "Paranavaí"
+  },
+  {
+    "codigo": "411730",
+    "admissoes": 5981,
+    "demissoes": 5517,
+    "salario_medio": 1829.1653324867355,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 464,
+    "nome": "Ortigueira"
+  },
+  {
+    "codigo": "410465",
+    "admissoes": 5896,
+    "demissoes": 5493,
+    "salario_medio": 1844.8688598937197,
+    "cadeia_dominante": "Bovinocultura de Leite",
+    "saldo": 403,
+    "nome": "Carambeí"
+  },
+  {
+    "codigo": "410980",
+    "admissoes": 5728,
+    "demissoes": 5612,
+    "salario_medio": 1610.0423712186948,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 116,
+    "nome": "Ibiporã"
+  },
+  {
+    "codigo": "411850",
+    "admissoes": 5264,
+    "demissoes": 5186,
+    "salario_medio": 1660.7828498564593,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 78,
+    "nome": "Pato Branco"
+  },
+  {
+    "codigo": "411990",
+    "admissoes": 5177,
+    "demissoes": 4917,
+    "salario_medio": 1760.1263712026948,
+    "cadeia_dominante": "Grãos",
+    "saldo": 260,
+    "nome": "Ponta Grossa"
+  },
+  {
+    "codigo": "412710",
+    "admissoes": 5083,
+    "demissoes": 4377,
+    "salario_medio": 1891.9754386892175,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 706,
+    "nome": "Telêmaco Borba"
+  },
+  {
+    "codigo": "412770",
+    "admissoes": 5062,
+    "demissoes": 4916,
+    "salario_medio": 2008.2975655832834,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 146,
+    "nome": "Toledo"
+  },
+  {
+    "codigo": "410970",
+    "admissoes": 4843,
+    "demissoes": 4567,
+    "salario_medio": 1734.2005845467106,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 276,
+    "nome": "Ibaiti"
+  },
+  {
+    "codigo": "412570",
+    "admissoes": 4462,
+    "demissoes": 4130,
+    "salario_medio": 1801.614327269553,
+    "cadeia_dominante": "Suinocultura",
+    "saldo": 332,
+    "nome": "São Miguel do Iguaçu"
+  },
+  {
+    "codigo": "410720",
+    "admissoes": 3482,
+    "demissoes": 3242,
+    "salario_medio": 1831.6083863652589,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 240,
+    "nome": "Dois Vizinhos"
+  },
+  {
+    "codigo": "411320",
+    "admissoes": 3482,
+    "demissoes": 3368,
+    "salario_medio": 1864.7887591357664,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 114,
+    "nome": "Lapa"
+  },
+  {
+    "codigo": "412350",
+    "admissoes": 3441,
+    "demissoes": 3012,
+    "salario_medio": 1755.0317852998605,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 429,
+    "nome": "Santa Helena"
+  },
+  {
+    "codigo": "411930",
+    "admissoes": 3362,
+    "demissoes": 3051,
+    "salario_medio": 1891.554614079214,
+    "cadeia_dominante": "Grãos",
+    "saldo": 311,
+    "nome": "Pinhão"
+  },
+  {
+    "codigo": "411800",
+    "admissoes": 2781,
+    "demissoes": 2648,
+    "salario_medio": 956.4447374293055,
+    "cadeia_dominante": "Cana-de-açúcar",
+    "saldo": 133,
+    "nome": "Paraíso do Norte"
+  },
+  {
+    "codigo": "412853",
+    "admissoes": 2746,
+    "demissoes": 2362,
+    "salario_medio": 1929.8195009436179,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": 384,
+    "nome": "Ventania"
+  }
+]
