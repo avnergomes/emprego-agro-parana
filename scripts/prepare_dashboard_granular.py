@@ -414,6 +414,96 @@ def generate_top_municipios(df, mun_names, n=20):
     return agg.nlargest(n, 'admissoes').to_dict(orient='records')
 
 
+def generate_granular_cube(df):
+    """
+    Gera cubo granular para filtros regionais interativos.
+    Cada registro representa um (município × período × cadeia).
+    Permite filtrar por região e reagregar qualquer dimensão no frontend.
+    """
+    print("  Gerando cubo granular...")
+
+    # Agregar por município × período × cadeia
+    cube = df.groupby(['municipio_codigo', 'periodo', 'cadeia_produtiva']).agg({
+        'is_admissao': 'sum',
+        'is_demissao': 'sum',
+        'salario': 'mean',
+    }).reset_index()
+
+    cube.columns = ['mun', 'periodo', 'cadeia', 'admissoes', 'demissoes', 'salario_medio']
+    cube['saldo'] = cube['admissoes'] - cube['demissoes']
+
+    # Converter para int onde possível (reduz tamanho do JSON)
+    cube['admissoes'] = cube['admissoes'].astype(int)
+    cube['demissoes'] = cube['demissoes'].astype(int)
+    cube['saldo'] = cube['saldo'].astype(int)
+    cube['salario_medio'] = cube['salario_medio'].round(2)
+
+    print(f"    Registros no cubo: {len(cube):,}")
+    print(f"    Municípios: {cube['mun'].nunique()}")
+    print(f"    Períodos: {cube['periodo'].nunique()}")
+    print(f"    Cadeias: {cube['cadeia'].nunique()}")
+
+    return cube.to_dict(orient='records')
+
+
+def generate_granular_dimensions(df):
+    """
+    Gera dados granulares por dimensão demográfica (município × período × dimensão).
+    Usado para filtros interativos por sexo, faixa etária e escolaridade.
+    """
+    print("  Gerando dimensões granulares...")
+
+    dimensions = {}
+
+    # Por Sexo
+    sexo_cube = df.groupby(['municipio_codigo', 'periodo', 'sexo_nome']).agg({
+        'is_admissao': 'sum',
+        'is_demissao': 'sum',
+    }).reset_index()
+    sexo_cube.columns = ['mun', 'periodo', 'sexo', 'admissoes', 'demissoes']
+    sexo_cube['admissoes'] = sexo_cube['admissoes'].astype(int)
+    sexo_cube['demissoes'] = sexo_cube['demissoes'].astype(int)
+    dimensions['bySexo'] = sexo_cube.to_dict(orient='records')
+    print(f"    Sexo: {len(sexo_cube):,} registros")
+
+    # Por Faixa Etária
+    faixa_cube = df.groupby(['municipio_codigo', 'periodo', 'faixa_etaria']).agg({
+        'is_admissao': 'sum',
+        'is_demissao': 'sum',
+    }).reset_index()
+    faixa_cube.columns = ['mun', 'periodo', 'faixa', 'admissoes', 'demissoes']
+    faixa_cube['admissoes'] = faixa_cube['admissoes'].astype(int)
+    faixa_cube['demissoes'] = faixa_cube['demissoes'].astype(int)
+    dimensions['byFaixa'] = faixa_cube.to_dict(orient='records')
+    print(f"    Faixa Etária: {len(faixa_cube):,} registros")
+
+    # Por Escolaridade
+    esc_cube = df.groupby(['municipio_codigo', 'periodo', 'escolaridade_nome']).agg({
+        'is_admissao': 'sum',
+        'is_demissao': 'sum',
+        'salario': 'mean',
+    }).reset_index()
+    esc_cube.columns = ['mun', 'periodo', 'escolaridade', 'admissoes', 'demissoes', 'salario_medio']
+    esc_cube['admissoes'] = esc_cube['admissoes'].astype(int)
+    esc_cube['demissoes'] = esc_cube['demissoes'].astype(int)
+    esc_cube['salario_medio'] = esc_cube['salario_medio'].round(2)
+    dimensions['byEscolaridade'] = esc_cube.to_dict(orient='records')
+    print(f"    Escolaridade: {len(esc_cube):,} registros")
+
+    # Por Porte Empresa
+    porte_cube = df.groupby(['municipio_codigo', 'periodo', 'porte_empresa_nome']).agg({
+        'is_admissao': 'sum',
+        'is_demissao': 'sum',
+    }).reset_index()
+    porte_cube.columns = ['mun', 'periodo', 'porte', 'admissoes', 'demissoes']
+    porte_cube['admissoes'] = porte_cube['admissoes'].astype(int)
+    porte_cube['demissoes'] = porte_cube['demissoes'].astype(int)
+    dimensions['byPorte'] = porte_cube.to_dict(orient='records')
+    print(f"    Porte: {len(porte_cube):,} registros")
+
+    return dimensions
+
+
 def main():
     """Processa e gera todos os JSONs."""
 
@@ -458,6 +548,11 @@ def main():
         'top_municipios.json': generate_top_municipios(df, mun_names),
     }
 
+    # Gerar cubo granular para filtros regionais
+    print("\nGerando dados granulares para filtros regionais...")
+    granular_cube = generate_granular_cube(df)
+    granular_dimensions = generate_granular_dimensions(df)
+
     # Salvar arquivos
     for filename, data in outputs.items():
         filepath = os.path.join(DASHBOARD_DIR, filename)
@@ -492,11 +587,26 @@ def main():
         json.dump(safe_json(aggregated), f, ensure_ascii=False)
     print(f"  aggregated_full.json")
 
+    # Salvar cubo granular (para filtros regionais)
+    cube_path = os.path.join(DASHBOARD_DIR, 'granular_cube.json')
+    with open(cube_path, 'w', encoding='utf-8') as f:
+        json.dump(safe_json(granular_cube), f, ensure_ascii=False)
+    cube_size_mb = os.path.getsize(cube_path) / (1024 * 1024)
+    print(f"  granular_cube.json ({cube_size_mb:.2f} MB)")
+
+    # Salvar dimensões granulares
+    dims_path = os.path.join(DASHBOARD_DIR, 'granular_dimensions.json')
+    with open(dims_path, 'w', encoding='utf-8') as f:
+        json.dump(safe_json(granular_dimensions), f, ensure_ascii=False)
+    dims_size_mb = os.path.getsize(dims_path) / (1024 * 1024)
+    print(f"  granular_dimensions.json ({dims_size_mb:.2f} MB)")
+
     print("\n" + "=" * 70)
     print("RESUMO")
     print("=" * 70)
-    print(f"\nArquivos gerados: {len(outputs) + 1}")
+    print(f"\nArquivos gerados: {len(outputs) + 3}")  # +3: aggregated_full, granular_cube, granular_dimensions
     print(f"Diretório: {DASHBOARD_DIR}")
+    print(f"Cubo granular: {len(granular_cube):,} registros ({cube_size_mb:.2f} MB)")
 
     kpis = outputs['kpis.json']
     print(f"\nKPIs:")

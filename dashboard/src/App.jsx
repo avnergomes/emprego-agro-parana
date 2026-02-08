@@ -22,28 +22,41 @@ const formatPercent = (n) => `${n?.toFixed(1)}%` || '0%'
 function App() {
   const [data, setData] = useState(null)
   const [geoData, setGeoData] = useState(null)
+  const [granularData, setGranularData] = useState(null)
+  const [granularDimensions, setGranularDimensions] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
   const [selectedCadeia, setSelectedCadeia] = useState(null)
 
-  // Filtros globais
+  // Filtros globais (regionais)
   const [mesoFilter, setMesoFilter] = useState('')
   const [regIdrFilter, setRegIdrFilter] = useState('')
   const [munFilter, setMunFilter] = useState('')
 
+  // Filtros interativos (por clique nos gráficos)
+  const [cadeiaFilter, setCadeiaFilter] = useState('')
+  const [sexoFilter, setSexoFilter] = useState('')
+  const [faixaFilter, setFaixaFilter] = useState('')
+  const [escolaridadeFilter, setEscolaridadeFilter] = useState('')
+  const [periodoFilter, setPeriodoFilter] = useState('')
+
   useEffect(() => {
-    // Carregar dados agregados e GeoJSON em paralelo
+    // Carregar dados agregados, GeoJSON e dados granulares em paralelo
     Promise.all([
       fetch('./data/aggregated_full.json').then(res => {
         if (!res.ok) throw new Error('Dados não encontrados')
         return res.json()
       }),
-      fetch(GEO_URL).then(res => res.json()).catch(() => null)
+      fetch(GEO_URL).then(res => res.json()).catch(() => null),
+      fetch('./data/granular_cube.json').then(res => res.json()).catch(() => null),
+      fetch('./data/granular_dimensions.json').then(res => res.json()).catch(() => null)
     ])
-      .then(([aggData, geo]) => {
+      .then(([aggData, geo, cube, dims]) => {
         setData(aggData)
         setGeoData(geo)
+        setGranularData(cube)
+        setGranularDimensions(dims)
       })
       .catch(err => setError(err.message))
       .finally(() => setLoading(false))
@@ -144,8 +157,267 @@ function App() {
     }
   }, [data, filteredByMunicipio, mesoFilter, regIdrFilter])
 
-  const hasFilter = mesoFilter || regIdrFilter || munFilter
+  // Verificar se há filtros ativos
+  const hasRegionalFilter = mesoFilter || regIdrFilter || munFilter
+  const hasInteractiveFilter = cadeiaFilter || sexoFilter || faixaFilter || escolaridadeFilter || periodoFilter
+  const hasFilter = hasRegionalFilter || hasInteractiveFilter
   const selectedMunName = munFilter ? municipiosList.find(m => m.codigo === munFilter)?.nome : null
+
+  // Limpar filtros interativos
+  const clearInteractiveFilters = () => {
+    setCadeiaFilter('')
+    setSexoFilter('')
+    setFaixaFilter('')
+    setEscolaridadeFilter('')
+    setPeriodoFilter('')
+  }
+
+  // Dados filtrados do cubo granular
+  const filteredCube = useMemo(() => {
+    if (!granularData) return []
+    let filtered = granularData
+
+    // Aplicar filtros regionais
+    if (hasRegionalFilter) {
+      filtered = filtered.filter(r => {
+        if (munFilter) return r.mun === munFilter
+        const region = munRegionMap[r.mun]
+        if (!region) return true
+        const matchesMeso = !mesoFilter || region.meso === mesoFilter
+        const matchesRegIdr = !regIdrFilter || region.regIdr === regIdrFilter
+        return matchesMeso && matchesRegIdr
+      })
+    }
+
+    // Aplicar filtros interativos
+    if (cadeiaFilter) filtered = filtered.filter(r => r.cadeia === cadeiaFilter)
+    if (periodoFilter) filtered = filtered.filter(r => r.periodo === periodoFilter)
+
+    return filtered
+  }, [granularData, mesoFilter, regIdrFilter, munFilter, cadeiaFilter, periodoFilter, munRegionMap, hasRegionalFilter])
+
+  // Agregações calculadas a partir do cubo filtrado
+  const filteredAggregations = useMemo(() => {
+    if (!data) return null
+
+    // Se não há filtros, usar dados pré-agregados
+    if (!hasFilter || !granularData) {
+      return {
+        timeseries: data.timeseries,
+        byCadeia: data.byCadeia,
+        bySexo: data.bySexo,
+        byFaixaEtaria: data.byFaixaEtaria,
+        byEscolaridade: data.byEscolaridade,
+        byPorte: data.byPorte,
+        seasonality: data.seasonality,
+        yearly: data.yearly,
+        timeseriesCadeia: data.timeseriesCadeia,
+        crossCadeiaSexo: data.crossCadeiaSexo,
+        salaryDistribution: data.salaryDistribution,
+        byCnae: data.byCnae,
+      }
+    }
+
+    // Agregar timeseries do cubo filtrado
+    const timeseriesMap = {}
+    filteredCube.forEach(r => {
+      if (!timeseriesMap[r.periodo]) {
+        timeseriesMap[r.periodo] = { periodo: r.periodo, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
+      }
+      timeseriesMap[r.periodo].admissoes += r.admissoes
+      timeseriesMap[r.periodo].demissoes += r.demissoes
+      timeseriesMap[r.periodo].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
+      timeseriesMap[r.periodo].count += r.admissoes + r.demissoes
+    })
+    const timeseries = Object.values(timeseriesMap)
+      .sort((a, b) => a.periodo.localeCompare(b.periodo))
+      .map(t => ({
+        ...t,
+        saldo: t.admissoes - t.demissoes,
+        salario_medio: t.count > 0 ? t.salario_total / t.count : 0,
+      }))
+    // Calcular saldo_acumulado
+    let saldoAcum = 0
+    timeseries.forEach(t => {
+      saldoAcum += t.saldo
+      t.saldo_acumulado = saldoAcum
+    })
+
+    // Agregar por cadeia
+    const cadeiaMap = {}
+    filteredCube.forEach(r => {
+      if (!cadeiaMap[r.cadeia]) {
+        cadeiaMap[r.cadeia] = { cadeia: r.cadeia, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
+      }
+      cadeiaMap[r.cadeia].admissoes += r.admissoes
+      cadeiaMap[r.cadeia].demissoes += r.demissoes
+      cadeiaMap[r.cadeia].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
+      cadeiaMap[r.cadeia].count += r.admissoes + r.demissoes
+    })
+    const totalAdmissoes = Object.values(cadeiaMap).reduce((a, c) => a + c.admissoes, 0)
+    const byCadeia = Object.values(cadeiaMap)
+      .map(c => ({
+        ...c,
+        saldo: c.admissoes - c.demissoes,
+        salario_medio: c.count > 0 ? c.salario_total / c.count : 0,
+        salario_mediana: c.count > 0 ? c.salario_total / c.count : 0, // aproximação
+        pct_admissoes: totalAdmissoes > 0 ? (c.admissoes / totalAdmissoes * 100).toFixed(1) : 0,
+        cor: data.byCadeia.find(x => x.cadeia === c.cadeia)?.cor || '#808080',
+      }))
+      .sort((a, b) => b.admissoes - a.admissoes)
+
+    // Agregar por período (para filtro de período no gráfico)
+    const yearlyMap = {}
+    filteredCube.forEach(r => {
+      const ano = r.periodo.slice(0, 4)
+      if (!yearlyMap[ano]) {
+        yearlyMap[ano] = { ano: parseInt(ano), admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
+      }
+      yearlyMap[ano].admissoes += r.admissoes
+      yearlyMap[ano].demissoes += r.demissoes
+      yearlyMap[ano].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
+      yearlyMap[ano].count += r.admissoes + r.demissoes
+    })
+    const yearly = Object.values(yearlyMap)
+      .map(y => ({
+        ...y,
+        saldo: y.admissoes - y.demissoes,
+        salario_medio: y.count > 0 ? y.salario_total / y.count : 0,
+      }))
+      .sort((a, b) => a.ano - b.ano)
+
+    // Sazonalidade
+    const mesMeses = { 1: 'Jan', 2: 'Fev', 3: 'Mar', 4: 'Abr', 5: 'Mai', 6: 'Jun', 7: 'Jul', 8: 'Ago', 9: 'Set', 10: 'Out', 11: 'Nov', 12: 'Dez' }
+    const seasonMap = {}
+    filteredCube.forEach(r => {
+      const mes = parseInt(r.periodo.slice(5, 7))
+      if (!seasonMap[mes]) {
+        seasonMap[mes] = { mes, admissoes: 0, demissoes: 0 }
+      }
+      seasonMap[mes].admissoes += r.admissoes
+      seasonMap[mes].demissoes += r.demissoes
+    })
+    const seasonality = Object.values(seasonMap)
+      .map(s => ({
+        ...s,
+        mes_nome: mesMeses[s.mes],
+        saldo: s.admissoes - s.demissoes,
+      }))
+      .sort((a, b) => a.mes - b.mes)
+    const avgAdm = seasonality.reduce((a, s) => a + s.admissoes, 0) / 12
+    seasonality.forEach(s => {
+      s.indice = avgAdm > 0 ? (s.admissoes / avgAdm * 100).toFixed(1) : 100
+    })
+
+    // Agregar dimensões demográficas de granularDimensions
+    let bySexo = data.bySexo
+    let byFaixaEtaria = data.byFaixaEtaria
+    let byEscolaridade = data.byEscolaridade
+    let byPorte = data.byPorte
+
+    if (granularDimensions && hasRegionalFilter) {
+      // Filtrar por região primeiro
+      const filterByRegion = (records) => {
+        if (!hasRegionalFilter) return records
+        return records.filter(r => {
+          if (munFilter) return r.mun === munFilter
+          const region = munRegionMap[r.mun]
+          if (!region) return true
+          const matchesMeso = !mesoFilter || region.meso === mesoFilter
+          const matchesRegIdr = !regIdrFilter || region.regIdr === regIdrFilter
+          return matchesMeso && matchesRegIdr
+        })
+      }
+
+      // Agregar por sexo
+      if (granularDimensions.bySexo) {
+        const filteredSexo = filterByRegion(granularDimensions.bySexo)
+        const sexoMap = {}
+        filteredSexo.forEach(r => {
+          if (!sexoMap[r.sexo]) sexoMap[r.sexo] = { sexo: r.sexo, admissoes: 0, demissoes: 0 }
+          sexoMap[r.sexo].admissoes += r.admissoes
+          sexoMap[r.sexo].demissoes += r.demissoes
+        })
+        const totalAdm = Object.values(sexoMap).reduce((a, s) => a + s.admissoes, 0)
+        bySexo = Object.values(sexoMap).map(s => ({
+          ...s,
+          saldo: s.admissoes - s.demissoes,
+          pct: totalAdm > 0 ? (s.admissoes / totalAdm * 100).toFixed(1) : 0,
+        }))
+      }
+
+      // Agregar por faixa etária
+      if (granularDimensions.byFaixa) {
+        const filteredFaixa = filterByRegion(granularDimensions.byFaixa)
+        const faixaMap = {}
+        filteredFaixa.forEach(r => {
+          if (!faixaMap[r.faixa]) faixaMap[r.faixa] = { faixa: r.faixa, admissoes: 0, demissoes: 0 }
+          faixaMap[r.faixa].admissoes += r.admissoes
+          faixaMap[r.faixa].demissoes += r.demissoes
+        })
+        const totalAdm = Object.values(faixaMap).reduce((a, f) => a + f.admissoes, 0)
+        byFaixaEtaria = Object.values(faixaMap).map(f => ({
+          ...f,
+          saldo: f.admissoes - f.demissoes,
+          pct: totalAdm > 0 ? (f.admissoes / totalAdm * 100).toFixed(1) : 0,
+        }))
+      }
+
+      // Agregar por escolaridade
+      if (granularDimensions.byEscolaridade) {
+        const filteredEsc = filterByRegion(granularDimensions.byEscolaridade)
+        const escMap = {}
+        filteredEsc.forEach(r => {
+          if (!escMap[r.escolaridade]) escMap[r.escolaridade] = { escolaridade: r.escolaridade, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
+          escMap[r.escolaridade].admissoes += r.admissoes
+          escMap[r.escolaridade].demissoes += r.demissoes
+          escMap[r.escolaridade].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
+          escMap[r.escolaridade].count += r.admissoes + r.demissoes
+        })
+        const totalAdm = Object.values(escMap).reduce((a, e) => a + e.admissoes, 0)
+        byEscolaridade = Object.values(escMap)
+          .map(e => ({
+            ...e,
+            saldo: e.admissoes - e.demissoes,
+            salario_mediana: e.count > 0 ? e.salario_total / e.count : 0,
+            pct: totalAdm > 0 ? (e.admissoes / totalAdm * 100).toFixed(1) : 0,
+          }))
+          .sort((a, b) => b.admissoes - a.admissoes)
+      }
+
+      // Agregar por porte
+      if (granularDimensions.byPorte) {
+        const filteredPorte = filterByRegion(granularDimensions.byPorte)
+        const porteMap = {}
+        filteredPorte.forEach(r => {
+          if (!porteMap[r.porte]) porteMap[r.porte] = { porte: r.porte, admissoes: 0, demissoes: 0 }
+          porteMap[r.porte].admissoes += r.admissoes
+          porteMap[r.porte].demissoes += r.demissoes
+        })
+        const totalAdm = Object.values(porteMap).reduce((a, p) => a + p.admissoes, 0)
+        byPorte = Object.values(porteMap).map(p => ({
+          ...p,
+          saldo: p.admissoes - p.demissoes,
+          pct: totalAdm > 0 ? (p.admissoes / totalAdm * 100).toFixed(1) : 0,
+        }))
+      }
+    }
+
+    return {
+      timeseries,
+      byCadeia,
+      bySexo,
+      byFaixaEtaria,
+      byEscolaridade,
+      byPorte,
+      seasonality,
+      yearly,
+      timeseriesCadeia: data.timeseriesCadeia,
+      crossCadeiaSexo: data.crossCadeiaSexo,
+      salaryDistribution: data.salaryDistribution,
+      byCnae: data.byCnae,
+    }
+  }, [data, granularData, granularDimensions, hasFilter, hasRegionalFilter, filteredCube, mesoFilter, regIdrFilter, munFilter, munRegionMap])
 
   if (loading) {
     return (
@@ -319,49 +591,93 @@ function App() {
 
       {/* Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Indicador de filtros interativos */}
+        <ActiveFilters
+          filters={{
+            cadeia: cadeiaFilter,
+            sexo: sexoFilter,
+            faixa: faixaFilter,
+            escolaridade: escolaridadeFilter,
+            periodo: periodoFilter,
+          }}
+          onClear={(key) => {
+            if (key === 'cadeia') setCadeiaFilter('')
+            if (key === 'sexo') setSexoFilter('')
+            if (key === 'faixa') setFaixaFilter('')
+            if (key === 'escolaridade') setEscolaridadeFilter('')
+            if (key === 'periodo') setPeriodoFilter('')
+          }}
+          onClearAll={clearInteractiveFilters}
+        />
+
         {activeTab === 'overview' && (
           <OverviewTab
-            timeseries={timeseries}
-            byCadeia={byCadeia}
-            bySexo={bySexo}
-            byFaixaEtaria={byFaixaEtaria}
-            seasonality={seasonality}
-            hasFilter={hasFilter}
+            timeseries={filteredAggregations?.timeseries || []}
+            byCadeia={filteredAggregations?.byCadeia || []}
+            bySexo={filteredAggregations?.bySexo || []}
+            byFaixaEtaria={filteredAggregations?.byFaixaEtaria || []}
+            seasonality={filteredAggregations?.seasonality || []}
+            hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
+            onSexoClick={(sexo) => setSexoFilter(prev => prev === sexo ? '' : sexo)}
+            onFaixaClick={(faixa) => setFaixaFilter(prev => prev === faixa ? '' : faixa)}
+            cadeiaFilter={cadeiaFilter}
+            sexoFilter={sexoFilter}
+            faixaFilter={faixaFilter}
           />
         )}
         {activeTab === 'cadeia' && (
           <CadeiaTab
-            byCadeia={byCadeia}
-            timeseriesCadeia={timeseriesCadeia}
-            crossCadeiaSexo={crossCadeiaSexo}
+            byCadeia={filteredAggregations?.byCadeia || []}
+            timeseriesCadeia={filteredAggregations?.timeseriesCadeia || []}
+            crossCadeiaSexo={filteredAggregations?.crossCadeiaSexo || []}
             selectedCadeia={selectedCadeia}
             setSelectedCadeia={setSelectedCadeia}
-            hasFilter={hasFilter}
+            hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
+            cadeiaFilter={cadeiaFilter}
           />
         )}
         {activeTab === 'cnae' && (
-          <CnaeTab byCnae={byCnae} byCadeia={byCadeia} hasFilter={hasFilter} filterLabel={selectedMunName || mesoFilter || regIdrFilter} />
+          <CnaeTab
+            byCnae={filteredAggregations?.byCnae || []}
+            byCadeia={filteredAggregations?.byCadeia || []}
+            hasFilter={hasRegionalFilter}
+            filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
+            cadeiaFilter={cadeiaFilter}
+          />
         )}
         {activeTab === 'perfil' && (
           <PerfilTab
-            bySexo={bySexo}
-            byFaixaEtaria={byFaixaEtaria}
-            byEscolaridade={byEscolaridade}
-            byPorte={byPorte}
+            bySexo={filteredAggregations?.bySexo || []}
+            byFaixaEtaria={filteredAggregations?.byFaixaEtaria || []}
+            byEscolaridade={filteredAggregations?.byEscolaridade || []}
+            byPorte={filteredAggregations?.byPorte || []}
             kpis={filteredKpis}
-            hasFilter={hasFilter}
+            hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            onSexoClick={(sexo) => setSexoFilter(prev => prev === sexo ? '' : sexo)}
+            onFaixaClick={(faixa) => setFaixaFilter(prev => prev === faixa ? '' : faixa)}
+            onEscolaridadeClick={(esc) => setEscolaridadeFilter(prev => prev === esc ? '' : esc)}
+            sexoFilter={sexoFilter}
+            faixaFilter={faixaFilter}
+            escolaridadeFilter={escolaridadeFilter}
           />
         )}
         {activeTab === 'salario' && (
           <SalarioTab
-            salaryDistribution={salaryDistribution}
-            byCadeia={byCadeia}
-            byEscolaridade={byEscolaridade}
-            hasFilter={hasFilter}
+            salaryDistribution={filteredAggregations?.salaryDistribution || []}
+            byCadeia={filteredAggregations?.byCadeia || []}
+            byEscolaridade={filteredAggregations?.byEscolaridade || []}
+            hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
+            cadeiaFilter={cadeiaFilter}
+            onEscolaridadeClick={(esc) => setEscolaridadeFilter(prev => prev === esc ? '' : esc)}
+            escolaridadeFilter={escolaridadeFilter}
           />
         )}
         {activeTab === 'geo' && (
@@ -377,11 +693,13 @@ function App() {
         )}
         {activeTab === 'tempo' && (
           <TempoTab
-            timeseries={timeseries}
-            yearly={yearly}
-            seasonality={seasonality}
-            hasFilter={hasFilter}
+            timeseries={filteredAggregations?.timeseries || []}
+            yearly={filteredAggregations?.yearly || []}
+            seasonality={filteredAggregations?.seasonality || []}
+            hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            onPeriodoClick={(periodo) => setPeriodoFilter(prev => prev === periodo ? '' : periodo)}
+            periodoFilter={periodoFilter}
           />
         )}
       </main>
@@ -443,19 +761,58 @@ function Card({ title, children, className = '' }) {
   )
 }
 
-function FilterIndicator({ hasFilter, filterLabel, message = "Dados agregados do estado. KPIs e Municípios são filtrados." }) {
+function FilterIndicator({ hasFilter, filterLabel, message = "Todos os gráficos estão filtrados." }) {
   if (!hasFilter) return null
   return (
     <div className="bg-green-50 border border-green-200 rounded-lg px-4 py-2 mb-4 text-sm text-green-700">
-      <span className="font-medium">Filtro ativo: {filterLabel}</span>
+      <span className="font-medium">Filtro regional: {filterLabel}</span>
       <span className="text-green-600 ml-2">- {message}</span>
+    </div>
+  )
+}
+
+function ActiveFilters({ filters, onClear, onClearAll }) {
+  const labels = {
+    cadeia: 'Cadeia',
+    sexo: 'Sexo',
+    faixa: 'Faixa Etária',
+    escolaridade: 'Escolaridade',
+    periodo: 'Período'
+  }
+  const active = Object.entries(filters).filter(([_, v]) => v)
+  if (!active.length) return null
+
+  return (
+    <div className="flex flex-wrap items-center gap-2 mb-4 bg-blue-50 border border-blue-200 rounded-lg px-4 py-2">
+      <span className="text-sm text-blue-700 font-medium">Filtros por clique:</span>
+      {active.map(([key, value]) => (
+        <span
+          key={key}
+          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm flex items-center gap-1"
+        >
+          {labels[key]}: {value}
+          <button
+            onClick={() => onClear(key)}
+            className="ml-1 hover:text-red-600 font-bold"
+            title="Remover filtro"
+          >
+            ×
+          </button>
+        </span>
+      ))}
+      <button
+        onClick={onClearAll}
+        className="px-3 py-1 text-red-600 text-sm hover:underline ml-2"
+      >
+        Limpar todos
+      </button>
     </div>
   )
 }
 
 // ===== TABS =====
 
-function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality, hasFilter, filterLabel }) {
+function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality, hasFilter, filterLabel, onCadeiaClick, onSexoClick, onFaixaClick, cadeiaFilter, sexoFilter, faixaFilter }) {
   return (
     <div className="space-y-6">
       <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
@@ -479,8 +836,8 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
       </Card>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Top Cadeias */}
-        <Card title="Principais Cadeias Produtivas">
+        {/* Top Cadeias - Clicável */}
+        <Card title="Principais Cadeias Produtivas (clique para filtrar)">
           <div className="h-72">
             <ResponsiveContainer>
               <BarChart data={byCadeia.slice(0, 8)} layout="vertical">
@@ -488,14 +845,28 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
                 <XAxis type="number" tick={{ fontSize: 11 }} />
                 <YAxis dataKey="cadeia" type="category" width={120} tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(v) => formatNumber(v)} />
-                <Bar dataKey="admissoes" name="Admissões" fill="#22c55e" />
+                <Bar
+                  dataKey="admissoes"
+                  name="Admissões"
+                  cursor="pointer"
+                  onClick={(data) => onCadeiaClick && onCadeiaClick(data.cadeia)}
+                >
+                  {byCadeia.slice(0, 8).map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.cadeia === cadeiaFilter ? '#15803d' : '#22c55e'}
+                      stroke={entry.cadeia === cadeiaFilter ? '#166534' : 'none'}
+                      strokeWidth={entry.cadeia === cadeiaFilter ? 2 : 0}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
         </Card>
 
-        {/* Distribuição por Sexo */}
-        <Card title="Distribuição por Sexo">
+        {/* Distribuição por Sexo - Clicável */}
+        <Card title="Distribuição por Sexo (clique para filtrar)">
           <div className="h-72 flex items-center">
             <ResponsiveContainer>
               <PieChart>
@@ -507,9 +878,20 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
                   cy="50%"
                   outerRadius={80}
                   label={({ sexo, pct }) => `${sexo}: ${pct}%`}
+                  cursor="pointer"
+                  onClick={(data) => onSexoClick && onSexoClick(data.sexo)}
                 >
-                  <Cell fill="#3b82f6" />
-                  <Cell fill="#ec4899" />
+                  {bySexo.filter(s => s.sexo !== 'Não informado').map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.sexo === sexoFilter
+                        ? (entry.sexo === 'Masculino' ? '#1d4ed8' : '#be185d')
+                        : (entry.sexo === 'Masculino' ? '#3b82f6' : '#ec4899')
+                      }
+                      stroke={entry.sexo === sexoFilter ? '#000' : 'none'}
+                      strokeWidth={entry.sexo === sexoFilter ? 2 : 0}
+                    />
+                  ))}
                 </Pie>
                 <Tooltip formatter={(v) => formatNumber(v)} />
               </PieChart>
@@ -519,8 +901,8 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Faixa Etária */}
-        <Card title="Distribuição por Faixa Etária">
+        {/* Faixa Etária - Clicável */}
+        <Card title="Distribuição por Faixa Etária (clique para filtrar)">
           <div className="h-64">
             <ResponsiveContainer>
               <BarChart data={byFaixaEtaria.filter(f => f.faixa !== 'Não informado')}>
@@ -528,7 +910,21 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
                 <XAxis dataKey="faixa" tick={{ fontSize: 10 }} angle={-20} textAnchor="end" height={60} />
                 <YAxis tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(v) => formatNumber(v)} />
-                <Bar dataKey="admissoes" name="Admissões" fill="#8b5cf6" />
+                <Bar
+                  dataKey="admissoes"
+                  name="Admissões"
+                  cursor="pointer"
+                  onClick={(data) => onFaixaClick && onFaixaClick(data.faixa)}
+                >
+                  {byFaixaEtaria.filter(f => f.faixa !== 'Não informado').map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.faixa === faixaFilter ? '#6d28d9' : '#8b5cf6'}
+                      stroke={entry.faixa === faixaFilter ? '#5b21b6' : 'none'}
+                      strokeWidth={entry.faixa === faixaFilter ? 2 : 0}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -554,7 +950,7 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
   )
 }
 
-function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia, setSelectedCadeia, hasFilter, filterLabel }) {
+function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia, setSelectedCadeia, hasFilter, filterLabel, onCadeiaClick, cadeiaFilter }) {
   const top10 = byCadeia.slice(0, 10)
   const [sortCol, setSortCol] = useState('admissoes')
   const [sortDir, setSortDir] = useState('desc')
@@ -583,18 +979,29 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
   return (
     <div className="space-y-6">
       <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
-      {/* Treemap */}
-      <Card title="Distribuição por Cadeia Produtiva">
+      {/* Treemap - Clicável */}
+      <Card title="Distribuição por Cadeia Produtiva (clique para filtrar)">
         <div className="h-80">
           <ResponsiveContainer>
             <Treemap
-              data={top10.map(c => ({ name: c.cadeia, size: c.admissoes, fill: c.cor }))}
+              data={top10.map(c => ({
+                name: c.cadeia,
+                size: c.admissoes,
+                fill: c.cadeia === cadeiaFilter ? '#15803d' : c.cor,
+                isSelected: c.cadeia === cadeiaFilter
+              }))}
               dataKey="size"
               aspectRatio={4/3}
               stroke="#fff"
-              content={({ x, y, width, height, name, fill }) => (
-                <g>
-                  <rect x={x} y={y} width={width} height={height} fill={fill} stroke="#fff" strokeWidth={2} />
+              onClick={(node) => onCadeiaClick && onCadeiaClick(node.name)}
+              content={({ x, y, width, height, name, fill, isSelected }) => (
+                <g style={{ cursor: 'pointer' }}>
+                  <rect
+                    x={x} y={y} width={width} height={height}
+                    fill={fill}
+                    stroke={isSelected ? '#000' : '#fff'}
+                    strokeWidth={isSelected ? 3 : 2}
+                  />
                   {width > 60 && height > 30 && (
                     <text x={x + width/2} y={y + height/2} textAnchor="middle" fill="#fff" fontSize={12} fontWeight="bold">
                       {name}
@@ -623,11 +1030,16 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
             </thead>
             <tbody>
               {sortedCadeias.map(c => (
-                <tr key={c.cadeia} className="border-b border-neutral-100 hover:bg-neutral-50">
+                <tr
+                  key={c.cadeia}
+                  className={`border-b border-neutral-100 hover:bg-neutral-50 cursor-pointer ${c.cadeia === cadeiaFilter ? 'bg-green-50' : ''}`}
+                  onClick={() => onCadeiaClick && onCadeiaClick(c.cadeia)}
+                >
                   <td className="py-2 px-2">
                     <div className="flex items-center gap-2">
                       <span className="w-3 h-3 rounded-full" style={{ backgroundColor: c.cor }} />
                       {c.cadeia}
+                      {c.cadeia === cadeiaFilter && <span className="text-xs text-green-600 ml-1">(filtrado)</span>}
                     </div>
                   </td>
                   <td className="text-right py-2 px-2 text-green-600">{formatNumber(c.admissoes)}</td>
@@ -675,16 +1087,18 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
   )
 }
 
-function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel }) {
+function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, onCadeiaClick, cadeiaFilter: globalCadeiaFilter }) {
   const [filter, setFilter] = useState('')
-  const [cadeiaFilter, setCadeiaFilter] = useState('')
+  const [localCadeiaFilter, setLocalCadeiaFilter] = useState('')
+  // Use global filter if set, otherwise use local
+  const effectiveCadeiaFilter = globalCadeiaFilter || localCadeiaFilter
   const [sortCol, setSortCol] = useState('admissoes')
   const [sortDir, setSortDir] = useState('desc')
 
   const filtered = useMemo(() => {
     let data = byCnae.filter(c => {
       const matchText = filter === '' || c.cnae.includes(filter) || c.cadeia.toLowerCase().includes(filter.toLowerCase())
-      const matchCadeia = cadeiaFilter === '' || c.cadeia === cadeiaFilter
+      const matchCadeia = effectiveCadeiaFilter === '' || c.cadeia === effectiveCadeiaFilter
       return matchText && matchCadeia
     })
     data.sort((a, b) => {
@@ -693,7 +1107,7 @@ function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel }) {
       return sortDir === 'asc' ? (aVal || 0) - (bVal || 0) : (bVal || 0) - (aVal || 0)
     })
     return data
-  }, [byCnae, filter, cadeiaFilter, sortCol, sortDir])
+  }, [byCnae, filter, effectiveCadeiaFilter, sortCol, sortDir])
 
   const toggleSort = (col) => {
     if (sortCol === col) setSortDir(sortDir === 'asc' ? 'desc' : 'asc')
@@ -719,8 +1133,12 @@ function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel }) {
             className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           />
           <select
-            value={cadeiaFilter}
-            onChange={(e) => setCadeiaFilter(e.target.value)}
+            value={effectiveCadeiaFilter}
+            onChange={(e) => {
+              setLocalCadeiaFilter(e.target.value)
+              // Se há um filtro global, usar o global
+              if (onCadeiaClick) onCadeiaClick(e.target.value || '')
+            }}
             className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             <option value="">Todas as cadeias</option>
@@ -770,7 +1188,7 @@ function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel }) {
   )
 }
 
-function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFilter, filterLabel }) {
+function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFilter, filterLabel, onSexoClick, onFaixaClick, onEscolaridadeClick, sexoFilter, faixaFilter, escolaridadeFilter }) {
   return (
     <div className="space-y-6">
       <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
@@ -795,11 +1213,15 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Sexo */}
-        <Card title="Por Sexo">
+        {/* Sexo - Clicável */}
+        <Card title="Por Sexo (clique para filtrar)">
           <div className="space-y-4">
             {bySexo.filter(s => s.sexo !== 'Não informado').map(s => (
-              <div key={s.sexo} className="flex items-center gap-4">
+              <div
+                key={s.sexo}
+                className={`flex items-center gap-4 cursor-pointer p-2 rounded-lg transition-colors ${s.sexo === sexoFilter ? 'bg-blue-50 ring-2 ring-blue-300' : 'hover:bg-neutral-50'}`}
+                onClick={() => onSexoClick && onSexoClick(s.sexo)}
+              >
                 <div className="w-24 text-sm font-medium">{s.sexo}</div>
                 <div className="flex-1 bg-neutral-100 rounded-full h-6 overflow-hidden">
                   <div
@@ -816,8 +1238,8 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
           </div>
         </Card>
 
-        {/* Faixa Etária */}
-        <Card title="Por Faixa Etária">
+        {/* Faixa Etária - Clicável */}
+        <Card title="Por Faixa Etária (clique para filtrar)">
           <div className="h-64">
             <ResponsiveContainer>
               <BarChart data={byFaixaEtaria.filter(f => f.faixa !== 'Não informado')} layout="vertical">
@@ -825,7 +1247,20 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
                 <XAxis type="number" tick={{ fontSize: 11 }} />
                 <YAxis dataKey="faixa" type="category" width={100} tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(v) => formatNumber(v)} />
-                <Bar dataKey="admissoes" fill="#8b5cf6" />
+                <Bar
+                  dataKey="admissoes"
+                  cursor="pointer"
+                  onClick={(data) => onFaixaClick && onFaixaClick(data.faixa)}
+                >
+                  {byFaixaEtaria.filter(f => f.faixa !== 'Não informado').map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.faixa === faixaFilter ? '#6d28d9' : '#8b5cf6'}
+                      stroke={entry.faixa === faixaFilter ? '#5b21b6' : 'none'}
+                      strokeWidth={entry.faixa === faixaFilter ? 2 : 0}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -833,8 +1268,8 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Escolaridade */}
-        <Card title="Por Escolaridade">
+        {/* Escolaridade - Clicável */}
+        <Card title="Por Escolaridade (clique para filtrar)">
           <div className="h-64">
             <ResponsiveContainer>
               <BarChart data={byEscolaridade.slice(0, 8)} layout="vertical">
@@ -842,7 +1277,20 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
                 <XAxis type="number" tick={{ fontSize: 11 }} />
                 <YAxis dataKey="escolaridade" type="category" width={130} tick={{ fontSize: 10 }} />
                 <Tooltip formatter={(v) => formatNumber(v)} />
-                <Bar dataKey="admissoes" fill="#06b6d4" />
+                <Bar
+                  dataKey="admissoes"
+                  cursor="pointer"
+                  onClick={(data) => onEscolaridadeClick && onEscolaridadeClick(data.escolaridade)}
+                >
+                  {byEscolaridade.slice(0, 8).map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={entry.escolaridade === escolaridadeFilter ? '#0891b2' : '#06b6d4'}
+                      stroke={entry.escolaridade === escolaridadeFilter ? '#0e7490' : 'none'}
+                      strokeWidth={entry.escolaridade === escolaridadeFilter ? 2 : 0}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -867,7 +1315,7 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
   )
 }
 
-function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, filterLabel }) {
+function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, filterLabel, onCadeiaClick, cadeiaFilter, onEscolaridadeClick, escolaridadeFilter }) {
   const [sortCol, setSortCol] = useState('p50')
   const [sortDir, setSortDir] = useState('desc')
 
@@ -900,8 +1348,8 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
   return (
     <div className="space-y-6">
       <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
-      {/* Box plot style */}
-      <Card title="Distribuição Salarial por Cadeia (Mediana)">
+      {/* Box plot style - Clicável */}
+      <Card title="Distribuição Salarial por Cadeia (clique para filtrar)">
         <div className="h-80">
           <ResponsiveContainer>
             <BarChart data={salarioData} layout="vertical">
@@ -909,7 +1357,21 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
               <XAxis type="number" tick={{ fontSize: 11 }} tickFormatter={(v) => `R$ ${v.toLocaleString()}`} />
               <YAxis dataKey="cadeia" type="category" width={140} tick={{ fontSize: 11 }} />
               <Tooltip formatter={(v) => formatCurrency(v)} />
-              <Bar dataKey="p50" name="Mediana" fill="#22c55e" />
+              <Bar
+                dataKey="p50"
+                name="Mediana"
+                cursor="pointer"
+                onClick={(data) => onCadeiaClick && onCadeiaClick(data.cadeia)}
+              >
+                {salarioData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={entry.cadeia === cadeiaFilter ? '#15803d' : '#22c55e'}
+                    stroke={entry.cadeia === cadeiaFilter ? '#166534' : 'none'}
+                    strokeWidth={entry.cadeia === cadeiaFilter ? 2 : 0}
+                  />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -947,8 +1409,8 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
         </div>
       </Card>
 
-      {/* Salário por escolaridade */}
-      <Card title="Salário Mediano por Escolaridade">
+      {/* Salário por escolaridade - Clicável */}
+      <Card title="Salário por Escolaridade (clique para filtrar)">
         <div className="h-64">
           <ResponsiveContainer>
             <BarChart data={byEscolaridade.slice(0, 8)}>
@@ -956,7 +1418,21 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
               <XAxis dataKey="escolaridade" tick={{ fontSize: 10 }} angle={-20} textAnchor="end" height={80} />
               <YAxis tick={{ fontSize: 11 }} tickFormatter={(v) => `R$ ${v.toLocaleString()}`} />
               <Tooltip formatter={(v) => formatCurrency(v)} />
-              <Bar dataKey="salario_mediana" name="Salário Mediano" fill="#f59e0b" />
+              <Bar
+                dataKey="salario_mediana"
+                name="Salário Mediano"
+                cursor="pointer"
+                onClick={(data) => onEscolaridadeClick && onEscolaridadeClick(data.escolaridade)}
+              >
+                {byEscolaridade.slice(0, 8).map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={entry.escolaridade === escolaridadeFilter ? '#d97706' : '#f59e0b'}
+                    stroke={entry.escolaridade === escolaridadeFilter ? '#b45309' : 'none'}
+                    strokeWidth={entry.escolaridade === escolaridadeFilter ? 2 : 0}
+                  />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -1299,10 +1775,21 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
   )
 }
 
-function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel }) {
+function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onPeriodoClick, periodoFilter }) {
   return (
     <div className="space-y-6">
       <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
+      {periodoFilter && (
+        <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 text-sm text-blue-700">
+          <span className="font-medium">Período selecionado: {periodoFilter}</span>
+          <button
+            onClick={() => onPeriodoClick && onPeriodoClick(periodoFilter)}
+            className="ml-2 text-red-600 hover:underline"
+          >
+            Limpar
+          </button>
+        </div>
+      )}
       {/* Série temporal completa */}
       <Card title="Série Histórica Completa (2020-2025)">
         <div className="h-80">
@@ -1336,8 +1823,8 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel }) {
       </Card>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Anual */}
-        <Card title="Resumo Anual">
+        {/* Anual - Clicável */}
+        <Card title="Resumo Anual (clique para filtrar por ano)">
           <div className="h-64">
             <ResponsiveContainer>
               <BarChart data={yearly}>
@@ -1346,8 +1833,46 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel }) {
                 <YAxis tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(v) => formatNumber(v)} />
                 <Legend />
-                <Bar dataKey="admissoes" name="Admissões" fill="#22c55e" />
-                <Bar dataKey="demissoes" name="Demissões" fill="#ef4444" />
+                <Bar
+                  dataKey="admissoes"
+                  name="Admissões"
+                  cursor="pointer"
+                  onClick={(data) => {
+                    // Filtrar por ano (todos os meses daquele ano)
+                    const ano = String(data.ano)
+                    const currentAno = periodoFilter ? periodoFilter.slice(0, 4) : ''
+                    if (currentAno === ano) {
+                      onPeriodoClick && onPeriodoClick('')
+                    } else {
+                      onPeriodoClick && onPeriodoClick(`${ano}-01`)
+                    }
+                  }}
+                >
+                  {yearly.map((entry, index) => {
+                    const isSelected = periodoFilter && periodoFilter.startsWith(String(entry.ano))
+                    return (
+                      <Cell
+                        key={`cell-adm-${index}`}
+                        fill={isSelected ? '#15803d' : '#22c55e'}
+                        stroke={isSelected ? '#166534' : 'none'}
+                        strokeWidth={isSelected ? 2 : 0}
+                      />
+                    )
+                  })}
+                </Bar>
+                <Bar dataKey="demissoes" name="Demissões">
+                  {yearly.map((entry, index) => {
+                    const isSelected = periodoFilter && periodoFilter.startsWith(String(entry.ano))
+                    return (
+                      <Cell
+                        key={`cell-dem-${index}`}
+                        fill={isSelected ? '#b91c1c' : '#ef4444'}
+                        stroke={isSelected ? '#991b1b' : 'none'}
+                        strokeWidth={isSelected ? 2 : 0}
+                      />
+                    )
+                  })}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
