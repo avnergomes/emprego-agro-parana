@@ -315,11 +315,16 @@ function App() {
     let byEscolaridade = data.byEscolaridade
     let byPorte = data.byPorte
 
-    if (granularDimensions && hasRegionalFilter) {
-      // Filtrar por região primeiro
-      const filterByRegion = (records) => {
-        if (!hasRegionalFilter) return records
+    // Aplicar filtros às dimensões demográficas quando há filtro regional OU filtro de cadeia
+    const needsDimensionFiltering = hasRegionalFilter || cadeiaFilter
+    if (granularDimensions && needsDimensionFiltering) {
+      // Filtrar por região E cadeia
+      const filterRecords = (records) => {
         return records.filter(r => {
+          // Filtro de cadeia
+          if (cadeiaFilter && r.cadeia !== cadeiaFilter) return false
+          // Filtros regionais
+          if (!hasRegionalFilter) return true
           if (munFilter) return r.mun === munFilter
           const region = munRegionMap[r.mun]
           if (!region) return true
@@ -331,7 +336,7 @@ function App() {
 
       // Agregar por sexo
       if (granularDimensions.bySexo) {
-        const filteredSexo = filterByRegion(granularDimensions.bySexo)
+        const filteredSexo = filterRecords(granularDimensions.bySexo)
         const sexoMap = {}
         filteredSexo.forEach(r => {
           if (!sexoMap[r.sexo]) sexoMap[r.sexo] = { sexo: r.sexo, admissoes: 0, demissoes: 0 }
@@ -348,7 +353,7 @@ function App() {
 
       // Agregar por faixa etária
       if (granularDimensions.byFaixa) {
-        const filteredFaixa = filterByRegion(granularDimensions.byFaixa)
+        const filteredFaixa = filterRecords(granularDimensions.byFaixa)
         const faixaMap = {}
         filteredFaixa.forEach(r => {
           if (!faixaMap[r.faixa]) faixaMap[r.faixa] = { faixa: r.faixa, admissoes: 0, demissoes: 0 }
@@ -365,7 +370,7 @@ function App() {
 
       // Agregar por escolaridade
       if (granularDimensions.byEscolaridade) {
-        const filteredEsc = filterByRegion(granularDimensions.byEscolaridade)
+        const filteredEsc = filterRecords(granularDimensions.byEscolaridade)
         const escMap = {}
         filteredEsc.forEach(r => {
           if (!escMap[r.escolaridade]) escMap[r.escolaridade] = { escolaridade: r.escolaridade, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
@@ -387,7 +392,7 @@ function App() {
 
       // Agregar por porte
       if (granularDimensions.byPorte) {
-        const filteredPorte = filterByRegion(granularDimensions.byPorte)
+        const filteredPorte = filterRecords(granularDimensions.byPorte)
         const porteMap = {}
         filteredPorte.forEach(r => {
           if (!porteMap[r.porte]) porteMap[r.porte] = { porte: r.porte, admissoes: 0, demissoes: 0 }
@@ -417,7 +422,7 @@ function App() {
       salaryDistribution: data.salaryDistribution,
       byCnae: data.byCnae,
     }
-  }, [data, granularData, granularDimensions, hasFilter, hasRegionalFilter, filteredCube, mesoFilter, regIdrFilter, munFilter, munRegionMap])
+  }, [data, granularData, granularDimensions, hasFilter, hasRegionalFilter, filteredCube, mesoFilter, regIdrFilter, munFilter, munRegionMap, cadeiaFilter])
 
   if (loading) {
     return (

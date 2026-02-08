@@ -448,54 +448,54 @@ def generate_granular_cube(df):
 
 def generate_granular_dimensions(df):
     """
-    Gera dados granulares por dimensão demográfica (município × período × dimensão).
-    Usado para filtros interativos por sexo, faixa etária e escolaridade.
+    Gera dados granulares por dimensão demográfica (município × período × cadeia × dimensão).
+    Inclui cadeia para permitir filtros cruzados entre cadeia e dimensões demográficas.
     """
-    print("  Gerando dimensões granulares...")
+    print("  Gerando dimensões granulares (com cadeia)...")
 
     dimensions = {}
 
-    # Por Sexo
-    sexo_cube = df.groupby(['municipio_codigo', 'periodo', 'sexo_nome']).agg({
+    # Por Sexo (inclui cadeia para cross-filtering)
+    sexo_cube = df.groupby(['municipio_codigo', 'periodo', 'cadeia_produtiva', 'sexo_nome']).agg({
         'is_admissao': 'sum',
         'is_demissao': 'sum',
     }).reset_index()
-    sexo_cube.columns = ['mun', 'periodo', 'sexo', 'admissoes', 'demissoes']
+    sexo_cube.columns = ['mun', 'periodo', 'cadeia', 'sexo', 'admissoes', 'demissoes']
     sexo_cube['admissoes'] = sexo_cube['admissoes'].astype(int)
     sexo_cube['demissoes'] = sexo_cube['demissoes'].astype(int)
     dimensions['bySexo'] = sexo_cube.to_dict(orient='records')
     print(f"    Sexo: {len(sexo_cube):,} registros")
 
-    # Por Faixa Etária
-    faixa_cube = df.groupby(['municipio_codigo', 'periodo', 'faixa_etaria']).agg({
+    # Por Faixa Etária (inclui cadeia)
+    faixa_cube = df.groupby(['municipio_codigo', 'periodo', 'cadeia_produtiva', 'faixa_etaria']).agg({
         'is_admissao': 'sum',
         'is_demissao': 'sum',
     }).reset_index()
-    faixa_cube.columns = ['mun', 'periodo', 'faixa', 'admissoes', 'demissoes']
+    faixa_cube.columns = ['mun', 'periodo', 'cadeia', 'faixa', 'admissoes', 'demissoes']
     faixa_cube['admissoes'] = faixa_cube['admissoes'].astype(int)
     faixa_cube['demissoes'] = faixa_cube['demissoes'].astype(int)
     dimensions['byFaixa'] = faixa_cube.to_dict(orient='records')
     print(f"    Faixa Etária: {len(faixa_cube):,} registros")
 
-    # Por Escolaridade
-    esc_cube = df.groupby(['municipio_codigo', 'periodo', 'escolaridade_nome']).agg({
+    # Por Escolaridade (inclui cadeia)
+    esc_cube = df.groupby(['municipio_codigo', 'periodo', 'cadeia_produtiva', 'escolaridade_nome']).agg({
         'is_admissao': 'sum',
         'is_demissao': 'sum',
         'salario': 'mean',
     }).reset_index()
-    esc_cube.columns = ['mun', 'periodo', 'escolaridade', 'admissoes', 'demissoes', 'salario_medio']
+    esc_cube.columns = ['mun', 'periodo', 'cadeia', 'escolaridade', 'admissoes', 'demissoes', 'salario_medio']
     esc_cube['admissoes'] = esc_cube['admissoes'].astype(int)
     esc_cube['demissoes'] = esc_cube['demissoes'].astype(int)
     esc_cube['salario_medio'] = esc_cube['salario_medio'].round(2)
     dimensions['byEscolaridade'] = esc_cube.to_dict(orient='records')
     print(f"    Escolaridade: {len(esc_cube):,} registros")
 
-    # Por Porte Empresa
-    porte_cube = df.groupby(['municipio_codigo', 'periodo', 'porte_empresa_nome']).agg({
+    # Por Porte Empresa (inclui cadeia)
+    porte_cube = df.groupby(['municipio_codigo', 'periodo', 'cadeia_produtiva', 'porte_empresa_nome']).agg({
         'is_admissao': 'sum',
         'is_demissao': 'sum',
     }).reset_index()
-    porte_cube.columns = ['mun', 'periodo', 'porte', 'admissoes', 'demissoes']
+    porte_cube.columns = ['mun', 'periodo', 'cadeia', 'porte', 'admissoes', 'demissoes']
     porte_cube['admissoes'] = porte_cube['admissoes'].astype(int)
     porte_cube['demissoes'] = porte_cube['demissoes'].astype(int)
     dimensions['byPorte'] = porte_cube.to_dict(orient='records')
