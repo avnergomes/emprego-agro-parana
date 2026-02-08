@@ -42,24 +42,44 @@ function App() {
   const [periodoFilter, setPeriodoFilter] = useState('')
 
   useEffect(() => {
-    // Carregar dados agregados, GeoJSON e dados granulares em paralelo
+    // Carregar dados agregados e GeoJSON primeiro (essenciais)
     Promise.all([
       fetch('./data/aggregated_full.json').then(res => {
         if (!res.ok) throw new Error('Dados não encontrados')
         return res.json()
       }),
       fetch(GEO_URL).then(res => res.json()).catch(() => null),
-      fetch('./data/granular_cube.json').then(res => res.json()).catch(() => null),
-      fetch('./data/granular_dimensions.json').then(res => res.json()).catch(() => null)
     ])
-      .then(([aggData, geo, cube, dims]) => {
+      .then(([aggData, geo]) => {
         setData(aggData)
         setGeoData(geo)
-        setGranularData(cube)
-        setGranularDimensions(dims)
+        setLoading(false)
+
+        // Carregar dados granulares em background (opcionais, para filtros avançados)
+        fetch('./data/granular_cube.json')
+          .then(res => res.ok ? res.json() : null)
+          .then(cube => {
+            if (cube) {
+              setGranularData(cube)
+              console.log('[Data] granular_cube.json carregado:', cube.length, 'registros')
+            }
+          })
+          .catch(err => console.warn('[Data] granular_cube.json não carregado:', err))
+
+        fetch('./data/granular_dimensions.json')
+          .then(res => res.ok ? res.json() : null)
+          .then(dims => {
+            if (dims) {
+              setGranularDimensions(dims)
+              console.log('[Data] granular_dimensions.json carregado')
+            }
+          })
+          .catch(err => console.warn('[Data] granular_dimensions.json não carregado:', err))
       })
-      .catch(err => setError(err.message))
-      .finally(() => setLoading(false))
+      .catch(err => {
+        setError(err.message)
+        setLoading(false)
+      })
   }, [])
 
   // Extrair regiões únicas do GeoJSON (hook deve vir ANTES de returns condicionais)
@@ -197,6 +217,27 @@ function App() {
     const hasAnyFilter = mesoFilter || regIdrFilter || munFilter || cadeiaFilter
     if (!hasAnyFilter) return kpis
 
+    // Se apenas cadeiaFilter está ativo e não temos granularData, usar byCadeia
+    if (cadeiaFilter && !granularData && !mesoFilter && !regIdrFilter && !munFilter) {
+      const cadeiaData = data.byCadeia.find(c => c.cadeia === cadeiaFilter)
+      if (cadeiaData) {
+        return {
+          ...kpis,
+          acumulado: {
+            admissoes: cadeiaData.admissoes,
+            demissoes: cadeiaData.demissoes,
+            saldo: cadeiaData.saldo
+          },
+          salario: {
+            ...kpis.salario,
+            media: cadeiaData.salario_medio,
+            mediana: cadeiaData.salario_mediana
+          }
+        }
+      }
+    }
+
+    // Usar filteredByMunicipio para calcular KPIs
     const admissoes = filteredByMunicipio.reduce((a, m) => a + (m.admissoes || 0), 0)
     const demissoes = filteredByMunicipio.reduce((a, m) => a + (m.demissoes || 0), 0)
     const saldo = admissoes - demissoes
@@ -208,7 +249,7 @@ function App() {
       acumulado: { admissoes, demissoes, saldo },
       salario: { ...kpis.salario, media: salarioMedia, mediana: salarioMediana }
     }
-  }, [data, filteredByMunicipio, mesoFilter, regIdrFilter, cadeiaFilter])
+  }, [data, granularData, filteredByMunicipio, mesoFilter, regIdrFilter, munFilter, cadeiaFilter])
 
   // Verificar se há filtros ativos
   const hasRegionalFilter = mesoFilter || regIdrFilter || munFilter
@@ -254,7 +295,7 @@ function App() {
     if (!data) return null
 
     // Se não há filtros, usar dados pré-agregados
-    if (!hasFilter || !granularData) {
+    if (!hasFilter) {
       return {
         timeseries: data.timeseries,
         byCadeia: data.byCadeia,
@@ -268,6 +309,65 @@ function App() {
         crossCadeiaSexo: data.crossCadeiaSexo,
         salaryDistribution: data.salaryDistribution,
         byCnae: data.byCnae,
+      }
+    }
+
+    // FALLBACK: Se granularData não está disponível, filtrar com dados existentes
+    if (!granularData) {
+      // Filtrar apenas por cadeia usando dados pré-agregados
+      const filteredByCadeia = cadeiaFilter
+        ? data.byCadeia.filter(c => c.cadeia === cadeiaFilter)
+        : data.byCadeia
+
+      const filteredByCnae = cadeiaFilter
+        ? data.byCnae.filter(c => c.cadeia === cadeiaFilter)
+        : data.byCnae
+
+      const filteredSalaryDist = cadeiaFilter
+        ? data.salaryDistribution.filter(s => s.cadeia === cadeiaFilter)
+        : data.salaryDistribution
+
+      const filteredTimeseriesCadeia = cadeiaFilter
+        ? data.timeseriesCadeia.filter(t => t.cadeia === cadeiaFilter)
+        : data.timeseriesCadeia
+
+      const filteredCrossCadeiaSexo = cadeiaFilter
+        ? data.crossCadeiaSexo.filter(c => c.cadeia === cadeiaFilter)
+        : data.crossCadeiaSexo
+
+      // Calcular timeseries da cadeia selecionada
+      let timeseries = data.timeseries
+      if (cadeiaFilter && filteredTimeseriesCadeia.length > 0) {
+        const tsMap = {}
+        filteredTimeseriesCadeia.forEach(t => {
+          if (!tsMap[t.periodo]) {
+            tsMap[t.periodo] = { periodo: t.periodo, admissoes: 0, demissoes: 0, saldo: 0 }
+          }
+          tsMap[t.periodo].admissoes += t.admissoes
+          tsMap[t.periodo].demissoes += t.demissoes
+          tsMap[t.periodo].saldo += t.saldo
+        })
+        timeseries = Object.values(tsMap).sort((a, b) => a.periodo.localeCompare(b.periodo))
+        let saldoAcum = 0
+        timeseries.forEach(t => {
+          saldoAcum += t.saldo
+          t.saldo_acumulado = saldoAcum
+        })
+      }
+
+      return {
+        timeseries,
+        byCadeia: filteredByCadeia,
+        bySexo: data.bySexo,
+        byFaixaEtaria: data.byFaixaEtaria,
+        byEscolaridade: data.byEscolaridade,
+        byPorte: data.byPorte,
+        seasonality: data.seasonality,
+        yearly: data.yearly,
+        timeseriesCadeia: filteredTimeseriesCadeia,
+        crossCadeiaSexo: filteredCrossCadeiaSexo,
+        salaryDistribution: filteredSalaryDist,
+        byCnae: filteredByCnae,
       }
     }
 

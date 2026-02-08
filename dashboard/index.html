@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/emprego-agro-parana/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Dashboard de emprego no agronegocio do Parana - dados CAGED por municipio, cadeia produtiva e atividade economica. Admissoes, demissoes e saldo de empregos formais no setor agropecuario." />
     <meta name="robots" content="index,follow" />
@@ -44,85 +44,66 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Analytics Tracking Script -->
+    <!-- Analytics Tracking Script - LGPD Compliant -->
     <script>
     (function() {
-      // IMPORTANTE: Substitua pela URL do seu Google Apps Script implantado
-      const TRACKING_URL = 'https://script.google.com/macros/s/AKfycbyk8VzLygqFmid0cSB5Qge8yRKRV-hJNvWlCSZBPrOCnyJyTd21d-6mNRjyJ7NIr_-36Q/exec';
+      var TRACKING_URL = 'https://script.google.com/macros/s/AKfycbyk8VzLygqFmid0cSB5Qge8yRKRV-hJNvWlCSZBPrOCnyJyTd21d-6mNRjyJ7NIr_-36Q/exec';
 
-      function getSessionId() {
-        let sessionId = sessionStorage.getItem('eap_session_id');
-        if (!sessionId) {
-          sessionId = 'sess_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-          sessionStorage.setItem('eap_session_id', sessionId);
-          sessionStorage.setItem('eap_session_start', new Date().toISOString());
-          sessionStorage.setItem('eap_page_views', '0');
+      function getDeviceType() {
+        var ua = navigator.userAgent;
+        if (/tablet|ipad|playbook|silk/i.test(ua)) return 'Tablet';
+        if (/Mobile|Android|iPhone|iPod|webOS|BlackBerry|Opera Mini|IEMobile/i.test(ua)) return 'Mobile';
+        return 'Desktop';
+      }
+
+      function getConnectionType() {
+        if (navigator.connection) {
+          return navigator.connection.effectiveType || 'unknown';
         }
-        return sessionId;
+        return 'unknown';
       }
 
-      function isReturningVisitor() {
-        const hasVisited = localStorage.getItem('eap_has_visited');
-        if (!hasVisited) {
-          localStorage.setItem('eap_has_visited', 'true');
-          localStorage.setItem('eap_first_visit', new Date().toISOString());
-          return false;
-        }
-        return true;
-      }
-
-      function getBrowserInfo() {
-        const ua = navigator.userAgent;
-        let browser = 'Unknown', version = '';
-        if (ua.indexOf('Firefox') > -1) { browser = 'Firefox'; version = (ua.match(/Firefox\/([0-9.]+)/) || [])[1] || ''; }
-        else if (ua.indexOf('Edg') > -1) { browser = 'Edge'; version = (ua.match(/Edg\/([0-9.]+)/) || [])[1] || ''; }
-        else if (ua.indexOf('Chrome') > -1) { browser = 'Chrome'; version = (ua.match(/Chrome\/([0-9.]+)/) || [])[1] || ''; }
-        else if (ua.indexOf('Safari') > -1) { browser = 'Safari'; version = (ua.match(/Version\/([0-9.]+)/) || [])[1] || ''; }
-        return { browser, version };
-      }
-
-      function getOS() {
-        const ua = navigator.userAgent;
-        if (ua.indexOf('Win') > -1) return 'Windows';
-        if (ua.indexOf('Mac') > -1) return 'macOS';
-        if (ua.indexOf('Linux') > -1) return 'Linux';
-        if (ua.indexOf('Android') > -1) return 'Android';
-        if (ua.indexOf('like Mac') > -1) return 'iOS';
-        return 'Unknown';
+      function getUTMParams() {
+        var params = new URLSearchParams(window.location.search);
+        return {
+          utmSource: params.get('utm_source') || '',
+          utmMedium: params.get('utm_medium') || '',
+          utmCampaign: params.get('utm_campaign') || '',
+          utmTerm: params.get('utm_term') || '',
+          utmContent: params.get('utm_content') || ''
+        };
       }
 
       function trackVisitor() {
-        // Nao rastrear se URL nao estiver configurada
-        if (TRACKING_URL === 'https://script.google.com/macros/s/AKfycbyk8VzLygqFmid0cSB5Qge8yRKRV-hJNvWlCSZBPrOCnyJyTd21d-6mNRjyJ7NIr_-36Q/exec') {
-          console.log('[Tracking] URL nao configurada - tracking desabilitado');
-          return;
-        }
-
         try {
-          const browserInfo = getBrowserInfo();
-          const isMobile = /Mobile|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-          const pageViews = parseInt(sessionStorage.getItem('eap_page_views') || '0') + 1;
-          sessionStorage.setItem('eap_page_views', pageViews.toString());
+          var loadTime = 0;
+          if (window.performance && window.performance.timing) {
+            loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+          }
 
-          const data = {
+          var utmParams = getUTMParams();
+
+          // Campos LGPD-compliant (19 campos anonimos)
+          var data = {
             origin: window.location.origin,
             timestamp: new Date().toISOString(),
-            page: window.location.pathname + window.location.hash,
-            referrer: document.referrer || 'Direct',
-            language: navigator.language,
             timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-            sessionId: getSessionId(),
-            returningVisitor: isReturningVisitor(),
-            browser: browserInfo.browser,
-            browserVersion: browserInfo.version,
-            os: getOS(),
-            screenWidth: screen.width,
-            screenHeight: screen.height,
-            viewportWidth: window.innerWidth,
-            viewportHeight: window.innerHeight,
-            isMobile: isMobile,
-            pageViewsInSession: pageViews,
-            pageTitle: document.title
+            timezoneOffset: new Date().getTimezoneOffset(),
+            page: window.location.href,
+            pathname: window.location.pathname,
+            referrer: document.referrer || '',
+            pageTitle: document.title,
+            language: navigator.language,
+            deviceType: getDeviceType(),
+            screenOrientation: screen.orientation ? screen.orientation.type : 'unknown',
+            connectionType: getConnectionType(),
+            loadTime: loadTime > 0 ? loadTime : '',
+            utmSource: utmParams.utmSource,
+            utmMedium: utmParams.utmMedium,
+            utmCampaign: utmParams.utmCampaign,
+            utmTerm: utmParams.utmTerm,
+            utmContent: utmParams.utmContent,
+            prefersColorScheme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
           };
 
           fetch(TRACKING_URL, {
@@ -131,20 +112,20 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
           }).then(function() {
-            console.log('[Tracking] Visitor data sent');
+            console.log('[Tracking] Data sent');
           }).catch(function(err) {
-            console.error('[Tracking] Error:', err);
+            console.warn('[Tracking] Error:', err);
           });
         } catch (e) {
-          console.error('[Tracking] Exception:', e);
+          console.warn('[Tracking] Exception:', e);
         }
       }
 
       // Track on page load
       if (document.readyState === 'complete') {
-        trackVisitor();
+        setTimeout(trackVisitor, 100);
       } else {
-        window.addEventListener('load', trackVisitor);
+        window.addEventListener('load', function() { setTimeout(trackVisitor, 100); });
       }
     })();
     </script>
