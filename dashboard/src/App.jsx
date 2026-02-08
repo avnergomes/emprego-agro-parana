@@ -61,20 +61,18 @@ function App() {
           .then(cube => {
             if (cube) {
               setGranularData(cube)
-              console.log('[Data] granular_cube.json carregado:', cube.length, 'registros')
             }
           })
-          .catch(err => console.warn('[Data] granular_cube.json não carregado:', err))
+          .catch(() => {})
 
         fetch('./data/granular_dimensions.json')
           .then(res => res.ok ? res.json() : null)
           .then(dims => {
             if (dims) {
               setGranularDimensions(dims)
-              console.log('[Data] granular_dimensions.json carregado')
             }
           })
-          .catch(err => console.warn('[Data] granular_dimensions.json não carregado:', err))
+          .catch(() => {})
       })
       .catch(err => {
         setError(err.message)
