@@ -1027,13 +1027,17 @@ function ActiveFilters({ filters, onClear, onClearAll }) {
 // ===== TABS =====
 
 function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality, hasFilter, filterLabel, onCadeiaClick, onSexoClick, onFaixaClick, cadeiaFilter, sexoFilter, faixaFilter }) {
+  // Evitar renderizar gráficos com dados vazios
+  const hasData = timeseries?.length > 0
+
   return (
     <div className="space-y-6">
       <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
       {/* Série Temporal */}
       <Card title="Evolução Mensal do Emprego Agrícola">
-        <div className="h-80">
-          <ResponsiveContainer>
+        <div className="h-80" style={{ minHeight: '320px' }}>
+          {hasData ? (
+          <ResponsiveContainer width="100%" height="100%">
             <ComposedChart data={timeseries}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
               <XAxis dataKey="periodo" tick={{ fontSize: 11 }} interval={5} />
@@ -1046,14 +1050,17 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
               <Line yAxisId="right" type="monotone" dataKey="saldo_acumulado" name="Saldo Acumulado" stroke="#3b82f6" strokeWidth={2} dot={false} />
             </ComposedChart>
           </ResponsiveContainer>
+          ) : (
+            <div className="flex items-center justify-center h-full text-neutral-400">Sem dados para exibir</div>
+          )}
         </div>
       </Card>
 
       <div className="grid md:grid-cols-2 gap-6">
         {/* Top Cadeias - Clicável */}
         <Card title="Principais Cadeias Produtivas (clique para filtrar)">
-          <div className="h-72">
-            <ResponsiveContainer>
+          <div className="h-72" style={{ minHeight: '288px' }}>
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart data={byCadeia.slice(0, 8)} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis type="number" tick={{ fontSize: 11 }} />
@@ -1082,7 +1089,7 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
         {/* Distribuição por Sexo - Clicável */}
         <Card title="Distribuição por Sexo (clique para filtrar)">
           <div className="h-72 flex items-center">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={bySexo.filter(s => s.sexo !== 'Não informado')}
@@ -1118,7 +1125,7 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
         {/* Faixa Etária - Clicável */}
         <Card title="Distribuição por Faixa Etária (clique para filtrar)">
           <div className="h-64">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart data={byFaixaEtaria.filter(f => f.faixa !== 'Não informado')}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="faixa" tick={{ fontSize: 10 }} angle={-20} textAnchor="end" height={60} />
@@ -1147,7 +1154,7 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
         {/* Sazonalidade */}
         <Card title="Padrão Sazonal (Média Mensal)">
           <div className="h-64">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={seasonality}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="mes_nome" tick={{ fontSize: 11 }} />
@@ -1196,7 +1203,7 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
       {/* Treemap - Clicável */}
       <Card title="Distribuição por Cadeia Produtiva (clique para filtrar)">
         <div className="h-80">
-          <ResponsiveContainer>
+          <ResponsiveContainer width="100%" height="100%">
             <Treemap
               data={top10.map(c => ({
                 name: c.cadeia,
@@ -1273,7 +1280,7 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
       {/* Gênero por cadeia */}
       <Card title="Distribuição de Gênero por Cadeia">
         <div className="h-80">
-          <ResponsiveContainer>
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart data={
               top10.map(c => {
                 const masc = crossCadeiaSexo.find(x => x.cadeia === c.cadeia && x.sexo === 'Masculino')
@@ -1455,7 +1462,7 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
         {/* Faixa Etária - Clicável */}
         <Card title="Por Faixa Etária (clique para filtrar)">
           <div className="h-64">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart data={byFaixaEtaria.filter(f => f.faixa !== 'Não informado')} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis type="number" tick={{ fontSize: 11 }} />
@@ -1485,7 +1492,7 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
         {/* Escolaridade - Clicável */}
         <Card title="Por Escolaridade (clique para filtrar)">
           <div className="h-64">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart data={byEscolaridade.slice(0, 8)} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis type="number" tick={{ fontSize: 11 }} />
@@ -1513,7 +1520,7 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
         {/* Porte da empresa */}
         <Card title="Por Porte da Empresa">
           <div className="h-64">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart data={byPorte}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="porte" tick={{ fontSize: 10 }} angle={-30} textAnchor="end" height={80} />
@@ -1565,7 +1572,7 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
       {/* Box plot style - Clicável */}
       <Card title="Distribuição Salarial por Cadeia (clique para filtrar)">
         <div className="h-80">
-          <ResponsiveContainer>
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart data={salarioData} layout="vertical">
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
               <XAxis type="number" tick={{ fontSize: 11 }} tickFormatter={(v) => `R$ ${v.toLocaleString()}`} />
@@ -1626,7 +1633,7 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
       {/* Salário por escolaridade - Clicável */}
       <Card title="Salário por Escolaridade (clique para filtrar)">
         <div className="h-64">
-          <ResponsiveContainer>
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart data={byEscolaridade.slice(0, 8)}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
               <XAxis dataKey="escolaridade" tick={{ fontSize: 10 }} angle={-20} textAnchor="end" height={80} />
@@ -1938,7 +1945,7 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
       {/* Top 20 municípios */}
       <Card title="Top 20 Municípios por Admissões">
         <div className="h-96">
-          <ResponsiveContainer>
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart data={topMunicipios} layout="vertical">
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
               <XAxis type="number" tick={{ fontSize: 11 }} />
@@ -2008,7 +2015,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
       {/* Série temporal completa */}
       <Card title="Série Histórica Completa (2020-2025)">
         <div className="h-80">
-          <ResponsiveContainer>
+          <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={timeseries}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
               <XAxis dataKey="periodo" tick={{ fontSize: 11 }} interval={5} />
@@ -2025,7 +2032,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
       {/* Saldo acumulado */}
       <Card title="Saldo Acumulado">
         <div className="h-64">
-          <ResponsiveContainer>
+          <ResponsiveContainer width="100%" height="100%">
             <LineChart data={timeseries}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
               <XAxis dataKey="periodo" tick={{ fontSize: 11 }} interval={5} />
@@ -2041,7 +2048,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
         {/* Anual - Clicável */}
         <Card title="Resumo Anual (clique para filtrar por ano)">
           <div className="h-64">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart data={yearly}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="ano" tick={{ fontSize: 11 }} />
@@ -2096,7 +2103,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
         {/* Sazonalidade */}
         <Card title="Padrão Sazonal">
           <div className="h-64">
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
               <RadarChart data={seasonality}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="mes_nome" tick={{ fontSize: 11 }} />
