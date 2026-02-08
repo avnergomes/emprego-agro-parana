@@ -109,13 +109,57 @@ function App() {
     return map
   }, [geoData])
 
-  // Dados filtrados
+  // Dados filtrados por município - agora também considera cadeiaFilter
   const filteredByMunicipio = useMemo(() => {
     if (!data) return []
-    const byMunicipio = data.byMunicipio
-    if (!mesoFilter && !regIdrFilter && !munFilter) return byMunicipio
-    return byMunicipio.filter(m => {
-      // Filtro de município específico tem prioridade
+
+    const hasAnyFilter = mesoFilter || regIdrFilter || munFilter || cadeiaFilter
+
+    // Se não há filtros, retornar dados originais
+    if (!hasAnyFilter) return data.byMunicipio
+
+    // Se há filtro de cadeia, precisamos recalcular do granularData
+    if (cadeiaFilter && granularData) {
+      const munMap = {}
+      granularData.forEach(r => {
+        // Filtro de cadeia
+        if (r.cadeia !== cadeiaFilter) return
+        // Filtros regionais
+        if (munFilter && r.mun !== munFilter) return
+        if (mesoFilter || regIdrFilter) {
+          const region = munRegionMap[r.mun]
+          if (region) {
+            if (mesoFilter && region.meso !== mesoFilter) return
+            if (regIdrFilter && region.regIdr !== regIdrFilter) return
+          }
+        }
+
+        if (!munMap[r.mun]) {
+          munMap[r.mun] = { codigo: r.mun, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
+        }
+        munMap[r.mun].admissoes += r.admissoes
+        munMap[r.mun].demissoes += r.demissoes
+        munMap[r.mun].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
+        munMap[r.mun].count += r.admissoes + r.demissoes
+      })
+
+      // Buscar nomes dos municípios do data original
+      const munNames = {}
+      data.byMunicipio.forEach(m => { munNames[m.codigo] = m.nome })
+
+      return Object.values(munMap)
+        .map(m => ({
+          ...m,
+          nome: munNames[m.codigo] || m.codigo,
+          saldo: m.admissoes - m.demissoes,
+          salario_medio: m.count > 0 ? m.salario_total / m.count : 0,
+          cadeia_dominante: cadeiaFilter,
+        }))
+        .sort((a, b) => b.admissoes - a.admissoes)
+    }
+
+    // Apenas filtros regionais (sem cadeia)
+    return data.byMunicipio.filter(m => {
       if (munFilter) return m.codigo === munFilter
       const region = munRegionMap[m.codigo]
       if (!region) return true
@@ -123,10 +167,16 @@ function App() {
       const matchesRegIdr = !regIdrFilter || region.regIdr === regIdrFilter
       return matchesMeso && matchesRegIdr
     })
-  }, [data, mesoFilter, regIdrFilter, munFilter, munRegionMap])
+  }, [data, granularData, mesoFilter, regIdrFilter, munFilter, munRegionMap, cadeiaFilter])
 
   const filteredTopMunicipios = useMemo(() => {
     if (!data) return []
+
+    // Se tem cadeia filter, usar filteredByMunicipio (já filtrado)
+    if (cadeiaFilter) {
+      return filteredByMunicipio.slice(0, 20)
+    }
+
     const topMunicipios = data.topMunicipios
     if (!mesoFilter && !regIdrFilter && !munFilter) return topMunicipios
     return topMunicipios.filter(m => {
@@ -137,13 +187,16 @@ function App() {
       const matchesRegIdr = !regIdrFilter || region.regIdr === regIdrFilter
       return matchesMeso && matchesRegIdr
     })
-  }, [data, mesoFilter, regIdrFilter, munFilter, munRegionMap])
+  }, [data, filteredByMunicipio, mesoFilter, regIdrFilter, munFilter, munRegionMap, cadeiaFilter])
 
-  // KPIs recalculados com base nos municípios filtrados
+  // KPIs recalculados com base nos filtros ativos
   const filteredKpis = useMemo(() => {
     if (!data) return null
     const kpis = data.kpis
-    if (!mesoFilter && !regIdrFilter && !munFilter) return kpis
+
+    const hasAnyFilter = mesoFilter || regIdrFilter || munFilter || cadeiaFilter
+    if (!hasAnyFilter) return kpis
+
     const admissoes = filteredByMunicipio.reduce((a, m) => a + (m.admissoes || 0), 0)
     const demissoes = filteredByMunicipio.reduce((a, m) => a + (m.demissoes || 0), 0)
     const saldo = admissoes - demissoes
@@ -155,7 +208,7 @@ function App() {
       acumulado: { admissoes, demissoes, saldo },
       salario: { ...kpis.salario, media: salarioMedia, mediana: salarioMediana }
     }
-  }, [data, filteredByMunicipio, mesoFilter, regIdrFilter])
+  }, [data, filteredByMunicipio, mesoFilter, regIdrFilter, cadeiaFilter])
 
   // Verificar se há filtros ativos
   const hasRegionalFilter = mesoFilter || regIdrFilter || munFilter
@@ -408,6 +461,59 @@ function App() {
       }
     }
 
+    // Calcular timeseriesCadeia a partir do cubo filtrado
+    const timeseriesCadeiaMap = {}
+    filteredCube.forEach(r => {
+      const key = `${r.periodo}_${r.cadeia}`
+      if (!timeseriesCadeiaMap[key]) {
+        timeseriesCadeiaMap[key] = { periodo: r.periodo, cadeia: r.cadeia, admissoes: 0, demissoes: 0 }
+      }
+      timeseriesCadeiaMap[key].admissoes += r.admissoes
+      timeseriesCadeiaMap[key].demissoes += r.demissoes
+    })
+    const timeseriesCadeia = Object.values(timeseriesCadeiaMap)
+      .map(t => ({ ...t, saldo: t.admissoes - t.demissoes }))
+      .sort((a, b) => a.periodo.localeCompare(b.periodo))
+
+    // Calcular crossCadeiaSexo a partir de granularDimensions
+    let crossCadeiaSexo = data.crossCadeiaSexo
+    if (granularDimensions?.bySexo && (hasRegionalFilter || cadeiaFilter)) {
+      const crossMap = {}
+      const filteredSexoData = granularDimensions.bySexo.filter(r => {
+        if (cadeiaFilter && r.cadeia !== cadeiaFilter) return false
+        if (!hasRegionalFilter) return true
+        if (munFilter) return r.mun === munFilter
+        const region = munRegionMap[r.mun]
+        if (!region) return true
+        return (!mesoFilter || region.meso === mesoFilter) && (!regIdrFilter || region.regIdr === regIdrFilter)
+      })
+      filteredSexoData.forEach(r => {
+        const key = `${r.cadeia}_${r.sexo}`
+        if (!crossMap[key]) {
+          crossMap[key] = { cadeia: r.cadeia, sexo: r.sexo, admissoes: 0, demissoes: 0 }
+        }
+        crossMap[key].admissoes += r.admissoes
+        crossMap[key].demissoes += r.demissoes
+      })
+      crossCadeiaSexo = Object.values(crossMap).map(c => ({
+        ...c,
+        saldo: c.admissoes - c.demissoes,
+        salario_medio: 0, // Não temos salário nesse cubo
+      }))
+    }
+
+    // Filtrar salaryDistribution por cadeia
+    let salaryDistribution = data.salaryDistribution
+    if (cadeiaFilter) {
+      salaryDistribution = data.salaryDistribution.filter(s => s.cadeia === cadeiaFilter)
+    }
+
+    // Filtrar byCnae por cadeia (byCnae já tem o campo cadeia)
+    let byCnae = data.byCnae
+    if (cadeiaFilter) {
+      byCnae = data.byCnae.filter(c => c.cadeia === cadeiaFilter)
+    }
+
     return {
       timeseries,
       byCadeia,
@@ -417,10 +523,10 @@ function App() {
       byPorte,
       seasonality,
       yearly,
-      timeseriesCadeia: data.timeseriesCadeia,
-      crossCadeiaSexo: data.crossCadeiaSexo,
-      salaryDistribution: data.salaryDistribution,
-      byCnae: data.byCnae,
+      timeseriesCadeia,
+      crossCadeiaSexo,
+      salaryDistribution,
+      byCnae,
     }
   }, [data, granularData, granularDimensions, hasFilter, hasRegionalFilter, filteredCube, mesoFilter, regIdrFilter, munFilter, munRegionMap, cadeiaFilter])
 
@@ -694,6 +800,9 @@ function App() {
             mesoFilter={mesoFilter}
             regIdrFilter={regIdrFilter}
             munFilter={munFilter}
+            cadeiaFilter={cadeiaFilter}
+            hasFilter={hasFilter}
+            filterLabel={cadeiaFilter || selectedMunName || mesoFilter || regIdrFilter}
           />
         )}
         {activeTab === 'tempo' && (
@@ -1516,7 +1625,7 @@ function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHove
   )
 }
 
-function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, regIdrFilter, munFilter }) {
+function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, regIdrFilter, munFilter, cadeiaFilter, hasFilter, filterLabel }) {
   const [hoveredMun, setHoveredMun] = useState(null)
   const [mapMetric, setMapMetric] = useState('admissoes')
   const [sortColumn, setSortColumn] = useState('admissoes')
@@ -1623,11 +1732,12 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
 
   return (
     <div className="space-y-6">
+      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
       {/* Resumo */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="text-sm text-neutral-500">Total de Municípios</div>
-          <div className="text-2xl font-bold text-green-600">{metadata.total_municipios}</div>
+          <div className="text-sm text-neutral-500">Municípios Exibidos</div>
+          <div className="text-2xl font-bold text-green-600">{byMunicipio.length}</div>
         </div>
         <div className="bg-white rounded-xl p-4 shadow-sm">
           <div className="text-sm text-neutral-500">Maior Empregador</div>
@@ -1637,7 +1747,7 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
         <div className="bg-white rounded-xl p-4 shadow-sm">
           <div className="text-sm text-neutral-500">Top 20 representa</div>
           <div className="text-2xl font-bold text-blue-600">
-            {(topMunicipios.reduce((a, m) => a + m.admissoes, 0) / byMunicipio.reduce((a, m) => a + m.admissoes, 0) * 100).toFixed(1)}%
+            {byMunicipio.length > 0 ? (topMunicipios.reduce((a, m) => a + m.admissoes, 0) / byMunicipio.reduce((a, m) => a + m.admissoes, 0) * 100).toFixed(1) : 0}%
           </div>
         </div>
       </div>
