@@ -920,17 +920,66 @@ function App() {
 
       {/* Footer */}
       <footer className="bg-neutral-800 text-neutral-300 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-              <p className="font-medium">{metadata.fonte}</p>
-              <p className="text-sm text-neutral-400">
-                Atualização: {metadata.atualizacao} | {metadata.total_cadeias} cadeias produtivas | {metadata.total_subclasses} atividades CNAE
-              </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Fonte de Dados */}
+            <div className="space-y-3">
+              <h4 className="text-white font-semibold text-sm flex items-center gap-2">
+                <Briefcase className="w-4 h-4 text-indigo-400" />
+                Fonte de Dados
+              </h4>
+              <ul className="space-y-1.5 text-xs text-neutral-400">
+                <li>RAIS - Relação Anual de Informações Sociais</li>
+                <li>MTE - Ministério do Trabalho e Emprego</li>
+              </ul>
+              <div className="text-xs text-neutral-500 pt-2 border-t border-neutral-700">
+                <p>{metadata.atualizacao}</p>
+                <p>{metadata.total_cadeias} cadeias | {metadata.total_subclasses} atividades CNAE</p>
+              </div>
             </div>
-            <div className="text-sm text-neutral-400">
-              {metadata.total_municipios} municípios do Paraná
+
+            {/* Datageo Paraná */}
+            <div className="space-y-3">
+              <h4 className="text-white font-semibold text-sm">
+                <a
+                  href="https://datageoparana.github.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-indigo-400 transition-colors inline-flex items-center gap-1"
+                >
+                  Datageo Paraná
+                  <span className="text-xs">↗</span>
+                </a>
+              </h4>
+              <div className="flex flex-wrap gap-1.5">
+                <a href="https://avnergomes.github.io/vbp-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">VBP Paraná</a>
+                <a href="https://avnergomes.github.io/precos-diarios/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Preços Diários</a>
+                <a href="https://avnergomes.github.io/precos-florestais/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Preços Florestais</a>
+                <a href="https://avnergomes.github.io/precos-de-terras/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Preços de Terras</a>
+                <a href="https://avnergomes.github.io/comexstat-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">ComexStat Paraná</a>
+              </div>
             </div>
+
+            {/* Developer */}
+            <div className="space-y-3 flex flex-col items-start md:items-end">
+              <a
+                href="https://avnergomes.github.io/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-neutral-400 hover:text-indigo-400 transition-colors"
+                title="Portfolio"
+              >
+                <span className="text-xs">Desenvolvido por Avner Gomes</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom */}
+          <div className="mt-6 pt-4 border-t border-neutral-700 flex items-center justify-between text-[10px] text-neutral-500">
+            <p>Emprego Agro Paraná · Dados públicos RAIS/MTE</p>
+            <span className="px-2 py-0.5 bg-indigo-900/50 text-indigo-300 rounded-full">
+              {metadata.total_municipios} municípios
+            </span>
           </div>
         </div>
       </footer>
