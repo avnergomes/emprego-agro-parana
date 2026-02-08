@@ -39,3 +39,9 @@ npm-debug.log*
 # Temp
 *.tmp
 *.temp
+
+# Google Apps Script (secrets)
+*.gs
+
+# Claude Code
+.claude/
