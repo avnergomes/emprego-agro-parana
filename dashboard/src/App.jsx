@@ -964,9 +964,14 @@ function App() {
                 href="https://avnergomes.github.io/portfolio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-neutral-400 hover:text-indigo-400 transition-colors"
+                className="flex items-center gap-2 text-neutral-400 hover:text-indigo-400 transition-colors group"
                 title="Portfolio"
               >
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/logo.png`}
+                  alt="Avner Gomes"
+                  className="w-8 h-8 rounded-full opacity-80 group-hover:opacity-100 transition-opacity"
+                />
                 <span className="text-xs">Desenvolvido por Avner Gomes</span>
               </a>
             </div>
