@@ -10,6 +10,9 @@ import {
   BarChart3, Calendar, TreePine, Fish, Wheat, Building2, Info,
   MapPin, GraduationCap, UserCheck, Factory, Layers, Activity
 } from 'lucide-react'
+import BumpChart from './components/BumpChart'
+import LollipopChart from './components/LollipopChart'
+import CircularBarChart from './components/CircularBarChart'
 import './index.css'
 
 const GEO_URL = './assets/mun_PR.json'
@@ -1219,6 +1222,26 @@ function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality,
           </div>
         </Card>
       </div>
+
+      {/* D3 Charts */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <CircularBarChart
+          data={timeseries}
+          title="Padrão Sazonal de Emprego"
+          width={400}
+          height={400}
+          metric="saldo"
+        />
+        <LollipopChart
+          data={byCadeia}
+          title="Ranking por Cadeia"
+          width={500}
+          height={400}
+          metric="saldo"
+          limit={10}
+          onCadeiaClick={onCadeiaClick}
+        />
+      </div>
     </div>
   )
 }
@@ -1356,6 +1379,16 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
           </ResponsiveContainer>
         </div>
       </Card>
+
+      {/* D3 BumpChart - Evolução do Ranking */}
+      <BumpChart
+        data={timeseriesCadeia}
+        title="Evolução do Ranking de Cadeias"
+        width={800}
+        height={450}
+        metric="saldo"
+        topN={10}
+      />
     </div>
   )
 }
