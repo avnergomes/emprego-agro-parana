@@ -18,7 +18,7 @@ except ImportError:
     sys.exit(1)
 
 # Configurações
-ANOS = range(2020, 2026)
+ANOS = range(2020, datetime.now().year + 1)
 UF = 'PR'
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'data', 'raw')
 

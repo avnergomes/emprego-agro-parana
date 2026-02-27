@@ -147,7 +147,7 @@ def create_sample_data():
     ]
 
     # Gerar dados mensais 2020-2025
-    for ano in range(2020, 2026):
+    for ano in range(2020, datetime.now().year + 1):
         meses_disponiveis = 12 if ano < 2025 else 1
 
         for mes in range(1, meses_disponiveis + 1):

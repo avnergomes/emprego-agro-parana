@@ -7,6 +7,7 @@ import os
 import sys
 from io import BytesIO
 from ftplib import FTP
+from datetime import datetime
 import py7zr
 import pandas as pd
 
@@ -108,7 +109,7 @@ def download_all_data():
 
     all_data = []
 
-    for ano in range(2020, 2026):
+    for ano in range(2020, datetime.now().year + 1):
         # Determinar meses disponíveis
         if ano == 2025:
             # Verificar até qual mês está disponível

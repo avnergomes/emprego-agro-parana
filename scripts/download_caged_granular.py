@@ -190,7 +190,7 @@ def download_all():
     all_data = []
     total_registros = 0
 
-    for ano in range(2020, 2026):
+    for ano in range(2020, datetime.now().year + 1):
         print(f"\n[{ano}]")
 
         for mes in range(1, 13):
