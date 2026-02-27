@@ -45,9 +45,15 @@
     <script type="module" src="/src/main.jsx"></script>
 
     <!-- Analytics Tracking Script - LGPD Compliant -->
+    <!-- URL configurada via GitHub Actions secret TRACKING_URL -->
     <script>
     (function() {
-      var TRACKING_URL = 'https://script.google.com/macros/s/AKfycbyk8VzLygqFmid0cSB5Qge8yRKRV-hJNvWlCSZBPrOCnyJyTd21d-6mNRjyJ7NIr_-36Q/exec';
+      var TRACKING_URL = '%VITE_TRACKING_URL%';
+      // Skip if URL not configured
+      if (!TRACKING_URL || TRACKING_URL.indexOf('VITE_TRACKING_URL') !== -1) {
+        console.warn('[Tracking] URL not configured - tracking disabled');
+        return;
+      }
 
       function getDeviceType() {
         var ua = navigator.userAgent;
