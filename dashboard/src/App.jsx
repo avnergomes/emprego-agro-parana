@@ -28,6 +28,7 @@ function App() {
   const [granularData, setGranularData] = useState(null)
   const [granularDimensions, setGranularDimensions] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [isGranularLoading, setIsGranularLoading] = useState(false)
   const [error, setError] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
   const [selectedCadeia, setSelectedCadeia] = useState(null)
@@ -45,42 +46,55 @@ function App() {
   const [periodoFilter, setPeriodoFilter] = useState('')
 
   useEffect(() => {
+    // AbortController para cancelar fetches se componente desmontar
+    const abortController = new AbortController()
+    const { signal } = abortController
+
     // Carregar dados agregados e GeoJSON primeiro (essenciais)
     Promise.all([
-      fetch('./data/aggregated_full.json').then(res => {
+      fetch('./data/aggregated_full.json', { signal }).then(res => {
         if (!res.ok) throw new Error('Dados não encontrados')
         return res.json()
       }),
-      fetch(GEO_URL).then(res => res.json()).catch(() => null),
+      fetch(GEO_URL, { signal }).then(res => res.json()).catch(() => null),
     ])
       .then(([aggData, geo]) => {
+        if (signal.aborted) return
         setData(aggData)
         setGeoData(geo)
         setLoading(false)
 
         // Carregar dados granulares em background (opcionais, para filtros avançados)
-        fetch('./data/granular_cube.json')
-          .then(res => res.ok ? res.json() : null)
-          .then(cube => {
-            if (cube) {
-              setGranularData(cube)
-            }
-          })
-          .catch(() => {})
+        setIsGranularLoading(true)
 
-        fetch('./data/granular_dimensions.json')
-          .then(res => res.ok ? res.json() : null)
-          .then(dims => {
-            if (dims) {
-              setGranularDimensions(dims)
-            }
+        Promise.all([
+          fetch('./data/granular_cube.json', { signal })
+            .then(res => res.ok ? res.json() : null)
+            .catch(() => null),
+          fetch('./data/granular_dimensions.json', { signal })
+            .then(res => res.ok ? res.json() : null)
+            .catch(() => null)
+        ])
+          .then(([cube, dims]) => {
+            if (signal.aborted) return
+            if (cube) setGranularData(cube)
+            if (dims) setGranularDimensions(dims)
           })
           .catch(() => {})
+          .finally(() => {
+            if (!signal.aborted) setIsGranularLoading(false)
+          })
       })
       .catch(err => {
+        if (signal.aborted) return
         setError(err.message)
         setLoading(false)
       })
+
+    // Cleanup: cancelar fetches pendentes ao desmontar
+    return () => {
+      abortController.abort()
+    }
   }, [])
 
   // Extrair regiões únicas do GeoJSON (hook deve vir ANTES de returns condicionais)
