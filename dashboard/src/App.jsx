@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import {
   Users, TrendingUp, TrendingDown, DollarSign, Briefcase,
-  BarChart3, Calendar, TreePine, MapPin, GraduationCap, Activity
+  BarChart3, Layers, Factory, MapPin, Info, Activity
 } from 'lucide-react'
 
 // Components
