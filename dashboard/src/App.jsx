@@ -1479,7 +1479,7 @@ function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, onCadeiaClick, cade
                 <SortTh col="admissoes" label="Admissões" align="right" />
                 <SortTh col="demissoes" label="Demissões" align="right" />
                 <SortTh col="saldo" label="Saldo" align="right" />
-                <SortTh col="salario_mediana" label="Sal. Méd." align="right" />
+                <SortTh col="salario_mediana" label="Mediana" align="right" />
               </tr>
             </thead>
             <tbody>
@@ -1529,7 +1529,7 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
         </div>
         <div className="bg-white rounded-xl p-4 shadow-sm">
           <div className="text-sm text-neutral-500">Salário Médio</div>
-          <div className="text-2xl font-bold text-amber-600">{formatCurrency(kpis.salario.mediana)}</div>
+          <div className="text-2xl font-bold text-amber-600">{formatCurrency(kpis.salario.media)}</div>
         </div>
       </div>
 
