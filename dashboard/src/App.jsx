@@ -256,13 +256,15 @@ function App() {
     const admissoes = filteredByMunicipio.reduce((a, m) => a + (m.admissoes || 0), 0)
     const demissoes = filteredByMunicipio.reduce((a, m) => a + (m.demissoes || 0), 0)
     const saldo = admissoes - demissoes
-    const salarios = filteredByMunicipio.filter(m => m.salario_medio).map(m => m.salario_medio)
-    const salarioMedia = salarios.length > 0 ? salarios.reduce((a, b) => a + b, 0) / salarios.length : 0
-    const salarioMediana = salarios.length > 0 ? salarios.sort((a, b) => a - b)[Math.floor(salarios.length / 2)] : 0
+    // Média ponderada por headcount (corrige problema de mean-of-means)
+    const municipiosComSalario = filteredByMunicipio.filter(m => m.salario_medio && m.count > 0)
+    const totalSalario = municipiosComSalario.reduce((sum, m) => sum + (m.salario_medio * m.count), 0)
+    const totalCount = municipiosComSalario.reduce((sum, m) => sum + m.count, 0)
+    const salarioMedia = totalCount > 0 ? totalSalario / totalCount : 0
     return {
       ...kpis,
       acumulado: { admissoes, demissoes, saldo },
-      salario: { ...kpis.salario, media: salarioMedia, mediana: salarioMediana }
+      salario: { ...kpis.salario, media: salarioMedia }
     }
   }, [data, granularData, filteredByMunicipio, mesoFilter, regIdrFilter, munFilter, cadeiaFilter])
 
@@ -428,7 +430,6 @@ function App() {
         ...c,
         saldo: c.admissoes - c.demissoes,
         salario_medio: c.count > 0 ? c.salario_total / c.count : 0,
-        salario_mediana: c.count > 0 ? c.salario_total / c.count : 0, // aproximação
         pct_admissoes: totalAdmissoes > 0 ? (c.admissoes / totalAdmissoes * 100).toFixed(1) : 0,
         cor: data.byCadeia.find(x => x.cadeia === c.cadeia)?.cor || '#808080',
       }))
@@ -552,7 +553,7 @@ function App() {
           .map(e => ({
             ...e,
             saldo: e.admissoes - e.demissoes,
-            salario_mediana: e.count > 0 ? e.salario_total / e.count : 0,
+            salario_medio: e.count > 0 ? e.salario_total / e.count : 0,
             pct: totalAdm > 0 ? (e.admissoes / totalAdm * 100).toFixed(1) : 0,
           }))
           .sort((a, b) => b.admissoes - a.admissoes)
@@ -783,9 +784,9 @@ function App() {
             color={filteredKpis.acumulado.saldo >= 0 ? 'green' : 'red'}
           />
           <KpiCard
-            title="Salário Mediano"
-            value={formatCurrency(filteredKpis.salario.mediana)}
-            subtitle={`Média: ${formatCurrency(filteredKpis.salario.media)}`}
+            title="Salário Médio"
+            value={formatCurrency(filteredKpis.salario.media)}
+            subtitle="Ponderado por vínculos"
             icon={DollarSign}
             color="amber"
           />
@@ -1334,7 +1335,7 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
                 <SortTh col="admissoes" label="Admissões" align="right" />
                 <SortTh col="demissoes" label="Demissões" align="right" />
                 <SortTh col="saldo" label="Saldo" align="right" />
-                <SortTh col="salario_mediana" label="Salário Mediano" align="right" />
+                <SortTh col="salario_medio" label="Salário Médio" align="right" />
                 <SortTh col="pct_admissoes" label="%" align="right" />
               </tr>
             </thead>
@@ -1357,7 +1358,7 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
                   <td className={`text-right py-2 px-2 font-medium ${c.saldo >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                     {c.saldo >= 0 ? '+' : ''}{formatNumber(c.saldo)}
                   </td>
-                  <td className="text-right py-2 px-2">{formatCurrency(c.salario_mediana)}</td>
+                  <td className="text-right py-2 px-2">{formatCurrency(c.salario_medio)}</td>
                   <td className="text-right py-2 px-2 text-neutral-500">{c.pct_admissoes}%</td>
                 </tr>
               ))}
@@ -1478,7 +1479,7 @@ function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, onCadeiaClick, cade
                 <SortTh col="admissoes" label="Admissões" align="right" />
                 <SortTh col="demissoes" label="Demissões" align="right" />
                 <SortTh col="saldo" label="Saldo" align="right" />
-                <SortTh col="salario_mediana" label="Sal. Med." align="right" />
+                <SortTh col="salario_mediana" label="Sal. Méd." align="right" />
               </tr>
             </thead>
             <tbody>
@@ -1527,7 +1528,7 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
           <div className="text-2xl font-bold text-purple-600">{kpis.perfil.idade_media} anos</div>
         </div>
         <div className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="text-sm text-neutral-500">Salário Mediano</div>
+          <div className="text-sm text-neutral-500">Salário Médio</div>
           <div className="text-2xl font-bold text-amber-600">{formatCurrency(kpis.salario.mediana)}</div>
         </div>
       </div>
@@ -1739,8 +1740,8 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
               <YAxis tick={{ fontSize: 11 }} tickFormatter={(v) => `R$ ${v.toLocaleString()}`} />
               <Tooltip formatter={(v) => formatCurrency(v)} />
               <Bar
-                dataKey="salario_mediana"
-                name="Salário Mediano"
+                dataKey="salario_medio"
+                name="Salário Médio"
                 cursor="pointer"
                 onClick={(data) => onEscolaridadeClick && onEscolaridadeClick(data.escolaridade)}
               >
