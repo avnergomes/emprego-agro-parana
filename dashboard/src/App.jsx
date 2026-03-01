@@ -15,7 +15,7 @@ import LollipopChart from './components/LollipopChart'
 import CircularBarChart from './components/CircularBarChart'
 import './index.css'
 
-const GEO_URL = './assets/mun_PR.json'
+const GEO_URL = `${import.meta.env.BASE_URL}assets/mun_PR.json`
 
 // Formatadores
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
@@ -52,7 +52,7 @@ function App() {
 
     // Carregar dados agregados e GeoJSON primeiro (essenciais)
     Promise.all([
-      fetch('./data/aggregated_full.json', { signal }).then(res => {
+      fetch(`${import.meta.env.BASE_URL}data/aggregated_full.json`, { signal }).then(res => {
         if (!res.ok) throw new Error('Dados não encontrados')
         return res.json()
       }),
@@ -68,10 +68,10 @@ function App() {
         setIsGranularLoading(true)
 
         Promise.all([
-          fetch('./data/granular_cube.json', { signal })
+          fetch(`${import.meta.env.BASE_URL}data/granular_cube.json`, { signal })
             .then(res => res.ok ? res.json() : null)
             .catch(() => null),
-          fetch('./data/granular_dimensions.json', { signal })
+          fetch(`${import.meta.env.BASE_URL}data/granular_dimensions.json`, { signal })
             .then(res => res.ok ? res.json() : null)
             .catch(() => null)
         ])
