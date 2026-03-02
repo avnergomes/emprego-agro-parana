@@ -975,6 +975,9 @@ function App() {
                 <a href="https://avnergomes.github.io/precos-florestais/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Preços Florestais</a>
                 <a href="https://avnergomes.github.io/precos-de-terras/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Preços de Terras</a>
                 <a href="https://avnergomes.github.io/comexstat-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">ComexStat Paraná</a>
+                <a href="https://avnergomes.github.io/censo-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Censo Paraná</a>
+                <a href="https://avnergomes.github.io/credito-rural-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Crédito Rural</a>
+                <a href="https://avnergomes.github.io/saude-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Saúde Paraná</a>
               </div>
             </div>
 
