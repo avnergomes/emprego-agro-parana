@@ -1,36 +1,81 @@
-# Emprego Agrícola - Paraná
+# Emprego Agro Paraná — Emprego Formal no Agronegócio
 
-Dashboard interativo de emprego formal na agropecuária paranaense.
+Dashboard de emprego formal no agronegócio paranaense (2020–2025), com dados do RAIS/CAGED (MTE). Organizado em 7 abas temáticas — de visão geral a perfil do trabalhador e salários — com filtros regionais e cross-filtering por clique nos gráficos.
+
+**🔗 [Acessar dashboard](https://avnergomes.github.io/emprego-agro-parana/)**
+
+Parte do ecossistema **[Datageo Paraná](https://datageoparana.github.io)**.
 
 ## Sobre
 
-Este dashboard apresenta dados de movimentação de emprego formal (admissões e demissões) no setor agropecuário do Paraná, baseado em estatísticas do CAGED/MTE.
+O mercado formal de trabalho no agronegócio paranaense envolve centenas de milhares de trabalhadores distribuídos por cadeias produtivas, classes CNAE e municípios de todo o estado. Este dashboard consolida os microdados do RAIS e do CAGED (Ministério do Trabalho e Emprego) para o período 2020–2025, permitindo análises detalhadas de admissões, demissões, saldo de empregos e salários.
 
-### Cobertura
+A arquitetura de dados utiliza um cubo granular (`granular_cube.json`) que habilita o cross-filtering interativo: clicar em um gráfico filtra automaticamente os demais painéis da mesma aba. As 7 abas cobrem desde a visão geral até recortes específicos por cadeia produtiva, CNAE, perfil demográfico do trabalhador, salários, distribuição geográfica e evolução temporal.
 
-- **Estado:** Paraná (PR)
-- **Período:** 2020-2025
-- **Setores:** CNAE Seção A (Agricultura, Pecuária, Silvicultura, Pesca)
+O mapa SVG do Paraná (`mun_PR.json`) e o bump chart de ranking completam a análise territorial e competitiva entre municípios e regiões.
 
-### Visualizações
+## Fonte de Dados
 
-- **Visão Geral:** KPIs, série temporal, distribuição por setor
-- **Por Setor:** Comparativo entre divisões CNAE
-- **Sazonalidade:** Padrão mensal de contratações
-- **Evolução Anual:** Resumo e tendências por ano
+- **RAIS/CAGED — MTE** — Relação Anual de Informações Sociais e Cadastro Geral de Empregados e Desempregados, Ministério do Trabalho e Emprego
+- Período: 2020–2025
+- Atualização: workflow automatizado (`data-pipeline.yml`)
 
-## Stack Tecnológico
+## Tecnologias
 
-- **Frontend:** React 18 + Vite 5 + Tailwind CSS 3
-- **Gráficos:** Recharts
-- **Ícones:** Lucide React
-- **ETL:** Python + Pandas
+| Camada | Tecnologia |
+|--------|-----------|
+| Frontend | React 18, Vite 5, Tailwind CSS 3 |
+| Gráficos | Recharts, D3.js |
+| Mapas | react-simple-maps (SVG) |
+| Pipeline | Python (Pandas) |
+| Deploy | GitHub Pages via GitHub Actions |
+| Tracking | LGPD-compliant (19 métricas anônimas) |
 
-## Desenvolvimento
+## Estrutura do Projeto
+
+```
+emprego-agro-parana/
+├── dashboard/          # Aplicação React
+│   ├── src/
+│   │   ├── App.jsx
+│   │   └── components/ # 16 componentes
+│   ├── public/
+│   │   ├── data/       # JSONs processados
+│   │   └── assets/     # mun_PR.json (mapa SVG)
+│   └── index.html
+├── scripts/            # Pipeline de dados (Python)
+│   ├── download_caged.py
+│   ├── download_caged_ftp.py
+│   ├── download_caged_granular.py
+│   ├── download_sidra.py
+│   ├── cnae_cadeias.py
+│   ├── prepare_dashboard_data.py
+│   └── prepare_dashboard_granular.py
+├── .github/workflows/  # CI/CD
+│   ├── data-pipeline.yml
+│   └── deploy.yml
+└── README.md
+```
+
+## Funcionalidades
+
+- 7 abas temáticas: Visão Geral, Cadeias Produtivas, CNAE, Perfil do Trabalhador, Salários, Municípios e Evolução Temporal
+- Filtros regionais por mesorregião, regional IDR e município
+- Cross-filtering interativo: clique em qualquer gráfico filtra os demais painéis
+- Cubo granular para análises multidimensionais
+- Mapa SVG do Paraná por município
+- Bump chart de ranking de municípios/regiões
+- Circular bar chart para comparações periódicas
+- KPIs de admissões, demissões, saldo e salário médio
+
+## Desenvolvimento Local
 
 ```bash
+# Clone
+git clone https://github.com/avnergomes/emprego-agro-parana.git
+cd emprego-agro-parana/dashboard
+
 # Instalar dependências
-cd dashboard
 npm install
 
 # Rodar em desenvolvimento
@@ -40,49 +85,10 @@ npm run dev
 npm run build
 ```
 
-## Scripts Python
+## Pipeline de Dados
 
-```bash
-# Download de dados
-python scripts/download_sidra.py
+O pipeline em `scripts/` coleta os microdados do CAGED via `download_caged.py`, `download_caged_ftp.py` e `download_caged_granular.py`, e dados complementares via `download_sidra.py`. O script `cnae_cadeias.py` realiza o mapeamento de classes CNAE para cadeias produtivas do agronegócio. Os scripts `prepare_dashboard_data.py` e `prepare_dashboard_granular.py` geram os arquivos finais em `dashboard/public/data/` (`aggregated_full.json`, `granular_cube.json`, `granular_dimensions.json`). O workflow `data-pipeline.yml` automatiza todo o processo no GitHub Actions.
 
-# Processamento para dashboard
-python scripts/prepare_dashboard_data.py
-```
+## Licença
 
-## Estrutura
-
-```
-emprego-agro-parana/
-├── dashboard/           # Frontend React
-│   ├── src/
-│   │   ├── App.jsx     # Componente principal
-│   │   └── index.css   # Estilos Tailwind
-│   └── public/data/    # JSONs do dashboard
-├── scripts/            # Scripts Python
-│   ├── download_sidra.py
-│   └── prepare_dashboard_data.py
-└── data/               # Dados brutos e processados
-    ├── raw/
-    └── processed/
-```
-
-## Fonte dos Dados
-
-- **CAGED/MTE:** Cadastro Geral de Empregados e Desempregados
-- **SIDRA/IBGE:** Sistema IBGE de Recuperação Automática
-
-> **Nota:** Os dados atuais são simulados com base em estatísticas reais do Paraná. Para dados oficiais, consulte o [PDET/MTE](http://pdet.mte.gov.br/).
-
-## Parte do Ecossistema DataGeo Paraná
-
-- [Portal DataGeo](https://datageoparana.github.io)
-- [VBP Paraná](https://avnergomes.github.io/vbp-parana/)
-- [Preços Florestais](https://avnergomes.github.io/precos-florestais/)
-- [Preços de Terras](https://avnergomes.github.io/precos-de-terras/)
-- [Preços Diários](https://avnergomes.github.io/precos-diarios/)
-- [ComexStat Paraná](https://avnergomes.github.io/comexstat-parana/)
-
----
-
-*DataGeo Paraná © 2026*
+Dados públicos. Dashboard desenvolvido por [Avner Gomes](https://avnergomes.github.io/portfolio/).
