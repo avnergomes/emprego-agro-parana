@@ -23,6 +23,7 @@ from cnae_cadeias import (
 SCRIPT_DIR = os.path.dirname(__file__)
 RAW_DIR = os.path.join(SCRIPT_DIR, '..', 'data', 'raw')
 os.makedirs(RAW_DIR, exist_ok=True)
+MICRODATA_PATH = os.path.join(RAW_DIR, 'caged_agro_pr_microdados.parquet')
 
 # CNAE Seção A - Agropecuária (divisões 01, 02, 03)
 CNAE_AGRO = ['01', '02', '03']
@@ -32,6 +33,27 @@ DIVISAO_CNAE = {
     '02': 'Silvicultura',
     '03': 'Pesca e Aquicultura'
 }
+
+
+def get_force_rebuild():
+    return os.getenv('FORCE_REBUILD', '').lower() == 'true'
+
+
+def get_target_periods():
+    """
+    Retorna apenas os periodos que razoavelmente ja deveriam estar disponiveis.
+    O CAGED costuma ter defasagem de algumas semanas; usar dois meses de folga
+    evita tentativas em meses futuros ou ainda nao publicados.
+    """
+    now = pd.Timestamp.utcnow().tz_localize(None)
+    last_available = (now.replace(day=1) - pd.DateOffset(months=2)).to_pydatetime()
+
+    periods = []
+    for ano in range(2020, last_available.year + 1):
+        max_month = 12 if ano < last_available.year else last_available.month
+        for mes in range(1, max_month + 1):
+            periods.append((ano, mes))
+    return periods
 
 
 def download_mes(ano, mes):
@@ -178,8 +200,8 @@ def process_microdata(df, ano, mes):
     return df[colunas]
 
 
-def download_all():
-    """Baixa todos os microdados de 2020-2025."""
+def download_all(force_rebuild=False):
+    """Baixa apenas os periodos faltantes e consolida os microdados."""
 
     print("=" * 70)
     print("DOWNLOAD CAGED GRANULAR - AGROPECUÁRIA PARANÁ")
@@ -189,21 +211,45 @@ def download_all():
 
     all_data = []
     total_registros = 0
+    existing_periods = set()
 
-    for ano in range(2020, datetime.now().year + 1):
-        print(f"\n[{ano}]")
+    if os.path.exists(MICRODATA_PATH) and not force_rebuild:
+        print("\nCarregando microdados ja salvos para execucao incremental...")
+        existing_df = pd.read_parquet(MICRODATA_PATH)
+        if 'periodo' in existing_df.columns:
+            existing_periods = set(existing_df['periodo'].dropna().astype(str).unique())
+        all_data.append(existing_df)
+        total_registros += len(existing_df)
+        print(f"Periodos ja existentes: {len(existing_periods)}")
+        print(f"Registros em cache: {len(existing_df):,}")
 
-        for mes in range(1, 13):
-            df = download_mes(ano, mes)
+    target_periods = get_target_periods()
+    downloaded_new_data = False
+    current_year = None
 
-            if df is not None:
-                df_processed = process_microdata(df, ano, mes)
-                all_data.append(df_processed)
-                total_registros += len(df_processed)
+    for ano, mes in target_periods:
+        periodo = f"{ano}-{str(mes).zfill(2)}"
+        if periodo in existing_periods:
+            continue
+
+        if current_year != ano:
+            current_year = ano
+            print(f"\n[{ano}]")
+
+        df = download_mes(ano, mes)
+
+        if df is not None:
+            df_processed = process_microdata(df, ano, mes)
+            all_data.append(df_processed)
+            total_registros += len(df_processed)
+            downloaded_new_data = True
 
     if not all_data:
         print("\nNenhum dado obtido!")
         return None
+
+    if existing_periods and not downloaded_new_data:
+        print("\nNenhum novo periodo disponivel. Reutilizando dados em cache.")
 
     # Consolidar
     print("\n" + "=" * 70)
@@ -211,11 +257,12 @@ def download_all():
     print("=" * 70)
 
     df_final = pd.concat(all_data, ignore_index=True)
+    if 'periodo' in df_final.columns:
+        df_final = df_final.drop_duplicates().sort_values(['periodo']).reset_index(drop=True)
 
     # Salvar microdados completos
-    micro_parquet = os.path.join(RAW_DIR, 'caged_agro_pr_microdados.parquet')
-    df_final.to_parquet(micro_parquet, index=False)
-    print(f"\nMicrodados salvos: {micro_parquet}")
+    df_final.to_parquet(MICRODATA_PATH, index=False)
+    print(f"\nMicrodados salvos: {MICRODATA_PATH}")
     print(f"Total de registros: {len(df_final):,}")
 
     # Estatísticas
@@ -271,4 +318,4 @@ def download_all():
 
 
 if __name__ == '__main__':
-    download_all()
+    download_all(force_rebuild=get_force_rebuild())

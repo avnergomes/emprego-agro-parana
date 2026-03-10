@@ -23,7 +23,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
 
     steps:
       - name: Checkout
@@ -53,6 +53,8 @@ jobs:
 
       - name: Download CAGED data
         working-directory: scripts
+        env:
+          FORCE_REBUILD: ${{ github.event.inputs.force_rebuild == 'true' }}
         run: python download_caged_granular.py
 
       - name: Process dashboard data
