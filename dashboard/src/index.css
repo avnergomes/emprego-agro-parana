@@ -74,6 +74,100 @@
   .badge-red {
     @apply bg-red-100 text-red-800;
   }
+
+  /* Filter panel with animated collapse */
+  .filter-panel {
+    display: grid;
+    grid-template-rows: 1fr;
+    opacity: 1;
+    transition: grid-template-rows 300ms ease, opacity 200ms ease;
+  }
+
+  .filter-panel.collapsed {
+    grid-template-rows: 0fr;
+    opacity: 0;
+  }
+
+  .filter-panel > div {
+    overflow: hidden;
+  }
+
+  /* Skeleton loading shimmer */
+  .skeleton {
+    @apply rounded-md bg-neutral-200 animate-pulse;
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite ease-in-out;
+  }
+
+  /* Chart container enhancements */
+  .chart-container-title {
+    @apply text-lg font-semibold text-neutral-800 mb-1;
+  }
+
+  .chart-container-desc {
+    @apply text-xs text-neutral-400 mb-4;
+  }
+
+  /* Active filter badge */
+  .active-filter-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
+    @apply bg-green-100 text-green-800 border border-green-200;
+    @apply transition-all duration-200;
+  }
+
+  .active-filter-badge:hover {
+    @apply bg-green-200 border-green-300;
+  }
+
+  .active-filter-badge button {
+    @apply ml-0.5 rounded-full w-4 h-4 flex items-center justify-center;
+    @apply text-green-600 hover:text-red-600 hover:bg-red-100;
+    @apply transition-colors duration-150;
+  }
+
+  /* Tab scroll container with fade indicators */
+  .tab-scroll-container {
+    position: relative;
+  }
+
+  .tab-scroll-container::before,
+  .tab-scroll-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  .tab-scroll-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgb(249 250 251), transparent);
+  }
+
+  .tab-scroll-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(249 250 251), transparent);
+  }
+
+  .tab-scroll-container.scroll-left::before {
+    opacity: 1;
+  }
+
+  .tab-scroll-container.scroll-right::after {
+    opacity: 1;
+  }
+
+  /* Focus states for interactive elements */
+  .filter-select:focus-visible,
+  select:focus-visible,
+  button:focus-visible {
+    @apply outline-2 outline-offset-2 outline-green-500;
+  }
 }
 
 /* Recharts customization */
@@ -87,4 +181,20 @@
 
 .recharts-tooltip-wrapper {
   outline: none;
+}
+
+/* Shimmer keyframe */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Scrollbar styling for tab container */
+.tab-scroll-container::-webkit-scrollbar {
+  height: 0;
+}
+
+/* Hide scrollbar for Firefox */
+.tab-scroll-container {
+  scrollbar-width: none;
 }
