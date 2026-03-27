@@ -76,13 +76,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "$(cat <<'EOF'
-          Atualiza dados CAGED Agro via pipeline automatico
-
-          Download e processamento de microdados CAGED executados automaticamente.
-          Dados filtrados para Parana e setores agropecuarios (CNAE).
-          EOF
-          )"
+          git commit -m "chore: update data [skip ci]"
           git push
 
       - name: Summary
