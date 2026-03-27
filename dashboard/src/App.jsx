@@ -745,6 +745,23 @@ function App() {
         </div>
       </header>
 
+      {/* Fallback data warning banner */}
+      {metadata.dados_reais === false && (
+        <div className="bg-amber-50 border-b border-amber-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div className="flex items-center gap-2 text-amber-800 text-sm">
+              <Info className="w-4 h-4 flex-shrink-0" />
+              <p>
+                <span className="font-semibold">Dados simulados:</span>{' '}
+                Este painel exibe dados de exemplo baseados em estatísticas reais do Paraná.
+                Para dados oficiais, consulte o{' '}
+                <a href="https://pdet.mte.gov.br" target="_blank" rel="noopener noreferrer" className="underline font-medium">PDET/MTE</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Filtros Globais */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-3 mb-3">
         <div className="bg-white rounded-xl shadow-sm p-3 flex flex-wrap items-center gap-3">
