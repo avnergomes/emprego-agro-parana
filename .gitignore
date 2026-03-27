@@ -58,3 +58,4 @@ env/
 *.tmp
 *.temp
 *.gs
+dashboard/public/assets/mun_PR.json

@@ -15,9 +15,10 @@ import SalarioTab from './components/SalarioTab'
 import GeoTab from './components/GeoTab'
 import TempoTab from './components/TempoTab'
 
+import { feature } from 'topojson-client'
 import './index.css'
 
-const GEO_URL = `${import.meta.env.BASE_URL}assets/mun_PR.json`
+const TOPO_URL = 'https://cdn.jsdelivr.net/gh/datageoparana/datageoparana.github.io@main/assets/parana-municipalities.topojson'
 
 // Formatadores
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
@@ -58,7 +59,7 @@ function App() {
         if (!res.ok) throw new Error('Dados não encontrados')
         return res.json()
       }),
-      fetch(GEO_URL, { signal }).then(res => res.json()).catch(() => null),
+      fetch(TOPO_URL, { signal }).then(res => res.json()).then(topo => feature(topo, topo.objects.municipalities)).catch(() => null),
     ])
       .then(([aggData, geo]) => {
         if (signal.aborted) return

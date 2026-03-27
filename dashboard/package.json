@@ -19,7 +19,8 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "react-simple-maps": "^3.0.0",
-    "recharts": "^2.10.3"
+    "recharts": "^2.10.3",
+    "topojson-client": "^3.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
