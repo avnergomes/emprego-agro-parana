@@ -56,6 +56,10 @@ def download_pnad_emprego():
     try:
         response = requests.get(url, timeout=60)
         response.raise_for_status()
+        content_type = response.headers.get('Content-Type', '')
+        if 'html' in content_type.lower():
+            print(f"ERRO: API retornou HTML em vez de JSON (Content-Type: {content_type})")
+            return None
         data = response.json()
 
         if not data:
