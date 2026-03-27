@@ -152,7 +152,7 @@ def create_sample_data():
 
     # Gerar dados mensais 2020-2025
     for ano in range(2020, datetime.now().year + 1):
-        meses_disponiveis = 12 if ano < 2025 else 1
+        meses_disponiveis = 12 if ano < datetime.now().year else max(1, datetime.now().month - 1)
 
         for mes in range(1, meses_disponiveis + 1):
             # Sazonalidade: mais contratações em Mar-Jun (safra) e Set-Nov (plantio)

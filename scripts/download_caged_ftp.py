@@ -111,9 +111,9 @@ def download_all_data():
 
     for ano in range(2020, datetime.now().year + 1):
         # Determinar meses disponíveis
-        if ano == 2025:
-            # Verificar até qual mês está disponível
-            meses = range(1, 13)
+        if ano == datetime.now().year:
+            # Ano corrente: tentar todos os meses, falhas individuais são tratadas no loop
+            meses = range(1, max(1, datetime.now().month))
         else:
             meses = range(1, 13)
 

@@ -60,8 +60,9 @@ def download_caged_pr():
 
     for ano in ANOS:
         # Determinar meses disponíveis
-        if ano == 2025:
-            meses = range(1, 2)  # Janeiro 2025 (ajustar conforme disponibilidade)
+        if ano == datetime.now().year:
+            # Ano corrente: baixar até o mês anterior (defasagem de publicação)
+            meses = range(1, max(1, datetime.now().month))
         else:
             meses = range(1, 13)
 
