@@ -1,21 +1,21 @@
 [
   {
     "sexo": "Feminino",
-    "admissoes": 66229,
-    "demissoes": 62799,
-    "salario_medio": 1775.4226602942088,
-    "salario_mediana": 1690.0,
-    "saldo": 3430,
-    "pct": 22.6
+    "admissoes": 67542,
+    "demissoes": 64058,
+    "salario_medio": 1781.32570165386,
+    "salario_mediana": 1700.0,
+    "saldo": 3484,
+    "pct": 22.7
   },
   {
     "sexo": "Masculino",
-    "admissoes": 226549,
-    "demissoes": 224746,
-    "salario_medio": 1898.9046831221133,
-    "salario_mediana": 1749.02,
-    "saldo": 1803,
-    "pct": 77.4
+    "admissoes": 230617,
+    "demissoes": 228833,
+    "salario_medio": 1905.5792104709703,
+    "salario_mediana": 1750.0,
+    "saldo": 1784,
+    "pct": 77.3
   },
   {
     "sexo": "Não informado",

@@ -1,182 +1,182 @@
 [
   {
     "codigo": "411760",
-    "admissoes": 13849,
-    "demissoes": 13686,
-    "salario_medio": 1904.7516779044852,
+    "admissoes": 14158,
+    "demissoes": 13903,
+    "salario_medio": 1912.0017048964755,
     "cadeia_dominante": "Silvicultura",
-    "saldo": 163,
-    "nome": "Palmas"
+    "saldo": 255,
+    "nome": "411760"
   },
   {
     "codigo": "410480",
-    "admissoes": 8819,
-    "demissoes": 8673,
-    "salario_medio": 1871.470482005832,
+    "admissoes": 9064,
+    "demissoes": 8851,
+    "salario_medio": 1882.45792707682,
     "cadeia_dominante": "Avicultura",
-    "saldo": 146,
-    "nome": "Cascavel"
+    "saldo": 213,
+    "nome": "410480"
   },
   {
     "codigo": "410940",
-    "admissoes": 8457,
-    "demissoes": 8054,
-    "salario_medio": 1931.2930157855847,
+    "admissoes": 8580,
+    "demissoes": 8229,
+    "salario_medio": 1938.6934085328414,
     "cadeia_dominante": "Grãos",
-    "saldo": 403,
-    "nome": "Guarapuava"
+    "saldo": 351,
+    "nome": "410940"
   },
   {
     "codigo": "410490",
-    "admissoes": 7732,
-    "demissoes": 7345,
-    "salario_medio": 1944.9454808311223,
+    "admissoes": 7852,
+    "demissoes": 7476,
+    "salario_medio": 1953.3848515045345,
     "cadeia_dominante": "Grãos",
-    "saldo": 387,
-    "nome": "Castro"
+    "saldo": 376,
+    "nome": "410490"
   },
   {
     "codigo": "410465",
-    "admissoes": 5871,
-    "demissoes": 5591,
-    "salario_medio": 1855.3763955219063,
+    "admissoes": 5969,
+    "demissoes": 5687,
+    "salario_medio": 1863.4424184594918,
     "cadeia_dominante": "Avicultura",
-    "saldo": 280,
-    "nome": "Carambeí"
+    "saldo": 282,
+    "nome": "410465"
   },
   {
     "codigo": "411840",
-    "admissoes": 5709,
-    "demissoes": 5657,
-    "salario_medio": 1631.9670077247931,
+    "admissoes": 5811,
+    "demissoes": 5764,
+    "salario_medio": 1640.2363317321813,
     "cadeia_dominante": "Fruticultura",
-    "saldo": 52,
-    "nome": "Paranavaí"
+    "saldo": 47,
+    "nome": "411840"
   },
   {
     "codigo": "411990",
-    "admissoes": 5093,
-    "demissoes": 5026,
-    "salario_medio": 1781.0535636841585,
+    "admissoes": 5169,
+    "demissoes": 5097,
+    "salario_medio": 1789.0373096551725,
     "cadeia_dominante": "Grãos",
-    "saldo": 67,
-    "nome": "Ponta Grossa"
+    "saldo": 72,
+    "nome": "411990"
   },
   {
     "codigo": "411850",
-    "admissoes": 5034,
-    "demissoes": 5204,
-    "salario_medio": 1679.231639089666,
+    "admissoes": 5124,
+    "demissoes": 5276,
+    "salario_medio": 1685.8413539423077,
     "cadeia_dominante": "Avicultura",
-    "saldo": -170,
-    "nome": "Pato Branco"
+    "saldo": -152,
+    "nome": "411850"
   },
   {
     "codigo": "412770",
-    "admissoes": 5033,
-    "demissoes": 4902,
-    "salario_medio": 2023.2116506683442,
+    "admissoes": 5105,
+    "demissoes": 4989,
+    "salario_medio": 2026.4648463829997,
     "cadeia_dominante": "Suinocultura",
-    "saldo": 131,
-    "nome": "Toledo"
+    "saldo": 116,
+    "nome": "412770"
   },
   {
     "codigo": "412710",
-    "admissoes": 4714,
-    "demissoes": 4324,
-    "salario_medio": 1908.4389201150698,
+    "admissoes": 4802,
+    "demissoes": 4422,
+    "salario_medio": 1917.1646856027753,
     "cadeia_dominante": "Silvicultura",
-    "saldo": 390,
-    "nome": "Telêmaco Borba"
+    "saldo": 380,
+    "nome": "412710"
   },
   {
     "codigo": "411730",
-    "admissoes": 4684,
-    "demissoes": 5297,
-    "salario_medio": 1866.5062963527055,
+    "admissoes": 4763,
+    "demissoes": 5372,
+    "salario_medio": 1872.4882738898755,
     "cadeia_dominante": "Silvicultura",
-    "saldo": -613,
-    "nome": "Ortigueira"
+    "saldo": -609,
+    "nome": "411730"
   },
   {
     "codigo": "412570",
-    "admissoes": 4355,
-    "demissoes": 4156,
-    "salario_medio": 1805.960440594525,
+    "admissoes": 4399,
+    "demissoes": 4209,
+    "salario_medio": 1808.1383433898698,
     "cadeia_dominante": "Suinocultura",
-    "saldo": 199,
-    "nome": "São Miguel do Iguaçu"
+    "saldo": 190,
+    "nome": "412570"
   },
   {
     "codigo": "410980",
-    "admissoes": 4263,
-    "demissoes": 5087,
-    "salario_medio": 1656.374245948663,
+    "admissoes": 4273,
+    "demissoes": 5097,
+    "salario_medio": 1657.4670874727854,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -824,
-    "nome": "Ibiporã"
+    "nome": "410980"
   },
   {
     "codigo": "410970",
-    "admissoes": 4217,
-    "demissoes": 4440,
-    "salario_medio": 1757.37105707024,
+    "admissoes": 4227,
+    "demissoes": 4666,
+    "salario_medio": 1774.5589080071975,
     "cadeia_dominante": "Silvicultura",
-    "saldo": -223,
-    "nome": "Ibaiti"
+    "saldo": -439,
+    "nome": "410970"
   },
   {
     "codigo": "412350",
-    "admissoes": 3430,
-    "demissoes": 3055,
-    "salario_medio": 1769.5537271333849,
+    "admissoes": 3494,
+    "demissoes": 3111,
+    "salario_medio": 1777.5365178591976,
     "cadeia_dominante": "Avicultura",
-    "saldo": 375,
-    "nome": "Santa Helena"
-  },
-  {
-    "codigo": "411320",
-    "admissoes": 3407,
-    "demissoes": 3457,
-    "salario_medio": 1879.67517483683,
-    "cadeia_dominante": "Fruticultura",
-    "saldo": -50,
-    "nome": "Lapa"
+    "saldo": 383,
+    "nome": "412350"
   },
   {
     "codigo": "410720",
-    "admissoes": 3358,
-    "demissoes": 3258,
-    "salario_medio": 1848.5645661910519,
+    "admissoes": 3447,
+    "demissoes": 3290,
+    "salario_medio": 1857.2332699896097,
     "cadeia_dominante": "Avicultura",
-    "saldo": 100,
-    "nome": "Dois Vizinhos"
+    "saldo": 157,
+    "nome": "410720"
+  },
+  {
+    "codigo": "411320",
+    "admissoes": 3446,
+    "demissoes": 3555,
+    "salario_medio": 1885.5019125953434,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": -109,
+    "nome": "411320"
   },
   {
     "codigo": "411930",
-    "admissoes": 3284,
-    "demissoes": 3005,
-    "salario_medio": 1910.4911337398632,
+    "admissoes": 3319,
+    "demissoes": 3057,
+    "salario_medio": 1914.4538143177542,
     "cadeia_dominante": "Grãos",
-    "saldo": 279,
-    "nome": "Pinhão"
-  },
-  {
-    "codigo": "410160",
-    "admissoes": 2639,
-    "demissoes": 2577,
-    "salario_medio": 1998.9915126533742,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 62,
-    "nome": "Arapoti"
+    "saldo": 262,
+    "nome": "411930"
   },
   {
     "codigo": "411790",
-    "admissoes": 2589,
-    "demissoes": 2239,
-    "salario_medio": 2055.0981775890637,
+    "admissoes": 2688,
+    "demissoes": 2310,
+    "salario_medio": 2056.302889435774,
     "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 350,
-    "nome": "Palotina"
+    "saldo": 378,
+    "nome": "411790"
+  },
+  {
+    "codigo": "410160",
+    "admissoes": 2685,
+    "demissoes": 2609,
+    "salario_medio": 2005.4088741972043,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 76,
+    "nome": "410160"
   }
 ]

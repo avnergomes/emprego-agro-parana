@@ -5,15 +5,15 @@
     "demissoes": 28139,
     "saldo": 3663,
     "mes_nome": "Jan",
-    "indice": 130.3
+    "indice": 128.0
   },
   {
     "mes": 2,
-    "admissoes": 26683,
-    "demissoes": 22471,
-    "saldo": 4212,
+    "admissoes": 32064,
+    "demissoes": 27817,
+    "saldo": 4247,
     "mes_nome": "Fev",
-    "indice": 109.4
+    "indice": 129.0
   },
   {
     "mes": 3,
@@ -21,7 +21,7 @@
     "demissoes": 22933,
     "saldo": 2850,
     "mes_nome": "Mar",
-    "indice": 105.7
+    "indice": 103.8
   },
   {
     "mes": 4,
@@ -29,7 +29,7 @@
     "demissoes": 22906,
     "saldo": 2592,
     "mes_nome": "Abr",
-    "indice": 104.5
+    "indice": 102.6
   },
   {
     "mes": 5,
@@ -37,7 +37,7 @@
     "demissoes": 24756,
     "saldo": -1230,
     "mes_nome": "Mai",
-    "indice": 96.4
+    "indice": 94.7
   },
   {
     "mes": 6,
@@ -45,7 +45,7 @@
     "demissoes": 24361,
     "saldo": -479,
     "mes_nome": "Jun",
-    "indice": 97.9
+    "indice": 96.1
   },
   {
     "mes": 7,
@@ -53,7 +53,7 @@
     "demissoes": 24441,
     "saldo": -687,
     "mes_nome": "Jul",
-    "indice": 97.4
+    "indice": 95.6
   },
   {
     "mes": 8,
@@ -61,7 +61,7 @@
     "demissoes": 22902,
     "saldo": 37,
     "mes_nome": "Ago",
-    "indice": 94.0
+    "indice": 92.3
   },
   {
     "mes": 9,
@@ -69,7 +69,7 @@
     "demissoes": 22136,
     "saldo": -131,
     "mes_nome": "Set",
-    "indice": 90.2
+    "indice": 88.6
   },
   {
     "mes": 10,
@@ -77,7 +77,7 @@
     "demissoes": 22619,
     "saldo": 69,
     "mes_nome": "Out",
-    "indice": 93.0
+    "indice": 91.3
   },
   {
     "mes": 11,
@@ -85,7 +85,7 @@
     "demissoes": 24091,
     "saldo": -2125,
     "mes_nome": "Nov",
-    "indice": 90.0
+    "indice": 88.4
   },
   {
     "mes": 12,
@@ -93,6 +93,6 @@
     "demissoes": 25791,
     "saldo": -3539,
     "mes_nome": "Dez",
-    "indice": 91.2
+    "indice": 89.6
   }
 ]

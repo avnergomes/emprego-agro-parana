@@ -9434,5 +9434,138 @@
     "admissoes": 292,
     "demissoes": 308,
     "saldo": -16
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Algodão",
+    "admissoes": 7,
+    "demissoes": 7,
+    "saldo": 0
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Apicultura",
+    "admissoes": 16,
+    "demissoes": 14,
+    "saldo": 2
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Aquicultura",
+    "admissoes": 62,
+    "demissoes": 59,
+    "saldo": 3
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Avicultura",
+    "admissoes": 971,
+    "demissoes": 785,
+    "saldo": 186
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Bovinocultura de Corte",
+    "admissoes": 491,
+    "demissoes": 537,
+    "saldo": -46
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Bovinocultura de Leite",
+    "admissoes": 215,
+    "demissoes": 229,
+    "saldo": -14
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Cafeicultura",
+    "admissoes": 20,
+    "demissoes": 22,
+    "saldo": -2
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Cana-de-açúcar",
+    "admissoes": 45,
+    "demissoes": 54,
+    "saldo": -9
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Fruticultura",
+    "admissoes": 377,
+    "demissoes": 707,
+    "saldo": -330
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Fumo",
+    "admissoes": 1,
+    "demissoes": 0,
+    "saldo": 1
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Grãos",
+    "admissoes": 391,
+    "demissoes": 399,
+    "saldo": -8
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Horticultura",
+    "admissoes": 118,
+    "demissoes": 90,
+    "saldo": 28
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Outras Culturas Permanentes",
+    "admissoes": 16,
+    "demissoes": 25,
+    "saldo": -9
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Outros",
+    "admissoes": 160,
+    "demissoes": 156,
+    "saldo": 4
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Ovinocaprinocultura",
+    "admissoes": 31,
+    "demissoes": 32,
+    "saldo": -1
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Serviços Agrícolas",
+    "admissoes": 1007,
+    "demissoes": 698,
+    "saldo": 309
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Silvicultura",
+    "admissoes": 640,
+    "demissoes": 845,
+    "saldo": -205
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Sojicultura",
+    "admissoes": 513,
+    "demissoes": 439,
+    "saldo": 74
+  },
+  {
+    "periodo": "2026-02",
+    "cadeia": "Suinocultura",
+    "admissoes": 300,
+    "demissoes": 248,
+    "saldo": 52
   }
 ]
