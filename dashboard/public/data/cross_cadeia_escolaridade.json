@@ -2,50 +2,50 @@
   {
     "cadeia": "Algodão",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 38,
-    "demissoes": 37,
-    "salario_medio": 1891.9941333333334,
-    "saldo": 1
+    "admissoes": 39,
+    "demissoes": 40,
+    "salario_medio": 1902.7964556962027,
+    "saldo": -1
   },
   {
     "cadeia": "Algodão",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 207,
-    "demissoes": 177,
-    "salario_medio": 2013.4353125,
-    "saldo": 30
+    "admissoes": 211,
+    "demissoes": 185,
+    "salario_medio": 2017.071186868687,
+    "saldo": 26
   },
   {
     "cadeia": "Algodão",
     "escolaridade": "Analfabeto",
     "admissoes": 9,
-    "demissoes": 7,
-    "salario_medio": 1896.69,
-    "saldo": 2
+    "demissoes": 8,
+    "salario_medio": 1908.9635294117647,
+    "saldo": 1
   },
   {
     "cadeia": "Algodão",
     "escolaridade": "Até 5ª Incompleto",
     "admissoes": 46,
-    "demissoes": 48,
-    "salario_medio": 1793.3971276595744,
-    "saldo": -2
+    "demissoes": 49,
+    "salario_medio": 1796.8350526315787,
+    "saldo": -3
   },
   {
     "cadeia": "Algodão",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 78,
+    "admissoes": 79,
     "demissoes": 62,
-    "salario_medio": 1928.5899285714288,
-    "saldo": 16
+    "salario_medio": 1929.947446808511,
+    "saldo": 17
   },
   {
     "cadeia": "Algodão",
     "escolaridade": "Médio Completo",
-    "admissoes": 114,
-    "demissoes": 108,
-    "salario_medio": 1846.9036486486486,
-    "saldo": 6
+    "admissoes": 117,
+    "demissoes": 109,
+    "salario_medio": 1858.415221238938,
+    "saldo": 8
   },
   {
     "cadeia": "Algodão",
@@ -67,17 +67,17 @@
     "cadeia": "Apicultura",
     "escolaridade": "5ª Completo Fundamental",
     "admissoes": 22,
-    "demissoes": 31,
-    "salario_medio": 1834.952641509434,
-    "saldo": -9
+    "demissoes": 32,
+    "salario_medio": 1846.1583333333333,
+    "saldo": -10
   },
   {
     "cadeia": "Apicultura",
     "escolaridade": "6ª a 9ª Fundamental",
     "admissoes": 29,
-    "demissoes": 42,
-    "salario_medio": 1809.106056338028,
-    "saldo": -13
+    "demissoes": 43,
+    "salario_medio": 1811.5490277777778,
+    "saldo": -14
   },
   {
     "cadeia": "Apicultura",
@@ -91,9 +91,9 @@
     "cadeia": "Apicultura",
     "escolaridade": "Até 5ª Incompleto",
     "admissoes": 24,
-    "demissoes": 21,
-    "salario_medio": 1742.4884444444444,
-    "saldo": 3
+    "demissoes": 22,
+    "salario_medio": 1773.013695652174,
+    "saldo": 2
   },
   {
     "cadeia": "Apicultura",
@@ -106,90 +106,90 @@
   {
     "cadeia": "Apicultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 51,
-    "demissoes": 62,
-    "salario_medio": 1831.894424778761,
+    "admissoes": 52,
+    "demissoes": 63,
+    "salario_medio": 1832.584956521739,
     "saldo": -11
   },
   {
     "cadeia": "Apicultura",
     "escolaridade": "Mestrado",
     "admissoes": 11,
-    "demissoes": 2,
-    "salario_medio": 9727.692307692309,
-    "saldo": 9
+    "demissoes": 4,
+    "salario_medio": 8949.58,
+    "saldo": 7
   },
   {
     "cadeia": "Apicultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 367,
-    "demissoes": 361,
-    "salario_medio": 1959.3874585164833,
-    "saldo": 6
+    "admissoes": 372,
+    "demissoes": 372,
+    "salario_medio": 1968.058951344086,
+    "saldo": 0
   },
   {
     "cadeia": "Apicultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 38,
+    "admissoes": 41,
     "demissoes": 34,
-    "salario_medio": 1761.972777777778,
-    "saldo": 4
+    "salario_medio": 1779.3650666666667,
+    "saldo": 7
   },
   {
     "cadeia": "Apicultura",
     "escolaridade": "Pós-Graduação completa",
     "admissoes": 17,
-    "demissoes": 3,
-    "salario_medio": 8616.45,
-    "saldo": 14
+    "demissoes": 5,
+    "salario_medio": 8162.865,
+    "saldo": 12
   },
   {
     "cadeia": "Apicultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 44,
-    "demissoes": 20,
-    "salario_medio": 4388.30625,
-    "saldo": 24
+    "admissoes": 46,
+    "demissoes": 23,
+    "salario_medio": 4447.44347826087,
+    "saldo": 23
   },
   {
     "cadeia": "Apicultura",
     "escolaridade": "Superior Incompleto",
     "admissoes": 16,
-    "demissoes": 13,
-    "salario_medio": 2424.9368931034483,
-    "saldo": 3
+    "demissoes": 14,
+    "salario_medio": 2432.09433,
+    "saldo": 2
   },
   {
     "cadeia": "Aquicultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 64,
+    "admissoes": 66,
     "demissoes": 58,
-    "salario_medio": 1835.033525409836,
-    "saldo": 6
+    "salario_medio": 1837.613145967742,
+    "saldo": 8
   },
   {
     "cadeia": "Aquicultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 170,
-    "demissoes": 166,
-    "salario_medio": 1821.335357142857,
-    "saldo": 4
+    "admissoes": 173,
+    "demissoes": 167,
+    "salario_medio": 1822.5003235294116,
+    "saldo": 6
   },
   {
     "cadeia": "Aquicultura",
     "escolaridade": "Analfabeto",
-    "admissoes": 19,
-    "demissoes": 13,
-    "salario_medio": 1857.215625,
+    "admissoes": 21,
+    "demissoes": 15,
+    "salario_medio": 1893.1099999999997,
     "saldo": 6
   },
   {
     "cadeia": "Aquicultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 155,
-    "demissoes": 114,
-    "salario_medio": 1858.3234200743495,
-    "saldo": 41
+    "admissoes": 157,
+    "demissoes": 117,
+    "salario_medio": 1862.1424817518248,
+    "saldo": 40
   },
   {
     "cadeia": "Aquicultura",
@@ -202,10 +202,10 @@
   {
     "cadeia": "Aquicultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 257,
-    "demissoes": 260,
-    "salario_medio": 1780.7265764023211,
-    "saldo": -3
+    "admissoes": 259,
+    "demissoes": 266,
+    "salario_medio": 1785.1213714285714,
+    "saldo": -7
   },
   {
     "cadeia": "Aquicultura",
@@ -218,18 +218,18 @@
   {
     "cadeia": "Aquicultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 1380,
-    "demissoes": 1235,
-    "salario_medio": 2109.9594875717016,
-    "saldo": 145
+    "admissoes": 1429,
+    "demissoes": 1271,
+    "salario_medio": 2110.7241185185185,
+    "saldo": 158
   },
   {
     "cadeia": "Aquicultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 255,
-    "demissoes": 220,
-    "salario_medio": 2141.5731789473684,
-    "saldo": 35
+    "admissoes": 261,
+    "demissoes": 225,
+    "salario_medio": 2130.245925925926,
+    "saldo": 36
   },
   {
     "cadeia": "Aquicultura",
@@ -242,50 +242,50 @@
   {
     "cadeia": "Aquicultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 118,
-    "demissoes": 113,
-    "salario_medio": 4207.462812987013,
-    "saldo": 5
+    "admissoes": 121,
+    "demissoes": 115,
+    "salario_medio": 4176.6283466101695,
+    "saldo": 6
   },
   {
     "cadeia": "Aquicultura",
     "escolaridade": "Superior Incompleto",
     "admissoes": 67,
-    "demissoes": 46,
-    "salario_medio": 2341.2762840707965,
-    "saldo": 21
+    "demissoes": 48,
+    "salario_medio": 2337.722174782609,
+    "saldo": 19
   },
   {
     "cadeia": "Avicultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 1170,
-    "demissoes": 1248,
-    "salario_medio": 1679.6555665012406,
-    "saldo": -78
+    "admissoes": 1186,
+    "demissoes": 1260,
+    "salario_medio": 1683.6466556827475,
+    "saldo": -74
   },
   {
     "cadeia": "Avicultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 6866,
-    "demissoes": 6621,
-    "salario_medio": 1627.7084117284592,
-    "saldo": 245
+    "admissoes": 6996,
+    "demissoes": 6725,
+    "salario_medio": 1634.446869575073,
+    "saldo": 271
   },
   {
     "cadeia": "Avicultura",
     "escolaridade": "Analfabeto",
-    "admissoes": 423,
-    "demissoes": 332,
-    "salario_medio": 1773.395721986755,
-    "saldo": 91
+    "admissoes": 440,
+    "demissoes": 343,
+    "salario_medio": 1783.3560665389525,
+    "saldo": 97
   },
   {
     "cadeia": "Avicultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 2425,
-    "demissoes": 2270,
-    "salario_medio": 1737.7995548690094,
-    "saldo": 155
+    "admissoes": 2474,
+    "demissoes": 2323,
+    "salario_medio": 1746.1528101125703,
+    "saldo": 151
   },
   {
     "cadeia": "Avicultura",
@@ -298,10 +298,10 @@
   {
     "cadeia": "Avicultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 6753,
-    "demissoes": 6501,
-    "salario_medio": 1678.5372535501394,
-    "saldo": 252
+    "admissoes": 6866,
+    "demissoes": 6626,
+    "salario_medio": 1685.8604937588022,
+    "saldo": 240
   },
   {
     "cadeia": "Avicultura",
@@ -314,73 +314,73 @@
   {
     "cadeia": "Avicultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 20388,
-    "demissoes": 19663,
-    "salario_medio": 1798.8232849868905,
-    "saldo": 725
+    "admissoes": 20829,
+    "demissoes": 20046,
+    "salario_medio": 1805.752019864207,
+    "saldo": 783
   },
   {
     "cadeia": "Avicultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 7329,
-    "demissoes": 6864,
-    "salario_medio": 1615.0721977600056,
-    "saldo": 465
+    "admissoes": 7486,
+    "demissoes": 6986,
+    "salario_medio": 1621.5939417186098,
+    "saldo": 500
   },
   {
     "cadeia": "Avicultura",
     "escolaridade": "Pós-Graduação completa",
-    "admissoes": 90,
-    "demissoes": 77,
-    "salario_medio": 4590.386646706586,
+    "admissoes": 93,
+    "demissoes": 80,
+    "salario_medio": 4539.24774566474,
     "saldo": 13
   },
   {
     "cadeia": "Avicultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 1209,
-    "demissoes": 1105,
-    "salario_medio": 3604.0986474070874,
-    "saldo": 104
+    "admissoes": 1239,
+    "demissoes": 1127,
+    "salario_medio": 3617.4628656382083,
+    "saldo": 112
   },
   {
     "cadeia": "Avicultura",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 835,
-    "demissoes": 793,
-    "salario_medio": 2016.34564497543,
-    "saldo": 42
+    "admissoes": 857,
+    "demissoes": 811,
+    "salario_medio": 2025.990377709832,
+    "saldo": 46
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 1928,
-    "demissoes": 1988,
-    "salario_medio": 1777.0987283452503,
-    "saldo": -60
+    "admissoes": 1958,
+    "demissoes": 2021,
+    "salario_medio": 1785.177047046997,
+    "saldo": -63
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 3396,
-    "demissoes": 3592,
-    "salario_medio": 1877.2061390998854,
-    "saldo": -196
+    "admissoes": 3459,
+    "demissoes": 3649,
+    "salario_medio": 1879.7771201505345,
+    "saldo": -190
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "Analfabeto",
-    "admissoes": 247,
-    "demissoes": 332,
-    "salario_medio": 1736.9885664939552,
-    "saldo": -85
+    "admissoes": 253,
+    "demissoes": 337,
+    "salario_medio": 1742.554305084746,
+    "saldo": -84
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 1717,
-    "demissoes": 2139,
-    "salario_medio": 1762.4911488329876,
+    "admissoes": 1747,
+    "demissoes": 2169,
+    "salario_medio": 1770.916131230848,
     "saldo": -422
   },
   {
@@ -394,10 +394,10 @@
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 3435,
-    "demissoes": 3932,
-    "salario_medio": 1890.149136505566,
-    "saldo": -497
+    "admissoes": 3492,
+    "demissoes": 3999,
+    "salario_medio": 1896.6180533377837,
+    "saldo": -507
   },
   {
     "cadeia": "Bovinocultura de Corte",
@@ -410,58 +410,58 @@
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "Médio Completo",
-    "admissoes": 13794,
-    "demissoes": 12942,
-    "salario_medio": 1879.0054683859623,
-    "saldo": 852
+    "admissoes": 14100,
+    "demissoes": 13217,
+    "salario_medio": 1887.102844447618,
+    "saldo": 883
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 2495,
-    "demissoes": 2407,
-    "salario_medio": 1865.5005528416973,
-    "saldo": 88
+    "admissoes": 2547,
+    "demissoes": 2466,
+    "salario_medio": 1872.8420067883503,
+    "saldo": 81
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "Pós-Graduação completa",
     "admissoes": 21,
-    "demissoes": 25,
-    "salario_medio": 3635.150652173913,
-    "saldo": -4
+    "demissoes": 26,
+    "salario_medio": 3699.696170212766,
+    "saldo": -5
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "Superior Completo",
-    "admissoes": 522,
-    "demissoes": 531,
-    "salario_medio": 3109.240834757835,
-    "saldo": -9
+    "admissoes": 529,
+    "demissoes": 548,
+    "salario_medio": 3127.6187455896006,
+    "saldo": -19
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 263,
-    "demissoes": 256,
-    "salario_medio": 2047.358631984586,
-    "saldo": 7
+    "admissoes": 269,
+    "demissoes": 258,
+    "salario_medio": 2058.3571157495257,
+    "saldo": 11
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 301,
-    "demissoes": 344,
-    "salario_medio": 1772.4306821705427,
-    "saldo": -43
+    "admissoes": 304,
+    "demissoes": 349,
+    "salario_medio": 1775.9048545176113,
+    "saldo": -45
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 599,
-    "demissoes": 676,
-    "salario_medio": 1843.0531215764706,
-    "saldo": -77
+    "admissoes": 612,
+    "demissoes": 688,
+    "salario_medio": 1851.8484384692306,
+    "saldo": -76
   },
   {
     "cadeia": "Bovinocultura de Leite",
@@ -474,18 +474,18 @@
   {
     "cadeia": "Bovinocultura de Leite",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 311,
-    "demissoes": 383,
-    "salario_medio": 1787.4397982708933,
-    "saldo": -72
+    "admissoes": 320,
+    "demissoes": 387,
+    "salario_medio": 1793.231117397454,
+    "saldo": -67
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 1289,
-    "demissoes": 1363,
-    "salario_medio": 1807.2796831384385,
-    "saldo": -74
+    "admissoes": 1310,
+    "demissoes": 1388,
+    "salario_medio": 1813.2416981831666,
+    "saldo": -78
   },
   {
     "cadeia": "Bovinocultura de Leite",
@@ -498,18 +498,18 @@
   {
     "cadeia": "Bovinocultura de Leite",
     "escolaridade": "Médio Completo",
-    "admissoes": 7295,
-    "demissoes": 6436,
-    "salario_medio": 1836.24438600874,
-    "saldo": 859
+    "admissoes": 7441,
+    "demissoes": 6599,
+    "salario_medio": 1844.8058736306004,
+    "saldo": 842
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 710,
-    "demissoes": 697,
-    "salario_medio": 1788.2975766169154,
-    "saldo": 13
+    "admissoes": 721,
+    "demissoes": 712,
+    "salario_medio": 1795.179525680391,
+    "saldo": 9
   },
   {
     "cadeia": "Bovinocultura de Leite",
@@ -522,17 +522,17 @@
   {
     "cadeia": "Bovinocultura de Leite",
     "escolaridade": "Superior Completo",
-    "admissoes": 103,
+    "admissoes": 107,
     "demissoes": 118,
-    "salario_medio": 2756.3439366515836,
-    "saldo": -15
+    "salario_medio": 2770.862622222222,
+    "saldo": -11
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 69,
-    "demissoes": 53,
-    "salario_medio": 1898.9899180327868,
+    "admissoes": 70,
+    "demissoes": 54,
+    "salario_medio": 1901.7105645161291,
     "saldo": 16
   },
   {
@@ -546,34 +546,34 @@
   {
     "cadeia": "Cafeicultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 89,
-    "demissoes": 103,
-    "salario_medio": 21962.407395833332,
-    "saldo": -14
+    "admissoes": 90,
+    "demissoes": 105,
+    "salario_medio": 21650.58153846154,
+    "saldo": -15
   },
   {
     "cadeia": "Cafeicultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 108,
+    "admissoes": 110,
     "demissoes": 138,
-    "salario_medio": 2386.1031707317075,
-    "saldo": -30
+    "salario_medio": 2381.0575806451616,
+    "saldo": -28
   },
   {
     "cadeia": "Cafeicultura",
     "escolaridade": "Analfabeto",
-    "admissoes": 70,
+    "admissoes": 71,
     "demissoes": 57,
-    "salario_medio": 22122.83433070866,
-    "saldo": 13
+    "salario_medio": 21966.4059375,
+    "saldo": 14
   },
   {
     "cadeia": "Cafeicultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 125,
+    "admissoes": 126,
     "demissoes": 137,
-    "salario_medio": 18456.371641221376,
-    "saldo": -12
+    "salario_medio": 18394.20041825095,
+    "saldo": -11
   },
   {
     "cadeia": "Cafeicultura",
@@ -586,10 +586,10 @@
   {
     "cadeia": "Cafeicultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 227,
-    "demissoes": 231,
-    "salario_medio": 2144.3469216157205,
-    "saldo": -4
+    "admissoes": 229,
+    "demissoes": 235,
+    "salario_medio": 2143.6512502155174,
+    "saldo": -6
   },
   {
     "cadeia": "Cafeicultura",
@@ -602,18 +602,18 @@
   {
     "cadeia": "Cafeicultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 582,
-    "demissoes": 570,
-    "salario_medio": 1988.0186025173612,
-    "saldo": 12
+    "admissoes": 601,
+    "demissoes": 582,
+    "salario_medio": 1988.9005918005073,
+    "saldo": 19
   },
   {
     "cadeia": "Cafeicultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 77,
+    "admissoes": 82,
     "demissoes": 103,
-    "salario_medio": 2516.9687777777776,
-    "saldo": -26
+    "salario_medio": 2498.9862702702703,
+    "saldo": -21
   },
   {
     "cadeia": "Cafeicultura",
@@ -626,10 +626,10 @@
   {
     "cadeia": "Cafeicultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 19,
+    "admissoes": 20,
     "demissoes": 16,
-    "salario_medio": 3725.378285714286,
-    "saldo": 3
+    "salario_medio": 3699.673333333333,
+    "saldo": 4
   },
   {
     "cadeia": "Cafeicultura",
@@ -642,42 +642,42 @@
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 540,
-    "demissoes": 776,
-    "salario_medio": 941.5741489364742,
-    "saldo": -236
+    "admissoes": 545,
+    "demissoes": 782,
+    "salario_medio": 947.5673398646572,
+    "saldo": -237
   },
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 1422,
-    "demissoes": 1643,
-    "salario_medio": 983.1561259784596,
-    "saldo": -221
+    "admissoes": 1442,
+    "demissoes": 1649,
+    "salario_medio": 992.4387766983818,
+    "saldo": -207
   },
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "Analfabeto",
-    "admissoes": 100,
-    "demissoes": 155,
-    "salario_medio": 278.42435294,
-    "saldo": -55
+    "admissoes": 102,
+    "demissoes": 156,
+    "salario_medio": 292.40449612286824,
+    "saldo": -54
   },
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 1084,
-    "demissoes": 1309,
-    "salario_medio": 538.5021028007525,
-    "saldo": -225
+    "admissoes": 1095,
+    "demissoes": 1313,
+    "salario_medio": 539.4951266719568,
+    "saldo": -218
   },
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 574,
-    "demissoes": 768,
-    "salario_medio": 1405.3886065576007,
-    "saldo": -194
+    "admissoes": 584,
+    "demissoes": 772,
+    "salario_medio": 1416.6976991152656,
+    "saldo": -188
   },
   {
     "cadeia": "Cana-de-açúcar",
@@ -690,18 +690,18 @@
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "Médio Completo",
-    "admissoes": 3417,
-    "demissoes": 3483,
-    "salario_medio": 1646.4772241920423,
-    "saldo": -66
+    "admissoes": 3464,
+    "demissoes": 3508,
+    "salario_medio": 1654.1098493330799,
+    "saldo": -44
   },
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 1524,
-    "demissoes": 1320,
-    "salario_medio": 1333.0004429677215,
-    "saldo": 204
+    "admissoes": 1547,
+    "demissoes": 1329,
+    "salario_medio": 1345.7222565369264,
+    "saldo": 218
   },
   {
     "cadeia": "Cana-de-açúcar",
@@ -714,50 +714,50 @@
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "Superior Completo",
-    "admissoes": 167,
-    "demissoes": 231,
-    "salario_medio": 4008.0885934673365,
-    "saldo": -64
+    "admissoes": 169,
+    "demissoes": 232,
+    "salario_medio": 3998.195636408978,
+    "saldo": -63
   },
   {
     "cadeia": "Cana-de-açúcar",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 185,
+    "admissoes": 193,
     "demissoes": 188,
-    "salario_medio": 1754.3559250938338,
-    "saldo": -3
+    "salario_medio": 1765.360472598425,
+    "saldo": 5
   },
   {
     "cadeia": "Fruticultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 1225,
-    "demissoes": 1483,
-    "salario_medio": 1507.9436005169869,
+    "admissoes": 1242,
+    "demissoes": 1500,
+    "salario_medio": 1515.3464333333334,
     "saldo": -258
   },
   {
     "cadeia": "Fruticultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 2908,
-    "demissoes": 3074,
-    "salario_medio": 1639.456743550652,
-    "saldo": -166
+    "admissoes": 2930,
+    "demissoes": 3125,
+    "salario_medio": 1645.1364475507846,
+    "saldo": -195
   },
   {
     "cadeia": "Fruticultura",
     "escolaridade": "Analfabeto",
-    "admissoes": 146,
-    "demissoes": 162,
-    "salario_medio": 1499.745909090909,
-    "saldo": -16
+    "admissoes": 150,
+    "demissoes": 167,
+    "salario_medio": 1498.6947318611988,
+    "saldo": -17
   },
   {
     "cadeia": "Fruticultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 1287,
-    "demissoes": 1371,
-    "salario_medio": 1524.8479044469527,
-    "saldo": -84
+    "admissoes": 1304,
+    "demissoes": 1394,
+    "salario_medio": 1528.997879918458,
+    "saldo": -90
   },
   {
     "cadeia": "Fruticultura",
@@ -770,10 +770,10 @@
   {
     "cadeia": "Fruticultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 6210,
-    "demissoes": 5540,
-    "salario_medio": 1671.7547974723402,
-    "saldo": 670
+    "admissoes": 6314,
+    "demissoes": 5702,
+    "salario_medio": 1678.3035536201733,
+    "saldo": 612
   },
   {
     "cadeia": "Fruticultura",
@@ -786,18 +786,18 @@
   {
     "cadeia": "Fruticultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 6862,
-    "demissoes": 6611,
-    "salario_medio": 1784.8427254657463,
-    "saldo": 251
+    "admissoes": 7015,
+    "demissoes": 6779,
+    "salario_medio": 1787.2406568218066,
+    "saldo": 236
   },
   {
     "cadeia": "Fruticultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 1517,
-    "demissoes": 1542,
-    "salario_medio": 1578.2676789735208,
-    "saldo": -25
+    "admissoes": 1547,
+    "demissoes": 1586,
+    "salario_medio": 1580.5300382955634,
+    "saldo": -39
   },
   {
     "cadeia": "Fruticultura",
@@ -810,18 +810,18 @@
   {
     "cadeia": "Fruticultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 248,
-    "demissoes": 242,
-    "salario_medio": 3807.628836122449,
-    "saldo": 6
+    "admissoes": 253,
+    "demissoes": 249,
+    "salario_medio": 3828.7724695219126,
+    "saldo": 4
   },
   {
     "cadeia": "Fruticultura",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 172,
+    "admissoes": 174,
     "demissoes": 137,
-    "salario_medio": 1979.010226537217,
-    "saldo": 35
+    "salario_medio": 1979.432990353698,
+    "saldo": 37
   },
   {
     "cadeia": "Fumo",
@@ -866,10 +866,10 @@
   {
     "cadeia": "Fumo",
     "escolaridade": "Médio Completo",
-    "admissoes": 20,
+    "admissoes": 21,
     "demissoes": 33,
-    "salario_medio": 1644.4184905660377,
-    "saldo": -13
+    "salario_medio": 1647.2996296296294,
+    "saldo": -12
   },
   {
     "cadeia": "Fumo",
@@ -890,34 +890,34 @@
   {
     "cadeia": "Grãos",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 1256,
-    "demissoes": 1364,
-    "salario_medio": 1873.0119158778627,
-    "saldo": -108
+    "admissoes": 1268,
+    "demissoes": 1385,
+    "salario_medio": 1877.5519146626461,
+    "saldo": -117
   },
   {
     "cadeia": "Grãos",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 2806,
-    "demissoes": 3020,
-    "salario_medio": 1775.6332011980776,
-    "saldo": -214
+    "admissoes": 2832,
+    "demissoes": 3057,
+    "salario_medio": 1781.1531788385125,
+    "saldo": -225
   },
   {
     "cadeia": "Grãos",
     "escolaridade": "Analfabeto",
-    "admissoes": 310,
-    "demissoes": 323,
-    "salario_medio": 1616.0219589257504,
-    "saldo": -13
+    "admissoes": 312,
+    "demissoes": 329,
+    "salario_medio": 1627.8845397815912,
+    "saldo": -17
   },
   {
     "cadeia": "Grãos",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 1264,
-    "demissoes": 1365,
-    "salario_medio": 1654.7703347660706,
-    "saldo": -101
+    "admissoes": 1275,
+    "demissoes": 1386,
+    "salario_medio": 1664.0624314543404,
+    "saldo": -111
   },
   {
     "cadeia": "Grãos",
@@ -930,10 +930,10 @@
   {
     "cadeia": "Grãos",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 4658,
-    "demissoes": 4856,
-    "salario_medio": 1691.6051976024808,
-    "saldo": -198
+    "admissoes": 4727,
+    "demissoes": 4927,
+    "salario_medio": 1701.3233934110215,
+    "saldo": -200
   },
   {
     "cadeia": "Grãos",
@@ -946,74 +946,74 @@
   {
     "cadeia": "Grãos",
     "escolaridade": "Médio Completo",
-    "admissoes": 10678,
-    "demissoes": 9927,
-    "salario_medio": 1980.5880003892448,
-    "saldo": 751
+    "admissoes": 10911,
+    "demissoes": 10131,
+    "salario_medio": 1985.2318497229219,
+    "saldo": 780
   },
   {
     "cadeia": "Grãos",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 2288,
-    "demissoes": 2137,
-    "salario_medio": 1783.331932259887,
-    "saldo": 151
+    "admissoes": 2324,
+    "demissoes": 2180,
+    "salario_medio": 1786.873250499556,
+    "saldo": 144
   },
   {
     "cadeia": "Grãos",
     "escolaridade": "Pós-Graduação completa",
     "admissoes": 22,
-    "demissoes": 17,
-    "salario_medio": 5729.795641025641,
-    "saldo": 5
+    "demissoes": 19,
+    "salario_medio": 5813.13512195122,
+    "saldo": 3
   },
   {
     "cadeia": "Grãos",
     "escolaridade": "Superior Completo",
-    "admissoes": 392,
-    "demissoes": 359,
-    "salario_medio": 3465.269613715047,
-    "saldo": 33
+    "admissoes": 403,
+    "demissoes": 372,
+    "salario_medio": 3480.225638580645,
+    "saldo": 31
   },
   {
     "cadeia": "Grãos",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 239,
-    "demissoes": 223,
-    "salario_medio": 3895.7659307359304,
-    "saldo": 16
+    "admissoes": 242,
+    "demissoes": 227,
+    "salario_medio": 3865.4100213219617,
+    "saldo": 15
   },
   {
     "cadeia": "Horticultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 266,
-    "demissoes": 272,
-    "salario_medio": 1723.1588475836431,
-    "saldo": -6
+    "admissoes": 271,
+    "demissoes": 275,
+    "salario_medio": 1728.5107875457875,
+    "saldo": -4
   },
   {
     "cadeia": "Horticultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 613,
-    "demissoes": 663,
-    "salario_medio": 1694.0285971786836,
-    "saldo": -50
+    "admissoes": 622,
+    "demissoes": 671,
+    "salario_medio": 1697.5012683681362,
+    "saldo": -49
   },
   {
     "cadeia": "Horticultura",
     "escolaridade": "Analfabeto",
-    "admissoes": 53,
-    "demissoes": 58,
-    "salario_medio": 1768.6156756756757,
-    "saldo": -5
+    "admissoes": 55,
+    "demissoes": 59,
+    "salario_medio": 1777.5754385964913,
+    "saldo": -4
   },
   {
     "cadeia": "Horticultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 348,
-    "demissoes": 355,
-    "salario_medio": 1791.9419916073969,
-    "saldo": -7
+    "admissoes": 350,
+    "demissoes": 361,
+    "salario_medio": 1795.5247821378339,
+    "saldo": -11
   },
   {
     "cadeia": "Horticultura",
@@ -1026,10 +1026,10 @@
   {
     "cadeia": "Horticultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 842,
-    "demissoes": 952,
-    "salario_medio": 1729.5389018840579,
-    "saldo": -110
+    "admissoes": 854,
+    "demissoes": 962,
+    "salario_medio": 1734.5120594603525,
+    "saldo": -108
   },
   {
     "cadeia": "Horticultura",
@@ -1042,18 +1042,18 @@
   {
     "cadeia": "Horticultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 2670,
-    "demissoes": 2770,
-    "salario_medio": 1846.8768198915443,
-    "saldo": -100
+    "admissoes": 2720,
+    "demissoes": 2819,
+    "salario_medio": 1851.2108882848888,
+    "saldo": -99
   },
   {
     "cadeia": "Horticultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 693,
-    "demissoes": 739,
-    "salario_medio": 1727.3261845562542,
-    "saldo": -46
+    "admissoes": 703,
+    "demissoes": 747,
+    "salario_medio": 1727.7954797101452,
+    "saldo": -44
   },
   {
     "cadeia": "Horticultura",
@@ -1066,18 +1066,18 @@
   {
     "cadeia": "Horticultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 90,
-    "demissoes": 113,
-    "salario_medio": 2917.2500990147782,
-    "saldo": -23
+    "admissoes": 92,
+    "demissoes": 114,
+    "salario_medio": 2931.768835436893,
+    "saldo": -22
   },
   {
     "cadeia": "Horticultura",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 70,
-    "demissoes": 83,
-    "salario_medio": 1991.2222869281045,
-    "saldo": -13
+    "admissoes": 73,
+    "demissoes": 85,
+    "salario_medio": 2005.5510753164558,
+    "saldo": -12
   },
   {
     "cadeia": "Outras Culturas Permanentes",
@@ -1090,10 +1090,10 @@
   {
     "cadeia": "Outras Culturas Permanentes",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 101,
-    "demissoes": 115,
-    "salario_medio": 1491.4655092592593,
-    "saldo": -14
+    "admissoes": 104,
+    "demissoes": 117,
+    "salario_medio": 1501.1901357466065,
+    "saldo": -13
   },
   {
     "cadeia": "Outras Culturas Permanentes",
@@ -1106,18 +1106,18 @@
   {
     "cadeia": "Outras Culturas Permanentes",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 64,
-    "demissoes": 94,
-    "salario_medio": 1585.5850632911392,
+    "admissoes": 65,
+    "demissoes": 95,
+    "salario_medio": 1591.3505,
     "saldo": -30
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 245,
+    "admissoes": 249,
     "demissoes": 249,
-    "salario_medio": 1601.4444937246965,
-    "saldo": -4
+    "salario_medio": 1601.6736945783134,
+    "saldo": 0
   },
   {
     "cadeia": "Outras Culturas Permanentes",
@@ -1130,18 +1130,18 @@
   {
     "cadeia": "Outras Culturas Permanentes",
     "escolaridade": "Médio Completo",
-    "admissoes": 786,
-    "demissoes": 737,
-    "salario_medio": 1680.2866512609323,
-    "saldo": 49
+    "admissoes": 803,
+    "demissoes": 749,
+    "salario_medio": 1690.7346648649486,
+    "saldo": 54
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "escolaridade": "Médio Incompleto",
     "admissoes": 161,
-    "demissoes": 148,
-    "salario_medio": 1559.2200970873787,
-    "saldo": 13
+    "demissoes": 151,
+    "salario_medio": 1566.1238782051282,
+    "saldo": 10
   },
   {
     "cadeia": "Outras Culturas Permanentes",
@@ -1155,9 +1155,9 @@
     "cadeia": "Outras Culturas Permanentes",
     "escolaridade": "Superior Completo",
     "admissoes": 33,
-    "demissoes": 30,
-    "salario_medio": 2839.0044444444443,
-    "saldo": 3
+    "demissoes": 31,
+    "salario_medio": 2872.77,
+    "saldo": 2
   },
   {
     "cadeia": "Outras Culturas Permanentes",
@@ -1170,34 +1170,34 @@
   {
     "cadeia": "Outros",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 357,
-    "demissoes": 372,
-    "salario_medio": 1675.5452813443073,
-    "saldo": -15
+    "admissoes": 359,
+    "demissoes": 377,
+    "salario_medio": 1678.5697691576086,
+    "saldo": -18
   },
   {
     "cadeia": "Outros",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 585,
-    "demissoes": 727,
-    "salario_medio": 1744.737933917683,
-    "saldo": -142
+    "admissoes": 592,
+    "demissoes": 737,
+    "salario_medio": 1746.5290438675695,
+    "saldo": -145
   },
   {
     "cadeia": "Outros",
     "escolaridade": "Analfabeto",
-    "admissoes": 61,
-    "demissoes": 81,
-    "salario_medio": 1669.4014781690141,
-    "saldo": -20
+    "admissoes": 62,
+    "demissoes": 83,
+    "salario_medio": 1672.6414475862068,
+    "saldo": -21
   },
   {
     "cadeia": "Outros",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 213,
-    "demissoes": 301,
-    "salario_medio": 1744.7495914396889,
-    "saldo": -88
+    "admissoes": 219,
+    "demissoes": 310,
+    "salario_medio": 1754.8806616257089,
+    "saldo": -91
   },
   {
     "cadeia": "Outros",
@@ -1210,73 +1210,73 @@
   {
     "cadeia": "Outros",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 2646,
-    "demissoes": 2286,
-    "salario_medio": 1565.5566179237633,
-    "saldo": 360
+    "admissoes": 2672,
+    "demissoes": 2328,
+    "salario_medio": 1569.6482539200001,
+    "saldo": 344
   },
   {
     "cadeia": "Outros",
     "escolaridade": "Mestrado",
-    "admissoes": 26,
+    "admissoes": 27,
     "demissoes": 18,
-    "salario_medio": 21014.471818181817,
-    "saldo": 8
+    "salario_medio": 20925.261333333332,
+    "saldo": 9
   },
   {
     "cadeia": "Outros",
     "escolaridade": "Médio Completo",
-    "admissoes": 3496,
-    "demissoes": 3523,
-    "salario_medio": 1892.7932253563283,
-    "saldo": -27
+    "admissoes": 3572,
+    "demissoes": 3603,
+    "salario_medio": 1899.6887742749582,
+    "saldo": -31
   },
   {
     "cadeia": "Outros",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 891,
-    "demissoes": 888,
-    "salario_medio": 1514.031854940978,
-    "saldo": 3
+    "admissoes": 904,
+    "demissoes": 906,
+    "salario_medio": 1520.5839557679558,
+    "saldo": -2
   },
   {
     "cadeia": "Outros",
     "escolaridade": "Pós-Graduação completa",
     "admissoes": 29,
-    "demissoes": 44,
-    "salario_medio": 9182.581646575341,
-    "saldo": -15
+    "demissoes": 45,
+    "salario_medio": 9109.961489189189,
+    "saldo": -16
   },
   {
     "cadeia": "Outros",
     "escolaridade": "Superior Completo",
-    "admissoes": 581,
-    "demissoes": 586,
-    "salario_medio": 4731.893581405313,
-    "saldo": -5
+    "admissoes": 588,
+    "demissoes": 592,
+    "salario_medio": 4799.430830084746,
+    "saldo": -4
   },
   {
     "cadeia": "Outros",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 581,
-    "demissoes": 533,
-    "salario_medio": 2172.901804308797,
-    "saldo": 48
+    "admissoes": 584,
+    "demissoes": 546,
+    "salario_medio": 2178.6927079646016,
+    "saldo": 38
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 59,
-    "demissoes": 75,
-    "salario_medio": 1902.1631336567164,
-    "saldo": -16
+    "admissoes": 61,
+    "demissoes": 76,
+    "salario_medio": 1909.381021240876,
+    "saldo": -15
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 98,
-    "demissoes": 118,
-    "salario_medio": 1911.974999537037,
+    "admissoes": 101,
+    "demissoes": 121,
+    "salario_medio": 1936.9259454954954,
     "saldo": -20
   },
   {
@@ -1290,33 +1290,33 @@
   {
     "cadeia": "Ovinocaprinocultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 90,
-    "demissoes": 85,
-    "salario_medio": 1910.5651994285715,
-    "saldo": 5
+    "admissoes": 92,
+    "demissoes": 88,
+    "salario_medio": 1925.7994994444446,
+    "saldo": 4
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 207,
-    "demissoes": 233,
-    "salario_medio": 1969.2521136363637,
-    "saldo": -26
+    "admissoes": 214,
+    "demissoes": 244,
+    "salario_medio": 1988.7054585152837,
+    "saldo": -30
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 612,
-    "demissoes": 553,
-    "salario_medio": 1960.255210300429,
-    "saldo": 59
+    "admissoes": 630,
+    "demissoes": 568,
+    "salario_medio": 1973.5322120200333,
+    "saldo": 62
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 137,
-    "demissoes": 125,
-    "salario_medio": 1861.689503816794,
+    "admissoes": 139,
+    "demissoes": 127,
+    "salario_medio": 1868.3934210526318,
     "saldo": 12
   },
   {
@@ -1346,34 +1346,34 @@
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 2062,
-    "demissoes": 2262,
-    "salario_medio": 1885.7673173450507,
-    "saldo": -200
+    "admissoes": 2135,
+    "demissoes": 2307,
+    "salario_medio": 1931.8692909049978,
+    "saldo": -172
   },
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 3477,
-    "demissoes": 3725,
-    "salario_medio": 1796.1115968633712,
-    "saldo": -248
+    "admissoes": 3526,
+    "demissoes": 3785,
+    "salario_medio": 1803.1836904130762,
+    "saldo": -259
   },
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "Analfabeto",
-    "admissoes": 443,
-    "demissoes": 455,
-    "salario_medio": 1677.5939197104676,
-    "saldo": -12
+    "admissoes": 456,
+    "demissoes": 460,
+    "salario_medio": 1689.0435260917031,
+    "saldo": -4
   },
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 1795,
-    "demissoes": 1966,
-    "salario_medio": 1777.3406886732253,
-    "saldo": -171
+    "admissoes": 1822,
+    "demissoes": 2004,
+    "salario_medio": 1783.1666754051228,
+    "saldo": -182
   },
   {
     "cadeia": "Serviços Agrícolas",
@@ -1386,10 +1386,10 @@
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 5386,
-    "demissoes": 5808,
-    "salario_medio": 1778.6545666785778,
-    "saldo": -422
+    "admissoes": 5504,
+    "demissoes": 5909,
+    "salario_medio": 1789.3541408393937,
+    "saldo": -405
   },
   {
     "cadeia": "Serviços Agrícolas",
@@ -1402,18 +1402,18 @@
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "Médio Completo",
-    "admissoes": 29722,
-    "demissoes": 26863,
-    "salario_medio": 1889.9163813270536,
-    "saldo": 2859
+    "admissoes": 30385,
+    "demissoes": 27357,
+    "salario_medio": 1899.1404324658388,
+    "saldo": 3028
   },
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 3697,
-    "demissoes": 3807,
-    "salario_medio": 1802.7909795895523,
-    "saldo": -110
+    "admissoes": 3789,
+    "demissoes": 3875,
+    "salario_medio": 1811.4045081993736,
+    "saldo": -86
   },
   {
     "cadeia": "Serviços Agrícolas",
@@ -1426,58 +1426,58 @@
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "Pós-Graduação completa",
-    "admissoes": 29,
+    "admissoes": 31,
     "demissoes": 45,
-    "salario_medio": 3268.03972972973,
-    "saldo": -16
+    "salario_medio": 3234.0123684210525,
+    "saldo": -14
   },
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "Superior Completo",
-    "admissoes": 1175,
-    "demissoes": 1096,
-    "salario_medio": 2737.6446631439894,
-    "saldo": 79
+    "admissoes": 1186,
+    "demissoes": 1116,
+    "salario_medio": 2740.281750651607,
+    "saldo": 70
   },
   {
     "cadeia": "Serviços Agrícolas",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 785,
-    "demissoes": 710,
-    "salario_medio": 1953.3218128561873,
-    "saldo": 75
+    "admissoes": 795,
+    "demissoes": 715,
+    "salario_medio": 1958.2058213377481,
+    "saldo": 80
   },
   {
     "cadeia": "Silvicultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 2620,
-    "demissoes": 2703,
-    "salario_medio": 1691.6460663972937,
-    "saldo": -83
+    "admissoes": 2676,
+    "demissoes": 2736,
+    "salario_medio": 1700.3424305545286,
+    "saldo": -60
   },
   {
     "cadeia": "Silvicultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 6719,
-    "demissoes": 6634,
-    "salario_medio": 1801.3186648472138,
-    "saldo": 85
+    "admissoes": 6800,
+    "demissoes": 6700,
+    "salario_medio": 1806.4744064775168,
+    "saldo": 100
   },
   {
     "cadeia": "Silvicultura",
     "escolaridade": "Analfabeto",
-    "admissoes": 387,
-    "demissoes": 434,
-    "salario_medio": 1731.2573812423875,
-    "saldo": -47
+    "admissoes": 392,
+    "demissoes": 440,
+    "salario_medio": 1735.992764423077,
+    "saldo": -48
   },
   {
     "cadeia": "Silvicultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 2399,
-    "demissoes": 2577,
-    "salario_medio": 1736.3974856712214,
-    "saldo": -178
+    "admissoes": 2430,
+    "demissoes": 2611,
+    "salario_medio": 1742.833506982741,
+    "saldo": -181
   },
   {
     "cadeia": "Silvicultura",
@@ -1490,10 +1490,10 @@
   {
     "cadeia": "Silvicultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 8493,
-    "demissoes": 8949,
-    "salario_medio": 1813.5156286905171,
-    "saldo": -456
+    "admissoes": 8584,
+    "demissoes": 9034,
+    "salario_medio": 1818.4887095935976,
+    "saldo": -450
   },
   {
     "cadeia": "Silvicultura",
@@ -1506,74 +1506,74 @@
   {
     "cadeia": "Silvicultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 19815,
-    "demissoes": 19467,
-    "salario_medio": 1876.475767927444,
-    "saldo": 348
+    "admissoes": 20110,
+    "demissoes": 19780,
+    "salario_medio": 1882.9518154379764,
+    "saldo": 330
   },
   {
     "cadeia": "Silvicultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 4480,
-    "demissoes": 4355,
-    "salario_medio": 1759.12532967176,
-    "saldo": 125
+    "admissoes": 4549,
+    "demissoes": 4423,
+    "salario_medio": 1765.8054812360679,
+    "saldo": 126
   },
   {
     "cadeia": "Silvicultura",
     "escolaridade": "Pós-Graduação completa",
-    "admissoes": 63,
-    "demissoes": 59,
-    "salario_medio": 5739.042868852459,
+    "admissoes": 64,
+    "demissoes": 60,
+    "salario_medio": 5721.695403225806,
     "saldo": 4
   },
   {
     "cadeia": "Silvicultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 856,
-    "demissoes": 851,
-    "salario_medio": 4142.232471763327,
+    "admissoes": 869,
+    "demissoes": 864,
+    "salario_medio": 4144.775844950952,
     "saldo": 5
   },
   {
     "cadeia": "Silvicultura",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 594,
-    "demissoes": 578,
-    "salario_medio": 2073.082798489761,
+    "admissoes": 603,
+    "demissoes": 587,
+    "salario_medio": 2077.6557309495797,
     "saldo": 16
   },
   {
     "cadeia": "Sojicultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 1255,
-    "demissoes": 1526,
-    "salario_medio": 2032.2303703775622,
-    "saldo": -271
+    "admissoes": 1267,
+    "demissoes": 1547,
+    "salario_medio": 2036.1422530277184,
+    "saldo": -280
   },
   {
     "cadeia": "Sojicultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 2090,
-    "demissoes": 2397,
-    "salario_medio": 1959.4500490782261,
-    "saldo": -307
+    "admissoes": 2140,
+    "demissoes": 2432,
+    "salario_medio": 1964.3413626889765,
+    "saldo": -292
   },
   {
     "cadeia": "Sojicultura",
     "escolaridade": "Analfabeto",
-    "admissoes": 186,
-    "demissoes": 215,
-    "salario_medio": 1718.606783042394,
-    "saldo": -29
+    "admissoes": 190,
+    "demissoes": 217,
+    "salario_medio": 1725.0371253071253,
+    "saldo": -27
   },
   {
     "cadeia": "Sojicultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 1209,
-    "demissoes": 1473,
-    "salario_medio": 1879.6890454138702,
-    "saldo": -264
+    "admissoes": 1225,
+    "demissoes": 1513,
+    "salario_medio": 1894.0608801314827,
+    "saldo": -288
   },
   {
     "cadeia": "Sojicultura",
@@ -1586,10 +1586,10 @@
   {
     "cadeia": "Sojicultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 3378,
-    "demissoes": 3571,
-    "salario_medio": 1981.5258722985031,
-    "saldo": -193
+    "admissoes": 3453,
+    "demissoes": 3642,
+    "salario_medio": 1988.455768357767,
+    "saldo": -189
   },
   {
     "cadeia": "Sojicultura",
@@ -1602,74 +1602,74 @@
   {
     "cadeia": "Sojicultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 12738,
-    "demissoes": 11398,
-    "salario_medio": 2100.2232326923554,
-    "saldo": 1340
+    "admissoes": 12981,
+    "demissoes": 11692,
+    "salario_medio": 2109.3838080021887,
+    "saldo": 1289
   },
   {
     "cadeia": "Sojicultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 1953,
-    "demissoes": 1898,
-    "salario_medio": 2011.742220334978,
-    "saldo": 55
+    "admissoes": 1989,
+    "demissoes": 1937,
+    "salario_medio": 2017.0989991110544,
+    "saldo": 52
   },
   {
     "cadeia": "Sojicultura",
     "escolaridade": "Pós-Graduação completa",
     "admissoes": 36,
-    "demissoes": 34,
-    "salario_medio": 4344.803571428572,
-    "saldo": 2
+    "demissoes": 37,
+    "salario_medio": 4574.81095890411,
+    "saldo": -1
   },
   {
     "cadeia": "Sojicultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 664,
-    "demissoes": 611,
-    "salario_medio": 3905.255010823529,
-    "saldo": 53
+    "admissoes": 674,
+    "demissoes": 622,
+    "salario_medio": 3944.9402691358023,
+    "saldo": 52
   },
   {
     "cadeia": "Sojicultura",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 370,
-    "demissoes": 294,
-    "salario_medio": 2378.1468371987953,
-    "saldo": 76
+    "admissoes": 380,
+    "demissoes": 305,
+    "salario_medio": 2393.4150071532845,
+    "saldo": 75
   },
   {
     "cadeia": "Suinocultura",
     "escolaridade": "5ª Completo Fundamental",
-    "admissoes": 467,
-    "demissoes": 479,
-    "salario_medio": 1829.9798734672304,
+    "admissoes": 473,
+    "demissoes": 485,
+    "salario_medio": 1834.7595618997914,
     "saldo": -12
   },
   {
     "cadeia": "Suinocultura",
     "escolaridade": "6ª a 9ª Fundamental",
-    "admissoes": 1849,
-    "demissoes": 1843,
-    "salario_medio": 1812.0860185319611,
-    "saldo": 6
+    "admissoes": 1870,
+    "demissoes": 1859,
+    "salario_medio": 1816.6172379780103,
+    "saldo": 11
   },
   {
     "cadeia": "Suinocultura",
     "escolaridade": "Analfabeto",
-    "admissoes": 116,
-    "demissoes": 102,
-    "salario_medio": 1879.2786233944953,
+    "admissoes": 119,
+    "demissoes": 105,
+    "salario_medio": 1885.0188388392858,
     "saldo": 14
   },
   {
     "cadeia": "Suinocultura",
     "escolaridade": "Até 5ª Incompleto",
-    "admissoes": 808,
-    "demissoes": 794,
-    "salario_medio": 1812.172259425718,
-    "saldo": 14
+    "admissoes": 839,
+    "demissoes": 803,
+    "salario_medio": 1818.810943727162,
+    "saldo": 36
   },
   {
     "cadeia": "Suinocultura",
@@ -1682,10 +1682,10 @@
   {
     "cadeia": "Suinocultura",
     "escolaridade": "Fundamental Completo",
-    "admissoes": 1963,
-    "demissoes": 1863,
-    "salario_medio": 1837.6587322556195,
-    "saldo": 100
+    "admissoes": 1996,
+    "demissoes": 1888,
+    "salario_medio": 1841.8962280149333,
+    "saldo": 108
   },
   {
     "cadeia": "Suinocultura",
@@ -1698,18 +1698,18 @@
   {
     "cadeia": "Suinocultura",
     "escolaridade": "Médio Completo",
-    "admissoes": 8523,
-    "demissoes": 7927,
-    "salario_medio": 1886.0245087969604,
-    "saldo": 596
+    "admissoes": 8705,
+    "demissoes": 8074,
+    "salario_medio": 1890.6941819959472,
+    "saldo": 631
   },
   {
     "cadeia": "Suinocultura",
     "escolaridade": "Médio Incompleto",
-    "admissoes": 2152,
-    "demissoes": 1942,
-    "salario_medio": 1768.5824622545188,
-    "saldo": 210
+    "admissoes": 2189,
+    "demissoes": 1962,
+    "salario_medio": 1773.0271622428331,
+    "saldo": 227
   },
   {
     "cadeia": "Suinocultura",
@@ -1722,17 +1722,17 @@
   {
     "cadeia": "Suinocultura",
     "escolaridade": "Superior Completo",
-    "admissoes": 445,
-    "demissoes": 421,
-    "salario_medio": 3449.010473094688,
-    "saldo": 24
+    "admissoes": 451,
+    "demissoes": 430,
+    "salario_medio": 3453.9134843359816,
+    "saldo": 21
   },
   {
     "cadeia": "Suinocultura",
     "escolaridade": "Superior Incompleto",
-    "admissoes": 383,
-    "demissoes": 320,
-    "salario_medio": 2080.8416503556186,
-    "saldo": 63
+    "admissoes": 392,
+    "demissoes": 325,
+    "salario_medio": 2095.4161509065552,
+    "saldo": 67
   }
 ]

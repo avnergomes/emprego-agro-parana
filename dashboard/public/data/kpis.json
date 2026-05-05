@@ -1,17 +1,17 @@
 {
-  "periodo_referencia": "2026-02",
+  "periodo_referencia": "2026-03",
   "ultimo_mes": {
-    "admissoes": 5381,
-    "demissoes": 5346,
-    "saldo": 35
+    "admissoes": 5539,
+    "demissoes": 5250,
+    "saldo": 289
   },
   "acumulado": {
-    "admissoes": 298159,
-    "demissoes": 292892,
-    "saldo": 5267
+    "admissoes": 303698,
+    "demissoes": 298142,
+    "saldo": 5556
   },
   "salario": {
-    "media": 1877.91,
+    "media": 1885.15,
     "mediana": 1749.02
   },
   "perfil": {

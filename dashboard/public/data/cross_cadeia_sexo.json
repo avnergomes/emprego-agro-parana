@@ -2,98 +2,98 @@
   {
     "cadeia": "Algodão",
     "sexo": "Feminino",
-    "admissoes": 158,
-    "demissoes": 139,
-    "salario_medio": 1786.6743097643098,
-    "saldo": 19
+    "admissoes": 164,
+    "demissoes": 146,
+    "salario_medio": 1800.2249032258064,
+    "saldo": 18
   },
   {
     "cadeia": "Algodão",
     "sexo": "Masculino",
-    "admissoes": 358,
-    "demissoes": 322,
-    "salario_medio": 1990.8177205882353,
-    "saldo": 36
+    "admissoes": 361,
+    "demissoes": 329,
+    "salario_medio": 1995.196463768116,
+    "saldo": 32
   },
   {
     "cadeia": "Apicultura",
     "sexo": "Feminino",
-    "admissoes": 200,
-    "demissoes": 162,
-    "salario_medio": 2249.6880107734805,
-    "saldo": 38
+    "admissoes": 201,
+    "demissoes": 169,
+    "salario_medio": 2281.073459189189,
+    "saldo": 32
   },
   {
     "cadeia": "Apicultura",
     "sexo": "Masculino",
-    "admissoes": 426,
-    "demissoes": 434,
-    "salario_medio": 2269.517802093023,
-    "saldo": -8
+    "admissoes": 436,
+    "demissoes": 450,
+    "salario_medio": 2281.694830474041,
+    "saldo": -14
   },
   {
     "cadeia": "Aquicultura",
     "sexo": "Feminino",
-    "admissoes": 686,
-    "demissoes": 609,
-    "salario_medio": 2009.2840306563705,
-    "saldo": 77
+    "admissoes": 706,
+    "demissoes": 633,
+    "salario_medio": 2011.5870498132936,
+    "saldo": 73
   },
   {
     "cadeia": "Aquicultura",
     "sexo": "Masculino",
-    "admissoes": 1812,
-    "demissoes": 1627,
-    "salario_medio": 2209.10292532713,
-    "saldo": 185
+    "admissoes": 1861,
+    "demissoes": 1660,
+    "salario_medio": 2206.8712866231185,
+    "saldo": 201
   },
   {
     "cadeia": "Avicultura",
     "sexo": "Feminino",
-    "admissoes": 20485,
-    "demissoes": 19316,
-    "salario_medio": 1708.7352688394183,
-    "saldo": 1169
+    "admissoes": 20902,
+    "demissoes": 19680,
+    "salario_medio": 1715.3001785248894,
+    "saldo": 1222
   },
   {
     "cadeia": "Avicultura",
     "sexo": "Masculino",
-    "admissoes": 27015,
-    "demissoes": 26172,
-    "salario_medio": 1827.5044812519275,
-    "saldo": 843
+    "admissoes": 27576,
+    "demissoes": 26661,
+    "salario_medio": 1835.4012441351967,
+    "saldo": 915
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "sexo": "Feminino",
-    "admissoes": 3309,
-    "demissoes": 3299,
-    "salario_medio": 1798.188731627062,
-    "saldo": 10
+    "admissoes": 3381,
+    "demissoes": 3357,
+    "salario_medio": 1802.9917707970908,
+    "saldo": 24
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "sexo": "Masculino",
-    "admissoes": 24510,
-    "demissoes": 24849,
-    "salario_medio": 1900.7678429579946,
-    "saldo": -339
+    "admissoes": 24995,
+    "demissoes": 25337,
+    "salario_medio": 1908.6368275141085,
+    "saldo": -342
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "sexo": "Feminino",
-    "admissoes": 2808,
-    "demissoes": 2574,
-    "salario_medio": 1752.5149999442588,
-    "saldo": 234
+    "admissoes": 2865,
+    "demissoes": 2625,
+    "salario_medio": 1758.8716830054643,
+    "saldo": 240
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "sexo": "Masculino",
-    "admissoes": 7926,
-    "demissoes": 7569,
-    "salario_medio": 1865.6950655463759,
-    "saldo": 357
+    "admissoes": 8077,
+    "demissoes": 7743,
+    "salario_medio": 1874.0629024219245,
+    "saldo": 334
   },
   {
     "cadeia": "Cacau",
@@ -106,50 +106,50 @@
   {
     "cadeia": "Cafeicultura",
     "sexo": "Feminino",
-    "admissoes": 226,
-    "demissoes": 227,
-    "salario_medio": 12756.02766004415,
-    "saldo": -1
+    "admissoes": 228,
+    "demissoes": 230,
+    "salario_medio": 12635.829737991266,
+    "saldo": -2
   },
   {
     "cadeia": "Cafeicultura",
     "sexo": "Masculino",
-    "admissoes": 1084,
-    "demissoes": 1136,
-    "salario_medio": 4766.1403199099095,
-    "saldo": -52
+    "admissoes": 1114,
+    "demissoes": 1151,
+    "salario_medio": 4711.780476909493,
+    "saldo": -37
   },
   {
     "cadeia": "Cana-de-açúcar",
     "sexo": "Feminino",
-    "admissoes": 1427,
-    "demissoes": 1731,
-    "salario_medio": 890.4485647083967,
-    "saldo": -304
+    "admissoes": 1457,
+    "demissoes": 1740,
+    "salario_medio": 898.3166886446636,
+    "saldo": -283
   },
   {
     "cadeia": "Cana-de-açúcar",
     "sexo": "Masculino",
-    "admissoes": 7594,
-    "demissoes": 8167,
-    "salario_medio": 1410.8026839745685,
-    "saldo": -573
+    "admissoes": 7692,
+    "demissoes": 8214,
+    "salario_medio": 1419.3110625236845,
+    "saldo": -522
   },
   {
     "cadeia": "Fruticultura",
     "sexo": "Feminino",
-    "admissoes": 4177,
-    "demissoes": 4033,
-    "salario_medio": 1797.615898908648,
-    "saldo": 144
+    "admissoes": 4252,
+    "demissoes": 4111,
+    "salario_medio": 1801.3564008178885,
+    "saldo": 141
   },
   {
     "cadeia": "Fruticultura",
     "sexo": "Masculino",
-    "admissoes": 16428,
-    "demissoes": 16152,
-    "salario_medio": 1684.557445373849,
-    "saldo": 276
+    "admissoes": 16707,
+    "demissoes": 16551,
+    "salario_medio": 1689.8557429875518,
+    "saldo": 156
   },
   {
     "cadeia": "Fumo",
@@ -162,106 +162,106 @@
   {
     "cadeia": "Fumo",
     "sexo": "Masculino",
-    "admissoes": 41,
+    "admissoes": 42,
     "demissoes": 58,
-    "salario_medio": 1669.1151515151514,
-    "saldo": -17
-  },
-  {
-    "cadeia": "Grãos",
-    "sexo": "Feminino",
-    "admissoes": 5576,
-    "demissoes": 5325,
-    "salario_medio": 1641.3738170782497,
-    "saldo": 251
-  },
-  {
-    "cadeia": "Grãos",
-    "sexo": "Masculino",
-    "admissoes": 18344,
-    "demissoes": 18270,
-    "salario_medio": 1972.1438317064976,
-    "saldo": 74
-  },
-  {
-    "cadeia": "Horticultura",
-    "sexo": "Feminino",
-    "admissoes": 2186,
-    "demissoes": 2321,
-    "salario_medio": 1812.3652096316841,
-    "saldo": -135
-  },
-  {
-    "cadeia": "Horticultura",
-    "sexo": "Masculino",
-    "admissoes": 3462,
-    "demissoes": 3687,
-    "salario_medio": 1806.9307555372134,
-    "saldo": -225
-  },
-  {
-    "cadeia": "Outras Culturas Permanentes",
-    "sexo": "Feminino",
-    "admissoes": 366,
-    "demissoes": 348,
-    "salario_medio": 1590.2249299299722,
-    "saldo": 18
-  },
-  {
-    "cadeia": "Outras Culturas Permanentes",
-    "sexo": "Masculino",
-    "admissoes": 1155,
-    "demissoes": 1176,
-    "salario_medio": 1684.2716687260404,
-    "saldo": -21
-  },
-  {
-    "cadeia": "Outros",
-    "sexo": "Feminino",
-    "admissoes": 1921,
-    "demissoes": 1840,
-    "salario_medio": 2210.35577767615,
-    "saldo": 81
-  },
-  {
-    "cadeia": "Outros",
-    "sexo": "Masculino",
-    "admissoes": 7567,
-    "demissoes": 7537,
-    "salario_medio": 2000.6870762068736,
-    "saldo": 30
-  },
-  {
-    "cadeia": "Ovinocaprinocultura",
-    "sexo": "Feminino",
-    "admissoes": 176,
-    "demissoes": 158,
-    "salario_medio": 1707.2360179940122,
-    "saldo": 18
-  },
-  {
-    "cadeia": "Ovinocaprinocultura",
-    "sexo": "Masculino",
-    "admissoes": 1069,
-    "demissoes": 1085,
-    "salario_medio": 2023.2593406220983,
+    "salario_medio": 1670.424,
     "saldo": -16
   },
   {
+    "cadeia": "Grãos",
+    "sexo": "Feminino",
+    "admissoes": 5666,
+    "demissoes": 5407,
+    "salario_medio": 1648.3871046663055,
+    "saldo": 259
+  },
+  {
+    "cadeia": "Grãos",
+    "sexo": "Masculino",
+    "admissoes": 18657,
+    "demissoes": 18610,
+    "salario_medio": 1978.6383776168625,
+    "saldo": 47
+  },
+  {
+    "cadeia": "Horticultura",
+    "sexo": "Feminino",
+    "admissoes": 2224,
+    "demissoes": 2357,
+    "salario_medio": 1816.1287076642654,
+    "saldo": -133
+  },
+  {
+    "cadeia": "Horticultura",
+    "sexo": "Masculino",
+    "admissoes": 3519,
+    "demissoes": 3739,
+    "salario_medio": 1811.6927849772635,
+    "saldo": -220
+  },
+  {
+    "cadeia": "Outras Culturas Permanentes",
+    "sexo": "Feminino",
+    "admissoes": 374,
+    "demissoes": 353,
+    "salario_medio": 1601.6357496148555,
+    "saldo": 21
+  },
+  {
+    "cadeia": "Outras Culturas Permanentes",
+    "sexo": "Masculino",
+    "admissoes": 1172,
+    "demissoes": 1190,
+    "salario_medio": 1690.9669643524132,
+    "saldo": -18
+  },
+  {
+    "cadeia": "Outros",
+    "sexo": "Feminino",
+    "admissoes": 1940,
+    "demissoes": 1870,
+    "salario_medio": 2225.567167937008,
+    "saldo": 70
+  },
+  {
+    "cadeia": "Outros",
+    "sexo": "Masculino",
+    "admissoes": 7690,
+    "demissoes": 7693,
+    "salario_medio": 2006.6895583745124,
+    "saldo": -3
+  },
+  {
+    "cadeia": "Ovinocaprinocultura",
+    "sexo": "Feminino",
+    "admissoes": 180,
+    "demissoes": 162,
+    "salario_medio": 1717.6585380409358,
+    "saldo": 18
+  },
+  {
+    "cadeia": "Ovinocaprinocultura",
+    "sexo": "Masculino",
+    "admissoes": 1099,
+    "demissoes": 1116,
+    "salario_medio": 2036.5959231151244,
+    "saldo": -17
+  },
+  {
     "cadeia": "Serviços Agrícolas",
     "sexo": "Feminino",
-    "admissoes": 7068,
-    "demissoes": 6418,
-    "salario_medio": 1740.5919405576153,
-    "saldo": 650
+    "admissoes": 7188,
+    "demissoes": 6547,
+    "salario_medio": 1746.945246476884,
+    "saldo": 641
   },
   {
     "cadeia": "Serviços Agrícolas",
     "sexo": "Masculino",
-    "admissoes": 41515,
-    "demissoes": 40335,
-    "salario_medio": 1901.7664670542094,
-    "saldo": 1180
+    "admissoes": 42453,
+    "demissoes": 41042,
+    "salario_medio": 1912.798558242748,
+    "saldo": 1411
   },
   {
     "cadeia": "Serviços Agrícolas",
@@ -274,49 +274,49 @@
   {
     "cadeia": "Silvicultura",
     "sexo": "Feminino",
-    "admissoes": 7488,
-    "demissoes": 7116,
-    "salario_medio": 1735.790037938236,
-    "saldo": 372
+    "admissoes": 7607,
+    "demissoes": 7227,
+    "salario_medio": 1739.0425343164352,
+    "saldo": 380
   },
   {
     "cadeia": "Silvicultura",
     "sexo": "Masculino",
-    "admissoes": 38957,
-    "demissoes": 39513,
-    "salario_medio": 1901.650787787931,
-    "saldo": -556
+    "admissoes": 39489,
+    "demissoes": 40030,
+    "salario_medio": 1908.305092987147,
+    "saldo": -541
   },
   {
     "cadeia": "Sojicultura",
     "sexo": "Feminino",
-    "admissoes": 3399,
-    "demissoes": 3125,
-    "salario_medio": 1899.839389814531,
-    "saldo": 274
+    "admissoes": 3471,
+    "demissoes": 3202,
+    "salario_medio": 1909.2482405439832,
+    "saldo": 269
   },
   {
     "cadeia": "Sojicultura",
     "sexo": "Masculino",
-    "admissoes": 20486,
-    "demissoes": 20304,
-    "salario_medio": 2131.0029384096792,
-    "saldo": 182
+    "admissoes": 20870,
+    "demissoes": 20754,
+    "salario_medio": 2140.355763102542,
+    "saldo": 116
   },
   {
     "cadeia": "Suinocultura",
     "sexo": "Feminino",
-    "admissoes": 5871,
-    "demissoes": 5290,
-    "salario_medio": 1831.9323942316996,
-    "saldo": 581
+    "admissoes": 5989,
+    "demissoes": 5382,
+    "salario_medio": 1837.2609956925512,
+    "saldo": 607
   },
   {
     "cadeia": "Suinocultura",
     "sexo": "Masculino",
-    "admissoes": 10868,
-    "demissoes": 10439,
-    "salario_medio": 1942.4167887497067,
-    "saldo": 429
+    "admissoes": 11078,
+    "demissoes": 10587,
+    "salario_medio": 1947.1498632767136,
+    "saldo": 491
   }
 ]
