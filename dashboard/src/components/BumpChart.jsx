@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import { useMemo, useState } from 'react'
 import * as d3 from 'd3'
 
@@ -110,8 +111,8 @@ export default function BumpChart({
           {/* X axis */}
           {periods.filter((_, i) => i % Math.ceil(periods.length / 12) === 0).map(period => (
             <g key={period} transform={`translate(${xScale(period)}, ${innerHeight})`}>
-              <line y1={0} y2={5} stroke="#94a3b8" />
-              <text y={20} textAnchor="middle" fill="#64748b" fontSize={10}>
+              <line y1={0} y2={5} stroke="#918058" />
+              <text y={20} textAnchor="middle" fill="#6e6453" fontSize={10}>
                 {formatPeriod(period)}
               </text>
             </g>
@@ -121,7 +122,7 @@ export default function BumpChart({
           {d3.range(1, topN + 1).map(rank => (
             <g key={rank} transform={`translate(0, ${yScale(rank)})`}>
               <line x1={-5} x2={innerWidth} stroke="#e2e8f0" strokeDasharray="4,4" />
-              <text x={-10} textAnchor="end" alignmentBaseline="middle" fill="#64748b" fontSize={11}>
+              <text x={-10} textAnchor="end" alignmentBaseline="middle" fill="#6e6453" fontSize={11}>
                 {rank}
               </text>
             </g>
@@ -143,7 +144,7 @@ export default function BumpChart({
                 <path
                   d={lineGenerator(lineData)}
                   fill="none"
-                  stroke={cor || '#64748b'}
+                  stroke={cor || '#6e6453'}
                   strokeWidth={isHovered ? 3 : 2}
                   opacity={opacity}
                   className="transition-all duration-200 cursor-pointer"
@@ -156,7 +157,7 @@ export default function BumpChart({
                     cx={xScale(lineData[lineData.length - 1].period)}
                     cy={yScale(lineData[lineData.length - 1].rank)}
                     r={isHovered ? 6 : 4}
-                    fill={cor || '#64748b'}
+                    fill={cor || '#6e6453'}
                     opacity={opacity}
                     className="cursor-pointer"
                     onMouseEnter={() => setHoveredCadeia(cadeia)}
@@ -182,11 +183,11 @@ export default function BumpChart({
                 onMouseEnter={() => setHoveredCadeia(cadeia)}
                 onMouseLeave={() => setHoveredCadeia(null)}
               >
-                <circle r={4} fill={cor || '#64748b'} />
+                <circle r={4} fill={cor || '#6e6453'} />
                 <text
                   x={10}
                   alignmentBaseline="middle"
-                  fill={hoveredCadeia === cadeia ? '#1e293b' : '#64748b'}
+                  fill={hoveredCadeia === cadeia ? '#1e293b' : '#6e6453'}
                   fontSize={10}
                   fontWeight={hoveredCadeia === cadeia ? 600 : 400}
                 >

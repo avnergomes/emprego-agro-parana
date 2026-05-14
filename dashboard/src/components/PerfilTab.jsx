@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, Cell
@@ -76,7 +77,7 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
                   {byFaixaEtaria.filter(f => f.faixa !== 'Não informado').map((entry, index) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={entry.faixa === faixaFilter ? '#6d28d9' : '#8b5cf6'}
+                      fill={entry.faixa === faixaFilter ? '#6d28d9' : '#CC79A7'}
                       stroke={entry.faixa === faixaFilter ? '#5b21b6' : 'none'}
                       strokeWidth={entry.faixa === faixaFilter ? 2 : 0}
                     />
@@ -126,7 +127,7 @@ function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFi
                 <XAxis dataKey="porte" tick={{ fontSize: 10 }} angle={-30} textAnchor="end" height={80} />
                 <YAxis tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(v) => formatNumber(v)} />
-                <Bar dataKey="admissoes" fill="#f59e0b" />
+                <Bar dataKey="admissoes" fill="#c89b3c" />
               </BarChart>
             </ResponsiveContainer>
           </div>

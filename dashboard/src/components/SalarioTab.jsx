@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import { useState, useMemo } from 'react'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
@@ -61,7 +62,7 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
                 {salarioData.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={entry.cadeia === cadeiaFilter ? '#15803d' : '#22c55e'}
+                    fill={entry.cadeia === cadeiaFilter ? '#004a72' : '#0072B2'}
                     stroke={entry.cadeia === cadeiaFilter ? '#166534' : 'none'}
                     strokeWidth={entry.cadeia === cadeiaFilter ? 2 : 0}
                   />
@@ -122,7 +123,7 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
                 {byEscolaridade.slice(0, 8).map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={entry.escolaridade === escolaridadeFilter ? '#d97706' : '#f59e0b'}
+                    fill={entry.escolaridade === escolaridadeFilter ? '#a87f2d' : '#c89b3c'}
                     stroke={entry.escolaridade === escolaridadeFilter ? '#b45309' : 'none'}
                     strokeWidth={entry.escolaridade === escolaridadeFilter ? 2 : 0}
                   />

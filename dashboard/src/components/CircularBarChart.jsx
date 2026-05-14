@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import { useMemo } from 'react'
 import * as d3 from 'd3'
 
@@ -113,7 +114,7 @@ export default function CircularBarChart({
             <circle
               r={yScale(Math.abs(avgValue))}
               fill="none"
-              stroke="#64748b"
+              stroke="#6e6453"
               strokeWidth={1}
               strokeDasharray="6,3"
             />
@@ -125,7 +126,7 @@ export default function CircularBarChart({
               key={i}
               x={4}
               y={-(innerRadius + (outerRadius - innerRadius) * level)}
-              fill="#94a3b8"
+              fill="#918058"
               fontSize={9}
               alignmentBaseline="middle"
             >
@@ -150,7 +151,7 @@ export default function CircularBarChart({
             const labelY = labelRadius * Math.sin(midAngle)
 
             const isPositive = d.value >= 0
-            const color = isPositive ? '#22c55e' : '#ef4444'
+            const color = isPositive ? '#0072B2' : '#D55E00'
             const isAboveAvg = absValue > Math.abs(avgValue)
 
             return (
@@ -198,7 +199,7 @@ export default function CircularBarChart({
           <text
             x={0}
             y={10}
-            fill="#64748b"
+            fill="#6e6453"
             fontSize={12}
             fontFamily="monospace"
             textAnchor="middle"

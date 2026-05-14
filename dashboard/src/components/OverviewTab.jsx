@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import {
   ComposedChart, BarChart, Bar, AreaChart, Area, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Line
@@ -27,8 +28,8 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
               <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11 }} />
               <Tooltip formatter={(v) => formatNumber(v)} />
               <Legend />
-              <Bar yAxisId="left" dataKey="admissoes" name="Admissões" fill="#22c55e" opacity={0.8} />
-              <Bar yAxisId="left" dataKey="demissoes" name="Demissões" fill="#ef4444" opacity={0.8} />
+              <Bar yAxisId="left" dataKey="admissoes" name="Admissões" fill="#0072B2" opacity={0.8} />
+              <Bar yAxisId="left" dataKey="demissoes" name="Demissões" fill="#D55E00" opacity={0.8} />
               <Line yAxisId="right" type="monotone" dataKey="saldo_acumulado" name="Saldo Acumulado" stroke="#3b82f6" strokeWidth={2} dot={false} />
             </ComposedChart>
           </ResponsiveContainer>
@@ -57,7 +58,7 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
                   {byCadeia.slice(0, 8).map((entry, index) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={entry.cadeia === cadeiaFilter ? '#15803d' : '#22c55e'}
+                      fill={entry.cadeia === cadeiaFilter ? '#004a72' : '#0072B2'}
                       stroke={entry.cadeia === cadeiaFilter ? '#166534' : 'none'}
                       strokeWidth={entry.cadeia === cadeiaFilter ? 2 : 0}
                     />
@@ -122,7 +123,7 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
                   {byFaixaEtaria.filter(f => f.faixa !== 'Não informado').map((entry, index) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={entry.faixa === faixaFilter ? '#6d28d9' : '#8b5cf6'}
+                      fill={entry.faixa === faixaFilter ? '#6d28d9' : '#CC79A7'}
                       stroke={entry.faixa === faixaFilter ? '#5b21b6' : 'none'}
                       strokeWidth={entry.faixa === faixaFilter ? 2 : 0}
                     />
@@ -142,8 +143,8 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
                 <XAxis dataKey="mes_nome" tick={{ fontSize: 11 }} />
                 <YAxis tick={{ fontSize: 11 }} />
                 <Tooltip formatter={(v) => formatNumber(v)} />
-                <Area type="monotone" dataKey="admissoes" name="Admissões" fill="#22c55e" fillOpacity={0.3} stroke="#16a34a" />
-                <Area type="monotone" dataKey="demissoes" name="Demissões" fill="#ef4444" fillOpacity={0.3} stroke="#dc2626" />
+                <Area type="monotone" dataKey="admissoes" name="Admissões" fill="#0072B2" fillOpacity={0.3} stroke="#005c8e" />
+                <Area type="monotone" dataKey="demissoes" name="Demissões" fill="#D55E00" fillOpacity={0.3} stroke="#a8482c" />
               </AreaChart>
             </ResponsiveContainer>
           </div>

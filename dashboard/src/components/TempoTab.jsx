@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import {
   LineChart, Line, BarChart, Bar, AreaChart, Area,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
@@ -34,8 +35,8 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
               <YAxis tick={{ fontSize: 11 }} />
               <Tooltip formatter={(v) => formatNumber(v)} />
               <Legend />
-              <Area type="monotone" dataKey="admissoes" name="Admissões" fill="#22c55e" fillOpacity={0.3} stroke="#16a34a" />
-              <Area type="monotone" dataKey="demissoes" name="Demissões" fill="#ef4444" fillOpacity={0.3} stroke="#dc2626" />
+              <Area type="monotone" dataKey="admissoes" name="Admissões" fill="#0072B2" fillOpacity={0.3} stroke="#005c8e" />
+              <Area type="monotone" dataKey="demissoes" name="Demissões" fill="#D55E00" fillOpacity={0.3} stroke="#a8482c" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -87,7 +88,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
                     return (
                       <Cell
                         key={`cell-adm-${index}`}
-                        fill={isSelected ? '#15803d' : '#22c55e'}
+                        fill={isSelected ? '#004a72' : '#0072B2'}
                         stroke={isSelected ? '#166534' : 'none'}
                         strokeWidth={isSelected ? 2 : 0}
                       />
@@ -100,7 +101,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
                     return (
                       <Cell
                         key={`cell-dem-${index}`}
-                        fill={isSelected ? '#b91c1c' : '#ef4444'}
+                        fill={isSelected ? '#893824' : '#D55E00'}
                         stroke={isSelected ? '#991b1b' : 'none'}
                         strokeWidth={isSelected ? 2 : 0}
                       />
@@ -119,7 +120,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
               <RadarChart data={seasonality}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="mes_nome" tick={{ fontSize: 11 }} />
-                <Radar name="Índice Sazonal" dataKey="indice" stroke="#16a34a" fill="#22c55e" fillOpacity={0.5} />
+                <Radar name="Índice Sazonal" dataKey="indice" stroke="#005c8e" fill="#0072B2" fillOpacity={0.5} />
                 <Tooltip formatter={(v) => `${v}%`} />
               </RadarChart>
             </ResponsiveContainer>

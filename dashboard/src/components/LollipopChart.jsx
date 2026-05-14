@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import { useMemo } from 'react'
 import * as d3 from 'd3'
 
@@ -88,7 +89,7 @@ export default function LollipopChart({
               x2={zeroX}
               y1={0}
               y2={innerHeight}
-              stroke="#94a3b8"
+              stroke="#918058"
               strokeWidth={1}
             />
           )}
@@ -113,7 +114,7 @@ export default function LollipopChart({
               x={xScale(tick)}
               y={innerHeight + 15}
               textAnchor="middle"
-              fill="#64748b"
+              fill="#6e6453"
               fontSize={10}
             >
               {formatValue(tick)}
@@ -125,7 +126,7 @@ export default function LollipopChart({
             const value = item[metric] || 0
             const y = yScale(item.cadeia) + yScale.bandwidth() / 2
             const xEnd = xScale(value)
-            const color = item.cor || (value >= 0 ? '#22c55e' : '#ef4444')
+            const color = item.cor || (value >= 0 ? '#0072B2' : '#D55E00')
 
             return (
               <g

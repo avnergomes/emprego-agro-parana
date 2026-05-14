@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import { useState, useMemo } from 'react'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -231,8 +232,8 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
               <YAxis dataKey="nome" type="category" width={100} tick={{ fontSize: 10 }} />
               <Tooltip formatter={(v) => formatNumber(v)} />
               <Legend />
-              <Bar dataKey="admissoes" name="Admissões" fill="#22c55e" />
-              <Bar dataKey="demissoes" name="Demissões" fill="#ef4444" />
+              <Bar dataKey="admissoes" name="Admissões" fill="#0072B2" />
+              <Bar dataKey="demissoes" name="Demissões" fill="#D55E00" />
             </BarChart>
           </ResponsiveContainer>
         </div>

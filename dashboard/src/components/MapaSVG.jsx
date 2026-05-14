@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHoveredMun, mesoFilter, regIdrFilter, munFilter }) {
   const width = 800
   const height = 520
@@ -54,7 +55,7 @@ function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHove
           <path
             key={idx}
             d={pathD}
-            fill={isHovered ? '#fbbf24' : (hasFilter && !isFiltered ? '#e5e7eb' : getColor(value))}
+            fill={isHovered ? '#e0b850' : (hasFilter && !isFiltered ? '#e5e7eb' : getColor(value))}
             stroke={hasFilter && !isFiltered ? '#d1d5db' : '#fff'}
             strokeWidth={0.5}
             opacity={hasFilter && !isFiltered ? 0.5 : 1}

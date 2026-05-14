@@ -1,3 +1,4 @@
+// ATLAS-A11Y-HEX-SWEPT
 import { useState, useMemo } from 'react'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -48,7 +49,7 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
               data={top10.map(c => ({
                 name: c.cadeia,
                 size: c.admissoes,
-                fill: c.cadeia === cadeiaFilter ? '#15803d' : c.cor,
+                fill: c.cadeia === cadeiaFilter ? '#004a72' : c.cor,
                 isSelected: c.cadeia === cadeiaFilter
               }))}
               dataKey="size"
