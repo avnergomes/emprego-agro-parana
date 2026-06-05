@@ -891,15 +891,6 @@
     "nome": "412060"
   },
   {
-    "codigo": "411550",
-    "admissoes": 746,
-    "demissoes": 532,
-    "salario_medio": 1559.7042018779343,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 214,
-    "nome": "411550"
-  },
-  {
     "codigo": "411960",
     "admissoes": 746,
     "demissoes": 739,
@@ -907,6 +898,15 @@
     "cadeia_dominante": "Sojicultura",
     "saldo": 7,
     "nome": "411960"
+  },
+  {
+    "codigo": "411550",
+    "admissoes": 746,
+    "demissoes": 532,
+    "salario_medio": 1559.7042018779343,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 214,
+    "nome": "411550"
   },
   {
     "codigo": "410420",
@@ -1494,15 +1494,6 @@
     "nome": "412640"
   },
   {
-    "codigo": "412720",
-    "admissoes": 428,
-    "demissoes": 460,
-    "salario_medio": 1882.7683786036037,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": -32,
-    "nome": "412720"
-  },
-  {
     "codigo": "411845",
     "admissoes": 428,
     "demissoes": 443,
@@ -1510,6 +1501,15 @@
     "cadeia_dominante": "Suinocultura",
     "saldo": -15,
     "nome": "411845"
+  },
+  {
+    "codigo": "412720",
+    "admissoes": 428,
+    "demissoes": 460,
+    "salario_medio": 1882.7683786036037,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -32,
+    "nome": "412720"
   },
   {
     "codigo": "410220",
@@ -1620,13 +1620,13 @@
     "nome": "411970"
   },
   {
-    "codigo": "412385",
+    "codigo": "410610",
     "admissoes": 362,
-    "demissoes": 337,
-    "salario_medio": 2179.200972846924,
-    "cadeia_dominante": "Grãos",
-    "saldo": 25,
-    "nome": "412385"
+    "demissoes": 328,
+    "salario_medio": 1702.8485944927536,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 34,
+    "nome": "410610"
   },
   {
     "codigo": "411630",
@@ -1638,13 +1638,13 @@
     "nome": "411630"
   },
   {
-    "codigo": "410610",
+    "codigo": "412385",
     "admissoes": 362,
-    "demissoes": 328,
-    "salario_medio": 1702.8485944927536,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": 34,
-    "nome": "410610"
+    "demissoes": 337,
+    "salario_medio": 2179.200972846924,
+    "cadeia_dominante": "Grãos",
+    "saldo": 25,
+    "nome": "412385"
   },
   {
     "codigo": "412100",
@@ -1656,15 +1656,6 @@
     "nome": "412100"
   },
   {
-    "codigo": "411705",
-    "admissoes": 359,
-    "demissoes": 309,
-    "salario_medio": 1854.1321407185628,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": 50,
-    "nome": "411705"
-  },
-  {
     "codigo": "411007",
     "admissoes": 359,
     "demissoes": 318,
@@ -1672,6 +1663,15 @@
     "cadeia_dominante": "Silvicultura",
     "saldo": 41,
     "nome": "411007"
+  },
+  {
+    "codigo": "411705",
+    "admissoes": 359,
+    "demissoes": 309,
+    "salario_medio": 1854.1321407185628,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 50,
+    "nome": "411705"
   },
   {
     "codigo": "411780",
@@ -1692,15 +1692,6 @@
     "nome": "410280"
   },
   {
-    "codigo": "412790",
-    "admissoes": 348,
-    "demissoes": 302,
-    "salario_medio": 1648.2354153846154,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": 46,
-    "nome": "412790"
-  },
-  {
     "codigo": "411860",
     "admissoes": 348,
     "demissoes": 345,
@@ -1708,6 +1699,15 @@
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 3,
     "nome": "411860"
+  },
+  {
+    "codigo": "412790",
+    "admissoes": 348,
+    "demissoes": 302,
+    "salario_medio": 1648.2354153846154,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 46,
+    "nome": "412790"
   },
   {
     "codigo": "410865",
@@ -1728,15 +1728,6 @@
     "nome": "411125"
   },
   {
-    "codigo": "410010",
-    "admissoes": 339,
-    "demissoes": 320,
-    "salario_medio": 1660.9156904400606,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 19,
-    "nome": "410010"
-  },
-  {
     "codigo": "411720",
     "admissoes": 339,
     "demissoes": 316,
@@ -1744,6 +1735,15 @@
     "cadeia_dominante": "Avicultura",
     "saldo": 23,
     "nome": "411720"
+  },
+  {
+    "codigo": "410010",
+    "admissoes": 339,
+    "demissoes": 320,
+    "salario_medio": 1660.9156904400606,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 19,
+    "nome": "410010"
   },
   {
     "codigo": "410165",
@@ -1827,15 +1827,6 @@
     "nome": "410965"
   },
   {
-    "codigo": "412555",
-    "admissoes": 303,
-    "demissoes": 282,
-    "salario_medio": 1517.2489914871794,
-    "cadeia_dominante": "Avicultura",
-    "saldo": 21,
-    "nome": "412555"
-  },
-  {
     "codigo": "412575",
     "admissoes": 303,
     "demissoes": 278,
@@ -1843,6 +1834,15 @@
     "cadeia_dominante": "Suinocultura",
     "saldo": 25,
     "nome": "412575"
+  },
+  {
+    "codigo": "412555",
+    "admissoes": 303,
+    "demissoes": 282,
+    "salario_medio": 1517.2489914871794,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 21,
+    "nome": "412555"
   },
   {
     "codigo": "412430",
@@ -1926,15 +1926,6 @@
     "nome": "411290"
   },
   {
-    "codigo": "412785",
-    "admissoes": 279,
-    "demissoes": 295,
-    "salario_medio": 1766.3868817073171,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": -16,
-    "nome": "412785"
-  },
-  {
     "codigo": "411560",
     "admissoes": 279,
     "demissoes": 265,
@@ -1944,13 +1935,13 @@
     "nome": "411560"
   },
   {
-    "codigo": "412480",
-    "admissoes": 275,
-    "demissoes": 279,
-    "salario_medio": 1850.435974729242,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": -4,
-    "nome": "412480"
+    "codigo": "412785",
+    "admissoes": 279,
+    "demissoes": 295,
+    "salario_medio": 1766.3868817073171,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -16,
+    "nome": "412785"
   },
   {
     "codigo": "410750",
@@ -1960,6 +1951,15 @@
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -41,
     "nome": "410750"
+  },
+  {
+    "codigo": "412480",
+    "admissoes": 275,
+    "demissoes": 279,
+    "salario_medio": 1850.435974729242,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -4,
+    "nome": "412480"
   },
   {
     "codigo": "412795",
@@ -2268,15 +2268,6 @@
     "nome": "412540"
   },
   {
-    "codigo": "411605",
-    "admissoes": 197,
-    "demissoes": 192,
-    "salario_medio": 1989.9081750642672,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 5,
-    "nome": "411605"
-  },
-  {
     "codigo": "410830",
     "admissoes": 197,
     "demissoes": 235,
@@ -2284,6 +2275,15 @@
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -38,
     "nome": "410830"
+  },
+  {
+    "codigo": "411605",
+    "admissoes": 197,
+    "demissoes": 192,
+    "salario_medio": 1989.9081750642672,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 5,
+    "nome": "411605"
   },
   {
     "codigo": "410755",
@@ -2313,15 +2313,6 @@
     "nome": "412863"
   },
   {
-    "codigo": "410322",
-    "admissoes": 192,
-    "demissoes": 166,
-    "salario_medio": 1996.0186592178773,
-    "cadeia_dominante": "Outros",
-    "saldo": 26,
-    "nome": "410322"
-  },
-  {
     "codigo": "411325",
     "admissoes": 192,
     "demissoes": 171,
@@ -2329,6 +2320,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 21,
     "nome": "411325"
+  },
+  {
+    "codigo": "410322",
+    "admissoes": 192,
+    "demissoes": 166,
+    "salario_medio": 1996.0186592178773,
+    "cadeia_dominante": "Outros",
+    "saldo": 26,
+    "nome": "410322"
   },
   {
     "codigo": "412420",
@@ -2349,15 +2349,6 @@
     "nome": "412220"
   },
   {
-    "codigo": "410680",
-    "admissoes": 185,
-    "demissoes": 204,
-    "salario_medio": 1711.8351413881749,
-    "cadeia_dominante": "Silvicultura",
-    "saldo": -19,
-    "nome": "410680"
-  },
-  {
     "codigo": "411965",
     "admissoes": 185,
     "demissoes": 171,
@@ -2365,6 +2356,15 @@
     "cadeia_dominante": "Avicultura",
     "saldo": 14,
     "nome": "411965"
+  },
+  {
+    "codigo": "410680",
+    "admissoes": 185,
+    "demissoes": 204,
+    "salario_medio": 1711.8351413881749,
+    "cadeia_dominante": "Silvicultura",
+    "saldo": -19,
+    "nome": "410680"
   },
   {
     "codigo": "410510",
@@ -2403,15 +2403,6 @@
     "nome": "412460"
   },
   {
-    "codigo": "412340",
-    "admissoes": 178,
-    "demissoes": 171,
-    "salario_medio": 1781.0815472779368,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": 7,
-    "nome": "412340"
-  },
-  {
     "codigo": "410700",
     "admissoes": 178,
     "demissoes": 181,
@@ -2428,6 +2419,15 @@
     "cadeia_dominante": "Sojicultura",
     "saldo": 6,
     "nome": "410070"
+  },
+  {
+    "codigo": "412340",
+    "admissoes": 178,
+    "demissoes": 171,
+    "salario_medio": 1781.0815472779368,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 7,
+    "nome": "412340"
   },
   {
     "codigo": "411620",
@@ -2475,15 +2475,6 @@
     "nome": "411510"
   },
   {
-    "codigo": "410330",
-    "admissoes": 169,
-    "demissoes": 162,
-    "salario_medio": 2031.6183081570998,
-    "cadeia_dominante": "Sojicultura",
-    "saldo": 7,
-    "nome": "410330"
-  },
-  {
     "codigo": "411280",
     "admissoes": 169,
     "demissoes": 180,
@@ -2491,6 +2482,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -11,
     "nome": "411280"
+  },
+  {
+    "codigo": "410330",
+    "admissoes": 169,
+    "demissoes": 162,
+    "salario_medio": 2031.6183081570998,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 7,
+    "nome": "410330"
   },
   {
     "codigo": "410820",
@@ -2511,15 +2511,6 @@
     "nome": "410685"
   },
   {
-    "codigo": "412880",
-    "admissoes": 167,
-    "demissoes": 154,
-    "salario_medio": 1922.3082554517132,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": 13,
-    "nome": "412880"
-  },
-  {
     "codigo": "412395",
     "admissoes": 167,
     "demissoes": 156,
@@ -2529,13 +2520,13 @@
     "nome": "412395"
   },
   {
-    "codigo": "411575",
-    "admissoes": 165,
-    "demissoes": 181,
-    "salario_medio": 2168.7071684971097,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": -16,
-    "nome": "411575"
+    "codigo": "412880",
+    "admissoes": 167,
+    "demissoes": 154,
+    "salario_medio": 1922.3082554517132,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": 13,
+    "nome": "412880"
   },
   {
     "codigo": "411380",
@@ -2545,6 +2536,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 16,
     "nome": "411380"
+  },
+  {
+    "codigo": "411575",
+    "admissoes": 165,
+    "demissoes": 181,
+    "salario_medio": 2168.7071684971097,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -16,
+    "nome": "411575"
   },
   {
     "codigo": "411065",
@@ -2592,15 +2592,6 @@
     "nome": "410190"
   },
   {
-    "codigo": "411270",
-    "admissoes": 153,
-    "demissoes": 201,
-    "salario_medio": 1646.6744632768361,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": -48,
-    "nome": "411270"
-  },
-  {
     "codigo": "412200",
     "admissoes": 153,
     "demissoes": 163,
@@ -2608,6 +2599,15 @@
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -10,
     "nome": "412200"
+  },
+  {
+    "codigo": "411270",
+    "admissoes": 153,
+    "demissoes": 201,
+    "salario_medio": 1646.6744632768361,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -48,
+    "nome": "411270"
   },
   {
     "codigo": "411727",
@@ -2682,15 +2682,6 @@
     "nome": "411890"
   },
   {
-    "codigo": "411810",
-    "admissoes": 140,
-    "demissoes": 129,
-    "salario_medio": 1872.6881412639405,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 11,
-    "nome": "411810"
-  },
-  {
     "codigo": "410460",
     "admissoes": 140,
     "demissoes": 145,
@@ -2700,13 +2691,13 @@
     "nome": "410460"
   },
   {
-    "codigo": "411600",
-    "admissoes": 138,
-    "demissoes": 112,
-    "salario_medio": 2183.85756,
+    "codigo": "411810",
+    "admissoes": 140,
+    "demissoes": 129,
+    "salario_medio": 1872.6881412639405,
     "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 26,
-    "nome": "411600"
+    "saldo": 11,
+    "nome": "411810"
   },
   {
     "codigo": "412215",
@@ -2718,13 +2709,13 @@
     "nome": "412215"
   },
   {
-    "codigo": "412535",
-    "admissoes": 137,
-    "demissoes": 105,
-    "salario_medio": 1732.346611570248,
-    "cadeia_dominante": "Fruticultura",
-    "saldo": 32,
-    "nome": "412535"
+    "codigo": "411600",
+    "admissoes": 138,
+    "demissoes": 112,
+    "salario_medio": 2183.85756,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 26,
+    "nome": "411600"
   },
   {
     "codigo": "412135",
@@ -2734,6 +2725,15 @@
     "cadeia_dominante": "Sojicultura",
     "saldo": 8,
     "nome": "412135"
+  },
+  {
+    "codigo": "412535",
+    "admissoes": 137,
+    "demissoes": 105,
+    "salario_medio": 1732.346611570248,
+    "cadeia_dominante": "Fruticultura",
+    "saldo": 32,
+    "nome": "412535"
   },
   {
     "codigo": "411925",
@@ -2781,15 +2781,6 @@
     "nome": "412670"
   },
   {
-    "codigo": "410445",
-    "admissoes": 125,
-    "demissoes": 130,
-    "salario_medio": 1884.4267843137256,
-    "cadeia_dominante": "Grãos",
-    "saldo": -5,
-    "nome": "410445"
-  },
-  {
     "codigo": "410405",
     "admissoes": 125,
     "demissoes": 125,
@@ -2797,6 +2788,15 @@
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 0,
     "nome": "410405"
+  },
+  {
+    "codigo": "410445",
+    "admissoes": 125,
+    "demissoes": 130,
+    "salario_medio": 1884.4267843137256,
+    "cadeia_dominante": "Grãos",
+    "saldo": -5,
+    "nome": "410445"
   },
   {
     "codigo": "412050",
@@ -2817,15 +2817,6 @@
     "nome": "412865"
   },
   {
-    "codigo": "410845",
-    "admissoes": 121,
-    "demissoes": 112,
-    "salario_medio": 2226.475664806867,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 9,
-    "nome": "410845"
-  },
-  {
     "codigo": "411650",
     "admissoes": 121,
     "demissoes": 124,
@@ -2833,6 +2824,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -3,
     "nome": "411650"
+  },
+  {
+    "codigo": "410845",
+    "admissoes": 121,
+    "demissoes": 112,
+    "salario_medio": 2226.475664806867,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 9,
+    "nome": "410845"
   },
   {
     "codigo": "412600",
@@ -2853,15 +2853,6 @@
     "nome": "410045"
   },
   {
-    "codigo": "412265",
-    "admissoes": 117,
-    "demissoes": 113,
-    "salario_medio": 1721.8989130434782,
-    "cadeia_dominante": "Sojicultura",
-    "saldo": 4,
-    "nome": "412265"
-  },
-  {
     "codigo": "410425",
     "admissoes": 117,
     "demissoes": 107,
@@ -2869,6 +2860,15 @@
     "cadeia_dominante": "Avicultura",
     "saldo": 10,
     "nome": "410425"
+  },
+  {
+    "codigo": "412265",
+    "admissoes": 117,
+    "demissoes": 113,
+    "salario_medio": 1721.8989130434782,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 4,
+    "nome": "412265"
   },
   {
     "codigo": "411210",
@@ -2907,24 +2907,6 @@
     "nome": "412130"
   },
   {
-    "codigo": "411155",
-    "admissoes": 110,
-    "demissoes": 101,
-    "salario_medio": 1784.6783412322275,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 9,
-    "nome": "411155"
-  },
-  {
-    "codigo": "412160",
-    "admissoes": 110,
-    "demissoes": 88,
-    "salario_medio": 2121.133888888889,
-    "cadeia_dominante": "Sojicultura",
-    "saldo": 22,
-    "nome": "412160"
-  },
-  {
     "codigo": "410337",
     "admissoes": 110,
     "demissoes": 92,
@@ -2934,6 +2916,15 @@
     "nome": "410337"
   },
   {
+    "codigo": "411155",
+    "admissoes": 110,
+    "demissoes": 101,
+    "salario_medio": 1784.6783412322275,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": 9,
+    "nome": "411155"
+  },
+  {
     "codigo": "410270",
     "admissoes": 110,
     "demissoes": 103,
@@ -2941,6 +2932,15 @@
     "cadeia_dominante": "Avicultura",
     "saldo": 7,
     "nome": "410270"
+  },
+  {
+    "codigo": "412160",
+    "admissoes": 110,
+    "demissoes": 88,
+    "salario_medio": 2121.133888888889,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 22,
+    "nome": "412160"
   },
   {
     "codigo": "411090",
@@ -2961,15 +2961,6 @@
     "nome": "412020"
   },
   {
-    "codigo": "412830",
-    "admissoes": 104,
-    "demissoes": 107,
-    "salario_medio": 1916.2941232227488,
-    "cadeia_dominante": "Horticultura",
-    "saldo": -3,
-    "nome": "412830"
-  },
-  {
     "codigo": "412125",
     "admissoes": 104,
     "demissoes": 106,
@@ -2977,6 +2968,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -2,
     "nome": "412125"
+  },
+  {
+    "codigo": "412830",
+    "admissoes": 104,
+    "demissoes": 107,
+    "salario_medio": 1916.2941232227488,
+    "cadeia_dominante": "Horticultura",
+    "saldo": -3,
+    "nome": "412830"
   },
   {
     "codigo": "410380",
@@ -2988,15 +2988,6 @@
     "nome": "410380"
   },
   {
-    "codigo": "411740",
-    "admissoes": 100,
-    "demissoes": 100,
-    "salario_medio": 2026.6835505499998,
-    "cadeia_dominante": "Sojicultura",
-    "saldo": 0,
-    "nome": "411740"
-  },
-  {
     "codigo": "412310",
     "admissoes": 100,
     "demissoes": 143,
@@ -3004,6 +2995,15 @@
     "cadeia_dominante": "Sojicultura",
     "saldo": -43,
     "nome": "412310"
+  },
+  {
+    "codigo": "411740",
+    "admissoes": 100,
+    "demissoes": 100,
+    "salario_medio": 2026.6835505499998,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 0,
+    "nome": "411740"
   },
   {
     "codigo": "412080",
@@ -3096,15 +3096,6 @@
     "nome": "410340"
   },
   {
-    "codigo": "410400",
-    "admissoes": 80,
-    "demissoes": 94,
-    "salario_medio": 1765.976379310345,
-    "cadeia_dominante": "Horticultura",
-    "saldo": -14,
-    "nome": "410400"
-  },
-  {
     "codigo": "410715",
     "admissoes": 80,
     "demissoes": 97,
@@ -3112,6 +3103,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -17,
     "nome": "410715"
+  },
+  {
+    "codigo": "410400",
+    "admissoes": 80,
+    "demissoes": 94,
+    "salario_medio": 1765.976379310345,
+    "cadeia_dominante": "Horticultura",
+    "saldo": -14,
+    "nome": "410400"
   },
   {
     "codigo": "411360",
@@ -3132,15 +3132,6 @@
     "nome": "412590"
   },
   {
-    "codigo": "412665",
-    "admissoes": 74,
-    "demissoes": 63,
-    "salario_medio": 1829.7667153284672,
-    "cadeia_dominante": "Avicultura",
-    "saldo": 11,
-    "nome": "412665"
-  },
-  {
     "codigo": "410347",
     "admissoes": 74,
     "demissoes": 71,
@@ -3148,6 +3139,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 3,
     "nome": "410347"
+  },
+  {
+    "codigo": "412665",
+    "admissoes": 74,
+    "demissoes": 63,
+    "salario_medio": 1829.7667153284672,
+    "cadeia_dominante": "Avicultura",
+    "saldo": 11,
+    "nome": "412665"
   },
   {
     "codigo": "411545",
@@ -3231,15 +3231,6 @@
     "nome": "411820"
   },
   {
-    "codigo": "410350",
-    "admissoes": 59,
-    "demissoes": 73,
-    "salario_medio": 1916.9856060606062,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": -14,
-    "nome": "410350"
-  },
-  {
     "codigo": "411721",
     "admissoes": 59,
     "demissoes": 64,
@@ -3247,6 +3238,15 @@
     "cadeia_dominante": "Fruticultura",
     "saldo": -5,
     "nome": "411721"
+  },
+  {
+    "codigo": "410350",
+    "admissoes": 59,
+    "demissoes": 73,
+    "salario_medio": 1916.9856060606062,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -14,
+    "nome": "410350"
   },
   {
     "codigo": "410305",
@@ -3267,15 +3267,6 @@
     "nome": "411250"
   },
   {
-    "codigo": "412210",
-    "admissoes": 55,
-    "demissoes": 66,
-    "salario_medio": 1810.4790082644627,
-    "cadeia_dominante": "Bovinocultura de Corte",
-    "saldo": -11,
-    "nome": "412210"
-  },
-  {
     "codigo": "412280",
     "admissoes": 55,
     "demissoes": 69,
@@ -3285,13 +3276,13 @@
     "nome": "412280"
   },
   {
-    "codigo": "410185",
-    "admissoes": 54,
-    "demissoes": 54,
-    "salario_medio": 1892.0619444444444,
-    "cadeia_dominante": "Sojicultura",
-    "saldo": 0,
-    "nome": "410185"
+    "codigo": "412210",
+    "admissoes": 55,
+    "demissoes": 66,
+    "salario_medio": 1810.4790082644627,
+    "cadeia_dominante": "Bovinocultura de Corte",
+    "saldo": -11,
+    "nome": "412210"
   },
   {
     "codigo": "410752",
@@ -3301,6 +3292,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -14,
     "nome": "410752"
+  },
+  {
+    "codigo": "410185",
+    "admissoes": 54,
+    "demissoes": 54,
+    "salario_medio": 1892.0619444444444,
+    "cadeia_dominante": "Sojicultura",
+    "saldo": 0,
+    "nome": "410185"
   },
   {
     "codigo": "411375",
@@ -3375,15 +3375,6 @@
     "nome": "411030"
   },
   {
-    "codigo": "410770",
-    "admissoes": 44,
-    "demissoes": 44,
-    "salario_medio": 1972.2814772727272,
-    "cadeia_dominante": "Grãos",
-    "saldo": 0,
-    "nome": "410770"
-  },
-  {
     "codigo": "410105",
     "admissoes": 44,
     "demissoes": 49,
@@ -3400,6 +3391,15 @@
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -19,
     "nome": "411260"
+  },
+  {
+    "codigo": "410770",
+    "admissoes": 44,
+    "demissoes": 44,
+    "salario_medio": 1972.2814772727272,
+    "cadeia_dominante": "Grãos",
+    "saldo": 0,
+    "nome": "410770"
   },
   {
     "codigo": "412000",
@@ -3456,15 +3456,6 @@
     "nome": "410895"
   },
   {
-    "codigo": "410730",
-    "admissoes": 24,
-    "demissoes": 22,
-    "salario_medio": 2162.7028260869565,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": 2,
-    "nome": "410730"
-  },
-  {
     "codigo": "411900",
     "admissoes": 24,
     "demissoes": 29,
@@ -3474,13 +3465,13 @@
     "nome": "411900"
   },
   {
-    "codigo": "412120",
-    "admissoes": 23,
-    "demissoes": 32,
-    "salario_medio": 1725.8194545454546,
+    "codigo": "410730",
+    "admissoes": 24,
+    "demissoes": 22,
+    "salario_medio": 2162.7028260869565,
     "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": -9,
-    "nome": "412120"
+    "saldo": 2,
+    "nome": "410730"
   },
   {
     "codigo": "410810",
@@ -3501,6 +3492,15 @@
     "nome": "411160"
   },
   {
+    "codigo": "412120",
+    "admissoes": 23,
+    "demissoes": 32,
+    "salario_medio": 1725.8194545454546,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -9,
+    "nome": "412120"
+  },
+  {
     "codigo": "410315",
     "admissoes": 21,
     "demissoes": 19,
@@ -3519,15 +3519,6 @@
     "nome": "412610"
   },
   {
-    "codigo": "412382",
-    "admissoes": 13,
-    "demissoes": 17,
-    "salario_medio": 1890.3523333333333,
-    "cadeia_dominante": "Serviços Agrícolas",
-    "saldo": -4,
-    "nome": "412382"
-  },
-  {
     "codigo": "411915",
     "admissoes": 13,
     "demissoes": 9,
@@ -3535,6 +3526,15 @@
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 4,
     "nome": "411915"
+  },
+  {
+    "codigo": "412382",
+    "admissoes": 13,
+    "demissoes": 17,
+    "salario_medio": 1890.3523333333333,
+    "cadeia_dominante": "Serviços Agrícolas",
+    "saldo": -4,
+    "nome": "412382"
   },
   {
     "codigo": "411995",
