@@ -24,9 +24,9 @@ function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHove
     return [x, y]
   }
 
-  // Converter polygon para path SVG
-  const polygonToPath = (coordinates) => {
-    return coordinates.map(ring => {
+  // Converter anéis de um polígono para path SVG
+  const ringsToPath = (rings) => {
+    return rings.map(ring => {
       return ring.map((coord, i) => {
         const [x, y] = toSVG(coord[0], coord[1])
         return `${i === 0 ? 'M' : 'L'}${x.toFixed(2)},${y.toFixed(2)}`
@@ -34,8 +34,16 @@ function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHove
     }).join(' ')
   }
 
+  // Polygon: coordinates = [anéis]; MultiPolygon: coordinates = [[anéis], ...]
+  const geometryToPath = (geometry) => {
+    if (geometry.type === 'MultiPolygon') {
+      return geometry.coordinates.map(ringsToPath).join(' ')
+    }
+    return ringsToPath(geometry.coordinates)
+  }
+
   return (
-    <svg viewBox={`0 0 ${width} ${height}`} style={{ width: '100%', height: '100%', background: '#f9fafb' }}>
+    <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Mapa coroplético dos municípios do Paraná" style={{ width: '100%', height: '100%', background: '#f9fafb' }}>
       {geoData.features.map((feat, idx) => {
         const codIbge = String(feat.properties.CodIbge).slice(0, 6)
         const munData = munDataMap[codIbge]
@@ -49,7 +57,8 @@ function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHove
         const isFiltered = munFilter ? matchesMun : (matchesMeso && matchesRegIdr)
         const hasFilter = mesoFilter || regIdrFilter || munFilter
 
-        const pathD = polygonToPath(feat.geometry.coordinates)
+        const pathD = geometryToPath(feat.geometry)
+        const setHover = () => setHoveredMun(munData ? { ...munData, nome: feat.properties.Municipio, meso: feat.properties.MesoIdr, regIdr: feat.properties.RegIdr } : { nome: feat.properties.Municipio, codigo: codIbge, [mapMetric]: 0, meso: feat.properties.MesoIdr, regIdr: feat.properties.RegIdr })
 
         return (
           <path
@@ -60,8 +69,12 @@ function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHove
             strokeWidth={0.5}
             opacity={hasFilter && !isFiltered ? 0.5 : 1}
             style={{ cursor: 'pointer', transition: 'fill 0.15s, opacity 0.15s' }}
-            onMouseEnter={() => setHoveredMun(munData ? { ...munData, nome: feat.properties.Municipio, meso: feat.properties.MesoIdr, regIdr: feat.properties.RegIdr } : { nome: feat.properties.Municipio, codigo: codIbge, [mapMetric]: 0, meso: feat.properties.MesoIdr, regIdr: feat.properties.RegIdr })}
+            tabIndex={0}
+            aria-label={`${feat.properties.Municipio}: ${value ?? 0}`}
+            onMouseEnter={setHover}
             onMouseLeave={() => setHoveredMun(null)}
+            onFocus={setHover}
+            onBlur={() => setHoveredMun(null)}
           />
         )
       })}

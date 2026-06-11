@@ -18,19 +18,27 @@ ASSETS_DIR = os.path.join(SCRIPT_DIR, '..', 'dashboard', 'public', 'assets')
 
 def load_municipio_names():
     """Carrega mapeamento de código para nome de município."""
-    geo_path = os.path.join(ASSETS_DIR, 'mun_PR.json')
-    if not os.path.exists(geo_path):
-        return {}
-
-    with open(geo_path, 'r', encoding='utf-8') as f:
-        geo = json.load(f)
-
     code_to_name = {}
-    for feat in geo['features']:
-        props = feat['properties']
-        code_full = str(props['CodIbge'])
-        code_6 = code_full[:6]
-        code_to_name[code_6] = props['Municipio']
+
+    geo_path = os.path.join(ASSETS_DIR, 'mun_PR.json')
+    if os.path.exists(geo_path):
+        with open(geo_path, 'r', encoding='utf-8') as f:
+            geo = json.load(f)
+        for feat in geo['features']:
+            props = feat['properties']
+            code_to_name[str(props['CodIbge'])[:6]] = props['Municipio']
+
+    if not code_to_name:
+        # Fallback leve e versionado: mun_PR.json (47 MB) é gitignorado e
+        # não existe no checkout do CI, o que zerava os nomes silenciosamente.
+        fallback_path = os.path.join(SCRIPT_DIR, 'municipios_pr.json')
+        if os.path.exists(fallback_path):
+            with open(fallback_path, 'r', encoding='utf-8') as f:
+                code_to_name = json.load(f)
+
+    if not code_to_name:
+        print('AVISO: nenhum mapeamento codigo->nome encontrado; '
+              'municipios serao exibidos como codigos IBGE!')
 
     return code_to_name
 

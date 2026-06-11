@@ -206,27 +206,29 @@ CADEIAS_DESCRICAO = {
     'Serviços Agrícolas': 'Serviços de apoio à agropecuária',
 }
 
-# Cores para visualização
+# Cores para visualização — paleta categórica Okabe-Ito (daltônico-segura),
+# com variações de luminosidade para as categorias além da 8ª.
+# Regra do ecossistema: nunca combinar verde e vermelho puros no mesmo gráfico.
 CADEIAS_CORES = {
-    'Bovinocultura de Corte': '#8B4513',  # Marrom (corte)
-    'Bovinocultura de Leite': '#F5F5DC',  # Bege/Creme (leite)
-    'Avicultura': '#FFD700',          # Amarelo ouro
-    'Suinocultura': '#FFC0CB',        # Rosa
-    'Sojicultura': '#228B22',         # Verde floresta
-    'Grãos': '#DAA520',               # Dourado
-    'Silvicultura': '#006400',        # Verde escuro
-    'Cafeicultura': '#4A2C2A',        # Marrom café
-    'Cana-de-açúcar': '#90EE90',      # Verde claro
-    'Fruticultura': '#FF6347',        # Tomate
-    'Horticultura': '#32CD32',        # Verde lima
-    'Ovinocaprinocultura': '#D2691E', # Chocolate
-    'Aquicultura': '#1E90FF',         # Azul dodger
-    'Apicultura': '#FFD700',          # Dourado mel
-    'Algodão': '#FFFAF0',             # Branco floral
-    'Fumo': '#808000',                # Oliva
-    'Cacau': '#3D2314',               # Marrom escuro
-    'Outras Culturas Permanentes': '#9370DB',  # Púrpura médio
-    'Serviços Agrícolas': '#708090',  # Cinza ardósia
+    'Bovinocultura de Corte': '#E69F00',       # laranja
+    'Bovinocultura de Leite': '#56B4E9',       # azul-céu
+    'Avicultura': '#F0E442',                   # amarelo
+    'Suinocultura': '#CC79A7',                 # rosa
+    'Sojicultura': '#0072B2',                  # azul
+    'Grãos': '#D55E00',                        # vermelho-alaranjado
+    'Silvicultura': '#009E73',                 # verde-azulado
+    'Cafeicultura': '#2a2419',                 # tinta
+    'Cana-de-açúcar': '#b8ad32',               # amarelo escuro
+    'Fruticultura': '#a8482c',                 # barro
+    'Horticultura': '#004a72',                 # azul escuro
+    'Ovinocaprinocultura': '#7a5200',          # laranja escuro
+    'Aquicultura': '#2f88c4',                  # azul médio
+    'Apicultura': '#9c5b80',                   # rosa escuro
+    'Algodão': '#8a8273',                      # cinza quente
+    'Fumo': '#6b675f',                         # cinza escuro
+    'Cacau': '#54391d',                        # marrom
+    'Outras Culturas Permanentes': '#1d5c8a',  # azul petróleo
+    'Serviços Agrícolas': '#006b4e',           # verde-azulado escuro
 }
 
 def get_cadeia(cnae_subclasse):

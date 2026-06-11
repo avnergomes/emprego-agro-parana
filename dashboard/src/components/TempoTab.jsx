@@ -26,7 +26,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
         </div>
       )}
       {/* Série temporal completa */}
-      <Card title="Série Histórica Completa (2020-2025)">
+      <Card title="Série Histórica Completa">
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={timeseries}>
@@ -73,13 +73,13 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
                   name="Admissões"
                   cursor="pointer"
                   onClick={(data) => {
-                    // Filtrar por ano (todos os meses daquele ano)
+                    // Filtrar por ano inteiro: o App trata filtro de 4 caracteres como prefixo
                     const ano = String(data.ano)
                     const currentAno = periodoFilter ? periodoFilter.slice(0, 4) : ''
                     if (currentAno === ano) {
                       onPeriodoClick && onPeriodoClick('')
                     } else {
-                      onPeriodoClick && onPeriodoClick(`${ano}-01`)
+                      onPeriodoClick && onPeriodoClick(ano)
                     }
                   }}
                 >
@@ -89,7 +89,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
                       <Cell
                         key={`cell-adm-${index}`}
                         fill={isSelected ? '#004a72' : '#0072B2'}
-                        stroke={isSelected ? '#166534' : 'none'}
+                        stroke={isSelected ? '#14110c' : 'none'}
                         strokeWidth={isSelected ? 2 : 0}
                       />
                     )
@@ -102,7 +102,7 @@ function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onP
                       <Cell
                         key={`cell-dem-${index}`}
                         fill={isSelected ? '#893824' : '#D55E00'}
-                        stroke={isSelected ? '#991b1b' : 'none'}
+                        stroke={isSelected ? '#14110c' : 'none'}
                         strokeWidth={isSelected ? 2 : 0}
                       />
                     )

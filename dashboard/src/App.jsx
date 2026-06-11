@@ -22,8 +22,8 @@ const TOPO_URL = 'https://cdn.jsdelivr.net/gh/datageoparana/datageoparana.github
 
 // Formatadores
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
-const formatCurrency = (n) => `R$ ${n?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}` || 'R$ 0,00'
-const formatPercent = (n) => `${n?.toFixed(1)}%` || '0%'
+const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
+const formatPercent = (n) => n == null ? '0%' : `${n.toFixed(1)}%`
 
 function App() {
   const [data, setData] = useState(null)
@@ -66,27 +66,6 @@ function App() {
         setData(aggData)
         setGeoData(geo)
         setLoading(false)
-
-        // Carregar dados granulares em background (opcionais, para filtros avançados)
-        setIsGranularLoading(true)
-
-        Promise.all([
-          fetch(`${import.meta.env.BASE_URL}data/granular_cube.json`, { signal })
-            .then(res => res.ok ? res.json() : null)
-            .catch(() => null),
-          fetch(`${import.meta.env.BASE_URL}data/granular_dimensions.json`, { signal })
-            .then(res => res.ok ? res.json() : null)
-            .catch(() => null)
-        ])
-          .then(([cube, dims]) => {
-            if (signal.aborted) return
-            if (cube) setGranularData(cube)
-            if (dims) setGranularDimensions(dims)
-          })
-          .catch(() => {})
-          .finally(() => {
-            if (!signal.aborted) setIsGranularLoading(false)
-          })
       })
       .catch(err => {
         if (signal.aborted) return
@@ -259,10 +238,12 @@ function App() {
     const admissoes = filteredByMunicipio.reduce((a, m) => a + (m.admissoes || 0), 0)
     const demissoes = filteredByMunicipio.reduce((a, m) => a + (m.demissoes || 0), 0)
     const saldo = admissoes - demissoes
-    // Média ponderada por headcount (corrige problema de mean-of-means)
-    const municipiosComSalario = filteredByMunicipio.filter(m => m.salario_medio && m.count > 0)
-    const totalSalario = municipiosComSalario.reduce((sum, m) => sum + (m.salario_medio * m.count), 0)
-    const totalCount = municipiosComSalario.reduce((sum, m) => sum + m.count, 0)
+    // Média ponderada por headcount (corrige problema de mean-of-means);
+    // byMunicipio não tem campo count — usa admissões+demissões como peso.
+    const headcount = (m) => (m.count > 0 ? m.count : (m.admissoes || 0) + (m.demissoes || 0))
+    const municipiosComSalario = filteredByMunicipio.filter(m => m.salario_medio && headcount(m) > 0)
+    const totalSalario = municipiosComSalario.reduce((sum, m) => sum + (m.salario_medio * headcount(m)), 0)
+    const totalCount = municipiosComSalario.reduce((sum, m) => sum + headcount(m), 0)
     const salarioMedia = totalCount > 0 ? totalSalario / totalCount : 0
     return {
       ...kpis,
@@ -275,6 +256,33 @@ function App() {
   const hasRegionalFilter = mesoFilter || regIdrFilter || munFilter
   const hasInteractiveFilter = cadeiaFilter || sexoFilter || faixaFilter || escolaridadeFilter || periodoFilter
   const hasFilter = hasRegionalFilter || hasInteractiveFilter
+
+  // Cubos granulares (~100 MB) carregados sob demanda no primeiro filtro,
+  // em vez de em todo page load. Sem eles, a UI usa os pré-agregados.
+  const granularRequestedRef = useRef(false)
+  const loadGranular = useCallback(() => {
+    if (granularRequestedRef.current) return
+    granularRequestedRef.current = true
+    setIsGranularLoading(true)
+    Promise.all([
+      fetch(`${import.meta.env.BASE_URL}data/granular_cube.json`)
+        .then(res => res.ok ? res.json() : null)
+        .catch(() => null),
+      fetch(`${import.meta.env.BASE_URL}data/granular_dimensions.json`)
+        .then(res => res.ok ? res.json() : null)
+        .catch(() => null)
+    ])
+      .then(([cube, dims]) => {
+        if (cube) setGranularData(cube)
+        if (dims) setGranularDimensions(dims)
+      })
+      .catch(() => {})
+      .finally(() => setIsGranularLoading(false))
+  }, [])
+
+  useEffect(() => {
+    if (hasFilter) loadGranular()
+  }, [hasFilter, loadGranular])
   const selectedMunName = munFilter ? municipiosList.find(m => m.codigo === munFilter)?.nome : null
 
   // Limpar filtros interativos
@@ -333,7 +341,12 @@ function App() {
 
     // Aplicar filtros interativos
     if (cadeiaFilter) filtered = filtered.filter(r => r.cadeia === cadeiaFilter)
-    if (periodoFilter) filtered = filtered.filter(r => r.periodo === periodoFilter)
+    if (periodoFilter) {
+      // Filtro de 4 caracteres = ano inteiro (ex.: '2023'); senão, mês exato ('2023-01')
+      filtered = periodoFilter.length === 4
+        ? filtered.filter(r => r.periodo.startsWith(periodoFilter))
+        : filtered.filter(r => r.periodo === periodoFilter)
+    }
 
     return filtered
   }, [granularData, mesoFilter, regIdrFilter, munFilter, cadeiaFilter, periodoFilter, munRegionMap, hasRegionalFilter])
@@ -1006,7 +1019,7 @@ function App() {
                 Fonte de Dados
               </h4>
               <ul className="space-y-1.5 text-xs text-neutral-400">
-                <li>RAIS - Relação Anual de Informações Sociais</li>
+                <li>Novo CAGED - Cadastro Geral de Empregados e Desempregados (MTE)</li>
                 <li>MTE - Ministério do Trabalho e Emprego</li>
               </ul>
               <div className="text-xs text-neutral-500 pt-2 border-t border-neutral-700">
@@ -1062,7 +1075,7 @@ function App() {
 
           {/* Bottom */}
           <div className="mt-6 pt-4 border-t border-neutral-700 flex items-center justify-between text-[10px] text-neutral-500">
-            <p>Emprego Agro Paraná · Dados públicos RAIS/MTE</p>
+            <p>Emprego Agro Paraná · Dados públicos Novo CAGED/MTE</p>
             <span className="px-2 py-0.5 bg-indigo-900/50 text-indigo-300 rounded-full">
               {metadata.total_municipios} municípios
             </span>

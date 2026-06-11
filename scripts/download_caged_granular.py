@@ -5,6 +5,7 @@ Preserva todas as dimensões para análise detalhada
 
 import os
 import sys
+import time
 from io import BytesIO
 from ftplib import FTP
 import tempfile
@@ -56,8 +57,8 @@ def get_target_periods():
     return periods
 
 
-def download_mes(ano, mes):
-    """Baixa microdados de um mês específico."""
+def download_mes(ano, mes, tentativas=3):
+    """Baixa microdados de um mês específico, com retry e backoff."""
     ano_str = str(ano)
     mes_str = str(mes).zfill(2)
 
@@ -65,49 +66,53 @@ def download_mes(ano, mes):
 
     print(f"  {mes_str}/{ano_str}...", end=" ", flush=True)
 
-    try:
-        # Conectar ao FTP
-        ftp = FTP('ftp.mtps.gov.br', timeout=120)
-        ftp.login()
+    for tentativa in range(1, tentativas + 1):
+        try:
+            # Conectar ao FTP
+            ftp = FTP('ftp.mtps.gov.br', timeout=120)
+            ftp.login()
 
-        # Download
-        archive_bytes = BytesIO()
-        ftp.retrbinary(f'RETR {ftp_path}', archive_bytes.write)
-        archive_bytes.seek(0)
-        ftp.quit()
+            # Download
+            archive_bytes = BytesIO()
+            ftp.retrbinary(f'RETR {ftp_path}', archive_bytes.write)
+            archive_bytes.seek(0)
+            ftp.quit()
 
-        # Extrair
-        with tempfile.TemporaryDirectory() as tmpdir:
-            with py7zr.SevenZipFile(archive_bytes, mode='r') as archive:
-                filenames = archive.getnames()
-                txt_file = [f for f in filenames if f.endswith('.txt')][0]
-                archive.extractall(path=tmpdir)
+            # Extrair
+            with tempfile.TemporaryDirectory() as tmpdir:
+                with py7zr.SevenZipFile(archive_bytes, mode='r') as archive:
+                    filenames = archive.getnames()
+                    txt_file = [f for f in filenames if f.endswith('.txt')][0]
+                    archive.extractall(path=tmpdir)
 
-            txt_path = os.path.join(tmpdir, txt_file)
-            df = pd.read_csv(txt_path, sep=';', encoding='UTF-8')
+                txt_path = os.path.join(tmpdir, txt_file)
+                df = pd.read_csv(txt_path, sep=';', encoding='UTF-8')
 
-        # Filtrar Paraná
-        df = df[df['uf'] == 41].copy()
+            # Filtrar Paraná
+            df = df[df['uf'] == 41].copy()
 
-        if df.empty:
-            print("sem dados PR")
-            return None
+            if df.empty:
+                print("sem dados PR")
+                return None
 
-        # Filtrar agropecuária
-        df['subclasse'] = df['subclasse'].astype(str).str.zfill(7)
-        df['divisao'] = df['subclasse'].str[:2]
-        df = df[df['divisao'].isin(CNAE_AGRO)].copy()
+            # Filtrar agropecuária
+            df['subclasse'] = df['subclasse'].astype(str).str.zfill(7)
+            df['divisao'] = df['subclasse'].str[:2]
+            df = df[df['divisao'].isin(CNAE_AGRO)].copy()
 
-        if df.empty:
-            print("sem dados agro")
-            return None
+            if df.empty:
+                print("sem dados agro")
+                return None
 
-        print(f"OK ({len(df):,} reg)", flush=True)
-        return df
+            print(f"OK ({len(df):,} reg)", flush=True)
+            return df
 
-    except Exception as e:
-        print(f"ERRO: {e}")
-        return None
+        except Exception as e:
+            print(f"ERRO (tentativa {tentativa}/{tentativas}): {e}", flush=True)
+            if tentativa < tentativas:
+                time.sleep(30 * tentativa)
+
+    return None
 
 
 def process_microdata(df, ano, mes):
@@ -227,6 +232,7 @@ def download_all(force_rebuild=False):
     downloaded_new_data = False
     current_year = None
 
+    failed_periods = []
     for ano, mes in target_periods:
         periodo = f"{ano}-{str(mes).zfill(2)}"
         if periodo in existing_periods:
@@ -243,10 +249,16 @@ def download_all(force_rebuild=False):
             all_data.append(df_processed)
             total_registros += len(df_processed)
             downloaded_new_data = True
+        else:
+            failed_periods.append(periodo)
+
+    if failed_periods:
+        print(f"\nAVISO: periodos sem dados ou com falha: {', '.join(failed_periods)}")
 
     if not all_data:
+        # Falha total (sem cache e sem downloads): falhar o pipeline em vez de sair verde
         print("\nNenhum dado obtido!")
-        return None
+        sys.exit(1)
 
     if existing_periods and not downloaded_new_data:
         print("\nNenhum novo periodo disponivel. Reutilizando dados em cache.")

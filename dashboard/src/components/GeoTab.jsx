@@ -10,7 +10,7 @@ import MapaSVG from './MapaSVG'
 
 // Formatadores
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
-const formatCurrency = (n) => `R$ ${n?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}` || 'R$ 0,00'
+const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
 
 function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, regIdrFilter, munFilter, cadeiaFilter, hasFilter, filterLabel }) {
   const [hoveredMun, setHoveredMun] = useState(null)
@@ -36,40 +36,32 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
     }
   }, [byMunicipio, mapMetric])
 
-  // Escala de cores por métrica
+  // Escala de cores por métrica — rampas de matiz único Okabe-Ito
+  // (azul #0072B2 e laranja #D55E00; nunca verde+vermelho juntos)
+  const ATLAS_BLUE = [0, 114, 178]
+  const ATLAS_ORANGE = [213, 94, 0]
+  const ATLAS_LIGHT = [243, 244, 246]
+
+  const ramp = (rgb, intensity) => {
+    const r = Math.round(ATLAS_LIGHT[0] + (rgb[0] - ATLAS_LIGHT[0]) * intensity)
+    const g = Math.round(ATLAS_LIGHT[1] + (rgb[1] - ATLAS_LIGHT[1]) * intensity)
+    const b = Math.round(ATLAS_LIGHT[2] + (rgb[2] - ATLAS_LIGHT[2]) * intensity)
+    return `rgb(${r}, ${g}, ${b})`
+  }
+
   const getColor = (value, metric) => {
     if (value === 0 || value === null || value === undefined) return '#f3f4f6'
 
     if (metric === 'admissoes') {
-      // Verde
-      const intensity = Math.pow(value / maxPositive, 0.4)
-      const r = Math.round(220 - intensity * 186)
-      const g = Math.round(252 - intensity * 55)
-      const b = Math.round(231 - intensity * 140)
-      return `rgb(${r}, ${g}, ${b})`
+      return ramp(ATLAS_BLUE, Math.pow(value / (maxPositive || 1), 0.4))
     } else if (metric === 'demissoes') {
-      // Vermelho
-      const intensity = Math.pow(value / maxPositive, 0.4)
-      const r = Math.round(254 - intensity * 20)
-      const g = Math.round(226 - intensity * 158)
-      const b = Math.round(226 - intensity * 158)
-      return `rgb(${r}, ${g}, ${b})`
-    } else {
-      // Saldo - verde para positivo, vermelho para negativo
-      if (value > 0) {
-        const intensity = Math.pow(value / maxPositive, 0.4)
-        const r = Math.round(220 - intensity * 186)
-        const g = Math.round(252 - intensity * 55)
-        const b = Math.round(231 - intensity * 140)
-        return `rgb(${r}, ${g}, ${b})`
-      } else {
-        const intensity = Math.pow(Math.abs(value) / Math.abs(maxNegative), 0.4)
-        const r = Math.round(254 - intensity * 20)
-        const g = Math.round(226 - intensity * 158)
-        const b = Math.round(226 - intensity * 158)
-        return `rgb(${r}, ${g}, ${b})`
-      }
+      return ramp(ATLAS_ORANGE, Math.pow(value / (maxPositive || 1), 0.4))
     }
+    // Saldo - azul para positivo, laranja para negativo (divergente daltônico-seguro)
+    if (value > 0) {
+      return ramp(ATLAS_BLUE, Math.pow(value / (maxPositive || 1), 0.4))
+    }
+    return ramp(ATLAS_ORANGE, Math.pow(Math.abs(value) / Math.abs(maxNegative || 1), 0.4))
   }
 
   // Ordenar municípios
@@ -144,13 +136,13 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
         <div className="flex flex-wrap gap-2 mb-4 items-center">
           <button
             onClick={() => setMapMetric('admissoes')}
-            className={`px-3 py-1 rounded-lg text-sm ${mapMetric === 'admissoes' ? 'bg-green-600 text-white' : 'bg-neutral-100 text-neutral-600'}`}
+            className={`px-3 py-1 rounded-lg text-sm ${mapMetric === 'admissoes' ? 'bg-sky-700 text-white' : 'bg-neutral-100 text-neutral-600'}`}
           >
             Admissões
           </button>
           <button
             onClick={() => setMapMetric('demissoes')}
-            className={`px-3 py-1 rounded-lg text-sm ${mapMetric === 'demissoes' ? 'bg-red-600 text-white' : 'bg-neutral-100 text-neutral-600'}`}
+            className={`px-3 py-1 rounded-lg text-sm ${mapMetric === 'demissoes' ? 'bg-orange-700 text-white' : 'bg-neutral-100 text-neutral-600'}`}
           >
             Demissões
           </button>
@@ -197,7 +189,7 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
         <div className="flex items-center justify-center gap-2 mt-4 flex-wrap">
           {mapMetric === 'saldo' ? (
             <>
-              <span className="text-xs text-red-600">- Demissões</span>
+              <span className="text-xs text-orange-700">- Demissões</span>
               <div className="flex">
                 {[1, 0.6, 0.3, 0].map((v, i) => (
                   <div key={`neg${i}`} className="w-6 h-4" style={{ backgroundColor: getColor(-v * Math.abs(maxNegative), mapMetric) }} />
@@ -206,7 +198,7 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
                   <div key={`pos${i}`} className="w-6 h-4" style={{ backgroundColor: getColor(v * maxPositive, mapMetric) }} />
                 ))}
               </div>
-              <span className="text-xs text-green-600">+ Admissões</span>
+              <span className="text-xs text-sky-700">+ Admissões</span>
             </>
           ) : (
             <>

@@ -4,7 +4,7 @@ import FilterIndicator from './FilterIndicator'
 
 // Formatadores
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
-const formatCurrency = (n) => `R$ ${n?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}` || 'R$ 0,00'
+const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
 
 function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, onCadeiaClick, cadeiaFilter: globalCadeiaFilter }) {
   const [filter, setFilter] = useState('')
@@ -22,7 +22,7 @@ function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, onCadeiaClick, cade
     })
     data.sort((a, b) => {
       let aVal = a[sortCol], bVal = b[sortCol]
-      if (sortCol === 'cnae' || sortCol === 'cadeia') return sortDir === 'asc' ? (aVal || '').localeCompare(bVal || '') : (bVal || '').localeCompare(aVal || '')
+      if (sortCol === 'cnae' || sortCol === 'cadeia' || sortCol === 'descricao') return sortDir === 'asc' ? (aVal || '').localeCompare(bVal || '') : (bVal || '').localeCompare(aVal || '')
       return sortDir === 'asc' ? (aVal || 0) - (bVal || 0) : (bVal || 0) - (aVal || 0)
     })
     return data

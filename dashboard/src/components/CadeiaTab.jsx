@@ -10,7 +10,7 @@ import BumpChart from './BumpChart'
 
 // Formatadores
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
-const formatCurrency = (n) => `R$ ${n?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}` || 'R$ 0,00'
+const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
 
 function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia, setSelectedCadeia, hasFilter, filterLabel, onCadeiaClick, cadeiaFilter }) {
   const top10 = byCadeia.slice(0, 10)

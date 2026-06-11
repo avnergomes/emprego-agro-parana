@@ -59,3 +59,6 @@ env/
 *.temp
 *.gs
 dashboard/public/assets/mun_PR.json
+
+# Artefatos locais do understand-anything
+.understand-anything/
