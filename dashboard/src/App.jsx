@@ -264,17 +264,26 @@ function App() {
     if (granularRequestedRef.current) return
     granularRequestedRef.current = true
     setIsGranularLoading(true)
-    Promise.all([
-      fetch(`${import.meta.env.BASE_URL}data/granular_cube.json`)
-        .then(res => res.ok ? res.json() : null)
-        .catch(() => null),
-      fetch(`${import.meta.env.BASE_URL}data/granular_dimensions.json`)
+    const fetchJson = (file) =>
+      fetch(`${import.meta.env.BASE_URL}data/${file}`)
         .then(res => res.ok ? res.json() : null)
         .catch(() => null)
+
+    // Dimensões particionadas (o arquivo único de 90 MB beirava o limite
+    // de 100 MB do GitHub); o download em paralelo também é mais rápido.
+    Promise.all([
+      fetchJson('granular_cube.json'),
+      fetchJson('granular_bySexo.json'),
+      fetchJson('granular_byFaixa.json'),
+      fetchJson('granular_byEscolaridade.json'),
+      fetchJson('granular_byPorte.json'),
     ])
-      .then(([cube, dims]) => {
+      .then(([cube, bySexo, byFaixa, byEscolaridade, byPorte]) => {
         if (cube) setGranularData(cube)
-        if (dims) setGranularDimensions(dims)
+        const dims = { bySexo, byFaixa, byEscolaridade, byPorte }
+        if (Object.values(dims).some(Boolean)) {
+          setGranularDimensions(dims)
+        }
       })
       .catch(() => {})
       .finally(() => setIsGranularLoading(false))

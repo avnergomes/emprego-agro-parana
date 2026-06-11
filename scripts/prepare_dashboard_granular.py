@@ -602,12 +602,23 @@ def main():
     cube_size_mb = os.path.getsize(cube_path) / (1024 * 1024)
     print(f"  granular_cube.json ({cube_size_mb:.2f} MB)")
 
-    # Salvar dimensões granulares
-    dims_path = os.path.join(DASHBOARD_DIR, 'granular_dimensions.json')
-    with open(dims_path, 'w', encoding='utf-8') as f:
-        json.dump(safe_json(granular_dimensions), f, ensure_ascii=False)
-    dims_size_mb = os.path.getsize(dims_path) / (1024 * 1024)
-    print(f"  granular_dimensions.json ({dims_size_mb:.2f} MB)")
+    # Salvar dimensões granulares particionadas por dimensão.
+    # O arquivo único chegou a 90,8 MB — a 91% do limite de 100 MB por
+    # arquivo do GitHub; particionar elimina o risco e permite download
+    # paralelo no frontend.
+    dims_size_mb = 0.0
+    for dim_key, dim_rows in granular_dimensions.items():
+        part_path = os.path.join(DASHBOARD_DIR, f'granular_{dim_key}.json')
+        with open(part_path, 'w', encoding='utf-8') as f:
+            json.dump(safe_json(dim_rows), f, ensure_ascii=False)
+        part_size_mb = os.path.getsize(part_path) / (1024 * 1024)
+        dims_size_mb += part_size_mb
+        print(f"  granular_{dim_key}.json ({part_size_mb:.2f} MB)")
+
+    # Remover o arquivo legado se ainda existir de execuções antigas
+    legacy_dims = os.path.join(DASHBOARD_DIR, 'granular_dimensions.json')
+    if os.path.exists(legacy_dims):
+        os.remove(legacy_dims)
 
     print("\n" + "=" * 70)
     print("RESUMO")
