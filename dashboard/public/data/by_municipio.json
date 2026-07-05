@@ -6,7 +6,7 @@
     "salario_medio": 1917.879987091017,
     "cadeia_dominante": "Silvicultura",
     "saldo": 247,
-    "nome": "411760"
+    "nome": "Palmas"
   },
   {
     "codigo": "410480",
@@ -15,7 +15,7 @@
     "salario_medio": 1890.5508061321527,
     "cadeia_dominante": "Avicultura",
     "saldo": 312,
-    "nome": "410480"
+    "nome": "Cascavel"
   },
   {
     "codigo": "410940",
@@ -24,7 +24,7 @@
     "salario_medio": 1952.2754711288724,
     "cadeia_dominante": "Grãos",
     "saldo": 318,
-    "nome": "410940"
+    "nome": "Guarapuava"
   },
   {
     "codigo": "410490",
@@ -33,7 +33,7 @@
     "salario_medio": 1960.845117734315,
     "cadeia_dominante": "Grãos",
     "saldo": 387,
-    "nome": "410490"
+    "nome": "Castro"
   },
   {
     "codigo": "410465",
@@ -42,7 +42,7 @@
     "salario_medio": 1871.3661984562852,
     "cadeia_dominante": "Avicultura",
     "saldo": 291,
-    "nome": "410465"
+    "nome": "Carambeí"
   },
   {
     "codigo": "411840",
@@ -51,7 +51,7 @@
     "salario_medio": 1647.30931320017,
     "cadeia_dominante": "Fruticultura",
     "saldo": 21,
-    "nome": "411840"
+    "nome": "Paranavaí"
   },
   {
     "codigo": "411990",
@@ -60,7 +60,7 @@
     "salario_medio": 1799.0175330897264,
     "cadeia_dominante": "Grãos",
     "saldo": 98,
-    "nome": "411990"
+    "nome": "Ponta Grossa"
   },
   {
     "codigo": "411850",
@@ -69,7 +69,7 @@
     "salario_medio": 1692.307638680944,
     "cadeia_dominante": "Avicultura",
     "saldo": -127,
-    "nome": "411850"
+    "nome": "Pato Branco"
   },
   {
     "codigo": "412770",
@@ -78,7 +78,7 @@
     "salario_medio": 2030.5352636610007,
     "cadeia_dominante": "Suinocultura",
     "saldo": 117,
-    "nome": "412770"
+    "nome": "Toledo"
   },
   {
     "codigo": "412710",
@@ -87,7 +87,7 @@
     "salario_medio": 1924.3797299324833,
     "cadeia_dominante": "Silvicultura",
     "saldo": 363,
-    "nome": "412710"
+    "nome": "Telêmaco Borba"
   },
   {
     "codigo": "411730",
@@ -96,7 +96,7 @@
     "salario_medio": 1877.2397249295911,
     "cadeia_dominante": "Silvicultura",
     "saldo": -610,
-    "nome": "411730"
+    "nome": "Ortigueira"
   },
   {
     "codigo": "412570",
@@ -105,7 +105,7 @@
     "salario_medio": 1811.0312560160735,
     "cadeia_dominante": "Suinocultura",
     "saldo": 204,
-    "nome": "412570"
+    "nome": "São Miguel do Iguaçu"
   },
   {
     "codigo": "410980",
@@ -114,7 +114,7 @@
     "salario_medio": 1658.9090359629313,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -828,
-    "nome": "410980"
+    "nome": "Ibiporã"
   },
   {
     "codigo": "410970",
@@ -123,7 +123,7 @@
     "salario_medio": 1775.656029017857,
     "cadeia_dominante": "Silvicultura",
     "saldo": -437,
-    "nome": "410970"
+    "nome": "Ibaiti"
   },
   {
     "codigo": "412350",
@@ -132,7 +132,7 @@
     "salario_medio": 1788.4773299346211,
     "cadeia_dominante": "Avicultura",
     "saldo": 392,
-    "nome": "412350"
+    "nome": "Santa Helena"
   },
   {
     "codigo": "411320",
@@ -141,7 +141,7 @@
     "salario_medio": 1890.0821377383468,
     "cadeia_dominante": "Fruticultura",
     "saldo": -85,
-    "nome": "411320"
+    "nome": "Lapa"
   },
   {
     "codigo": "410720",
@@ -150,7 +150,7 @@
     "salario_medio": 1865.460090684611,
     "cadeia_dominante": "Avicultura",
     "saldo": 154,
-    "nome": "410720"
+    "nome": "Dois Vizinhos"
   },
   {
     "codigo": "411930",
@@ -159,7 +159,7 @@
     "salario_medio": 1923.3723503293827,
     "cadeia_dominante": "Grãos",
     "saldo": 249,
-    "nome": "411930"
+    "nome": "Pinhão"
   },
   {
     "codigo": "411790",
@@ -168,7 +168,7 @@
     "salario_medio": 2058.7508239147287,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 392,
-    "nome": "411790"
+    "nome": "Palotina"
   },
   {
     "codigo": "410160",
@@ -177,7 +177,7 @@
     "salario_medio": 2010.2716428968326,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 85,
-    "nome": "410160"
+    "nome": "Arapoti"
   },
   {
     "codigo": "412750",
@@ -186,7 +186,7 @@
     "salario_medio": 2216.935679232377,
     "cadeia_dominante": "Sojicultura",
     "saldo": 67,
-    "nome": "412750"
+    "nome": "Tibagi"
   },
   {
     "codigo": "411800",
@@ -195,7 +195,7 @@
     "salario_medio": 1033.7414162718246,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": 29,
-    "nome": "411800"
+    "nome": "Paraíso do Norte"
   },
   {
     "codigo": "412853",
@@ -204,7 +204,7 @@
     "salario_medio": 1958.1649090546096,
     "cadeia_dominante": "Silvicultura",
     "saldo": 177,
-    "nome": "412853"
+    "nome": "Ventania"
   },
   {
     "codigo": "410550",
@@ -213,7 +213,7 @@
     "salario_medio": 1715.9402237968927,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -150,
-    "nome": "410550"
+    "nome": "Cianorte"
   },
   {
     "codigo": "410150",
@@ -222,7 +222,7 @@
     "salario_medio": 1875.967421319827,
     "cadeia_dominante": "Avicultura",
     "saldo": -109,
-    "nome": "410150"
+    "nome": "Arapongas"
   },
   {
     "codigo": "411190",
@@ -231,7 +231,7 @@
     "salario_medio": 1648.2898025526977,
     "cadeia_dominante": "Outros",
     "saldo": -203,
-    "nome": "411190"
+    "nome": "Jaguapitã"
   },
   {
     "codigo": "411460",
@@ -240,7 +240,7 @@
     "salario_medio": 1653.3122217704363,
     "cadeia_dominante": "Suinocultura",
     "saldo": 118,
-    "nome": "411460"
+    "nome": "Marechal Cândido Rondon"
   },
   {
     "codigo": "410890",
@@ -249,7 +249,7 @@
     "salario_medio": 1706.9049555532004,
     "cadeia_dominante": "Fruticultura",
     "saldo": 120,
-    "nome": "410890"
+    "nome": "Guairaçá"
   },
   {
     "codigo": "411940",
@@ -258,7 +258,7 @@
     "salario_medio": 2101.305552180239,
     "cadeia_dominante": "Suinocultura",
     "saldo": 165,
-    "nome": "411940"
+    "nome": "Piraí do Sul"
   },
   {
     "codigo": "410060",
@@ -267,7 +267,7 @@
     "salario_medio": 1731.072756076389,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 92,
-    "nome": "410060"
+    "nome": "Alto Paraná"
   },
   {
     "codigo": "410690",
@@ -276,7 +276,7 @@
     "salario_medio": 3482.676140911002,
     "cadeia_dominante": "Silvicultura",
     "saldo": 331,
-    "nome": "410690"
+    "nome": "Curitiba"
   },
   {
     "codigo": "411180",
@@ -285,7 +285,7 @@
     "salario_medio": 1752.6301191364294,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": 255,
-    "nome": "411180"
+    "nome": "Jacarezinho"
   },
   {
     "codigo": "410360",
@@ -294,7 +294,7 @@
     "salario_medio": 2272.8257632894138,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 60,
-    "nome": "410360"
+    "nome": "Cambará"
   },
   {
     "codigo": "411520",
@@ -303,7 +303,7 @@
     "salario_medio": 2111.091886905312,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 98,
-    "nome": "411520"
+    "nome": "Maringá"
   },
   {
     "codigo": "412560",
@@ -312,7 +312,7 @@
     "salario_medio": 1842.3229502757354,
     "cadeia_dominante": "Grãos",
     "saldo": 24,
-    "nome": "412560"
+    "nome": "São Mateus do Sul"
   },
   {
     "codigo": "411370",
@@ -321,7 +321,7 @@
     "salario_medio": 2108.180440586517,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -91,
-    "nome": "411370"
+    "nome": "Londrina"
   },
   {
     "codigo": "410580",
@@ -330,7 +330,7 @@
     "salario_medio": 1836.8119784725536,
     "cadeia_dominante": "Horticultura",
     "saldo": 60,
-    "nome": "410580"
+    "nome": "Colombo"
   },
   {
     "codigo": "411200",
@@ -339,7 +339,7 @@
     "salario_medio": 2033.1338852426707,
     "cadeia_dominante": "Silvicultura",
     "saldo": 19,
-    "nome": "411200"
+    "nome": "Jaguariaíva"
   },
   {
     "codigo": "410660",
@@ -348,7 +348,7 @@
     "salario_medio": 985.8361822466615,
     "cadeia_dominante": "Fruticultura",
     "saldo": 57,
-    "nome": "410660"
+    "nome": "Cruzeiro do Oeste"
   },
   {
     "codigo": "412630",
@@ -357,7 +357,7 @@
     "salario_medio": 1836.8148274663072,
     "cadeia_dominante": "Silvicultura",
     "saldo": 142,
-    "nome": "412630"
+    "nome": "Sengés"
   },
   {
     "codigo": "410430",
@@ -366,7 +366,7 @@
     "salario_medio": 1994.1246454920288,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 49,
-    "nome": "410430"
+    "nome": "Campo Mourão"
   },
   {
     "codigo": "412240",
@@ -375,7 +375,7 @@
     "salario_medio": 1959.4567960288807,
     "cadeia_dominante": "Outros",
     "saldo": 302,
-    "nome": "412240"
+    "nome": "Rolândia"
   },
   {
     "codigo": "410110",
@@ -384,7 +384,7 @@
     "salario_medio": 1768.6924761918951,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 56,
-    "nome": "410110"
+    "nome": "Andirá"
   },
   {
     "codigo": "410290",
@@ -393,7 +393,7 @@
     "salario_medio": 1931.8814755108174,
     "cadeia_dominante": "Silvicultura",
     "saldo": 44,
-    "nome": "410290"
+    "nome": "Bituruna"
   },
   {
     "codigo": "412170",
@@ -402,7 +402,7 @@
     "salario_medio": 1860.4643102152168,
     "cadeia_dominante": "Silvicultura",
     "saldo": 23,
-    "nome": "412170"
+    "nome": "Reserva"
   },
   {
     "codigo": "410850",
@@ -411,7 +411,7 @@
     "salario_medio": 1885.3906818873668,
     "cadeia_dominante": "Silvicultura",
     "saldo": 31,
-    "nome": "410850"
+    "nome": "General Carneiro"
   },
   {
     "codigo": "410590",
@@ -420,7 +420,7 @@
     "salario_medio": 1484.080357995227,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": -157,
-    "nome": "410590"
+    "nome": "Colorado"
   },
   {
     "codigo": "412440",
@@ -429,7 +429,7 @@
     "salario_medio": 1827.2400415512466,
     "cadeia_dominante": "Avicultura",
     "saldo": 144,
-    "nome": "412440"
+    "nome": "Santo Antônio do Sudoeste"
   },
   {
     "codigo": "410753",
@@ -438,7 +438,7 @@
     "salario_medio": 2215.916191378092,
     "cadeia_dominante": "Suinocultura",
     "saldo": 114,
-    "nome": "410753"
+    "nome": "Entre Rios do Oeste"
   },
   {
     "codigo": "410442",
@@ -447,7 +447,7 @@
     "salario_medio": 1918.3998631556199,
     "cadeia_dominante": "Sojicultura",
     "saldo": 157,
-    "nome": "410442"
+    "nome": "Candói"
   },
   {
     "codigo": "410840",
@@ -456,7 +456,7 @@
     "salario_medio": 1629.080478726708,
     "cadeia_dominante": "Avicultura",
     "saldo": -298,
-    "nome": "410840"
+    "nome": "Francisco Beltrão"
   },
   {
     "codigo": "411725",
@@ -465,7 +465,7 @@
     "salario_medio": 1862.5308992233372,
     "cadeia_dominante": "Avicultura",
     "saldo": 179,
-    "nome": "411725"
+    "nome": "Nova Prata do Iguaçu"
   },
   {
     "codigo": "411580",
@@ -474,7 +474,7 @@
     "salario_medio": 1849.264838994575,
     "cadeia_dominante": "Suinocultura",
     "saldo": 89,
-    "nome": "411580"
+    "nome": "Medianeira"
   },
   {
     "codigo": "412650",
@@ -483,7 +483,7 @@
     "salario_medio": 2070.9784131384017,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 217,
-    "nome": "412650"
+    "nome": "Sertanópolis"
   },
   {
     "codigo": "410050",
@@ -492,7 +492,7 @@
     "salario_medio": 1395.5345548080727,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 113,
-    "nome": "410050"
+    "nome": "Altônia"
   },
   {
     "codigo": "412788",
@@ -501,7 +501,7 @@
     "salario_medio": 1591.6925593000394,
     "cadeia_dominante": "Silvicultura",
     "saldo": 57,
-    "nome": "412788"
+    "nome": "Tunas do Paraná"
   },
   {
     "codigo": "412810",
@@ -510,7 +510,7 @@
     "salario_medio": 2041.5104936586315,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -7,
-    "nome": "412810"
+    "nome": "Umuarama"
   },
   {
     "codigo": "411095",
@@ -519,7 +519,7 @@
     "salario_medio": 1825.6506344401873,
     "cadeia_dominante": "Avicultura",
     "saldo": 193,
-    "nome": "411095"
+    "nome": "Itaipulândia"
   },
   {
     "codigo": "411530",
@@ -528,7 +528,7 @@
     "salario_medio": 1586.9206785134038,
     "cadeia_dominante": "Avicultura",
     "saldo": 4,
-    "nome": "411530"
+    "nome": "Mariópolis"
   },
   {
     "codigo": "411770",
@@ -537,7 +537,7 @@
     "salario_medio": 2152.2393477374644,
     "cadeia_dominante": "Bovinocultura de Leite",
     "saldo": -47,
-    "nome": "411770"
+    "nome": "Palmeira"
   },
   {
     "codigo": "412580",
@@ -546,7 +546,7 @@
     "salario_medio": 1486.3012077309534,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": -255,
-    "nome": "412580"
+    "nome": "São Pedro do Ivaí"
   },
   {
     "codigo": "412490",
@@ -555,7 +555,7 @@
     "salario_medio": 1721.0179376718606,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 194,
-    "nome": "412490"
+    "nome": "São João do Caiuá"
   },
   {
     "codigo": "411373",
@@ -564,7 +564,7 @@
     "salario_medio": 1936.1497557155324,
     "cadeia_dominante": "Sojicultura",
     "saldo": 48,
-    "nome": "411373"
+    "nome": "Luiziana"
   },
   {
     "codigo": "411345",
@@ -573,7 +573,7 @@
     "salario_medio": 1893.7528292847503,
     "cadeia_dominante": "Avicultura",
     "saldo": 69,
-    "nome": "411345"
+    "nome": "Lindoeste"
   },
   {
     "codigo": "410320",
@@ -582,7 +582,7 @@
     "salario_medio": 2106.6354346240432,
     "cadeia_dominante": "Outros",
     "saldo": 22,
-    "nome": "410320"
+    "nome": "Bom Sucesso"
   },
   {
     "codigo": "410530",
@@ -591,7 +591,7 @@
     "salario_medio": 1995.6638586174683,
     "cadeia_dominante": "Avicultura",
     "saldo": 79,
-    "nome": "410530"
+    "nome": "Céu Azul"
   },
   {
     "codigo": "410860",
@@ -600,7 +600,7 @@
     "salario_medio": 1881.8536511627908,
     "cadeia_dominante": "Avicultura",
     "saldo": 66,
-    "nome": "410860"
+    "nome": "Goioerê"
   },
   {
     "codigo": "410760",
@@ -609,7 +609,7 @@
     "salario_medio": 1932.041159629108,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 30,
-    "nome": "410760"
+    "nome": "Faxinal"
   },
   {
     "codigo": "412820",
@@ -618,7 +618,7 @@
     "salario_medio": 1930.657967355865,
     "cadeia_dominante": "Silvicultura",
     "saldo": 102,
-    "nome": "412820"
+    "nome": "União da Vitória"
   },
   {
     "codigo": "410650",
@@ -627,7 +627,7 @@
     "salario_medio": 2061.181114325513,
     "cadeia_dominante": "Avicultura",
     "saldo": 64,
-    "nome": "410650"
+    "nome": "Coronel Vivida"
   },
   {
     "codigo": "412250",
@@ -636,7 +636,7 @@
     "salario_medio": 1821.8074352213232,
     "cadeia_dominante": "Avicultura",
     "saldo": -21,
-    "nome": "412250"
+    "nome": "Roncador"
   },
   {
     "codigo": "412300",
@@ -645,7 +645,7 @@
     "salario_medio": 1724.0940952857143,
     "cadeia_dominante": "Avicultura",
     "saldo": -36,
-    "nome": "412300"
+    "nome": "Salto do Lontra"
   },
   {
     "codigo": "411330",
@@ -654,7 +654,7 @@
     "salario_medio": 1642.163726373106,
     "cadeia_dominante": "Silvicultura",
     "saldo": -64,
-    "nome": "411330"
+    "nome": "Laranjeiras do Sul"
   },
   {
     "codigo": "412450",
@@ -663,7 +663,7 @@
     "salario_medio": 1416.8257233848954,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": -166,
-    "nome": "412450"
+    "nome": "Santo Inácio"
   },
   {
     "codigo": "412410",
@@ -672,7 +672,7 @@
     "salario_medio": 1630.0871708693467,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 16,
-    "nome": "412410"
+    "nome": "Santo Antônio da Platina"
   },
   {
     "codigo": "411670",
@@ -681,7 +681,7 @@
     "salario_medio": 1823.625366205837,
     "cadeia_dominante": "Avicultura",
     "saldo": 37,
-    "nome": "411670"
+    "nome": "Nova Aurora"
   },
   {
     "codigo": "410210",
@@ -690,7 +690,7 @@
     "salario_medio": 1871.9598525539757,
     "cadeia_dominante": "Avicultura",
     "saldo": 47,
-    "nome": "410210"
+    "nome": "Astorga"
   },
   {
     "codigo": "411100",
@@ -699,7 +699,7 @@
     "salario_medio": 1831.1026515399424,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -142,
-    "nome": "411100"
+    "nome": "Itambaracá"
   },
   {
     "codigo": "410645",
@@ -708,7 +708,7 @@
     "salario_medio": 1964.8893503118502,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -8,
-    "nome": "410645"
+    "nome": "Coronel Domingos Soares"
   },
   {
     "codigo": "410310",
@@ -717,7 +717,7 @@
     "salario_medio": 1787.172386443299,
     "cadeia_dominante": "Silvicultura",
     "saldo": -36,
-    "nome": "410310"
+    "nome": "Bocaiúva do Sul"
   },
   {
     "codigo": "412390",
@@ -726,7 +726,7 @@
     "salario_medio": 7805.279405992644,
     "cadeia_dominante": "Sojicultura",
     "saldo": -31,
-    "nome": "412390"
+    "nome": "Santa Mariana"
   },
   {
     "codigo": "412730",
@@ -735,7 +735,7 @@
     "salario_medio": 2053.622901849711,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 134,
-    "nome": "412730"
+    "nome": "Terra Rica"
   },
   {
     "codigo": "411690",
@@ -744,7 +744,7 @@
     "salario_medio": 1635.8401875344734,
     "cadeia_dominante": "Fruticultura",
     "saldo": 17,
-    "nome": "411690"
+    "nome": "Nova Esperança"
   },
   {
     "codigo": "410800",
@@ -753,7 +753,7 @@
     "salario_medio": 1559.2796,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": -181,
-    "nome": "410800"
+    "nome": "Florestópolis"
   },
   {
     "codigo": "411010",
@@ -762,7 +762,7 @@
     "salario_medio": 1979.0706599882146,
     "cadeia_dominante": "Silvicultura",
     "saldo": 29,
-    "nome": "411010"
+    "nome": "Imbituva"
   },
   {
     "codigo": "412680",
@@ -771,7 +771,7 @@
     "salario_medio": 1694.6682360406091,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 122,
-    "nome": "412680"
+    "nome": "Tapejara"
   },
   {
     "codigo": "410240",
@@ -780,7 +780,7 @@
     "salario_medio": 1848.4182316731951,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": -101,
-    "nome": "410240"
+    "nome": "Bandeirantes"
   },
   {
     "codigo": "410410",
@@ -789,7 +789,7 @@
     "salario_medio": 1922.6662324536778,
     "cadeia_dominante": "Fruticultura",
     "saldo": -105,
-    "nome": "410410"
+    "nome": "Campo do Tenente"
   },
   {
     "codigo": "410140",
@@ -798,7 +798,7 @@
     "salario_medio": 2058.4087952439777,
     "cadeia_dominante": "Sojicultura",
     "saldo": 51,
-    "nome": "410140"
+    "nome": "Apucarana"
   },
   {
     "codigo": "411500",
@@ -807,7 +807,7 @@
     "salario_medio": 1493.5126638123872,
     "cadeia_dominante": "Avicultura",
     "saldo": -25,
-    "nome": "411500"
+    "nome": "Marilena"
   },
   {
     "codigo": "410200",
@@ -816,7 +816,7 @@
     "salario_medio": 1861.8728420400944,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -66,
-    "nome": "410200"
+    "nome": "Assis Chateaubriand"
   },
   {
     "codigo": "410930",
@@ -825,7 +825,7 @@
     "salario_medio": 1976.8501203293222,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -15,
-    "nome": "410930"
+    "nome": "Guaraniaçu"
   },
   {
     "codigo": "411400",
@@ -834,7 +834,7 @@
     "salario_medio": 1841.5926263222632,
     "cadeia_dominante": "Sojicultura",
     "saldo": -64,
-    "nome": "411400"
+    "nome": "Mamborê"
   },
   {
     "codigo": "410130",
@@ -843,7 +843,7 @@
     "salario_medio": 1751.820255892256,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 71,
-    "nome": "410130"
+    "nome": "Antônio Olinto"
   },
   {
     "codigo": "412260",
@@ -852,7 +852,7 @@
     "salario_medio": 1670.2036576949622,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 81,
-    "nome": "412260"
+    "nome": "Rondon"
   },
   {
     "codigo": "411440",
@@ -861,7 +861,7 @@
     "salario_medio": 2000.6871555860178,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 67,
-    "nome": "411440"
+    "nome": "Mangueirinha"
   },
   {
     "codigo": "412700",
@@ -870,7 +870,7 @@
     "salario_medio": 1958.7119163292848,
     "cadeia_dominante": "Sojicultura",
     "saldo": 28,
-    "nome": "412700"
+    "nome": "Teixeira Soares"
   },
   {
     "codigo": "411540",
@@ -879,7 +879,7 @@
     "salario_medio": 1793.6234510146862,
     "cadeia_dominante": "Avicultura",
     "saldo": -2,
-    "nome": "411540"
+    "nome": "Marmeleiro"
   },
   {
     "codigo": "412060",
@@ -888,7 +888,7 @@
     "salario_medio": 1909.2910193347489,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 81,
-    "nome": "412060"
+    "nome": "Prudentópolis"
   },
   {
     "codigo": "411960",
@@ -897,7 +897,7 @@
     "salario_medio": 1850.5981212861952,
     "cadeia_dominante": "Sojicultura",
     "saldo": 7,
-    "nome": "411960"
+    "nome": "Pitanga"
   },
   {
     "codigo": "411550",
@@ -906,7 +906,7 @@
     "salario_medio": 1559.7042018779343,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 214,
-    "nome": "411550"
+    "nome": "Marumbi"
   },
   {
     "codigo": "410420",
@@ -915,7 +915,7 @@
     "salario_medio": 2162.0052239884394,
     "cadeia_dominante": "Silvicultura",
     "saldo": 74,
-    "nome": "410420"
+    "nome": "Campo Largo"
   },
   {
     "codigo": "410470",
@@ -924,7 +924,7 @@
     "salario_medio": 1749.4615800957592,
     "cadeia_dominante": "Fruticultura",
     "saldo": -34,
-    "nome": "410470"
+    "nome": "Carlópolis"
   },
   {
     "codigo": "410345",
@@ -933,7 +933,7 @@
     "salario_medio": 1902.9077892386529,
     "cadeia_dominante": "Avicultura",
     "saldo": 40,
-    "nome": "410345"
+    "nome": "Cafelândia"
   },
   {
     "codigo": "412380",
@@ -942,7 +942,7 @@
     "salario_medio": 1933.1575539033458,
     "cadeia_dominante": "Avicultura",
     "saldo": 59,
-    "nome": "412380"
+    "nome": "Santa Izabel do Oeste"
   },
   {
     "codigo": "410170",
@@ -951,7 +951,7 @@
     "salario_medio": 1726.2817709935898,
     "cadeia_dominante": "Outros",
     "saldo": 130,
-    "nome": "410170"
+    "nome": "Araruna"
   },
   {
     "codigo": "412085",
@@ -960,7 +960,7 @@
     "salario_medio": 1710.4174590802807,
     "cadeia_dominante": "Suinocultura",
     "saldo": 89,
-    "nome": "412085"
+    "nome": "Quatro Pontes"
   },
   {
     "codigo": "410640",
@@ -969,7 +969,7 @@
     "salario_medio": 1872.5315177971795,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -125,
-    "nome": "410640"
+    "nome": "Cornélio Procópio"
   },
   {
     "codigo": "411020",
@@ -978,7 +978,7 @@
     "salario_medio": 1822.1970162023458,
     "cadeia_dominante": "Silvicultura",
     "saldo": -16,
-    "nome": "411020"
+    "nome": "Inácio Martins"
   },
   {
     "codigo": "411060",
@@ -987,7 +987,7 @@
     "salario_medio": 2025.685684659557,
     "cadeia_dominante": "Avicultura",
     "saldo": 123,
-    "nome": "411060"
+    "nome": "Iporã"
   },
   {
     "codigo": "412175",
@@ -996,7 +996,7 @@
     "salario_medio": 1591.8138361975643,
     "cadeia_dominante": "Grãos",
     "saldo": -148,
-    "nome": "412175"
+    "nome": "Reserva do Iguaçu"
   },
   {
     "codigo": "410600",
@@ -1005,7 +1005,7 @@
     "salario_medio": 1779.9453461416072,
     "cadeia_dominante": "Avicultura",
     "saldo": 67,
-    "nome": "410600"
+    "nome": "Congonhinhas"
   },
   {
     "codigo": "410780",
@@ -1014,7 +1014,7 @@
     "salario_medio": 921.6731047550867,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -7,
-    "nome": "410780"
+    "nome": "Floraí"
   },
   {
     "codigo": "411420",
@@ -1023,7 +1023,7 @@
     "salario_medio": 1938.7245537134283,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -15,
-    "nome": "411420"
+    "nome": "Mandaguari"
   },
   {
     "codigo": "410725",
@@ -1032,7 +1032,7 @@
     "salario_medio": 1733.818779551181,
     "cadeia_dominante": "Avicultura",
     "saldo": 36,
-    "nome": "410725"
+    "nome": "Douradina"
   },
   {
     "codigo": "412862",
@@ -1041,7 +1041,7 @@
     "salario_medio": 2131.536205925926,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 83,
-    "nome": "412862"
+    "nome": "Alto Paraíso"
   },
   {
     "codigo": "411275",
@@ -1050,7 +1050,7 @@
     "salario_medio": 1915.3572687871076,
     "cadeia_dominante": "Suinocultura",
     "saldo": 117,
-    "nome": "411275"
+    "nome": "Jesuítas"
   },
   {
     "codigo": "412667",
@@ -1059,7 +1059,7 @@
     "salario_medio": 1755.097170190779,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 34,
-    "nome": "412667"
+    "nome": "Tamarana"
   },
   {
     "codigo": "411470",
@@ -1068,7 +1068,7 @@
     "salario_medio": 1792.77519562548,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -13,
-    "nome": "411470"
+    "nome": "Maria Helena"
   },
   {
     "codigo": "410570",
@@ -1077,7 +1077,7 @@
     "salario_medio": 1994.1465946394233,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 36,
-    "nome": "410570"
+    "nome": "Clevelândia"
   },
   {
     "codigo": "412065",
@@ -1086,7 +1086,7 @@
     "salario_medio": 2187.164482396088,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 47,
-    "nome": "412065"
+    "nome": "Quarto Centenário"
   },
   {
     "codigo": "412550",
@@ -1095,7 +1095,7 @@
     "salario_medio": 1929.8103613534822,
     "cadeia_dominante": "Horticultura",
     "saldo": -252,
-    "nome": "412550"
+    "nome": "São José dos Pinhais"
   },
   {
     "codigo": "411480",
@@ -1104,7 +1104,7 @@
     "salario_medio": 1908.2834395973152,
     "cadeia_dominante": "Outros",
     "saldo": 76,
-    "nome": "411480"
+    "nome": "Marialva"
   },
   {
     "codigo": "411950",
@@ -1113,7 +1113,7 @@
     "salario_medio": 3180.172550625,
     "cadeia_dominante": "Grãos",
     "saldo": 78,
-    "nome": "411950"
+    "nome": "Piraquara"
   },
   {
     "codigo": "412010",
@@ -1122,7 +1122,7 @@
     "salario_medio": 1860.0093122102007,
     "cadeia_dominante": "Fruticultura",
     "saldo": -48,
-    "nome": "412010"
+    "nome": "Porto Amazonas"
   },
   {
     "codigo": "411722",
@@ -1131,7 +1131,7 @@
     "salario_medio": 1862.356515549958,
     "cadeia_dominante": "Suinocultura",
     "saldo": 53,
-    "nome": "411722"
+    "nome": "Nova Santa Rosa"
   },
   {
     "codigo": "410990",
@@ -1140,7 +1140,7 @@
     "salario_medio": 1897.7769554455444,
     "cadeia_dominante": "Fruticultura",
     "saldo": 27,
-    "nome": "410990"
+    "nome": "Icaraíma"
   },
   {
     "codigo": "411490",
@@ -1149,7 +1149,7 @@
     "salario_medio": 1929.0342025316454,
     "cadeia_dominante": "Silvicultura",
     "saldo": 49,
-    "nome": "411490"
+    "nome": "Marilândia do Sul"
   },
   {
     "codigo": "410180",
@@ -1158,7 +1158,7 @@
     "salario_medio": 2179.464796159875,
     "cadeia_dominante": "Horticultura",
     "saldo": -46,
-    "nome": "410180"
+    "nome": "Araucária"
   },
   {
     "codigo": "412796",
@@ -1167,7 +1167,7 @@
     "salario_medio": 1635.0285022594142,
     "cadeia_dominante": "Outras Culturas Permanentes",
     "saldo": 29,
-    "nome": "412796"
+    "nome": "Turvo"
   },
   {
     "codigo": "411610",
@@ -1176,7 +1176,7 @@
     "salario_medio": 1724.994132091448,
     "cadeia_dominante": "Avicultura",
     "saldo": 37,
-    "nome": "411610"
+    "nome": "Moreira Sales"
   },
   {
     "codigo": "411390",
@@ -1185,7 +1185,7 @@
     "salario_medio": 1984.0183604831752,
     "cadeia_dominante": "Silvicultura",
     "saldo": 21,
-    "nome": "411390"
+    "nome": "Mallet"
   },
   {
     "codigo": "410370",
@@ -1194,7 +1194,7 @@
     "salario_medio": 2063.1924173027987,
     "cadeia_dominante": "Sojicultura",
     "saldo": -7,
-    "nome": "410370"
+    "nome": "Cambé"
   },
   {
     "codigo": "411120",
@@ -1203,7 +1203,7 @@
     "salario_medio": 1734.2644480230645,
     "cadeia_dominante": "Avicultura",
     "saldo": -48,
-    "nome": "411120"
+    "nome": "Itapejara d'Oeste"
   },
   {
     "codigo": "410560",
@@ -1212,7 +1212,7 @@
     "salario_medio": 1744.5968412599823,
     "cadeia_dominante": "Fruticultura",
     "saldo": 33,
-    "nome": "410560"
+    "nome": "Cidade Gaúcha"
   },
   {
     "codigo": "411745",
@@ -1221,7 +1221,7 @@
     "salario_medio": 1974.5988764272558,
     "cadeia_dominante": "Suinocultura",
     "saldo": 60,
-    "nome": "411745"
+    "nome": "Ouro Verde do Oeste"
   },
   {
     "codigo": "410670",
@@ -1230,7 +1230,7 @@
     "salario_medio": 1592.6799913043478,
     "cadeia_dominante": "Avicultura",
     "saldo": -6,
-    "nome": "410670"
+    "nome": "Cruzeiro do Sul"
   },
   {
     "codigo": "412800",
@@ -1239,7 +1239,7 @@
     "salario_medio": 1911.051335254563,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 99,
-    "nome": "412800"
+    "nome": "Ubiratã"
   },
   {
     "codigo": "410630",
@@ -1248,7 +1248,7 @@
     "salario_medio": 1985.8692759162304,
     "cadeia_dominante": "Sojicultura",
     "saldo": -22,
-    "nome": "410630"
+    "nome": "Corbélia"
   },
   {
     "codigo": "412140",
@@ -1257,7 +1257,7 @@
     "salario_medio": 1835.505073664825,
     "cadeia_dominante": "Avicultura",
     "saldo": 36,
-    "nome": "412140"
+    "nome": "Realeza"
   },
   {
     "codigo": "412520",
@@ -1266,7 +1266,7 @@
     "salario_medio": 1932.0981926141885,
     "cadeia_dominante": "Aquicultura",
     "saldo": 79,
-    "nome": "412520"
+    "nome": "São Jorge d'Oeste"
   },
   {
     "codigo": "412270",
@@ -1275,7 +1275,7 @@
     "salario_medio": 1818.522451084991,
     "cadeia_dominante": "Avicultura",
     "saldo": -10,
-    "nome": "412270"
+    "nome": "Sabáudia"
   },
   {
     "codigo": "411070",
@@ -1284,7 +1284,7 @@
     "salario_medio": 1872.9342881520777,
     "cadeia_dominante": "Silvicultura",
     "saldo": -41,
-    "nome": "411070"
+    "nome": "Irati"
   },
   {
     "codigo": "410620",
@@ -1293,7 +1293,7 @@
     "salario_medio": 1934.0606527272728,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -126,
-    "nome": "410620"
+    "nome": "Contenda"
   },
   {
     "codigo": "411590",
@@ -1302,7 +1302,7 @@
     "salario_medio": 1462.8413560885608,
     "cadeia_dominante": "Avicultura",
     "saldo": -4,
-    "nome": "411590"
+    "nome": "Mirador"
   },
   {
     "codigo": "410520",
@@ -1311,7 +1311,7 @@
     "salario_medio": 1717.3595678194026,
     "cadeia_dominante": "Silvicultura",
     "saldo": 25,
-    "nome": "410520"
+    "nome": "Cerro Azul"
   },
   {
     "codigo": "410500",
@@ -1320,7 +1320,7 @@
     "salario_medio": 1831.7878053625955,
     "cadeia_dominante": "Sojicultura",
     "saldo": 12,
-    "nome": "410500"
+    "nome": "Catanduvas"
   },
   {
     "codigo": "412855",
@@ -1329,7 +1329,7 @@
     "salario_medio": 1828.2070927342256,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -2,
-    "nome": "412855"
+    "nome": "Vera Cruz do Oeste"
   },
   {
     "codigo": "411350",
@@ -1338,7 +1338,7 @@
     "salario_medio": 1834.4739570175439,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 4,
-    "nome": "411350"
+    "nome": "Loanda"
   },
   {
     "codigo": "410740",
@@ -1347,7 +1347,7 @@
     "salario_medio": 1710.7836190428714,
     "cadeia_dominante": "Avicultura",
     "saldo": 13,
-    "nome": "410740"
+    "nome": "Enéas Marques"
   },
   {
     "codigo": "412870",
@@ -1356,7 +1356,7 @@
     "salario_medio": 1675.8145542697769,
     "cadeia_dominante": "Avicultura",
     "saldo": -10,
-    "nome": "412870"
+    "nome": "Vitorino"
   },
   {
     "codigo": "412402",
@@ -1365,7 +1365,7 @@
     "salario_medio": 2071.846567375133,
     "cadeia_dominante": "Avicultura",
     "saldo": 15,
-    "nome": "412402"
+    "nome": "Santa Tereza do Oeste"
   },
   {
     "codigo": "410230",
@@ -1374,7 +1374,7 @@
     "salario_medio": 1810.6847283280083,
     "cadeia_dominante": "Silvicultura",
     "saldo": 9,
-    "nome": "410230"
+    "nome": "Balsa Nova"
   },
   {
     "codigo": "411050",
@@ -1383,7 +1383,7 @@
     "salario_medio": 2007.4194905405404,
     "cadeia_dominante": "Sojicultura",
     "saldo": -18,
-    "nome": "411050"
+    "nome": "Ipiranga"
   },
   {
     "codigo": "410880",
@@ -1392,7 +1392,7 @@
     "salario_medio": 1710.6642474594594,
     "cadeia_dominante": "Avicultura",
     "saldo": 11,
-    "nome": "410880"
+    "nome": "Guaíra"
   },
   {
     "codigo": "412760",
@@ -1401,7 +1401,7 @@
     "salario_medio": 1738.221779895288,
     "cadeia_dominante": "Ovinocaprinocultura",
     "saldo": -23,
-    "nome": "412760"
+    "nome": "Tijucas do Sul"
   },
   {
     "codigo": "412180",
@@ -1410,7 +1410,7 @@
     "salario_medio": 1656.4037927350428,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -8,
-    "nome": "412180"
+    "nome": "Ribeirão Claro"
   },
   {
     "codigo": "410080",
@@ -1419,7 +1419,7 @@
     "salario_medio": 2302.3975512195125,
     "cadeia_dominante": "Sojicultura",
     "saldo": -62,
-    "nome": "410080"
+    "nome": "Alvorada do Sul"
   },
   {
     "codigo": "411710",
@@ -1428,7 +1428,7 @@
     "salario_medio": 1829.071725946548,
     "cadeia_dominante": "Avicultura",
     "saldo": 22,
-    "nome": "411710"
+    "nome": "Nova Londrina"
   },
   {
     "codigo": "410395",
@@ -1437,7 +1437,7 @@
     "salario_medio": 1728.512567075893,
     "cadeia_dominante": "Grãos",
     "saldo": 20,
-    "nome": "410395"
+    "nome": "Campina do Simão"
   },
   {
     "codigo": "412040",
@@ -1446,7 +1446,7 @@
     "salario_medio": 1025.0107882181426,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -14,
-    "nome": "412040"
+    "nome": "Presidente Castelo Branco"
   },
   {
     "codigo": "410540",
@@ -1455,7 +1455,7 @@
     "salario_medio": 1786.5916518599563,
     "cadeia_dominante": "Avicultura",
     "saldo": -4,
-    "nome": "410540"
+    "nome": "Chopinzinho"
   },
   {
     "codigo": "410870",
@@ -1464,7 +1464,7 @@
     "salario_medio": 1532.392350332594,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -4,
-    "nome": "410870"
+    "nome": "Grandes Rios"
   },
   {
     "codigo": "412510",
@@ -1473,7 +1473,7 @@
     "salario_medio": 1859.699408236659,
     "cadeia_dominante": "Outras Culturas Permanentes",
     "saldo": 32,
-    "nome": "412510"
+    "nome": "São João do Triunfo"
   },
   {
     "codigo": "411410",
@@ -1482,7 +1482,7 @@
     "salario_medio": 1766.701610472973,
     "cadeia_dominante": "Avicultura",
     "saldo": -8,
-    "nome": "411410"
+    "nome": "Mandaguaçu"
   },
   {
     "codigo": "412640",
@@ -1491,7 +1491,7 @@
     "salario_medio": 2486.4003023228806,
     "cadeia_dominante": "Sojicultura",
     "saldo": 11,
-    "nome": "412640"
+    "nome": "Sertaneja"
   },
   {
     "codigo": "411845",
@@ -1500,7 +1500,7 @@
     "salario_medio": 1737.354695752009,
     "cadeia_dominante": "Suinocultura",
     "saldo": -15,
-    "nome": "411845"
+    "nome": "Pato Bragado"
   },
   {
     "codigo": "412720",
@@ -1509,7 +1509,7 @@
     "salario_medio": 1882.7683786036037,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -32,
-    "nome": "412720"
+    "nome": "Terra Boa"
   },
   {
     "codigo": "410220",
@@ -1518,7 +1518,7 @@
     "salario_medio": 1695.8620933014354,
     "cadeia_dominante": "Fruticultura",
     "saldo": 16,
-    "nome": "410220"
+    "nome": "Atalaia"
   },
   {
     "codigo": "411880",
@@ -1527,7 +1527,7 @@
     "salario_medio": 1830.0766376249999,
     "cadeia_dominante": "Sojicultura",
     "saldo": 44,
-    "nome": "411880"
+    "nome": "Peabiru"
   },
   {
     "codigo": "410657",
@@ -1536,7 +1536,7 @@
     "salario_medio": 1817.152921090909,
     "cadeia_dominante": "Avicultura",
     "saldo": 11,
-    "nome": "410657"
+    "nome": "Cruzeiro do Iguaçu"
   },
   {
     "codigo": "410390",
@@ -1545,7 +1545,7 @@
     "salario_medio": 1975.9798923353294,
     "cadeia_dominante": "Sojicultura",
     "saldo": -11,
-    "nome": "410390"
+    "nome": "Campina da Lagoa"
   },
   {
     "codigo": "412190",
@@ -1554,7 +1554,7 @@
     "salario_medio": 1713.1630759803923,
     "cadeia_dominante": "Avicultura",
     "saldo": -6,
-    "nome": "412190"
+    "nome": "Ribeirão do Pinhal"
   },
   {
     "codigo": "412850",
@@ -1563,7 +1563,7 @@
     "salario_medio": 1906.4545404915912,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 29,
-    "nome": "412850"
+    "nome": "Wenceslau Braz"
   },
   {
     "codigo": "412090",
@@ -1572,7 +1572,7 @@
     "salario_medio": 2079.921904145078,
     "cadeia_dominante": "Avicultura",
     "saldo": 22,
-    "nome": "412090"
+    "nome": "Quedas do Iguaçu"
   },
   {
     "codigo": "412635",
@@ -1581,7 +1581,7 @@
     "salario_medio": 1766.0617645751634,
     "cadeia_dominante": "Suinocultura",
     "saldo": 17,
-    "nome": "412635"
+    "nome": "Serranópolis do Iguaçu"
   },
   {
     "codigo": "412033",
@@ -1590,7 +1590,7 @@
     "salario_medio": 1674.9491803278688,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -21,
-    "nome": "412033"
+    "nome": "Prado Ferreira"
   },
   {
     "codigo": "412740",
@@ -1599,7 +1599,7 @@
     "salario_medio": 1873.650433604336,
     "cadeia_dominante": "Silvicultura",
     "saldo": 10,
-    "nome": "412740"
+    "nome": "Terra Roxa"
   },
   {
     "codigo": "410020",
@@ -1608,7 +1608,7 @@
     "salario_medio": 1748.1510995542346,
     "cadeia_dominante": "Silvicultura",
     "saldo": 69,
-    "nome": "410020"
+    "nome": "Adrianópolis"
   },
   {
     "codigo": "411970",
@@ -1617,7 +1617,7 @@
     "salario_medio": 1925.6393447293449,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 24,
-    "nome": "411970"
+    "nome": "Planaltina do Paraná"
   },
   {
     "codigo": "410610",
@@ -1626,7 +1626,7 @@
     "salario_medio": 1702.8485944927536,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 34,
-    "nome": "410610"
+    "nome": "Conselheiro Mairinck"
   },
   {
     "codigo": "411630",
@@ -1635,7 +1635,7 @@
     "salario_medio": 1508.8345639534884,
     "cadeia_dominante": "Outros",
     "saldo": 36,
-    "nome": "411630"
+    "nome": "Munhoz de Melo"
   },
   {
     "codigo": "412385",
@@ -1644,7 +1644,7 @@
     "salario_medio": 2179.200972846924,
     "cadeia_dominante": "Grãos",
     "saldo": 25,
-    "nome": "412385"
+    "nome": "Santa Maria do Oeste"
   },
   {
     "codigo": "412100",
@@ -1653,7 +1653,7 @@
     "salario_medio": 2561.0329127600558,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 1,
-    "nome": "412100"
+    "nome": "Querência do Norte"
   },
   {
     "codigo": "411007",
@@ -1662,7 +1662,7 @@
     "salario_medio": 1915.894933530281,
     "cadeia_dominante": "Silvicultura",
     "saldo": 41,
-    "nome": "411007"
+    "nome": "Imbaú"
   },
   {
     "codigo": "411705",
@@ -1671,7 +1671,7 @@
     "salario_medio": 1854.1321407185628,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 50,
-    "nome": "411705"
+    "nome": "Nova Laranjeiras"
   },
   {
     "codigo": "411780",
@@ -1680,7 +1680,7 @@
     "salario_medio": 1676.6290579855074,
     "cadeia_dominante": "Silvicultura",
     "saldo": 27,
-    "nome": "411780"
+    "nome": "Palmital"
   },
   {
     "codigo": "410280",
@@ -1689,7 +1689,7 @@
     "salario_medio": 1897.7024071808512,
     "cadeia_dominante": "Sojicultura",
     "saldo": -44,
-    "nome": "410280"
+    "nome": "Bela Vista do Paraíso"
   },
   {
     "codigo": "411860",
@@ -1698,7 +1698,7 @@
     "salario_medio": 1766.4023663780665,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 3,
-    "nome": "411860"
+    "nome": "Paula Freitas"
   },
   {
     "codigo": "412790",
@@ -1707,7 +1707,7 @@
     "salario_medio": 1648.2354153846154,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 46,
-    "nome": "412790"
+    "nome": "Tuneiras do Oeste"
   },
   {
     "codigo": "410865",
@@ -1716,7 +1716,7 @@
     "salario_medio": 1880.7725246826517,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -21,
-    "nome": "410865"
+    "nome": "Goioxim"
   },
   {
     "codigo": "411125",
@@ -1725,7 +1725,7 @@
     "salario_medio": 1715.2138929088278,
     "cadeia_dominante": "Silvicultura",
     "saldo": -11,
-    "nome": "411125"
+    "nome": "Itaperuçu"
   },
   {
     "codigo": "411720",
@@ -1734,7 +1734,7 @@
     "salario_medio": 1774.0323664122136,
     "cadeia_dominante": "Avicultura",
     "saldo": 23,
-    "nome": "411720"
+    "nome": "Nova Olímpia"
   },
   {
     "codigo": "410010",
@@ -1743,7 +1743,7 @@
     "salario_medio": 1660.9156904400606,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 19,
-    "nome": "410010"
+    "nome": "Abatiá"
   },
   {
     "codigo": "410165",
@@ -1752,7 +1752,7 @@
     "salario_medio": 2700.6539819004524,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 11,
-    "nome": "410165"
+    "nome": "Arapuã"
   },
   {
     "codigo": "410115",
@@ -1761,7 +1761,7 @@
     "salario_medio": 1846.0553668841765,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 53,
-    "nome": "410115"
+    "nome": "Ângulo"
   },
   {
     "codigo": "411000",
@@ -1770,7 +1770,7 @@
     "salario_medio": 2055.906029774436,
     "cadeia_dominante": "Sojicultura",
     "saldo": -13,
-    "nome": "411000"
+    "nome": "Iguaraçu"
   },
   {
     "codigo": "411140",
@@ -1779,7 +1779,7 @@
     "salario_medio": 1626.0342375601927,
     "cadeia_dominante": "Outras Culturas Permanentes",
     "saldo": 19,
-    "nome": "411140"
+    "nome": "Ivaí"
   },
   {
     "codigo": "411150",
@@ -1788,7 +1788,7 @@
     "salario_medio": 2019.5036525974026,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 24,
-    "nome": "411150"
+    "nome": "Ivaiporã"
   },
   {
     "codigo": "412150",
@@ -1797,7 +1797,7 @@
     "salario_medio": 1617.106209137134,
     "cadeia_dominante": "Avicultura",
     "saldo": -11,
-    "nome": "412150"
+    "nome": "Rebouças"
   },
   {
     "codigo": "410960",
@@ -1806,7 +1806,7 @@
     "salario_medio": 1933.292328125,
     "cadeia_dominante": "Fruticultura",
     "saldo": -6,
-    "nome": "410960"
+    "nome": "Guaratuba"
   },
   {
     "codigo": "412545",
@@ -1815,7 +1815,7 @@
     "salario_medio": 1806.8652830703259,
     "cadeia_dominante": "Avicultura",
     "saldo": 37,
-    "nome": "412545"
+    "nome": "São José das Palmeiras"
   },
   {
     "codigo": "410965",
@@ -1824,7 +1824,7 @@
     "salario_medio": 2076.132473859649,
     "cadeia_dominante": "Bovinocultura de Leite",
     "saldo": 38,
-    "nome": "410965"
+    "nome": "Honório Serpa"
   },
   {
     "codigo": "412575",
@@ -1833,7 +1833,7 @@
     "salario_medio": 1871.7060929432014,
     "cadeia_dominante": "Suinocultura",
     "saldo": 25,
-    "nome": "412575"
+    "nome": "São Pedro do Iguaçu"
   },
   {
     "codigo": "412555",
@@ -1842,7 +1842,7 @@
     "salario_medio": 1517.2489914871794,
     "cadeia_dominante": "Avicultura",
     "saldo": 21,
-    "nome": "412555"
+    "nome": "São Manoel do Paraná"
   },
   {
     "codigo": "412430",
@@ -1851,7 +1851,7 @@
     "salario_medio": 2505.836313131313,
     "cadeia_dominante": "Avicultura",
     "saldo": 8,
-    "nome": "412430"
+    "nome": "Santo Antônio do Paraíso"
   },
   {
     "codigo": "410304",
@@ -1860,7 +1860,7 @@
     "salario_medio": 1886.113559322034,
     "cadeia_dominante": "Sojicultura",
     "saldo": 2,
-    "nome": "410304"
+    "nome": "Boa Ventura de São Roque"
   },
   {
     "codigo": "412230",
@@ -1869,7 +1869,7 @@
     "salario_medio": 1758.5638737439222,
     "cadeia_dominante": "Silvicultura",
     "saldo": -33,
-    "nome": "412230"
+    "nome": "Rio Negro"
   },
   {
     "codigo": "410773",
@@ -1878,7 +1878,7 @@
     "salario_medio": 1857.253790391459,
     "cadeia_dominante": "Silvicultura",
     "saldo": 20,
-    "nome": "410773"
+    "nome": "Fernandes Pinheiro"
   },
   {
     "codigo": "412470",
@@ -1887,7 +1887,7 @@
     "salario_medio": 1811.5625428178694,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -4,
-    "nome": "412470"
+    "nome": "São Jerônimo da Serra"
   },
   {
     "codigo": "410090",
@@ -1896,7 +1896,7 @@
     "salario_medio": 2112.645100841751,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -18,
-    "nome": "410090"
+    "nome": "Amaporã"
   },
   {
     "codigo": "411295",
@@ -1905,7 +1905,7 @@
     "salario_medio": 2027.4583948339482,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 32,
-    "nome": "411295"
+    "nome": "Juranda"
   },
   {
     "codigo": "412690",
@@ -1914,7 +1914,7 @@
     "salario_medio": 1930.8219998214286,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 14,
-    "nome": "412690"
+    "nome": "Tapira"
   },
   {
     "codigo": "411290",
@@ -1923,7 +1923,7 @@
     "salario_medio": 1776.5935398230088,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -5,
-    "nome": "411290"
+    "nome": "Jundiaí do Sul"
   },
   {
     "codigo": "411560",
@@ -1932,7 +1932,7 @@
     "salario_medio": 1914.707334742647,
     "cadeia_dominante": "Suinocultura",
     "saldo": 14,
-    "nome": "411560"
+    "nome": "Matelândia"
   },
   {
     "codigo": "412785",
@@ -1941,7 +1941,7 @@
     "salario_medio": 1766.3868817073171,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -16,
-    "nome": "412785"
+    "nome": "Três Barras do Paraná"
   },
   {
     "codigo": "410750",
@@ -1950,7 +1950,7 @@
     "salario_medio": 1941.030710321489,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -41,
-    "nome": "410750"
+    "nome": "Engenheiro Beltrão"
   },
   {
     "codigo": "412480",
@@ -1959,7 +1959,7 @@
     "salario_medio": 1850.435974729242,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -4,
-    "nome": "412480"
+    "nome": "São João"
   },
   {
     "codigo": "412795",
@@ -1968,7 +1968,7 @@
     "salario_medio": 1810.700855836576,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 32,
-    "nome": "412795"
+    "nome": "Tupãssi"
   },
   {
     "codigo": "411585",
@@ -1977,7 +1977,7 @@
     "salario_medio": 1740.1177996138997,
     "cadeia_dominante": "Suinocultura",
     "saldo": 20,
-    "nome": "411585"
+    "nome": "Mercedes"
   },
   {
     "codigo": "410100",
@@ -1986,7 +1986,7 @@
     "salario_medio": 1897.9011485148515,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 33,
-    "nome": "410100"
+    "nome": "Ampére"
   },
   {
     "codigo": "410900",
@@ -1995,7 +1995,7 @@
     "salario_medio": 1838.740614203455,
     "cadeia_dominante": "Avicultura",
     "saldo": 9,
-    "nome": "410900"
+    "nome": "Guapirama"
   },
   {
     "codigo": "411220",
@@ -2004,7 +2004,7 @@
     "salario_medio": 1810.4428465804065,
     "cadeia_dominante": "Grãos",
     "saldo": -13,
-    "nome": "411220"
+    "nome": "Janiópolis"
   },
   {
     "codigo": "411695",
@@ -2013,7 +2013,7 @@
     "salario_medio": 1897.1168452380953,
     "cadeia_dominante": "Avicultura",
     "saldo": 22,
-    "nome": "411695"
+    "nome": "Nova Esperança do Sudoeste"
   },
   {
     "codigo": "412405",
@@ -2022,7 +2022,7 @@
     "salario_medio": 1927.7060557009345,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -23,
-    "nome": "412405"
+    "nome": "Santa Terezinha de Itaipu"
   },
   {
     "codigo": "411700",
@@ -2031,7 +2031,7 @@
     "salario_medio": 2060.838182,
     "cadeia_dominante": "Grãos",
     "saldo": -40,
-    "nome": "411700"
+    "nome": "Nova Fátima"
   },
   {
     "codigo": "411340",
@@ -2040,7 +2040,7 @@
     "salario_medio": 2104.459125248509,
     "cadeia_dominante": "Sojicultura",
     "saldo": 3,
-    "nome": "411340"
+    "nome": "Leópolis"
   },
   {
     "codigo": "412840",
@@ -2049,7 +2049,7 @@
     "salario_medio": 1808.0970054613936,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -29,
-    "nome": "412840"
+    "nome": "Uraí"
   },
   {
     "codigo": "412780",
@@ -2058,7 +2058,7 @@
     "salario_medio": 1875.3742507490638,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -34,
-    "nome": "412780"
+    "nome": "Tomazina"
   },
   {
     "codigo": "410335",
@@ -2067,7 +2067,7 @@
     "salario_medio": 1717.842163562753,
     "cadeia_dominante": "Outros",
     "saldo": 4,
-    "nome": "410335"
+    "nome": "Braganey"
   },
   {
     "codigo": "411535",
@@ -2076,7 +2076,7 @@
     "salario_medio": 1909.528322717622,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 19,
-    "nome": "411535"
+    "nome": "Maripá"
   },
   {
     "codigo": "410440",
@@ -2085,7 +2085,7 @@
     "salario_medio": 1858.8184552475248,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -21,
-    "nome": "410440"
+    "nome": "Cândido de Abreu"
   },
   {
     "codigo": "411430",
@@ -2094,7 +2094,7 @@
     "salario_medio": 1854.588326494024,
     "cadeia_dominante": "Horticultura",
     "saldo": -20,
-    "nome": "411430"
+    "nome": "Mandirituba"
   },
   {
     "codigo": "411450",
@@ -2103,7 +2103,7 @@
     "salario_medio": 1813.876542798354,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -4,
-    "nome": "411450"
+    "nome": "Manoel Ribas"
   },
   {
     "codigo": "412530",
@@ -2112,7 +2112,7 @@
     "salario_medio": 1925.4370738888888,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -60,
-    "nome": "412530"
+    "nome": "São Jorge do Ivaí"
   },
   {
     "codigo": "411660",
@@ -2121,7 +2121,7 @@
     "salario_medio": 1813.2028733471075,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": -6,
-    "nome": "411660"
+    "nome": "Nova América da Colina"
   },
   {
     "codigo": "411885",
@@ -2130,7 +2130,7 @@
     "salario_medio": 2020.6220770877944,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 9,
-    "nome": "411885"
+    "nome": "Perobal"
   },
   {
     "codigo": "410920",
@@ -2139,7 +2139,7 @@
     "salario_medio": 2047.0905,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 8,
-    "nome": "410920"
+    "nome": "Guaraci"
   },
   {
     "codigo": "412627",
@@ -2148,7 +2148,7 @@
     "salario_medio": 1709.925502183406,
     "cadeia_dominante": "Avicultura",
     "saldo": 10,
-    "nome": "412627"
+    "nome": "Saudade do Iguaçu"
   },
   {
     "codigo": "410040",
@@ -2157,7 +2157,7 @@
     "salario_medio": 2197.4177867588933,
     "cadeia_dominante": "Silvicultura",
     "saldo": -40,
-    "nome": "410040"
+    "nome": "Almirante Tamandaré"
   },
   {
     "codigo": "410450",
@@ -2166,7 +2166,7 @@
     "salario_medio": 1814.443011235955,
     "cadeia_dominante": "Avicultura",
     "saldo": 19,
-    "nome": "410450"
+    "nome": "Capanema"
   },
   {
     "codigo": "412330",
@@ -2175,7 +2175,7 @@
     "salario_medio": 2090.418801742919,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 1,
-    "nome": "412330"
+    "nome": "Santa Cruz de Monte Castelo"
   },
   {
     "codigo": "410754",
@@ -2184,7 +2184,7 @@
     "salario_medio": 1991.933781902552,
     "cadeia_dominante": "Suinocultura",
     "saldo": 25,
-    "nome": "410754"
+    "nome": "Espigão Alto do Iguaçu"
   },
   {
     "codigo": "412860",
@@ -2193,7 +2193,7 @@
     "salario_medio": 1847.110782997763,
     "cadeia_dominante": "Bovinocultura de Leite",
     "saldo": 5,
-    "nome": "412860"
+    "nome": "Verê"
   },
   {
     "codigo": "412400",
@@ -2202,7 +2202,7 @@
     "salario_medio": 1791.6771116504854,
     "cadeia_dominante": "Fruticultura",
     "saldo": 34,
-    "nome": "412400"
+    "nome": "Santana do Itararé"
   },
   {
     "codigo": "412620",
@@ -2211,7 +2211,7 @@
     "salario_medio": 1775.3931756756756,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -2,
-    "nome": "412620"
+    "nome": "Sapopema"
   },
   {
     "codigo": "412370",
@@ -2220,7 +2220,7 @@
     "salario_medio": 1842.068322147651,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -13,
-    "nome": "412370"
+    "nome": "Santa Isabel do Ivaí"
   },
   {
     "codigo": "412660",
@@ -2229,7 +2229,7 @@
     "salario_medio": 1863.9841241935485,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -2,
-    "nome": "412660"
+    "nome": "Siqueira Campos"
   },
   {
     "codigo": "411080",
@@ -2238,7 +2238,7 @@
     "salario_medio": 1941.1949056603773,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -16,
-    "nome": "411080"
+    "nome": "Iretama"
   },
   {
     "codigo": "410975",
@@ -2247,7 +2247,7 @@
     "salario_medio": 1509.7895112469437,
     "cadeia_dominante": "Silvicultura",
     "saldo": -5,
-    "nome": "410975"
+    "nome": "Ibema"
   },
   {
     "codigo": "411240",
@@ -2256,7 +2256,7 @@
     "salario_medio": 1930.872291169451,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -17,
-    "nome": "411240"
+    "nome": "Japurá"
   },
   {
     "codigo": "412540",
@@ -2265,7 +2265,7 @@
     "salario_medio": 1624.7626433915211,
     "cadeia_dominante": "Silvicultura",
     "saldo": -3,
-    "nome": "412540"
+    "nome": "São José da Boa Vista"
   },
   {
     "codigo": "410830",
@@ -2274,7 +2274,7 @@
     "salario_medio": 2230.5202314814815,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -38,
-    "nome": "410830"
+    "nome": "Foz do Iguaçu"
   },
   {
     "codigo": "411605",
@@ -2283,7 +2283,7 @@
     "salario_medio": 1989.9081750642672,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 5,
-    "nome": "411605"
+    "nome": "Missal"
   },
   {
     "codigo": "410755",
@@ -2292,7 +2292,7 @@
     "salario_medio": 1978.2376712328767,
     "cadeia_dominante": "Sojicultura",
     "saldo": 27,
-    "nome": "410755"
+    "nome": "Farol"
   },
   {
     "codigo": "411920",
@@ -2301,7 +2301,7 @@
     "salario_medio": 1949.4221431428573,
     "cadeia_dominante": "Cafeicultura",
     "saldo": 40,
-    "nome": "411920"
+    "nome": "Pinhalão"
   },
   {
     "codigo": "412863",
@@ -2310,7 +2310,7 @@
     "salario_medio": 1913.0561475409838,
     "cadeia_dominante": "Silvicultura",
     "saldo": 24,
-    "nome": "412863"
+    "nome": "Doutor Ulysses"
   },
   {
     "codigo": "411325",
@@ -2319,7 +2319,7 @@
     "salario_medio": 1926.4844352617079,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 21,
-    "nome": "411325"
+    "nome": "Laranjal"
   },
   {
     "codigo": "410322",
@@ -2328,7 +2328,7 @@
     "salario_medio": 1996.0186592178773,
     "cadeia_dominante": "Outros",
     "saldo": 26,
-    "nome": "410322"
+    "nome": "Bom Sucesso do Sul"
   },
   {
     "codigo": "412420",
@@ -2337,7 +2337,7 @@
     "salario_medio": 1959.2479318734793,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -29,
-    "nome": "412420"
+    "nome": "Santo Antônio do Caiuá"
   },
   {
     "codigo": "412220",
@@ -2346,7 +2346,7 @@
     "salario_medio": 2005.8184637681159,
     "cadeia_dominante": "Silvicultura",
     "saldo": 27,
-    "nome": "412220"
+    "nome": "Rio Branco do Sul"
   },
   {
     "codigo": "411965",
@@ -2355,7 +2355,7 @@
     "salario_medio": 1937.2823314606742,
     "cadeia_dominante": "Avicultura",
     "saldo": 14,
-    "nome": "411965"
+    "nome": "Pitangueiras"
   },
   {
     "codigo": "410680",
@@ -2364,7 +2364,7 @@
     "salario_medio": 1711.8351413881749,
     "cadeia_dominante": "Silvicultura",
     "saldo": -19,
-    "nome": "410680"
+    "nome": "Cruz Machado"
   },
   {
     "codigo": "410510",
@@ -2373,7 +2373,7 @@
     "salario_medio": 1890.653440233236,
     "cadeia_dominante": "Sojicultura",
     "saldo": 25,
-    "nome": "410510"
+    "nome": "Centenário do Sul"
   },
   {
     "codigo": "412500",
@@ -2382,7 +2382,7 @@
     "salario_medio": 1856.215295774648,
     "cadeia_dominante": "Sojicultura",
     "saldo": 9,
-    "nome": "412500"
+    "nome": "São João do Ivaí"
   },
   {
     "codigo": "411680",
@@ -2391,7 +2391,7 @@
     "salario_medio": 3282.6137952908584,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 1,
-    "nome": "411680"
+    "nome": "Nova Cantú"
   },
   {
     "codigo": "412460",
@@ -2400,7 +2400,7 @@
     "salario_medio": 2348.6710734463277,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 4,
-    "nome": "412460"
+    "nome": "São Carlos do Ivaí"
   },
   {
     "codigo": "410700",
@@ -2409,7 +2409,7 @@
     "salario_medio": 1828.4332590807799,
     "cadeia_dominante": "Bovinocultura de Leite",
     "saldo": -3,
-    "nome": "410700"
+    "nome": "Curiúva"
   },
   {
     "codigo": "410070",
@@ -2418,7 +2418,7 @@
     "salario_medio": 2096.2516,
     "cadeia_dominante": "Sojicultura",
     "saldo": 6,
-    "nome": "410070"
+    "nome": "Alto Piquiri"
   },
   {
     "codigo": "412340",
@@ -2427,7 +2427,7 @@
     "salario_medio": 1781.0815472779368,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 7,
-    "nome": "412340"
+    "nome": "Santa Fé"
   },
   {
     "codigo": "411620",
@@ -2436,7 +2436,7 @@
     "salario_medio": 1755.6117628957895,
     "cadeia_dominante": "Horticultura",
     "saldo": -26,
-    "nome": "411620"
+    "nome": "Morretes"
   },
   {
     "codigo": "410300",
@@ -2445,7 +2445,7 @@
     "salario_medio": 2190.670512048193,
     "cadeia_dominante": "Sojicultura",
     "saldo": 14,
-    "nome": "410300"
+    "nome": "Boa Esperança"
   },
   {
     "codigo": "410260",
@@ -2454,7 +2454,7 @@
     "salario_medio": 1773.3568516034984,
     "cadeia_dominante": "Avicultura",
     "saldo": 3,
-    "nome": "410260"
+    "nome": "Barracão"
   },
   {
     "codigo": "410120",
@@ -2463,7 +2463,7 @@
     "salario_medio": 1717.4113489736071,
     "cadeia_dominante": "Fruticultura",
     "saldo": 3,
-    "nome": "410120"
+    "nome": "Antonina"
   },
   {
     "codigo": "411510",
@@ -2472,7 +2472,7 @@
     "salario_medio": 2033.5597752411577,
     "cadeia_dominante": "Grãos",
     "saldo": 31,
-    "nome": "411510"
+    "nome": "Mariluz"
   },
   {
     "codigo": "411280",
@@ -2481,7 +2481,7 @@
     "salario_medio": 1847.8759025787967,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -11,
-    "nome": "411280"
+    "nome": "Joaquim Távora"
   },
   {
     "codigo": "410330",
@@ -2490,7 +2490,7 @@
     "salario_medio": 2031.6183081570998,
     "cadeia_dominante": "Sojicultura",
     "saldo": 7,
-    "nome": "410330"
+    "nome": "Borrazópolis"
   },
   {
     "codigo": "410820",
@@ -2499,7 +2499,7 @@
     "salario_medio": 1607.645090361446,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 4,
-    "nome": "410820"
+    "nome": "Formosa do Oeste"
   },
   {
     "codigo": "410685",
@@ -2508,7 +2508,7 @@
     "salario_medio": 1937.8732352941176,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -4,
-    "nome": "410685"
+    "nome": "Cruzmaltina"
   },
   {
     "codigo": "412395",
@@ -2517,7 +2517,7 @@
     "salario_medio": 2185.5734362229105,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 11,
-    "nome": "412395"
+    "nome": "Santa Mônica"
   },
   {
     "codigo": "412880",
@@ -2526,7 +2526,7 @@
     "salario_medio": 1922.3082554517132,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 13,
-    "nome": "412880"
+    "nome": "Xambrê"
   },
   {
     "codigo": "411380",
@@ -2535,7 +2535,7 @@
     "salario_medio": 1847.6110828025478,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 16,
-    "nome": "411380"
+    "nome": "Lupionópolis"
   },
   {
     "codigo": "411575",
@@ -2544,7 +2544,7 @@
     "salario_medio": 2168.7071684971097,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -16,
-    "nome": "411575"
+    "nome": "Mauá da Serra"
   },
   {
     "codigo": "411065",
@@ -2553,7 +2553,7 @@
     "salario_medio": 1803.8642074433656,
     "cadeia_dominante": "Avicultura",
     "saldo": 13,
-    "nome": "411065"
+    "nome": "Iracema do Oeste"
   },
   {
     "codigo": "412015",
@@ -2562,7 +2562,7 @@
     "salario_medio": 1894.5468831168832,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 10,
-    "nome": "412015"
+    "nome": "Porto Barreiro"
   },
   {
     "codigo": "412110",
@@ -2571,7 +2571,7 @@
     "salario_medio": 1904.7790728434504,
     "cadeia_dominante": "Grãos",
     "saldo": 3,
-    "nome": "412110"
+    "nome": "Quinta do Sol"
   },
   {
     "codigo": "411110",
@@ -2580,7 +2580,7 @@
     "salario_medio": 2195.3318685245904,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 9,
-    "nome": "411110"
+    "nome": "Itambé"
   },
   {
     "codigo": "410190",
@@ -2589,7 +2589,7 @@
     "salario_medio": 1726.3528338762214,
     "cadeia_dominante": "Grãos",
     "saldo": 5,
-    "nome": "410190"
+    "nome": "Assaí"
   },
   {
     "codigo": "412200",
@@ -2598,7 +2598,7 @@
     "salario_medio": 1677.0412022468356,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -10,
-    "nome": "412200"
+    "nome": "Rio Azul"
   },
   {
     "codigo": "411270",
@@ -2607,7 +2607,7 @@
     "salario_medio": 1646.6744632768361,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -48,
-    "nome": "411270"
+    "nome": "Jataizinho"
   },
   {
     "codigo": "411727",
@@ -2616,7 +2616,7 @@
     "salario_medio": 1835.8251333333335,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 2,
-    "nome": "411727"
+    "nome": "Nova Tebas"
   },
   {
     "codigo": "412625",
@@ -2625,7 +2625,7 @@
     "salario_medio": 1964.0658974358976,
     "cadeia_dominante": "Avicultura",
     "saldo": -12,
-    "nome": "412625"
+    "nome": "Sarandi"
   },
   {
     "codigo": "411870",
@@ -2634,7 +2634,7 @@
     "salario_medio": 1756.0286759581882,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 13,
-    "nome": "411870"
+    "nome": "Paulo Frontin"
   },
   {
     "codigo": "410250",
@@ -2643,7 +2643,7 @@
     "salario_medio": 1833.658478317152,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -15,
-    "nome": "410250"
+    "nome": "Barbosa Ferraz"
   },
   {
     "codigo": "411830",
@@ -2652,7 +2652,7 @@
     "salario_medio": 1998.3490172881357,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": -5,
-    "nome": "411830"
+    "nome": "Paranapoema"
   },
   {
     "codigo": "411342",
@@ -2661,7 +2661,7 @@
     "salario_medio": 2998.446455597015,
     "cadeia_dominante": "Fruticultura",
     "saldo": 20,
-    "nome": "411342"
+    "nome": "Lidianópolis"
   },
   {
     "codigo": "410710",
@@ -2670,7 +2670,7 @@
     "salario_medio": 2207.5319112627985,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -7,
-    "nome": "410710"
+    "nome": "Diamante do Norte"
   },
   {
     "codigo": "411890",
@@ -2679,7 +2679,7 @@
     "salario_medio": 1762.938856088561,
     "cadeia_dominante": "Bovinocultura de Leite",
     "saldo": 15,
-    "nome": "411890"
+    "nome": "Pérola"
   },
   {
     "codigo": "410460",
@@ -2688,7 +2688,7 @@
     "salario_medio": 2059.1542807017545,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -5,
-    "nome": "410460"
+    "nome": "Capitão Leônidas Marques"
   },
   {
     "codigo": "411810",
@@ -2697,7 +2697,7 @@
     "salario_medio": 1872.6881412639405,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 11,
-    "nome": "411810"
+    "nome": "Paranacity"
   },
   {
     "codigo": "412215",
@@ -2706,7 +2706,7 @@
     "salario_medio": 1657.4895501730102,
     "cadeia_dominante": "Suinocultura",
     "saldo": -13,
-    "nome": "412215"
+    "nome": "Rio Bonito do Iguaçu"
   },
   {
     "codigo": "411600",
@@ -2715,7 +2715,7 @@
     "salario_medio": 2183.85756,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 26,
-    "nome": "411600"
+    "nome": "Miraselva"
   },
   {
     "codigo": "412135",
@@ -2724,7 +2724,7 @@
     "salario_medio": 2105.0546616541355,
     "cadeia_dominante": "Sojicultura",
     "saldo": 8,
-    "nome": "412135"
+    "nome": "Rancho Alegre D'Oeste"
   },
   {
     "codigo": "412535",
@@ -2733,7 +2733,7 @@
     "salario_medio": 1732.346611570248,
     "cadeia_dominante": "Fruticultura",
     "saldo": 32,
-    "nome": "412535"
+    "nome": "São Jorge do Patrocínio"
   },
   {
     "codigo": "411925",
@@ -2742,7 +2742,7 @@
     "salario_medio": 1778.52628,
     "cadeia_dominante": "Avicultura",
     "saldo": 20,
-    "nome": "411925"
+    "nome": "Pinhal de São Bento"
   },
   {
     "codigo": "410302",
@@ -2751,7 +2751,7 @@
     "salario_medio": 1948.7199209486166,
     "cadeia_dominante": "Avicultura",
     "saldo": 9,
-    "nome": "410302"
+    "nome": "Boa Esperança do Iguaçu"
   },
   {
     "codigo": "410832",
@@ -2760,7 +2760,7 @@
     "salario_medio": 2006.5337174721187,
     "cadeia_dominante": "Bovinocultura de Leite",
     "saldo": -11,
-    "nome": "410832"
+    "nome": "Francisco Alves"
   },
   {
     "codigo": "410790",
@@ -2769,7 +2769,7 @@
     "salario_medio": 1760.7140926640927,
     "cadeia_dominante": "Grãos",
     "saldo": -1,
-    "nome": "410790"
+    "nome": "Floresta"
   },
   {
     "codigo": "412670",
@@ -2778,7 +2778,7 @@
     "salario_medio": 1832.9907421875,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 0,
-    "nome": "412670"
+    "nome": "Tamboara"
   },
   {
     "codigo": "410405",
@@ -2787,7 +2787,7 @@
     "salario_medio": 1776.217,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 0,
-    "nome": "410405"
+    "nome": "Campo Bonito"
   },
   {
     "codigo": "410445",
@@ -2796,7 +2796,7 @@
     "salario_medio": 1884.4267843137256,
     "cadeia_dominante": "Grãos",
     "saldo": -5,
-    "nome": "410445"
+    "nome": "Cantagalo"
   },
   {
     "codigo": "412050",
@@ -2805,7 +2805,7 @@
     "salario_medio": 2076.018769920635,
     "cadeia_dominante": "Sojicultura",
     "saldo": -4,
-    "nome": "412050"
+    "nome": "Primeiro de Maio"
   },
   {
     "codigo": "412865",
@@ -2814,7 +2814,7 @@
     "salario_medio": 1474.8390833333333,
     "cadeia_dominante": "Grãos",
     "saldo": 4,
-    "nome": "412865"
+    "nome": "Virmond"
   },
   {
     "codigo": "411650",
@@ -2823,7 +2823,7 @@
     "salario_medio": 1863.0987755102042,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -3,
-    "nome": "411650"
+    "nome": "Nova Aliança do Ivaí"
   },
   {
     "codigo": "410845",
@@ -2832,7 +2832,7 @@
     "salario_medio": 2226.475664806867,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 9,
-    "nome": "410845"
+    "nome": "Foz do Jordão"
   },
   {
     "codigo": "412600",
@@ -2841,7 +2841,7 @@
     "salario_medio": 1921.8038567857143,
     "cadeia_dominante": "Sojicultura",
     "saldo": -40,
-    "nome": "412600"
+    "nome": "São Sebastião da Amoreira"
   },
   {
     "codigo": "410045",
@@ -2850,7 +2850,7 @@
     "salario_medio": 1870.99522079646,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 8,
-    "nome": "410045"
+    "nome": "Altamira do Paraná"
   },
   {
     "codigo": "410425",
@@ -2859,7 +2859,7 @@
     "salario_medio": 1848.810625,
     "cadeia_dominante": "Avicultura",
     "saldo": 10,
-    "nome": "410425"
+    "nome": "Campo Magro"
   },
   {
     "codigo": "412265",
@@ -2868,7 +2868,7 @@
     "salario_medio": 1721.8989130434782,
     "cadeia_dominante": "Sojicultura",
     "saldo": 4,
-    "nome": "412265"
+    "nome": "Rosário do Ivaí"
   },
   {
     "codigo": "411210",
@@ -2877,7 +2877,7 @@
     "salario_medio": 1971.7132510288066,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -13,
-    "nome": "411210"
+    "nome": "Jandaia do Sul"
   },
   {
     "codigo": "411300",
@@ -2886,7 +2886,7 @@
     "salario_medio": 1802.743336231884,
     "cadeia_dominante": "Horticultura",
     "saldo": 21,
-    "nome": "411300"
+    "nome": "Jussara"
   },
   {
     "codigo": "411910",
@@ -2895,7 +2895,7 @@
     "salario_medio": 2268.4395599118943,
     "cadeia_dominante": "Silvicultura",
     "saldo": -1,
-    "nome": "411910"
+    "nome": "Piên"
   },
   {
     "codigo": "412130",
@@ -2904,7 +2904,7 @@
     "salario_medio": 1897.58932,
     "cadeia_dominante": "Sojicultura",
     "saldo": -28,
-    "nome": "412130"
+    "nome": "Rancho Alegre"
   },
   {
     "codigo": "410337",
@@ -2913,7 +2913,7 @@
     "salario_medio": 1793.9315841584157,
     "cadeia_dominante": "Aquicultura",
     "saldo": 18,
-    "nome": "410337"
+    "nome": "Brasilândia do Sul"
   },
   {
     "codigo": "411155",
@@ -2922,7 +2922,7 @@
     "salario_medio": 1784.6783412322275,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 9,
-    "nome": "411155"
+    "nome": "Ivaté"
   },
   {
     "codigo": "410270",
@@ -2931,7 +2931,7 @@
     "salario_medio": 1752.898779342723,
     "cadeia_dominante": "Avicultura",
     "saldo": 7,
-    "nome": "410270"
+    "nome": "Barra do Jacaré"
   },
   {
     "codigo": "412160",
@@ -2940,7 +2940,7 @@
     "salario_medio": 2121.133888888889,
     "cadeia_dominante": "Sojicultura",
     "saldo": 22,
-    "nome": "412160"
+    "nome": "Renascença"
   },
   {
     "codigo": "411090",
@@ -2949,7 +2949,7 @@
     "salario_medio": 1858.6527678571426,
     "cadeia_dominante": "Bovinocultura de Leite",
     "saldo": -8,
-    "nome": "411090"
+    "nome": "Itaguajé"
   },
   {
     "codigo": "412020",
@@ -2958,7 +2958,7 @@
     "salario_medio": 2024.1271555555554,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -11,
-    "nome": "412020"
+    "nome": "Porto Rico"
   },
   {
     "codigo": "412125",
@@ -2967,7 +2967,7 @@
     "salario_medio": 1874.210380952381,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -2,
-    "nome": "412125"
+    "nome": "Ramilândia"
   },
   {
     "codigo": "412830",
@@ -2976,7 +2976,7 @@
     "salario_medio": 1916.2941232227488,
     "cadeia_dominante": "Horticultura",
     "saldo": -3,
-    "nome": "412830"
+    "nome": "Uniflor"
   },
   {
     "codigo": "410380",
@@ -2985,7 +2985,7 @@
     "salario_medio": 1912.7337855140186,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -12,
-    "nome": "410380"
+    "nome": "Cambira"
   },
   {
     "codigo": "412310",
@@ -2994,7 +2994,7 @@
     "salario_medio": 1704.4605345679013,
     "cadeia_dominante": "Sojicultura",
     "saldo": -43,
-    "nome": "412310"
+    "nome": "Santa Amélia"
   },
   {
     "codigo": "411740",
@@ -3003,7 +3003,7 @@
     "salario_medio": 2026.6835505499998,
     "cadeia_dominante": "Sojicultura",
     "saldo": 0,
-    "nome": "411740"
+    "nome": "Ourizona"
   },
   {
     "codigo": "412080",
@@ -3012,7 +3012,7 @@
     "salario_medio": 2304.3093063583815,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 25,
-    "nome": "412080"
+    "nome": "Quatro Barras"
   },
   {
     "codigo": "412030",
@@ -3021,7 +3021,7 @@
     "salario_medio": 1800.3001046632123,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -3,
-    "nome": "412030"
+    "nome": "Porto Vitória"
   },
   {
     "codigo": "410712",
@@ -3030,7 +3030,7 @@
     "salario_medio": 1952.9547872340424,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -2,
-    "nome": "410712"
+    "nome": "Diamante do Sul"
   },
   {
     "codigo": "411230",
@@ -3039,7 +3039,7 @@
     "salario_medio": 1811.741832460733,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -9,
-    "nome": "411230"
+    "nome": "Japira"
   },
   {
     "codigo": "411435",
@@ -3048,7 +3048,7 @@
     "salario_medio": 2187.1206024096386,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 14,
-    "nome": "411435"
+    "nome": "Manfrinópolis"
   },
   {
     "codigo": "411640",
@@ -3057,7 +3057,7 @@
     "salario_medio": 2224.419942857143,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 3,
-    "nome": "411640"
+    "nome": "Nossa Senhora das Graças"
   },
   {
     "codigo": "412035",
@@ -3066,7 +3066,7 @@
     "salario_medio": 2040.9001986754965,
     "cadeia_dominante": "Avicultura",
     "saldo": 23,
-    "nome": "412035"
+    "nome": "Pranchita"
   },
   {
     "codigo": "410775",
@@ -3075,7 +3075,7 @@
     "salario_medio": 1704.9867283950616,
     "cadeia_dominante": "Silvicultura",
     "saldo": 10,
-    "nome": "410775"
+    "nome": "Figueira"
   },
   {
     "codigo": "411980",
@@ -3084,7 +3084,7 @@
     "salario_medio": 1952.7826966292134,
     "cadeia_dominante": "Avicultura",
     "saldo": -10,
-    "nome": "411980"
+    "nome": "Planalto"
   },
   {
     "codigo": "410340",
@@ -3093,7 +3093,7 @@
     "salario_medio": 2638.583216666667,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -8,
-    "nome": "410340"
+    "nome": "Cafeara"
   },
   {
     "codigo": "410715",
@@ -3102,7 +3102,7 @@
     "salario_medio": 2050.673502824859,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -17,
-    "nome": "410715"
+    "nome": "Diamante d'Oeste"
   },
   {
     "codigo": "410400",
@@ -3111,7 +3111,7 @@
     "salario_medio": 1765.976379310345,
     "cadeia_dominante": "Horticultura",
     "saldo": -14,
-    "nome": "410400"
+    "nome": "Campina Grande do Sul"
   },
   {
     "codigo": "411360",
@@ -3120,7 +3120,7 @@
     "salario_medio": 2146.2356737588652,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 15,
-    "nome": "411360"
+    "nome": "Lobato"
   },
   {
     "codigo": "412590",
@@ -3129,7 +3129,7 @@
     "salario_medio": 2141.412053642384,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -1,
-    "nome": "412590"
+    "nome": "São Pedro do Paraná"
   },
   {
     "codigo": "410347",
@@ -3138,7 +3138,7 @@
     "salario_medio": 2003.4194489655174,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 3,
-    "nome": "410347"
+    "nome": "Cafezal do Sul"
   },
   {
     "codigo": "412665",
@@ -3147,7 +3147,7 @@
     "salario_medio": 1829.7667153284672,
     "cadeia_dominante": "Avicultura",
     "saldo": 11,
-    "nome": "412665"
+    "nome": "Sulina"
   },
   {
     "codigo": "411545",
@@ -3156,7 +3156,7 @@
     "salario_medio": 1541.8000000000002,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -12,
-    "nome": "411545"
+    "nome": "Marquinho"
   },
   {
     "codigo": "411729",
@@ -3165,7 +3165,7 @@
     "salario_medio": 1935.1424647887322,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -4,
-    "nome": "411729"
+    "nome": "Novo Itacolomi"
   },
   {
     "codigo": "411170",
@@ -3174,7 +3174,7 @@
     "salario_medio": 1813.9282442748092,
     "cadeia_dominante": "Cafeicultura",
     "saldo": 5,
-    "nome": "411170"
+    "nome": "Jaboti"
   },
   {
     "codigo": "411750",
@@ -3183,7 +3183,7 @@
     "salario_medio": 1861.5777685950413,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 9,
-    "nome": "411750"
+    "nome": "Paiçandu"
   },
   {
     "codigo": "411573",
@@ -3192,7 +3192,7 @@
     "salario_medio": 1819.3978294573644,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -1,
-    "nome": "411573"
+    "nome": "Mato Rico"
   },
   {
     "codigo": "412320",
@@ -3201,7 +3201,7 @@
     "salario_medio": 1834.7966666666666,
     "cadeia_dominante": "Horticultura",
     "saldo": 0,
-    "nome": "412320"
+    "nome": "Santa Cecília do Pavão"
   },
   {
     "codigo": "412360",
@@ -3210,7 +3210,7 @@
     "salario_medio": 1575.2296026490067,
     "cadeia_dominante": "Fumo",
     "saldo": -29,
-    "nome": "412360"
+    "nome": "Santa Inês"
   },
   {
     "codigo": "412070",
@@ -3219,7 +3219,7 @@
     "salario_medio": 1726.5766438356166,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -26,
-    "nome": "412070"
+    "nome": "Quatiguá"
   },
   {
     "codigo": "411820",
@@ -3228,7 +3228,7 @@
     "salario_medio": 3009.3206504065042,
     "cadeia_dominante": "Aquicultura",
     "saldo": -3,
-    "nome": "411820"
+    "nome": "Paranaguá"
   },
   {
     "codigo": "411721",
@@ -3237,7 +3237,7 @@
     "salario_medio": 1779.567723577236,
     "cadeia_dominante": "Fruticultura",
     "saldo": -5,
-    "nome": "411721"
+    "nome": "Nova Santa Bárbara"
   },
   {
     "codigo": "410350",
@@ -3246,7 +3246,7 @@
     "salario_medio": 1916.9856060606062,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -14,
-    "nome": "410350"
+    "nome": "Califórnia"
   },
   {
     "codigo": "410305",
@@ -3255,7 +3255,7 @@
     "salario_medio": 1840.5081690140846,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -26,
-    "nome": "410305"
+    "nome": "Boa Vista da Aparecida"
   },
   {
     "codigo": "411250",
@@ -3264,7 +3264,7 @@
     "salario_medio": 2091.2160162601626,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -7,
-    "nome": "411250"
+    "nome": "Jardim Alegre"
   },
   {
     "codigo": "412280",
@@ -3273,7 +3273,7 @@
     "salario_medio": 1736.9169354838712,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -14,
-    "nome": "412280"
+    "nome": "Salgado Filho"
   },
   {
     "codigo": "412210",
@@ -3282,7 +3282,7 @@
     "salario_medio": 1810.4790082644627,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -11,
-    "nome": "412210"
+    "nome": "Rio Bom"
   },
   {
     "codigo": "410752",
@@ -3291,7 +3291,7 @@
     "salario_medio": 1907.9989344262294,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -14,
-    "nome": "410752"
+    "nome": "Esperança Nova"
   },
   {
     "codigo": "410185",
@@ -3300,7 +3300,7 @@
     "salario_medio": 1892.0619444444444,
     "cadeia_dominante": "Sojicultura",
     "saldo": 0,
-    "nome": "410185"
+    "nome": "Ariranha do Ivaí"
   },
   {
     "codigo": "411375",
@@ -3309,7 +3309,7 @@
     "salario_medio": 1738.1896363636365,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -4,
-    "nome": "411375"
+    "nome": "Lunardelli"
   },
   {
     "codigo": "412217",
@@ -3318,7 +3318,7 @@
     "salario_medio": 1976.2942727272728,
     "cadeia_dominante": "Sojicultura",
     "saldo": -6,
-    "nome": "412217"
+    "nome": "Rio Branco do Ivaí"
   },
   {
     "codigo": "410910",
@@ -3327,7 +3327,7 @@
     "salario_medio": 1888.4122807017543,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -14,
-    "nome": "410910"
+    "nome": "Guaporema"
   },
   {
     "codigo": "410785",
@@ -3336,7 +3336,7 @@
     "salario_medio": 1664.6065263157893,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 5,
-    "nome": "410785"
+    "nome": "Flor da Serra do Sul"
   },
   {
     "codigo": "411130",
@@ -3345,7 +3345,7 @@
     "salario_medio": 2120.020101010101,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -1,
-    "nome": "411130"
+    "nome": "Itaúna do Sul"
   },
   {
     "codigo": "411310",
@@ -3354,7 +3354,7 @@
     "salario_medio": 1867.9263366336634,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -5,
-    "nome": "411310"
+    "nome": "Kaloré"
   },
   {
     "codigo": "412290",
@@ -3363,7 +3363,7 @@
     "salario_medio": 2034.2523595505618,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 5,
-    "nome": "412290"
+    "nome": "Salto do Itararé"
   },
   {
     "codigo": "411030",
@@ -3372,7 +3372,7 @@
     "salario_medio": 1519.6716326530614,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -6,
-    "nome": "411030"
+    "nome": "Inajá"
   },
   {
     "codigo": "410105",
@@ -3381,7 +3381,7 @@
     "salario_medio": 2060.1152677419354,
     "cadeia_dominante": "Avicultura",
     "saldo": -5,
-    "nome": "410105"
+    "nome": "Anahy"
   },
   {
     "codigo": "411260",
@@ -3390,7 +3390,7 @@
     "salario_medio": 1903.9094392523364,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -19,
-    "nome": "411260"
+    "nome": "Jardim Olinda"
   },
   {
     "codigo": "410770",
@@ -3399,7 +3399,7 @@
     "salario_medio": 1972.2814772727272,
     "cadeia_dominante": "Grãos",
     "saldo": 0,
-    "nome": "410770"
+    "nome": "Fênix"
   },
   {
     "codigo": "412000",
@@ -3408,7 +3408,7 @@
     "salario_medio": 1838.0192773195874,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": -11,
-    "nome": "412000"
+    "nome": "Porecatu"
   },
   {
     "codigo": "410655",
@@ -3417,7 +3417,7 @@
     "salario_medio": 2092.2282666666665,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 9,
-    "nome": "410655"
+    "nome": "Corumbataí do Sul"
   },
   {
     "codigo": "410030",
@@ -3426,7 +3426,7 @@
     "salario_medio": 1764.9093589743588,
     "cadeia_dominante": "Horticultura",
     "saldo": 0,
-    "nome": "410030"
+    "nome": "Agudos do Sul"
   },
   {
     "codigo": "411040",
@@ -3435,7 +3435,7 @@
     "salario_medio": 1876.1365384615385,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 0,
-    "nome": "411040"
+    "nome": "Indianópolis"
   },
   {
     "codigo": "410950",
@@ -3444,7 +3444,7 @@
     "salario_medio": 1764.7866666666666,
     "cadeia_dominante": "Outras Culturas Permanentes",
     "saldo": -23,
-    "nome": "410950"
+    "nome": "Guaraqueçaba"
   },
   {
     "codigo": "410895",
@@ -3453,7 +3453,7 @@
     "salario_medio": 1727.3704255319149,
     "cadeia_dominante": "Sojicultura",
     "saldo": 3,
-    "nome": "410895"
+    "nome": "Guamiranga"
   },
   {
     "codigo": "411900",
@@ -3462,7 +3462,7 @@
     "salario_medio": 1740.002641509434,
     "cadeia_dominante": "Bovinocultura de Leite",
     "saldo": -5,
-    "nome": "411900"
+    "nome": "Pérola d'Oeste"
   },
   {
     "codigo": "410730",
@@ -3471,7 +3471,7 @@
     "salario_medio": 2162.7028260869565,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 2,
-    "nome": "410730"
+    "nome": "Doutor Camargo"
   },
   {
     "codigo": "410810",
@@ -3480,7 +3480,7 @@
     "salario_medio": 1971.3220000000001,
     "cadeia_dominante": "Sojicultura",
     "saldo": 6,
-    "nome": "410810"
+    "nome": "Flórida"
   },
   {
     "codigo": "411160",
@@ -3489,7 +3489,7 @@
     "salario_medio": 1955.3183999999999,
     "cadeia_dominante": "Sojicultura",
     "saldo": -4,
-    "nome": "411160"
+    "nome": "Ivatuba"
   },
   {
     "codigo": "412120",
@@ -3498,7 +3498,7 @@
     "salario_medio": 1725.8194545454546,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -9,
-    "nome": "412120"
+    "nome": "Quitandinha"
   },
   {
     "codigo": "410315",
@@ -3507,7 +3507,7 @@
     "salario_medio": 1710.0645,
     "cadeia_dominante": "Horticultura",
     "saldo": 2,
-    "nome": "410315"
+    "nome": "Bom Jesus do Sul"
   },
   {
     "codigo": "412610",
@@ -3516,7 +3516,7 @@
     "salario_medio": 2308.7749976190476,
     "cadeia_dominante": "Cana-de-açúcar",
     "saldo": -6,
-    "nome": "412610"
+    "nome": "São Tomé"
   },
   {
     "codigo": "411915",
@@ -3525,7 +3525,7 @@
     "salario_medio": 1815.1277272727273,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 4,
-    "nome": "411915"
+    "nome": "Pinhais"
   },
   {
     "codigo": "412382",
@@ -3534,7 +3534,7 @@
     "salario_medio": 1890.3523333333333,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": -4,
-    "nome": "412382"
+    "nome": "Santa Lúcia"
   },
   {
     "codigo": "411995",
@@ -3543,7 +3543,7 @@
     "salario_medio": 1603.1352631578948,
     "cadeia_dominante": "Aquicultura",
     "saldo": 5,
-    "nome": "411995"
+    "nome": "Pontal do Paraná"
   },
   {
     "codigo": "411005",
@@ -3552,7 +3552,7 @@
     "salario_medio": 1776.055,
     "cadeia_dominante": "Sojicultura",
     "saldo": -2,
-    "nome": "411005"
+    "nome": "Iguatu"
   },
   {
     "codigo": "410765",
@@ -3561,7 +3561,7 @@
     "salario_medio": 2319.5226315789473,
     "cadeia_dominante": "Sojicultura",
     "saldo": 1,
-    "nome": "410765"
+    "nome": "Fazenda Rio Grande"
   },
   {
     "codigo": "410855",
@@ -3570,7 +3570,7 @@
     "salario_medio": 1859.6733333333334,
     "cadeia_dominante": "Bovinocultura de Corte",
     "saldo": 2,
-    "nome": "410855"
+    "nome": "Godoy Moreira"
   },
   {
     "codigo": "410275",
@@ -3579,6 +3579,6 @@
     "salario_medio": 1951.9166666666667,
     "cadeia_dominante": "Serviços Agrícolas",
     "saldo": 0,
-    "nome": "410275"
+    "nome": "Bela Vista da Caroba"
   }
 ]

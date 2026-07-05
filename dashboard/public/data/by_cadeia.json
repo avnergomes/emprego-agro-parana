@@ -10,7 +10,7 @@
     "n_municipios": 388,
     "saldo": 2051,
     "pct_admissoes": 16.3,
-    "cor": "#708090",
+    "cor": "#006b4e",
     "descricao": "Serviços de apoio à agropecuária"
   },
   {
@@ -24,7 +24,7 @@
     "n_municipios": 262,
     "saldo": 2137,
     "pct_admissoes": 16.0,
-    "cor": "#FFD700",
+    "cor": "#F0E442",
     "descricao": "Criação de aves, frangos e produção de ovos"
   },
   {
@@ -38,7 +38,7 @@
     "n_municipios": 233,
     "saldo": -161,
     "pct_admissoes": 15.5,
-    "cor": "#006400",
+    "cor": "#009E73",
     "descricao": "Produção florestal e madeireira"
   },
   {
@@ -52,7 +52,7 @@
     "n_municipios": 381,
     "saldo": -318,
     "pct_admissoes": 9.3,
-    "cor": "#8B4513",
+    "cor": "#E69F00",
     "descricao": "Criação de bovinos para abate"
   },
   {
@@ -66,7 +66,7 @@
     "n_municipios": 350,
     "saldo": 385,
     "pct_admissoes": 8.0,
-    "cor": "#228B22",
+    "cor": "#0072B2",
     "descricao": "Cultivo de soja"
   },
   {
@@ -80,7 +80,7 @@
     "n_municipios": 353,
     "saldo": 306,
     "pct_admissoes": 8.0,
-    "cor": "#DAA520",
+    "cor": "#D55E00",
     "descricao": "Cultivo de cereais (milho, trigo, arroz)"
   },
   {
@@ -94,7 +94,7 @@
     "n_municipios": 286,
     "saldo": 297,
     "pct_admissoes": 6.9,
-    "cor": "#FF6347",
+    "cor": "#a8482c",
     "descricao": "Cultivo de frutas"
   },
   {
@@ -108,7 +108,7 @@
     "n_municipios": 140,
     "saldo": 1098,
     "pct_admissoes": 5.6,
-    "cor": "#FFC0CB",
+    "cor": "#CC79A7",
     "descricao": "Criação de suínos"
   },
   {
@@ -122,7 +122,7 @@
     "n_municipios": 303,
     "saldo": 574,
     "pct_admissoes": 3.6,
-    "cor": "#F5F5DC",
+    "cor": "#56B4E9",
     "descricao": "Criação de bovinos para produção de leite"
   },
   {
@@ -150,7 +150,7 @@
     "n_municipios": 81,
     "saldo": -805,
     "pct_admissoes": 3.0,
-    "cor": "#90EE90",
+    "cor": "#b8ad32",
     "descricao": "Cultivo de cana-de-açúcar"
   },
   {
@@ -164,7 +164,7 @@
     "n_municipios": 164,
     "saldo": -353,
     "pct_admissoes": 1.9,
-    "cor": "#32CD32",
+    "cor": "#004a72",
     "descricao": "Horticultura e floricultura"
   },
   {
@@ -178,7 +178,7 @@
     "n_municipios": 121,
     "saldo": 274,
     "pct_admissoes": 0.8,
-    "cor": "#1E90FF",
+    "cor": "#2f88c4",
     "descricao": "Pesca e criação de peixes"
   },
   {
@@ -192,7 +192,7 @@
     "n_municipios": 129,
     "saldo": 3,
     "pct_admissoes": 0.5,
-    "cor": "#9370DB",
+    "cor": "#1d5c8a",
     "descricao": "Outras culturas permanentes"
   },
   {
@@ -206,7 +206,7 @@
     "n_municipios": 67,
     "saldo": -39,
     "pct_admissoes": 0.4,
-    "cor": "#4A2C2A",
+    "cor": "#2a2419",
     "descricao": "Cultivo de café"
   },
   {
@@ -220,7 +220,7 @@
     "n_municipios": 127,
     "saldo": 1,
     "pct_admissoes": 0.4,
-    "cor": "#D2691E",
+    "cor": "#7a5200",
     "descricao": "Criação de ovinos, caprinos, equinos"
   },
   {
@@ -234,7 +234,7 @@
     "n_municipios": 111,
     "saldo": 18,
     "pct_admissoes": 0.2,
-    "cor": "#FFD700",
+    "cor": "#9c5b80",
     "descricao": "Apicultura e criação de outros animais"
   },
   {
@@ -248,7 +248,7 @@
     "n_municipios": 50,
     "saldo": 50,
     "pct_admissoes": 0.2,
-    "cor": "#FFFAF0",
+    "cor": "#8a8273",
     "descricao": "Cultivo de algodão e fibras"
   },
   {
@@ -262,7 +262,7 @@
     "n_municipios": 9,
     "saldo": -28,
     "pct_admissoes": 0.0,
-    "cor": "#808000",
+    "cor": "#6b675f",
     "descricao": "Cultivo de fumo/tabaco"
   },
   {
@@ -276,7 +276,7 @@
     "n_municipios": 1,
     "saldo": -1,
     "pct_admissoes": 0.0,
-    "cor": "#3D2314",
+    "cor": "#54391d",
     "descricao": "Cultivo de cacau"
   }
 ]
