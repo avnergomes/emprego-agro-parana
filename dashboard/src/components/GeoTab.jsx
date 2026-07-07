@@ -12,7 +12,7 @@ import MapaSVG from './MapaSVG'
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
 const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
 
-function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, regIdrFilter, munFilter, cadeiaFilter, hasFilter, filterLabel }) {
+function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, geoError, onRetryMap, mesoFilter, regIdrFilter, munFilter, cadeiaFilter, hasFilter, filterLabel, filterMessage }) {
   const [hoveredMun, setHoveredMun] = useState(null)
   const [mapMetric, setMapMetric] = useState('admissoes')
   const [sortColumn, setSortColumn] = useState('admissoes')
@@ -111,22 +111,30 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
 
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
+      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
       {/* Resumo */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div className="bg-white rounded-xl p-4 shadow-sm">
           <div className="text-sm text-neutral-500">Municípios Exibidos</div>
           <div className="text-2xl font-bold text-green-600">{byMunicipio.length}</div>
         </div>
-        <div className="bg-white rounded-xl p-4 shadow-sm">
+        <div className="bg-white rounded-xl p-4 shadow-sm" data-i18n-translate>
           <div className="text-sm text-neutral-500">Maior Empregador</div>
-          <div className="text-lg font-bold text-neutral-800">{topMunicipios[0]?.nome}</div>
-          <div className="text-sm text-neutral-500">{formatNumber(topMunicipios[0]?.admissoes)} admissões</div>
+          <div className="text-lg font-bold text-neutral-800">{topMunicipios[0]?.nome || 'Sem dados'}</div>
+          <div className="text-sm text-neutral-500">
+            {topMunicipios[0]
+              ? `${formatNumber(topMunicipios[0].admissoes)} admissões`
+              : 'Nenhum registro para os filtros selecionados'}
+          </div>
         </div>
-        <div className="bg-white rounded-xl p-4 shadow-sm">
+        <div className="bg-white rounded-xl p-4 shadow-sm" data-i18n-translate>
           <div className="text-sm text-neutral-500">Top 20 representa</div>
           <div className="text-2xl font-bold text-blue-600">
-            {byMunicipio.length > 0 ? (topMunicipios.reduce((a, m) => a + m.admissoes, 0) / byMunicipio.reduce((a, m) => a + m.admissoes, 0) * 100).toFixed(1) : 0}%
+            {(() => {
+              const totalAdm = byMunicipio.reduce((a, m) => a + (m.admissoes || 0), 0)
+              if (totalAdm <= 0) return 'Sem dados'
+              return `${(topMunicipios.reduce((a, m) => a + (m.admissoes || 0), 0) / totalAdm * 100).toFixed(1)}%`
+            })()}
           </div>
         </div>
       </div>
@@ -178,8 +186,20 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
               regIdrFilter={regIdrFilter}
               munFilter={munFilter}
             />
+          ) : geoError ? (
+            <div className="flex flex-col items-center justify-center h-full gap-3 px-4 text-center" data-i18n-translate>
+              <p className="text-sm text-neutral-600">
+                Mapa indisponível no momento: falha ao carregar a malha municipal.
+              </p>
+              <button
+                onClick={onRetryMap}
+                className="px-4 py-2 text-sm rounded-lg bg-sky-700 text-white hover:bg-sky-800"
+              >
+                Tentar novamente
+              </button>
+            </div>
           ) : (
-            <div className="flex items-center justify-center h-full text-neutral-400">
+            <div className="flex items-center justify-center h-full text-neutral-400" data-i18n-translate>
               Carregando mapa...
             </div>
           )}
@@ -217,6 +237,7 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
       {/* Top 20 municípios */}
       <Card title="Top 20 Municípios por Admissões">
         <div className="h-96">
+          {topMunicipios.length > 0 ? (
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={topMunicipios} layout="vertical">
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -228,6 +249,9 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
               <Bar dataKey="demissoes" name="Demissões" fill="#D55E00" />
             </BarChart>
           </ResponsiveContainer>
+          ) : (
+            <div className="flex items-center justify-center h-full text-neutral-400" data-i18n-translate>Sem dados para exibir</div>
+          )}
         </div>
       </Card>
 
@@ -251,9 +275,10 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, mesoFilter, reg
                 <tr key={m.codigo} className="border-b border-neutral-100 hover:bg-neutral-50">
                   <td className="py-2 px-2 text-neutral-400">{i + 1}</td>
                   <td className="py-2 px-2 font-medium">{m.nome}</td>
-                  <td className="text-right py-2 px-2 text-green-600">{formatNumber(m.admissoes)}</td>
-                  <td className="text-right py-2 px-2 text-red-600">{formatNumber(m.demissoes)}</td>
-                  <td className={`text-right py-2 px-2 font-medium ${m.saldo >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  {/* Azul/laranja (par daltônico-seguro dos gráficos); sinal +/- mantém a redundância não-cromática */}
+                  <td className="text-right py-2 px-2 text-sky-700">{formatNumber(m.admissoes)}</td>
+                  <td className="text-right py-2 px-2 text-orange-700">{formatNumber(m.demissoes)}</td>
+                  <td className={`text-right py-2 px-2 font-medium ${m.saldo >= 0 ? 'text-sky-700' : 'text-orange-700'}`}>
                     {m.saldo >= 0 ? '+' : ''}{formatNumber(m.saldo)}
                   </td>
                   <td className="text-right py-2 px-2">{formatCurrency(m.salario_medio)}</td>

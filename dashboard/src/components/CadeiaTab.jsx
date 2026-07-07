@@ -12,7 +12,7 @@ import BumpChart from './BumpChart'
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
 const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
 
-function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia, setSelectedCadeia, hasFilter, filterLabel, onCadeiaClick, cadeiaFilter }) {
+function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia, setSelectedCadeia, hasFilter, filterLabel, filterMessage, onCadeiaClick, cadeiaFilter }) {
   const top10 = byCadeia.slice(0, 10)
   const [sortCol, setSortCol] = useState('admissoes')
   const [sortDir, setSortDir] = useState('desc')
@@ -40,7 +40,7 @@ function CadeiaTab({ byCadeia, timeseriesCadeia, crossCadeiaSexo, selectedCadeia
 
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
+      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
       {/* Treemap - Clicável */}
       <Card title="Distribuição por Cadeia Produtiva (clique para filtrar)">
         <div className="h-80">

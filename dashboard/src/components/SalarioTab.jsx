@@ -11,7 +11,7 @@ import FilterIndicator from './FilterIndicator'
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
 const formatCurrency = (n) => `R$ ${n?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}` || 'R$ 0,00'
 
-function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, filterLabel, onCadeiaClick, cadeiaFilter, onEscolaridadeClick, escolaridadeFilter }) {
+function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, filterLabel, filterMessage, onCadeiaClick, cadeiaFilter, onEscolaridadeClick, escolaridadeFilter }) {
   const [sortCol, setSortCol] = useState('p50')
   const [sortDir, setSortDir] = useState('desc')
 
@@ -43,7 +43,7 @@ function SalarioTab({ salaryDistribution, byCadeia, byEscolaridade, hasFilter, f
 
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
+      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
       {/* Box plot style - Clicável */}
       <Card title="Distribuição Salarial por Cadeia (clique para filtrar)">
         <div className="h-80">

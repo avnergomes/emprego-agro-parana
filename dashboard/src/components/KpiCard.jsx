@@ -4,12 +4,18 @@ export default function KpiCard({ title, value, subtitle, icon: Icon, color, loa
     red: 'border-red-500 bg-red-50',
     amber: 'border-amber-500 bg-amber-50',
     blue: 'border-blue-500 bg-blue-50',
+    // Par daltônico-seguro (mesma semântica dos gráficos Okabe-Ito):
+    // azul para admissões, laranja para demissões.
+    sky: 'border-sky-700 bg-sky-50',
+    orange: 'border-orange-700 bg-orange-50',
   }
   const iconColors = {
     green: 'text-green-600',
     red: 'text-red-600',
     amber: 'text-amber-600',
     blue: 'text-blue-600',
+    sky: 'text-sky-700',
+    orange: 'text-orange-700',
   }
 
   const isLoading = loading || value == null

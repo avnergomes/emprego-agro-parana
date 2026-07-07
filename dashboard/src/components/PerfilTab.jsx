@@ -10,10 +10,10 @@ import FilterIndicator from './FilterIndicator'
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
 const formatCurrency = (n) => `R$ ${n?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}` || 'R$ 0,00'
 
-function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFilter, filterLabel, onSexoClick, onFaixaClick, onEscolaridadeClick, sexoFilter, faixaFilter, escolaridadeFilter }) {
+function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFilter, filterLabel, filterMessage, onSexoClick, onFaixaClick, onEscolaridadeClick, sexoFilter, faixaFilter, escolaridadeFilter }) {
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
+      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
       {/* Resumo */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-white rounded-xl p-4 shadow-sm">

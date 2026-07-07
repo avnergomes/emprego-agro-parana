@@ -32,6 +32,8 @@ function App() {
   const [granularDimensions, setGranularDimensions] = useState(null)
   const [loading, setLoading] = useState(true)
   const [isGranularLoading, setIsGranularLoading] = useState(false)
+  const [granularError, setGranularError] = useState(false)
+  const [geoError, setGeoError] = useState(false)
   const [error, setError] = useState(null)
   const [activeTab, setActiveTab] = useState('overview')
   const [selectedCadeia, setSelectedCadeia] = useState(null)
@@ -59,7 +61,15 @@ function App() {
         if (!res.ok) throw new Error('Dados não encontrados')
         return res.json()
       }),
-      fetch(TOPO_URL, { signal }).then(res => res.json()).then(topo => feature(topo, topo.objects.municipalities)).catch(() => null),
+      fetch(TOPO_URL, { signal })
+        .then(res => { if (!res.ok) throw new Error('TopoJSON indisponível'); return res.json() })
+        .then(topo => feature(topo, topo.objects.municipalities))
+        .catch(() => {
+          // CDN externo pode falhar (bloqueio corporativo, queda do jsdelivr):
+          // sinaliza o erro em vez de engolir, para a UI oferecer retry.
+          if (!signal.aborted) setGeoError(true)
+          return null
+        }),
     ])
       .then(([aggData, geo]) => {
         if (signal.aborted) return
@@ -79,9 +89,27 @@ function App() {
     }
   }, [])
 
+  // Refaz o download do TopoJSON sem recarregar a página (falha do CDN)
+  const retryTopo = useCallback(() => {
+    setGeoError(false)
+    fetch(TOPO_URL)
+      .then(res => { if (!res.ok) throw new Error('TopoJSON indisponível'); return res.json() })
+      .then(topo => feature(topo, topo.objects.municipalities))
+      .then(geo => setGeoData(geo))
+      .catch(() => setGeoError(true))
+  }, [])
+
   // Extrair regiões únicas do GeoJSON (hook deve vir ANTES de returns condicionais)
   const { mesoRegioes, regIdrList, municipiosList } = useMemo(() => {
-    if (!geoData) return { mesoRegioes: [], regIdrList: [], municipiosList: [] }
+    if (!geoData) {
+      // Fallback sem geodata: deriva a lista de municípios dos dados
+      // tabulares para a busca por município continuar funcionando.
+      // Meso/Regional dependem do TopoJSON e ficam com aviso na UI.
+      const municipios = (data?.byMunicipio || [])
+        .map(m => ({ codigo: m.codigo, nome: m.nome, meso: null, regIdr: null }))
+        .sort((a, b) => a.nome.localeCompare(b.nome))
+      return { mesoRegioes: [], regIdrList: [], municipiosList: municipios }
+    }
     const meso = new Set()
     const regIdr = new Set()
     const municipios = []
@@ -100,7 +128,7 @@ function App() {
       regIdrList: [...regIdr].sort(),
       municipiosList: municipios.sort((a, b) => a.nome.localeCompare(b.nome))
     }
-  }, [geoData])
+  }, [geoData, data])
 
   // Municípios filtrados por região (para o dropdown)
   const filteredMunicipiosList = useMemo(() => {
@@ -263,6 +291,7 @@ function App() {
   const loadGranular = useCallback(() => {
     if (granularRequestedRef.current) return
     granularRequestedRef.current = true
+    setGranularError(false)
     setIsGranularLoading(true)
     const fetchJson = (file) =>
       fetch(`${import.meta.env.BASE_URL}data/${file}`)
@@ -284,14 +313,33 @@ function App() {
         if (Object.values(dims).some(Boolean)) {
           setGranularDimensions(dims)
         }
+        // Qualquer arquivo faltando deixa gráficos com totais estaduais:
+        // sinaliza para a UI avisar e oferecer nova tentativa.
+        if ([cube, bySexo, byFaixa, byEscolaridade, byPorte].some(d => !d)) {
+          setGranularError(true)
+        }
       })
-      .catch(() => {})
+      .catch(() => setGranularError(true))
       .finally(() => setIsGranularLoading(false))
   }, [])
+
+  // Permite tentar de novo após falha (o guard de requisição é resetado)
+  const retryGranular = useCallback(() => {
+    granularRequestedRef.current = false
+    loadGranular()
+  }, [loadGranular])
 
   useEffect(() => {
     if (hasFilter) loadGranular()
   }, [hasFilter, loadGranular])
+
+  // Mensagem do FilterIndicator enquanto os cubos detalhados não chegaram:
+  // sem ela, os gráficos com totais estaduais seriam rotulados como filtrados.
+  const filterMessage = hasFilter && !granularData
+    ? (isGranularLoading
+        ? 'Gráficos detalhados carregando; exibindo totais do Paraná.'
+        : (granularError ? 'Dados detalhados indisponíveis; alguns gráficos exibem totais do Paraná.' : undefined))
+    : undefined
   const selectedMunName = munFilter ? municipiosList.find(m => m.codigo === munFilter)?.nome : null
 
   // Limpar filtros interativos
@@ -826,8 +874,39 @@ function App() {
               </span>
             </>
           )}
+          {geoError && !geoData && (
+            <span className="text-sm text-amber-700 flex items-center gap-2" data-i18n-translate>
+              Filtros regionais indisponíveis: falha ao carregar a malha municipal.
+              <button onClick={retryTopo} className="underline font-medium hover:text-amber-900">
+                Tentar novamente
+              </button>
+            </span>
+          )}
         </div>
       </div>
+
+      {/* Status do carregamento dos cubos detalhados (baixados no 1º filtro) */}
+      {isGranularLoading && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3" data-i18n-translate>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2.5 text-sm text-blue-800 flex items-center gap-2" role="status">
+            <span className="animate-spin w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full flex-shrink-0" aria-hidden="true" />
+            <span>Carregando dados detalhados (download de aproximadamente 6 MB). Até concluir, os gráficos exibem totais do Paraná.</span>
+          </div>
+        </div>
+      )}
+      {!isGranularLoading && granularError && hasFilter && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3" data-i18n-translate>
+          <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2.5 text-sm text-amber-800 flex flex-wrap items-center gap-3" role="alert">
+            <span>Não foi possível carregar os dados detalhados. Os gráficos podem exibir totais do Paraná.</span>
+            <button
+              onClick={retryGranular}
+              className="px-3 py-1 text-sm rounded-lg border border-amber-400 text-amber-800 hover:bg-amber-100"
+            >
+              Tentar novamente
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* KPIs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -837,21 +916,21 @@ function App() {
             value={formatNumber(filteredKpis.acumulado.admissoes)}
             subtitle={hasFilter ? `${filteredByMunicipio.length} municípios` : `${formatNumber(kpis.ultimo_mes.admissoes)} em ${kpis.periodo_referencia}`}
             icon={TrendingUp}
-            color="green"
+            color="sky"
           />
           <KpiCard
             title="Demissões"
             value={formatNumber(filteredKpis.acumulado.demissoes)}
             subtitle={hasFilter ? `${filteredByMunicipio.length} municípios` : `${formatNumber(kpis.ultimo_mes.demissoes)} em ${kpis.periodo_referencia}`}
             icon={TrendingDown}
-            color="red"
+            color="orange"
           />
           <KpiCard
             title="Saldo"
             value={filteredKpis.acumulado.saldo >= 0 ? `+${formatNumber(filteredKpis.acumulado.saldo)}` : formatNumber(filteredKpis.acumulado.saldo)}
             subtitle={hasFilter ? `Região selecionada` : `${kpis.ultimo_mes.saldo >= 0 ? '+' : ''}${formatNumber(kpis.ultimo_mes.saldo)} último mês`}
             icon={Users}
-            color={filteredKpis.acumulado.saldo >= 0 ? 'green' : 'red'}
+            color={filteredKpis.acumulado.saldo >= 0 ? 'sky' : 'orange'}
           />
           <KpiCard
             title="Salário Médio"
@@ -929,6 +1008,7 @@ function App() {
             seasonality={filteredAggregations?.seasonality || []}
             hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            filterMessage={filterMessage}
             onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
             onSexoClick={(sexo) => setSexoFilter(prev => prev === sexo ? '' : sexo)}
             onFaixaClick={(faixa) => setFaixaFilter(prev => prev === faixa ? '' : faixa)}
@@ -946,6 +1026,7 @@ function App() {
             setSelectedCadeia={setSelectedCadeia}
             hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            filterMessage={filterMessage}
             onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
             cadeiaFilter={cadeiaFilter}
           />
@@ -956,6 +1037,7 @@ function App() {
             byCadeia={filteredAggregations?.byCadeia || []}
             hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            filterMessage={filterMessage}
             onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
             cadeiaFilter={cadeiaFilter}
           />
@@ -969,6 +1051,7 @@ function App() {
             kpis={filteredKpis}
             hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            filterMessage={filterMessage}
             onSexoClick={(sexo) => setSexoFilter(prev => prev === sexo ? '' : sexo)}
             onFaixaClick={(faixa) => setFaixaFilter(prev => prev === faixa ? '' : faixa)}
             onEscolaridadeClick={(esc) => setEscolaridadeFilter(prev => prev === esc ? '' : esc)}
@@ -984,6 +1067,7 @@ function App() {
             byEscolaridade={filteredAggregations?.byEscolaridade || []}
             hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            filterMessage={filterMessage}
             onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
             cadeiaFilter={cadeiaFilter}
             onEscolaridadeClick={(esc) => setEscolaridadeFilter(prev => prev === esc ? '' : esc)}
@@ -996,12 +1080,15 @@ function App() {
             byMunicipio={filteredByMunicipio}
             metadata={metadata}
             geoData={geoData}
+            geoError={geoError}
+            onRetryMap={retryTopo}
             mesoFilter={mesoFilter}
             regIdrFilter={regIdrFilter}
             munFilter={munFilter}
             cadeiaFilter={cadeiaFilter}
             hasFilter={hasFilter}
             filterLabel={cadeiaFilter || selectedMunName || mesoFilter || regIdrFilter}
+            filterMessage={filterMessage}
           />
         )}
         {activeTab === 'tempo' && (
@@ -1011,6 +1098,7 @@ function App() {
             seasonality={filteredAggregations?.seasonality || []}
             hasFilter={hasRegionalFilter}
             filterLabel={selectedMunName || mesoFilter || regIdrFilter}
+            filterMessage={filterMessage}
             onPeriodoClick={(periodo) => setPeriodoFilter(prev => prev === periodo ? '' : periodo)}
             periodoFilter={periodoFilter}
           />
@@ -1032,7 +1120,9 @@ function App() {
                 <li>MTE - Ministério do Trabalho e Emprego</li>
               </ul>
               <div className="text-xs text-neutral-500 pt-2 border-t border-neutral-700">
-                <p>{metadata.atualizacao}</p>
+                {metadata.atualizacao && (
+                  <p>Dados atualizados em {String(metadata.atualizacao).split('-').reverse().join('/')}</p>
+                )}
                 <p>{metadata.total_cadeias} cadeias | {metadata.total_subclasses} atividades CNAE</p>
               </div>
             </div>

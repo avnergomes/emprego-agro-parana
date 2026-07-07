@@ -10,12 +10,17 @@ import LollipopChart from './LollipopChart'
 
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
 
-export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality, hasFilter, filterLabel, onCadeiaClick, onSexoClick, onFaixaClick, cadeiaFilter, sexoFilter, faixaFilter }) {
+export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtaria, seasonality, hasFilter, filterLabel, filterMessage, onCadeiaClick, onSexoClick, onFaixaClick, cadeiaFilter, sexoFilter, faixaFilter }) {
   const hasData = timeseries?.length > 0
+
+  // Empty state padronizado: comunica ausência de registros em vez de eixos vazios
+  const EmptyChart = () => (
+    <div className="flex items-center justify-center h-full text-neutral-400" data-i18n-translate>Sem dados para exibir</div>
+  )
 
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
+      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
       {/* Série Temporal */}
       <Card title="Evolução Mensal do Emprego Agrícola">
         <div className="h-80" style={{ minHeight: '320px' }}>
@@ -34,7 +39,7 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
             </ComposedChart>
           </ResponsiveContainer>
           ) : (
-            <div className="flex items-center justify-center h-full text-neutral-400">Sem dados para exibir</div>
+            <EmptyChart />
           )}
         </div>
       </Card>
@@ -43,6 +48,7 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
         {/* Top Cadeias - Clicável */}
         <Card title="Principais Cadeias Produtivas (clique para filtrar)">
           <div className="h-72" style={{ minHeight: '288px' }}>
+            {byCadeia?.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={byCadeia.slice(0, 8)} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -66,12 +72,16 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
+            ) : (
+              <EmptyChart />
+            )}
           </div>
         </Card>
 
         {/* Distribuição por Sexo - Clicável */}
         <Card title="Distribuição por Sexo (clique para filtrar)">
           <div className="h-72 flex items-center">
+            {bySexo?.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
@@ -100,6 +110,9 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
                 <Tooltip formatter={(v) => formatNumber(v)} />
               </PieChart>
             </ResponsiveContainer>
+            ) : (
+              <EmptyChart />
+            )}
           </div>
         </Card>
       </div>
@@ -108,6 +121,7 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
         {/* Faixa Etária - Clicável */}
         <Card title="Distribuição por Faixa Etária (clique para filtrar)">
           <div className="h-64">
+            {byFaixaEtaria?.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={byFaixaEtaria.filter(f => f.faixa !== 'Não informado')}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -131,12 +145,16 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
+            ) : (
+              <EmptyChart />
+            )}
           </div>
         </Card>
 
         {/* Sazonalidade */}
         <Card title="Padrão Sazonal (Média Mensal)">
           <div className="h-64">
+            {seasonality?.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={seasonality}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -147,6 +165,9 @@ export default function OverviewTab({ timeseries, byCadeia, bySexo, byFaixaEtari
                 <Area type="monotone" dataKey="demissoes" name="Demissões" fill="#D55E00" fillOpacity={0.3} stroke="#a8482c" />
               </AreaChart>
             </ResponsiveContainer>
+            ) : (
+              <EmptyChart />
+            )}
           </div>
         </Card>
       </div>

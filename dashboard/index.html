@@ -39,6 +39,21 @@
           bar.appendChild(a);
           bar.appendChild(btn);
           document.body.appendChild(bar);
+
+          // Empilha o convite acima do banner LGPD enquanto ele estiver
+          // visível, para não cobrir o botão "Entendi". Recalcula quando
+          // o LGPD fecha e quando a janela muda de tamanho.
+          function stackAboveLgpd() {
+            var lgpd = document.getElementById('lgpd-banner');
+            var visible = lgpd && lgpd.style.display !== 'none' && lgpd.offsetHeight > 0;
+            bar.style.bottom = visible ? lgpd.offsetHeight + 'px' : '0';
+          }
+          stackAboveLgpd();
+          window.addEventListener('resize', stackAboveLgpd);
+          var lgpdEl = document.getElementById('lgpd-banner');
+          if (lgpdEl && window.MutationObserver) {
+            new MutationObserver(stackAboveLgpd).observe(lgpdEl, { attributes: true, attributeFilter: ['style'] });
+          }
         }
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', mount);
@@ -49,8 +64,9 @@
     </script>
 
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/emprego-agro-parana/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#14110c" />
     <meta name="description" content="Dashboard de emprego no agronegocio do Parana - dados CAGED por municipio, cadeia produtiva e atividade economica. Admissoes, demissoes e saldo de empregos formais no setor agropecuario." />
     <meta name="robots" content="index,follow" />
     <meta name="keywords" content="emprego agronegocio Parana, CAGED agropecuaria, dashboard emprego rural, mercado trabalho agro, admissoes demissoes agro, saldo empregos rurais, emprego formal agricultura, emprego pecuaria Parana, cadeias produtivas emprego, CNAE agropecuaria, emprego por municipio Parana, dados MTE agro, agricultural employment Brazil, farm jobs dashboard, rural labor market, agribusiness employment, employment data agriculture, empleo agropecuario, mercado laboral rural, empleo formal agricultura" />
@@ -59,15 +75,15 @@
     <meta name="geo.placename" content="Parana, Brasil" />
     <link rel="canonical" href="https://avnergomes.github.io/emprego-agro-parana/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Emprego Agro Parana - Dashboard CAGED Agropecuario" />
+    <meta property="og:title" content="Emprego Agro Paraná: Dashboard CAGED Agropecuário" />
     <meta property="og:description" content="Dashboard de emprego no agronegocio do Parana com dados CAGED por municipio, cadeia produtiva e atividade economica." />
     <meta property="og:url" content="https://avnergomes.github.io/emprego-agro-parana/" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Emprego Agro Parana" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Emprego Agro Parana - Dashboard CAGED Agropecuario" />
+    <meta name="twitter:title" content="Emprego Agro Paraná: Dashboard CAGED Agropecuário" />
     <meta name="twitter:description" content="Dashboard de emprego no agronegocio do Parana com dados CAGED por municipio, cadeia produtiva e atividade economica." />
-    <title>Emprego Agro Parana - Dashboard de Emprego no Agronegocio</title>
+    <title>Emprego Agro Paraná: Dashboard de Emprego no Agronegócio | Datageo Paraná</title>
     <meta property="og:image" content="https://avnergomes.github.io/emprego-agro-parana/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />

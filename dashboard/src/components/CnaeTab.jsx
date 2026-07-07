@@ -6,7 +6,7 @@ import FilterIndicator from './FilterIndicator'
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
 const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
 
-function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, onCadeiaClick, cadeiaFilter: globalCadeiaFilter }) {
+function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, filterMessage, onCadeiaClick, cadeiaFilter: globalCadeiaFilter }) {
   const [filter, setFilter] = useState('')
   const [localCadeiaFilter, setLocalCadeiaFilter] = useState('')
   // Use global filter if set, otherwise use local
@@ -41,7 +41,7 @@ function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, onCadeiaClick, cade
 
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
+      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
       <Card>
         <div className="flex flex-wrap gap-4 mb-4">
           <input

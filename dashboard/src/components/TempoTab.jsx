@@ -10,10 +10,10 @@ import FilterIndicator from './FilterIndicator'
 // Formatadores
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
 
-function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, onPeriodoClick, periodoFilter }) {
+function TempoTab({ timeseries, yearly, seasonality, hasFilter, filterLabel, filterMessage, onPeriodoClick, periodoFilter }) {
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} />
+      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
       {periodoFilter && (
         <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 text-sm text-blue-700">
           <span className="font-medium">Período selecionado: {periodoFilter}</span>
