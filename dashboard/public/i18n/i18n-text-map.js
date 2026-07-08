@@ -990,9 +990,9 @@ window.__I18N_TEXT_MAP__ = (function () {
 
     // ── emprego-agro-parana ──────────────────────────────────────────
     ["% Feminino", "% Female", "% Femenino"],
-    ["Carregando dados detalhados (download de aproximadamente 6 MB). Até concluir, os gráficos exibem totais do Paraná.",
-      "Loading detailed data (about a 6 MB download). Until it finishes, charts show statewide totals for Paraná.",
-      "Cargando datos detallados (descarga de aproximadamente 6 MB). Hasta que termine, los gráficos muestran totales de Paraná."],
+    ["Carregando dados detalhados (download de até 3 MB). Até concluir, os gráficos exibem totais do Paraná.",
+      "Loading detailed data (up to a 3 MB download). Until it finishes, charts show statewide totals for Paraná.",
+      "Cargando datos detallados (descarga de hasta 3 MB). Hasta que termine, los gráficos muestran totales de Paraná."],
     ["Dados atualizados em", "Data updated on", "Datos actualizados el"],
     ["Dados detalhados indisponíveis; alguns gráficos exibem totais do Paraná.",
       "Detailed data unavailable; some charts show statewide totals for Paraná.",

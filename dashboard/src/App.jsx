@@ -16,9 +16,36 @@ import GeoTab from './components/GeoTab'
 import TempoTab from './components/TempoTab'
 
 import { feature } from 'topojson-client'
+import { decodeBundle, resolvePartition } from './utils/granular-partitions'
 import './index.css'
 
-const TOPO_URL = 'https://cdn.jsdelivr.net/gh/datageoparana/datageoparana.github.io@main/assets/parana-municipalities.topojson'
+// Malha municipal: primeiro a versao reduzida self-hosted (~749 KB, mesmas
+// propriedades e object key 'municipalities'); em qualquer falha, o topojson
+// completo no jsdelivr como fallback.
+const TOPO_URL = 'https://datageoparana.github.io/assets/parana-municipalities.min.topojson'
+const TOPO_URL_FALLBACK = 'https://cdn.jsdelivr.net/gh/datageoparana/datageoparana.github.io@main/assets/parana-municipalities.topojson'
+
+// Base dos bundles granulares particionados (regiao / cadeia / cube_all).
+const GRANULAR_BASE = `${import.meta.env.BASE_URL}data/granular/`
+
+// Busca o topojson na malha reduzida e, em qualquer falha (rede, res.ok falso,
+// bloqueio corporativo), tenta o fallback do jsdelivr antes de propagar o erro.
+// Preserva a semantica de erro/retry (geoError/retryTopo) ja existente: so
+// propaga a falha se AMBOS falharem (ou se o fetch foi abortado).
+async function fetchTopo(signal) {
+  const load = async (url) => {
+    const res = await fetch(url, signal ? { signal } : undefined)
+    if (!res.ok) throw new Error('TopoJSON indisponível')
+    return res.json()
+  }
+  try {
+    return await load(TOPO_URL)
+  } catch (err) {
+    // Aborto nao deve cair no fallback: repropaga para o cleanup tratar.
+    if (signal && signal.aborted) throw err
+    return load(TOPO_URL_FALLBACK)
+  }
+}
 
 // Formatadores
 const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
@@ -61,12 +88,12 @@ function App() {
         if (!res.ok) throw new Error('Dados não encontrados')
         return res.json()
       }),
-      fetch(TOPO_URL, { signal })
-        .then(res => { if (!res.ok) throw new Error('TopoJSON indisponível'); return res.json() })
+      fetchTopo(signal)
         .then(topo => feature(topo, topo.objects.municipalities))
         .catch(() => {
-          // CDN externo pode falhar (bloqueio corporativo, queda do jsdelivr):
-          // sinaliza o erro em vez de engolir, para a UI oferecer retry.
+          // Primary self-hosted E fallback jsdelivr falharam (ou bloqueio
+          // corporativo): sinaliza o erro em vez de engolir, para a UI
+          // oferecer retry.
           if (!signal.aborted) setGeoError(true)
           return null
         }),
@@ -92,8 +119,7 @@ function App() {
   // Refaz o download do TopoJSON sem recarregar a página (falha do CDN)
   const retryTopo = useCallback(() => {
     setGeoError(false)
-    fetch(TOPO_URL)
-      .then(res => { if (!res.ok) throw new Error('TopoJSON indisponível'); return res.json() })
+    fetchTopo()
       .then(topo => feature(topo, topo.objects.municipalities))
       .then(geo => setGeoData(geo))
       .catch(() => setGeoError(true))
@@ -285,53 +311,126 @@ function App() {
   const hasInteractiveFilter = cadeiaFilter || sexoFilter || faixaFilter || escolaridadeFilter || periodoFilter
   const hasFilter = hasRegionalFilter || hasInteractiveFilter
 
-  // Cubos granulares (~100 MB) carregados sob demanda no primeiro filtro,
-  // em vez de em todo page load. Sem eles, a UI usa os pré-agregados.
-  const granularRequestedRef = useRef(false)
-  const loadGranular = useCallback(() => {
-    if (granularRequestedRef.current) return
-    granularRequestedRef.current = true
-    setGranularError(false)
-    setIsGranularLoading(true)
-    const fetchJson = (file) =>
-      fetch(`${import.meta.env.BASE_URL}data/${file}`)
-        .then(res => res.ok ? res.json() : null)
-        .catch(() => null)
+  // Cubos granulares particionados: em vez de baixar ~100 MB no 1º filtro,
+  // busca so o(s) bundle(s) compacto(s) que cobrem o filtro atual (superset
+  // dos registros que os filtros client-side selecionam). O index.json e
+  // cacheado em ref; cada bundle e cacheado por URL (nunca baixa 2x a mesma
+  // particao). Sem bundle aplicavel, a UI usa os pré-agregados.
+  const partitionIndexRef = useRef(null)          // index.json (cache)
+  const bundleCacheRef = useRef(new Map())        // file -> Promise<decoded>
+  const [granularRetry, setGranularRetry] = useState(0)
 
-    // Dimensões particionadas (o arquivo único de 90 MB beirava o limite
-    // de 100 MB do GitHub); o download em paralelo também é mais rápido.
-    Promise.all([
-      fetchJson('granular_cube.json'),
-      fetchJson('granular_bySexo.json'),
-      fetchJson('granular_byFaixa.json'),
-      fetchJson('granular_byEscolaridade.json'),
-      fetchJson('granular_byPorte.json'),
-    ])
-      .then(([cube, bySexo, byFaixa, byEscolaridade, byPorte]) => {
-        if (cube) setGranularData(cube)
-        const dims = { bySexo, byFaixa, byEscolaridade, byPorte }
-        if (Object.values(dims).some(Boolean)) {
-          setGranularDimensions(dims)
-        }
-        // Qualquer arquivo faltando deixa gráficos com totais estaduais:
-        // sinaliza para a UI avisar e oferecer nova tentativa.
-        if ([cube, bySexo, byFaixa, byEscolaridade, byPorte].some(d => !d)) {
-          setGranularError(true)
-        }
-      })
-      .catch(() => setGranularError(true))
-      .finally(() => setIsGranularLoading(false))
+  const loadIndex = useCallback(async () => {
+    if (partitionIndexRef.current) return partitionIndexRef.current
+    const res = await fetch(`${GRANULAR_BASE}index.json`)
+    if (!res.ok) throw new Error('Índice de partições indisponível')
+    const idx = await res.json()
+    partitionIndexRef.current = idx
+    return idx
   }, [])
 
-  // Permite tentar de novo após falha (o guard de requisição é resetado)
-  const retryGranular = useCallback(() => {
-    granularRequestedRef.current = false
-    loadGranular()
-  }, [loadGranular])
+  const fetchBundle = useCallback((file) => {
+    const cache = bundleCacheRef.current
+    if (cache.has(file)) return cache.get(file)
+    const p = fetch(`${GRANULAR_BASE}${file}`)
+      .then(res => {
+        if (!res.ok) throw new Error(`Bundle ${file} indisponível`)
+        return res.json()
+      })
+      .then(json => decodeBundle(json))
+      .catch(err => {
+        // Falha não deve envenenar o cache: remove para permitir retry.
+        cache.delete(file)
+        throw err
+      })
+    cache.set(file, p)
+    return p
+  }, [])
 
   useEffect(() => {
-    if (hasFilter) loadGranular()
-  }, [hasFilter, loadGranular])
+    let cancelled = false
+
+    // Sem nenhum filtro: garante estado limpo (usa pré-agregados).
+    if (!hasFilter) {
+      setGranularData(null)
+      setGranularDimensions(null)
+      setIsGranularLoading(false)
+      setGranularError(false)
+      return
+    }
+
+    const run = async () => {
+      let idx
+      try {
+        idx = await loadIndex()
+      } catch {
+        if (!cancelled) {
+          setIsGranularLoading(false)
+          setGranularError(true)
+        }
+        return
+      }
+      if (cancelled) return
+
+      const files = resolvePartition(
+        { munFilter, regIdrFilter, mesoFilter, cadeiaFilter, periodoFilter },
+        idx,
+      )
+
+      // Só sexo/faixa/escolaridade (highlight-only) ou nada aplicável:
+      // zera o estado detalhado e não baixa nada.
+      if (files.length === 0) {
+        setGranularData(null)
+        setGranularDimensions(null)
+        setIsGranularLoading(false)
+        setGranularError(false)
+        return
+      }
+
+      setGranularError(false)
+      setIsGranularLoading(true)
+      try {
+        const bundles = await Promise.all(files.map(fetchBundle))
+        if (cancelled) return
+        // Mesorregião resolve várias regionais (disjuntas por município):
+        // concatena cube e dimensões. SUBSTITUI o estado anterior (nunca
+        // faz merge entre eixos diferentes, evitando dupla contagem).
+        const cube = bundles.flatMap(b => b.cube)
+        let dims = null
+        for (const b of bundles) {
+          if (!b.dims) continue
+          if (!dims) dims = { bySexo: [], byFaixa: [], byEscolaridade: [], byPorte: [] }
+          for (const k of Object.keys(dims)) {
+            if (b.dims[k]) dims[k] = dims[k].concat(b.dims[k])
+          }
+        }
+        // Nenhum bundle trouxe dimensões (cube_all): mantém null.
+        if (dims && Object.values(dims).every(a => a.length === 0)) dims = null
+        setGranularData(cube)
+        setGranularDimensions(dims)
+      } catch {
+        if (!cancelled) setGranularError(true)
+      } finally {
+        if (!cancelled) setIsGranularLoading(false)
+      }
+    }
+
+    run()
+    return () => { cancelled = true }
+  }, [hasFilter, munFilter, regIdrFilter, mesoFilter, cadeiaFilter, periodoFilter,
+      granularRetry, loadIndex, fetchBundle])
+
+  // Permite tentar de novo após falha: limpa o cache dos bundles da partição
+  // atual e re-dispara o efeito. O index (se falhou) é re-buscado por loadIndex.
+  const retryGranular = useCallback(() => {
+    const files = resolvePartition(
+      { munFilter, regIdrFilter, mesoFilter, cadeiaFilter, periodoFilter },
+      partitionIndexRef.current,
+    )
+    files.forEach(f => bundleCacheRef.current.delete(f))
+    setGranularError(false)
+    setGranularRetry(n => n + 1)
+  }, [munFilter, regIdrFilter, mesoFilter, cadeiaFilter, periodoFilter])
 
   // Mensagem do FilterIndicator enquanto os cubos detalhados não chegaram:
   // sem ela, os gráficos com totais estaduais seriam rotulados como filtrados.
@@ -890,7 +989,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3" data-i18n-translate>
           <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2.5 text-sm text-blue-800 flex items-center gap-2" role="status">
             <span className="animate-spin w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full flex-shrink-0" aria-hidden="true" />
-            <span>Carregando dados detalhados (download de aproximadamente 6 MB). Até concluir, os gráficos exibem totais do Paraná.</span>
+            <span>Carregando dados detalhados (download de até 3 MB). Até concluir, os gráficos exibem totais do Paraná.</span>
           </div>
         </div>
       )}

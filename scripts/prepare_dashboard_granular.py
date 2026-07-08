@@ -620,6 +620,29 @@ def main():
     if os.path.exists(legacy_dims):
         os.remove(legacy_dims)
 
+    # Particionar os cubos granulares em bundles compactos por região/cadeia.
+    # Reduz o payload do 1º filtro no dashboard de ~100 MB para até ~3 MB.
+    # NÃO remove os granular_*.json fonte (remove_source=False): eles seguem
+    # como fallback deste release. A partição só é gerada se o topojson
+    # municipal (props RegIdr/MesoIdr) estiver disponível; caso contrário,
+    # apenas avisa. Falha de integridade da partição aborta o ETL (SystemExit).
+    try:
+        import partition_granular
+        topo_path = partition_granular.DEFAULT_TOPO
+        if os.path.exists(topo_path):
+            print("\nParticionando cubos granulares (região/cadeia)...")
+            partition_granular.run(DASHBOARD_DIR, topo_path, remove_source=False)
+        else:
+            print(f"\nAVISO: topojson não encontrado ({topo_path}); "
+                  "partição granular ignorada (mantidos granular_*.json).")
+    except SystemExit:
+        # Verificação de integridade abortou: propaga para falhar o ETL de
+        # forma visível (bundles particionados não confiáveis).
+        raise
+    except Exception as exc:  # noqa: BLE001
+        print(f"\nAVISO: partição granular falhou ({exc}); "
+              "mantidos granular_*.json como fallback.")
+
     print("\n" + "=" * 70)
     print("RESUMO")
     print("=" * 70)
