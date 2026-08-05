@@ -5,7 +5,7 @@
     "demissoes": 28139,
     "saldo": 3663,
     "mes_nome": "Jan",
-    "indice": 125.7
+    "indice": 120.4
   },
   {
     "mes": 2,
@@ -13,7 +13,7 @@
     "demissoes": 27817,
     "saldo": 4247,
     "mes_nome": "Fev",
-    "indice": 126.7
+    "indice": 121.4
   },
   {
     "mes": 3,
@@ -21,31 +21,31 @@
     "demissoes": 28183,
     "saldo": 3139,
     "mes_nome": "Mar",
-    "indice": 123.8
+    "indice": 118.6
   },
   {
     "mes": 4,
-    "admissoes": 25498,
-    "demissoes": 22906,
-    "saldo": 2592,
+    "admissoes": 30308,
+    "demissoes": 27794,
+    "saldo": 2514,
     "mes_nome": "Abr",
-    "indice": 100.8
+    "indice": 114.7
   },
   {
     "mes": 5,
-    "admissoes": 23526,
-    "demissoes": 24756,
-    "saldo": -1230,
+    "admissoes": 27708,
+    "demissoes": 29763,
+    "saldo": -2055,
     "mes_nome": "Mai",
-    "indice": 93.0
+    "indice": 104.9
   },
   {
     "mes": 6,
-    "admissoes": 23882,
-    "demissoes": 24361,
-    "saldo": -479,
+    "admissoes": 28228,
+    "demissoes": 29610,
+    "saldo": -1382,
     "mes_nome": "Jun",
-    "indice": 94.4
+    "indice": 106.8
   },
   {
     "mes": 7,
@@ -53,7 +53,7 @@
     "demissoes": 24441,
     "saldo": -687,
     "mes_nome": "Jul",
-    "indice": 93.9
+    "indice": 89.9
   },
   {
     "mes": 8,
@@ -61,7 +61,7 @@
     "demissoes": 22902,
     "saldo": 37,
     "mes_nome": "Ago",
-    "indice": 90.6
+    "indice": 86.8
   },
   {
     "mes": 9,
@@ -69,7 +69,7 @@
     "demissoes": 22136,
     "saldo": -131,
     "mes_nome": "Set",
-    "indice": 86.9
+    "indice": 83.3
   },
   {
     "mes": 10,
@@ -77,7 +77,7 @@
     "demissoes": 22619,
     "saldo": 69,
     "mes_nome": "Out",
-    "indice": 89.6
+    "indice": 85.9
   },
   {
     "mes": 11,
@@ -85,7 +85,7 @@
     "demissoes": 24091,
     "saldo": -2125,
     "mes_nome": "Nov",
-    "indice": 86.8
+    "indice": 83.1
   },
   {
     "mes": 12,
@@ -93,6 +93,6 @@
     "demissoes": 25791,
     "saldo": -3539,
     "mes_nome": "Dez",
-    "indice": 87.9
+    "indice": 84.2
   }
 ]
