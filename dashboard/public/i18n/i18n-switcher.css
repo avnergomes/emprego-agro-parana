@@ -64,5 +64,5 @@
 
 @media (max-width: 540px) {
   .lang-chip .lang-flag { display: none; }
-  .lang-chip { padding: 4px 8px; }
+  .lang-chip { padding: 4px 8px; min-height: 44px; }
 }

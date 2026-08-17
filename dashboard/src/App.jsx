@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import {
   Users, TrendingUp, TrendingDown, DollarSign, Briefcase,
-  BarChart3, Layers, Factory, MapPin, Info, Activity
+  BarChart3, Layers, Factory, MapPin, Info, Activity,
+  ChevronLeft, ChevronRight
 } from 'lucide-react'
 
 // Components
@@ -453,17 +454,25 @@ function App() {
   // Tab scroll indicators
   const tabContainerRef = useRef(null)
   const [scrollClasses, setScrollClasses] = useState('')
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
 
   const updateScrollIndicators = useCallback(() => {
     const el = tabContainerRef.current
     if (!el) return
     const hasLeft = el.scrollLeft > 4
     const hasRight = el.scrollLeft < el.scrollWidth - el.clientWidth - 4
+    setCanScrollLeft(hasLeft)
+    setCanScrollRight(hasRight)
     const classes = [
       hasLeft ? 'scroll-left' : '',
       hasRight ? 'scroll-right' : '',
     ].filter(Boolean).join(' ')
     setScrollClasses(classes)
+  }, [])
+
+  const scrollTabs = useCallback((dir) => {
+    tabContainerRef.current?.scrollBy({ left: dir * 160, behavior: 'smooth' })
   }, [])
 
   useEffect(() => {
@@ -939,7 +948,7 @@ function App() {
           <select
             value={mesoFilter}
             onChange={(e) => { setMesoFilter(e.target.value); setRegIdrFilter(''); setMunFilter('') }}
-            className="px-3 py-1.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="px-3 py-2 text-base sm:text-sm min-h-[44px] border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             <option value="">Todas Mesorregiões</option>
             {mesoRegioes.map(m => <option key={m} value={m}>{m}</option>)}
@@ -947,7 +956,7 @@ function App() {
           <select
             value={regIdrFilter}
             onChange={(e) => { setRegIdrFilter(e.target.value); setMunFilter('') }}
-            className="px-3 py-1.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="px-3 py-2 text-base sm:text-sm min-h-[44px] border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             <option value="">Todas Regionais IDR</option>
             {regIdrList.map(r => <option key={r} value={r}>{r}</option>)}
@@ -955,7 +964,7 @@ function App() {
           <select
             value={munFilter}
             onChange={(e) => setMunFilter(e.target.value)}
-            className="px-3 py-1.5 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 max-w-[200px]"
+            className="px-3 py-2 text-base sm:text-sm min-h-[44px] border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 max-w-[200px]"
           >
             <option value="">Todos Municípios ({filteredMunicipiosList.length})</option>
             {filteredMunicipiosList.map(m => <option key={m.codigo} value={m.codigo}>{m.nome}</option>)}
@@ -964,7 +973,7 @@ function App() {
             <>
               <button
                 onClick={() => { setMesoFilter(''); setRegIdrFilter(''); setMunFilter('') }}
-                className="px-3 py-1.5 text-sm text-red-600 hover:bg-red-50 rounded-lg border border-red-200"
+                className="px-3 py-2 min-h-[44px] text-sm text-red-600 hover:bg-red-50 rounded-lg border border-red-200"
               >
                 Limpar filtros
               </button>
@@ -976,7 +985,7 @@ function App() {
           {geoError && !geoData && (
             <span className="text-sm text-amber-700 flex items-center gap-2" data-i18n-translate>
               Filtros regionais indisponíveis: falha ao carregar a malha municipal.
-              <button onClick={retryTopo} className="underline font-medium hover:text-amber-900">
+              <button onClick={retryTopo} className="underline font-medium hover:text-amber-900 py-2 px-1 min-h-[44px]">
                 Tentar novamente
               </button>
             </span>
@@ -999,7 +1008,7 @@ function App() {
             <span>Não foi possível carregar os dados detalhados. Os gráficos podem exibir totais do Paraná.</span>
             <button
               onClick={retryGranular}
-              className="px-3 py-1 text-sm rounded-lg border border-amber-400 text-amber-800 hover:bg-amber-100"
+              className="px-3 py-2 min-h-[44px] text-sm rounded-lg border border-amber-400 text-amber-800 hover:bg-amber-100"
             >
               Tentar novamente
             </button>
@@ -1043,10 +1052,19 @@ function App() {
 
       {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-        <div className={`tab-scroll-container ${scrollClasses}`}>
+        <div className="relative">
+          {canScrollLeft && (
+            <button
+              onClick={() => scrollTabs(-1)}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-1 bg-white/90 backdrop-blur-sm rounded-full shadow-md border border-neutral-200 md:hidden"
+              aria-label="Rolar abas para a esquerda"
+            >
+              <ChevronLeft className="w-4 h-4 text-neutral-600" />
+            </button>
+          )}
           <div
             ref={tabContainerRef}
-            className="flex overflow-x-auto gap-2 pb-2"
+            className="flex overflow-x-auto gap-2 pb-2 scrollbar-thin"
             role="tablist"
             aria-label="Seções do dashboard"
           >
@@ -1061,19 +1079,27 @@ function App() {
                   aria-selected={isActive}
                   aria-controls={`tabpanel-${tab.id}`}
                   id={`tab-${tab.id}`}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium whitespace-nowrap transition-all ${
+                  className={`flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-lg font-medium whitespace-nowrap transition-all flex-shrink-0 ${
                     isActive
                       ? 'bg-green-600 text-white shadow-md'
                       : 'bg-white text-neutral-600 hover:bg-green-50'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
-                  <span className="hidden sm:inline">{tab.label}</span>
-                  <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
+                  <span>{tab.label}</span>
                 </button>
               )
             })}
           </div>
+          {canScrollRight && (
+            <button
+              onClick={() => scrollTabs(1)}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-1 bg-white/90 backdrop-blur-sm rounded-full shadow-md border border-neutral-200 md:hidden"
+              aria-label="Rolar abas para a direita"
+            >
+              <ChevronRight className="w-4 h-4 text-neutral-600" />
+            </button>
+          )}
         </div>
       </div>
 

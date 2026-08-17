@@ -173,7 +173,7 @@ function GeoTab({ topMunicipios, byMunicipio, metadata, geoData, geoError, onRet
           </div>
         )}
 
-        <div className="h-[500px] bg-neutral-50 rounded-lg overflow-hidden">
+        <div className="h-[60vh] max-h-[480px] sm:h-[500px] sm:max-h-none bg-neutral-50 rounded-lg overflow-hidden">
           {geoData ? (
             <MapaSVG
               geoData={geoData}

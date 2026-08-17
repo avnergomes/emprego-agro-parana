@@ -80,7 +80,7 @@ export default function LollipopChart({
       <h3 className="text-lg font-semibold text-dark-700 mb-2">{title}</h3>
       <p className="text-sm text-dark-500 mb-4">Metrica: {metricLabels[metric] || metric}</p>
 
-      <svg width={width} height={height}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto" style={{ display: 'block' }}>
         <g transform={`translate(${MARGIN.left}, ${MARGIN.top})`}>
           {/* Zero line for saldo */}
           {hasNegative && (

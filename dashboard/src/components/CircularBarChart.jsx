@@ -88,7 +88,7 @@ export default function CircularBarChart({
     <div className="card p-6">
       <h3 className="text-lg font-semibold text-dark-700 mb-4">{title}</h3>
 
-      <svg width={width} height={height} className="mx-auto">
+      <svg viewBox={`0 0 ${width} ${height}`} className="mx-auto w-full h-auto" style={{ display: 'block' }}>
         <g transform={`translate(${centerX}, ${centerY})`}>
           {/* Grid circles */}
           {gridLevels.map((level, i) => (
