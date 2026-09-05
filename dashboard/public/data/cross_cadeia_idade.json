@@ -2,8 +2,8 @@
   {
     "cadeia": "Algodão",
     "faixa": "18 a 24 anos",
-    "admissoes": 109,
-    "demissoes": 98,
+    "admissoes": 110,
+    "demissoes": 99,
     "saldo": 11
   },
   {
@@ -16,23 +16,23 @@
   {
     "cadeia": "Algodão",
     "faixa": "30 a 39 anos",
-    "admissoes": 172,
-    "demissoes": 174,
+    "admissoes": 173,
+    "demissoes": 175,
     "saldo": -2
   },
   {
     "cadeia": "Algodão",
     "faixa": "40 a 49 anos",
-    "admissoes": 107,
-    "demissoes": 105,
+    "admissoes": 108,
+    "demissoes": 106,
     "saldo": 2
   },
   {
     "cadeia": "Algodão",
     "faixa": "50 a 64 anos",
     "admissoes": 57,
-    "demissoes": 70,
-    "saldo": -13
+    "demissoes": 71,
+    "saldo": -14
   },
   {
     "cadeia": "Algodão",
@@ -51,37 +51,37 @@
   {
     "cadeia": "Apicultura",
     "faixa": "18 a 24 anos",
-    "admissoes": 128,
-    "demissoes": 119,
-    "saldo": 9
+    "admissoes": 131,
+    "demissoes": 120,
+    "saldo": 11
   },
   {
     "cadeia": "Apicultura",
     "faixa": "25 a 29 anos",
-    "admissoes": 101,
+    "admissoes": 103,
     "demissoes": 99,
-    "saldo": 2
+    "saldo": 4
   },
   {
     "cadeia": "Apicultura",
     "faixa": "30 a 39 anos",
-    "admissoes": 188,
-    "demissoes": 172,
+    "admissoes": 193,
+    "demissoes": 177,
     "saldo": 16
   },
   {
     "cadeia": "Apicultura",
     "faixa": "40 a 49 anos",
-    "admissoes": 136,
-    "demissoes": 142,
-    "saldo": -6
+    "admissoes": 140,
+    "demissoes": 143,
+    "saldo": -3
   },
   {
     "cadeia": "Apicultura",
     "faixa": "50 a 64 anos",
-    "admissoes": 88,
-    "demissoes": 106,
-    "saldo": -18
+    "admissoes": 90,
+    "demissoes": 107,
+    "saldo": -17
   },
   {
     "cadeia": "Apicultura",
@@ -107,37 +107,37 @@
   {
     "cadeia": "Aquicultura",
     "faixa": "18 a 24 anos",
-    "admissoes": 666,
-    "demissoes": 539,
-    "saldo": 127
+    "admissoes": 684,
+    "demissoes": 549,
+    "saldo": 135
   },
   {
     "cadeia": "Aquicultura",
     "faixa": "25 a 29 anos",
-    "admissoes": 471,
-    "demissoes": 445,
-    "saldo": 26
+    "admissoes": 480,
+    "demissoes": 453,
+    "saldo": 27
   },
   {
     "cadeia": "Aquicultura",
     "faixa": "30 a 39 anos",
-    "admissoes": 738,
-    "demissoes": 712,
-    "saldo": 26
+    "admissoes": 763,
+    "demissoes": 720,
+    "saldo": 43
   },
   {
     "cadeia": "Aquicultura",
     "faixa": "40 a 49 anos",
-    "admissoes": 488,
-    "demissoes": 443,
-    "saldo": 45
+    "admissoes": 506,
+    "demissoes": 454,
+    "saldo": 52
   },
   {
     "cadeia": "Aquicultura",
     "faixa": "50 a 64 anos",
-    "admissoes": 279,
-    "demissoes": 262,
-    "saldo": 17
+    "admissoes": 281,
+    "demissoes": 266,
+    "saldo": 15
   },
   {
     "cadeia": "Aquicultura",
@@ -149,8 +149,8 @@
   {
     "cadeia": "Aquicultura",
     "faixa": "Menor de 18",
-    "admissoes": 78,
-    "demissoes": 39,
+    "admissoes": 79,
+    "demissoes": 40,
     "saldo": 39
   },
   {
@@ -163,170 +163,170 @@
   {
     "cadeia": "Avicultura",
     "faixa": "18 a 24 anos",
-    "admissoes": 16742,
-    "demissoes": 15403,
-    "saldo": 1339
+    "admissoes": 16968,
+    "demissoes": 15612,
+    "saldo": 1356
   },
   {
     "cadeia": "Avicultura",
     "faixa": "25 a 29 anos",
-    "admissoes": 8682,
-    "demissoes": 8596,
-    "saldo": 86
+    "admissoes": 8824,
+    "demissoes": 8721,
+    "saldo": 103
   },
   {
     "cadeia": "Avicultura",
     "faixa": "30 a 39 anos",
-    "admissoes": 12152,
-    "demissoes": 11839,
-    "saldo": 313
+    "admissoes": 12320,
+    "demissoes": 12034,
+    "saldo": 286
   },
   {
     "cadeia": "Avicultura",
     "faixa": "40 a 49 anos",
-    "admissoes": 7780,
-    "demissoes": 7598,
-    "saldo": 182
+    "admissoes": 7916,
+    "demissoes": 7709,
+    "saldo": 207
   },
   {
     "cadeia": "Avicultura",
     "faixa": "50 a 64 anos",
-    "admissoes": 3797,
-    "demissoes": 3963,
-    "saldo": -166
+    "admissoes": 3856,
+    "demissoes": 4037,
+    "saldo": -181
   },
   {
     "cadeia": "Avicultura",
     "faixa": "65 anos ou mais",
-    "admissoes": 121,
-    "demissoes": 217,
-    "saldo": -96
+    "admissoes": 125,
+    "demissoes": 222,
+    "saldo": -97
   },
   {
     "cadeia": "Avicultura",
     "faixa": "Menor de 18",
-    "admissoes": 1752,
-    "demissoes": 1121,
-    "saldo": 631
+    "admissoes": 1775,
+    "demissoes": 1137,
+    "saldo": 638
   },
   {
     "cadeia": "Avicultura",
     "faixa": "Não informado",
-    "admissoes": 9,
+    "admissoes": 19,
     "demissoes": 0,
-    "saldo": 9
+    "saldo": 19
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "faixa": "18 a 24 anos",
-    "admissoes": 6453,
-    "demissoes": 5592,
-    "saldo": 861
+    "admissoes": 6553,
+    "demissoes": 5683,
+    "saldo": 870
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "faixa": "25 a 29 anos",
-    "admissoes": 4878,
-    "demissoes": 4832,
-    "saldo": 46
+    "admissoes": 4955,
+    "demissoes": 4897,
+    "saldo": 58
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "faixa": "30 a 39 anos",
-    "admissoes": 8013,
-    "demissoes": 8085,
-    "saldo": -72
+    "admissoes": 8150,
+    "demissoes": 8233,
+    "saldo": -83
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "faixa": "40 a 49 anos",
-    "admissoes": 5949,
-    "demissoes": 6143,
-    "saldo": -194
+    "admissoes": 6033,
+    "demissoes": 6257,
+    "saldo": -224
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "faixa": "50 a 64 anos",
-    "admissoes": 3949,
-    "demissoes": 4927,
-    "saldo": -978
+    "admissoes": 4008,
+    "demissoes": 5013,
+    "saldo": -1005
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "faixa": "65 anos ou mais",
-    "admissoes": 162,
-    "demissoes": 441,
-    "saldo": -279
+    "admissoes": 163,
+    "demissoes": 447,
+    "saldo": -284
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "faixa": "Menor de 18",
-    "admissoes": 372,
-    "demissoes": 150,
-    "saldo": 222
+    "admissoes": 378,
+    "demissoes": 153,
+    "saldo": 225
   },
   {
     "cadeia": "Bovinocultura de Corte",
     "faixa": "Não informado",
-    "admissoes": 3,
-    "demissoes": 1,
-    "saldo": 2
+    "admissoes": 5,
+    "demissoes": 2,
+    "saldo": 3
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "faixa": "18 a 24 anos",
-    "admissoes": 3147,
-    "demissoes": 2665,
-    "saldo": 482
+    "admissoes": 3212,
+    "demissoes": 2711,
+    "saldo": 501
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "faixa": "25 a 29 anos",
-    "admissoes": 2253,
-    "demissoes": 2100,
-    "saldo": 153
+    "admissoes": 2311,
+    "demissoes": 2140,
+    "saldo": 171
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "faixa": "30 a 39 anos",
-    "admissoes": 3225,
-    "demissoes": 3149,
-    "saldo": 76
+    "admissoes": 3288,
+    "demissoes": 3189,
+    "saldo": 99
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "faixa": "40 a 49 anos",
-    "admissoes": 1945,
-    "demissoes": 1916,
-    "saldo": 29
+    "admissoes": 1975,
+    "demissoes": 1960,
+    "saldo": 15
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "faixa": "50 a 64 anos",
-    "admissoes": 856,
-    "demissoes": 998,
-    "saldo": -142
+    "admissoes": 872,
+    "demissoes": 1013,
+    "saldo": -141
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "faixa": "65 anos ou mais",
     "admissoes": 25,
-    "demissoes": 58,
-    "saldo": -33
+    "demissoes": 60,
+    "saldo": -35
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "faixa": "Menor de 18",
-    "admissoes": 146,
-    "demissoes": 57,
-    "saldo": 89
+    "admissoes": 150,
+    "demissoes": 58,
+    "saldo": 92
   },
   {
     "cadeia": "Bovinocultura de Leite",
     "faixa": "Não informado",
-    "admissoes": 3,
+    "admissoes": 4,
     "demissoes": 0,
-    "saldo": 3
+    "saldo": 4
   },
   {
     "cadeia": "Cacau",
@@ -339,43 +339,43 @@
     "cadeia": "Cafeicultura",
     "faixa": "18 a 24 anos",
     "admissoes": 221,
-    "demissoes": 166,
-    "saldo": 55
+    "demissoes": 171,
+    "saldo": 50
   },
   {
     "cadeia": "Cafeicultura",
     "faixa": "25 a 29 anos",
-    "admissoes": 187,
-    "demissoes": 174,
-    "saldo": 13
+    "admissoes": 191,
+    "demissoes": 175,
+    "saldo": 16
   },
   {
     "cadeia": "Cafeicultura",
     "faixa": "30 a 39 anos",
-    "admissoes": 294,
-    "demissoes": 304,
-    "saldo": -10
+    "admissoes": 302,
+    "demissoes": 305,
+    "saldo": -3
   },
   {
     "cadeia": "Cafeicultura",
     "faixa": "40 a 49 anos",
-    "admissoes": 319,
-    "demissoes": 323,
+    "admissoes": 325,
+    "demissoes": 329,
     "saldo": -4
   },
   {
     "cadeia": "Cafeicultura",
     "faixa": "50 a 64 anos",
-    "admissoes": 329,
-    "demissoes": 404,
-    "saldo": -75
+    "admissoes": 336,
+    "demissoes": 408,
+    "saldo": -72
   },
   {
     "cadeia": "Cafeicultura",
     "faixa": "65 anos ou mais",
     "admissoes": 39,
-    "demissoes": 65,
-    "saldo": -26
+    "demissoes": 67,
+    "saldo": -28
   },
   {
     "cadeia": "Cafeicultura",
@@ -387,107 +387,107 @@
   {
     "cadeia": "Cana-de-açúcar",
     "faixa": "18 a 24 anos",
-    "admissoes": 2657,
-    "demissoes": 2011,
-    "saldo": 646
+    "admissoes": 2685,
+    "demissoes": 2024,
+    "saldo": 661
   },
   {
     "cadeia": "Cana-de-açúcar",
     "faixa": "25 a 29 anos",
-    "admissoes": 1202,
-    "demissoes": 1413,
-    "saldo": -211
+    "admissoes": 1216,
+    "demissoes": 1428,
+    "saldo": -212
   },
   {
     "cadeia": "Cana-de-açúcar",
     "faixa": "30 a 39 anos",
-    "admissoes": 2179,
-    "demissoes": 2396,
-    "saldo": -217
+    "admissoes": 2190,
+    "demissoes": 2434,
+    "saldo": -244
   },
   {
     "cadeia": "Cana-de-açúcar",
     "faixa": "40 a 49 anos",
-    "admissoes": 1884,
-    "demissoes": 2087,
-    "saldo": -203
+    "admissoes": 1906,
+    "demissoes": 2150,
+    "saldo": -244
   },
   {
     "cadeia": "Cana-de-açúcar",
     "faixa": "50 a 64 anos",
-    "admissoes": 1287,
-    "demissoes": 2008,
-    "saldo": -721
+    "admissoes": 1302,
+    "demissoes": 2089,
+    "saldo": -787
   },
   {
     "cadeia": "Cana-de-açúcar",
     "faixa": "65 anos ou mais",
     "admissoes": 43,
-    "demissoes": 211,
-    "saldo": -168
+    "demissoes": 215,
+    "saldo": -172
   },
   {
     "cadeia": "Cana-de-açúcar",
     "faixa": "Menor de 18",
     "admissoes": 32,
-    "demissoes": 12,
-    "saldo": 20
+    "demissoes": 13,
+    "saldo": 19
   },
   {
     "cadeia": "Fruticultura",
     "faixa": "18 a 24 anos",
-    "admissoes": 5238,
-    "demissoes": 4769,
-    "saldo": 469
+    "admissoes": 5323,
+    "demissoes": 4839,
+    "saldo": 484
   },
   {
     "cadeia": "Fruticultura",
     "faixa": "25 a 29 anos",
-    "admissoes": 3662,
-    "demissoes": 3723,
-    "saldo": -61
+    "admissoes": 3711,
+    "demissoes": 3761,
+    "saldo": -50
   },
   {
     "cadeia": "Fruticultura",
     "faixa": "30 a 39 anos",
-    "admissoes": 5708,
-    "demissoes": 5728,
-    "saldo": -20
+    "admissoes": 5777,
+    "demissoes": 5821,
+    "saldo": -44
   },
   {
     "cadeia": "Fruticultura",
     "faixa": "40 a 49 anos",
-    "admissoes": 4262,
-    "demissoes": 4219,
-    "saldo": 43
+    "admissoes": 4322,
+    "demissoes": 4276,
+    "saldo": 46
   },
   {
     "cadeia": "Fruticultura",
     "faixa": "50 a 64 anos",
-    "admissoes": 2792,
-    "demissoes": 2948,
-    "saldo": -156
+    "admissoes": 2823,
+    "demissoes": 2986,
+    "saldo": -163
   },
   {
     "cadeia": "Fruticultura",
     "faixa": "65 anos ou mais",
-    "admissoes": 132,
-    "demissoes": 194,
-    "saldo": -62
+    "admissoes": 134,
+    "demissoes": 197,
+    "saldo": -63
   },
   {
     "cadeia": "Fruticultura",
     "faixa": "Menor de 18",
-    "admissoes": 175,
-    "demissoes": 82,
-    "saldo": 93
+    "admissoes": 179,
+    "demissoes": 83,
+    "saldo": 96
   },
   {
     "cadeia": "Fruticultura",
     "faixa": "Não informado",
-    "admissoes": 3,
-    "demissoes": 0,
-    "saldo": 3
+    "admissoes": 7,
+    "demissoes": 2,
+    "saldo": 5
   },
   {
     "cadeia": "Fumo",
@@ -534,204 +534,211 @@
   {
     "cadeia": "Grãos",
     "faixa": "18 a 24 anos",
-    "admissoes": 5731,
-    "demissoes": 5028,
-    "saldo": 703
+    "admissoes": 5801,
+    "demissoes": 5108,
+    "saldo": 693
   },
   {
     "cadeia": "Grãos",
     "faixa": "25 a 29 anos",
-    "admissoes": 4081,
-    "demissoes": 4126,
-    "saldo": -45
+    "admissoes": 4133,
+    "demissoes": 4197,
+    "saldo": -64
   },
   {
     "cadeia": "Grãos",
     "faixa": "30 a 39 anos",
-    "admissoes": 6494,
-    "demissoes": 6748,
-    "saldo": -254
+    "admissoes": 6571,
+    "demissoes": 6865,
+    "saldo": -294
   },
   {
     "cadeia": "Grãos",
     "faixa": "40 a 49 anos",
-    "admissoes": 5151,
-    "demissoes": 5476,
-    "saldo": -325
+    "admissoes": 5221,
+    "demissoes": 5582,
+    "saldo": -361
   },
   {
     "cadeia": "Grãos",
     "faixa": "50 a 64 anos",
-    "admissoes": 3339,
-    "demissoes": 3950,
-    "saldo": -611
+    "admissoes": 3384,
+    "demissoes": 4051,
+    "saldo": -667
   },
   {
     "cadeia": "Grãos",
     "faixa": "65 anos ou mais",
-    "admissoes": 206,
-    "demissoes": 376,
-    "saldo": -170
+    "admissoes": 210,
+    "demissoes": 385,
+    "saldo": -175
   },
   {
     "cadeia": "Grãos",
     "faixa": "Menor de 18",
-    "admissoes": 193,
+    "admissoes": 195,
     "demissoes": 76,
-    "saldo": 117
+    "saldo": 119
   },
   {
     "cadeia": "Grãos",
     "faixa": "Não informado",
-    "admissoes": 2,
+    "admissoes": 5,
     "demissoes": 0,
-    "saldo": 2
+    "saldo": 5
   },
   {
     "cadeia": "Horticultura",
     "faixa": "18 a 24 anos",
-    "admissoes": 1702,
-    "demissoes": 1694,
-    "saldo": 8
+    "admissoes": 1724,
+    "demissoes": 1722,
+    "saldo": 2
   },
   {
     "cadeia": "Horticultura",
     "faixa": "25 a 29 anos",
-    "admissoes": 927,
-    "demissoes": 1042,
-    "saldo": -115
+    "admissoes": 946,
+    "demissoes": 1062,
+    "saldo": -116
   },
   {
     "cadeia": "Horticultura",
     "faixa": "30 a 39 anos",
-    "admissoes": 1490,
-    "demissoes": 1677,
-    "saldo": -187
+    "admissoes": 1512,
+    "demissoes": 1701,
+    "saldo": -189
   },
   {
     "cadeia": "Horticultura",
     "faixa": "40 a 49 anos",
-    "admissoes": 1013,
-    "demissoes": 1083,
-    "saldo": -70
+    "admissoes": 1028,
+    "demissoes": 1100,
+    "saldo": -72
   },
   {
     "cadeia": "Horticultura",
     "faixa": "50 a 64 anos",
-    "admissoes": 708,
-    "demissoes": 775,
-    "saldo": -67
+    "admissoes": 713,
+    "demissoes": 790,
+    "saldo": -77
   },
   {
     "cadeia": "Horticultura",
     "faixa": "65 anos ou mais",
     "admissoes": 39,
-    "demissoes": 78,
-    "saldo": -39
+    "demissoes": 79,
+    "saldo": -40
   },
   {
     "cadeia": "Horticultura",
     "faixa": "Menor de 18",
-    "admissoes": 181,
+    "admissoes": 184,
     "demissoes": 79,
-    "saldo": 102
+    "saldo": 105
+  },
+  {
+    "cadeia": "Horticultura",
+    "faixa": "Não informado",
+    "admissoes": 1,
+    "demissoes": 0,
+    "saldo": 1
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "faixa": "18 a 24 anos",
-    "admissoes": 335,
-    "demissoes": 275,
+    "admissoes": 338,
+    "demissoes": 278,
     "saldo": 60
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "faixa": "25 a 29 anos",
     "admissoes": 249,
-    "demissoes": 242,
-    "saldo": 7
+    "demissoes": 244,
+    "saldo": 5
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "faixa": "30 a 39 anos",
-    "admissoes": 425,
-    "demissoes": 410,
-    "saldo": 15
+    "admissoes": 434,
+    "demissoes": 415,
+    "saldo": 19
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "faixa": "40 a 49 anos",
-    "admissoes": 334,
-    "demissoes": 313,
-    "saldo": 21
+    "admissoes": 336,
+    "demissoes": 317,
+    "saldo": 19
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "faixa": "50 a 64 anos",
-    "admissoes": 250,
-    "demissoes": 322,
-    "saldo": -72
+    "admissoes": 252,
+    "demissoes": 325,
+    "saldo": -73
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "faixa": "65 anos ou mais",
     "admissoes": 15,
-    "demissoes": 36,
-    "saldo": -21
+    "demissoes": 37,
+    "saldo": -22
   },
   {
     "cadeia": "Outras Culturas Permanentes",
     "faixa": "Menor de 18",
     "admissoes": 26,
-    "demissoes": 9,
-    "saldo": 17
+    "demissoes": 10,
+    "saldo": 16
   },
   {
     "cadeia": "Outros",
     "faixa": "18 a 24 anos",
-    "admissoes": 3132,
-    "demissoes": 2856,
-    "saldo": 276
+    "admissoes": 3165,
+    "demissoes": 2885,
+    "saldo": 280
   },
   {
     "cadeia": "Outros",
     "faixa": "25 a 29 anos",
-    "admissoes": 2004,
-    "demissoes": 2244,
-    "saldo": -240
+    "admissoes": 2031,
+    "demissoes": 2266,
+    "saldo": -235
   },
   {
     "cadeia": "Outros",
     "faixa": "30 a 39 anos",
-    "admissoes": 2564,
-    "demissoes": 2635,
-    "saldo": -71
+    "admissoes": 2594,
+    "demissoes": 2681,
+    "saldo": -87
   },
   {
     "cadeia": "Outros",
     "faixa": "40 a 49 anos",
-    "admissoes": 1334,
-    "demissoes": 1357,
-    "saldo": -23
+    "admissoes": 1350,
+    "demissoes": 1371,
+    "saldo": -21
   },
   {
     "cadeia": "Outros",
     "faixa": "50 a 64 anos",
-    "admissoes": 659,
-    "demissoes": 790,
-    "saldo": -131
+    "admissoes": 667,
+    "demissoes": 803,
+    "saldo": -136
   },
   {
     "cadeia": "Outros",
     "faixa": "65 anos ou mais",
     "admissoes": 23,
-    "demissoes": 52,
-    "saldo": -29
+    "demissoes": 53,
+    "saldo": -30
   },
   {
     "cadeia": "Outros",
     "faixa": "Menor de 18",
-    "admissoes": 197,
-    "demissoes": 108,
+    "admissoes": 198,
+    "demissoes": 109,
     "saldo": 89
   },
   {
@@ -744,37 +751,37 @@
   {
     "cadeia": "Ovinocaprinocultura",
     "faixa": "18 a 24 anos",
-    "admissoes": 303,
-    "demissoes": 273,
-    "saldo": 30
+    "admissoes": 309,
+    "demissoes": 278,
+    "saldo": 31
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "faixa": "25 a 29 anos",
-    "admissoes": 201,
-    "demissoes": 186,
-    "saldo": 15
+    "admissoes": 204,
+    "demissoes": 188,
+    "saldo": 16
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "faixa": "30 a 39 anos",
-    "admissoes": 363,
-    "demissoes": 335,
-    "saldo": 28
+    "admissoes": 370,
+    "demissoes": 339,
+    "saldo": 31
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "faixa": "40 a 49 anos",
-    "admissoes": 290,
-    "demissoes": 306,
-    "saldo": -16
+    "admissoes": 296,
+    "demissoes": 308,
+    "saldo": -12
   },
   {
     "cadeia": "Ovinocaprinocultura",
     "faixa": "50 a 64 anos",
-    "admissoes": 162,
-    "demissoes": 211,
-    "saldo": -49
+    "admissoes": 165,
+    "demissoes": 215,
+    "saldo": -50
   },
   {
     "cadeia": "Ovinocaprinocultura",
@@ -793,219 +800,219 @@
   {
     "cadeia": "Serviços Agrícolas",
     "faixa": "18 a 24 anos",
-    "admissoes": 11855,
-    "demissoes": 10573,
-    "saldo": 1282
+    "admissoes": 11993,
+    "demissoes": 10738,
+    "saldo": 1255
   },
   {
     "cadeia": "Serviços Agrícolas",
     "faixa": "25 a 29 anos",
-    "admissoes": 9008,
-    "demissoes": 8877,
-    "saldo": 131
+    "admissoes": 9104,
+    "demissoes": 9009,
+    "saldo": 95
   },
   {
     "cadeia": "Serviços Agrícolas",
     "faixa": "30 a 39 anos",
-    "admissoes": 13904,
-    "demissoes": 13598,
-    "saldo": 306
+    "admissoes": 14077,
+    "demissoes": 13780,
+    "saldo": 297
   },
   {
     "cadeia": "Serviços Agrícolas",
     "faixa": "40 a 49 anos",
-    "admissoes": 9746,
-    "demissoes": 9481,
-    "saldo": 265
+    "admissoes": 9850,
+    "demissoes": 9653,
+    "saldo": 197
   },
   {
     "cadeia": "Serviços Agrícolas",
     "faixa": "50 a 64 anos",
-    "admissoes": 6432,
-    "demissoes": 6822,
-    "saldo": -390
+    "admissoes": 6518,
+    "demissoes": 6947,
+    "saldo": -429
   },
   {
     "cadeia": "Serviços Agrícolas",
     "faixa": "65 anos ou mais",
-    "admissoes": 359,
-    "demissoes": 522,
-    "saldo": -163
+    "admissoes": 361,
+    "demissoes": 529,
+    "saldo": -168
   },
   {
     "cadeia": "Serviços Agrícolas",
     "faixa": "Menor de 18",
-    "admissoes": 419,
-    "demissoes": 169,
-    "saldo": 250
+    "admissoes": 423,
+    "demissoes": 171,
+    "saldo": 252
   },
   {
     "cadeia": "Serviços Agrícolas",
     "faixa": "Não informado",
-    "admissoes": 4,
+    "admissoes": 7,
     "demissoes": 1,
-    "saldo": 3
-  },
-  {
-    "cadeia": "Silvicultura",
-    "faixa": "18 a 24 anos",
-    "admissoes": 14704,
-    "demissoes": 13797,
-    "saldo": 907
-  },
-  {
-    "cadeia": "Silvicultura",
-    "faixa": "25 a 29 anos",
-    "admissoes": 8531,
-    "demissoes": 8757,
-    "saldo": -226
-  },
-  {
-    "cadeia": "Silvicultura",
-    "faixa": "30 a 39 anos",
-    "admissoes": 12207,
-    "demissoes": 12408,
-    "saldo": -201
-  },
-  {
-    "cadeia": "Silvicultura",
-    "faixa": "40 a 49 anos",
-    "admissoes": 8621,
-    "demissoes": 8715,
-    "saldo": -94
-  },
-  {
-    "cadeia": "Silvicultura",
-    "faixa": "50 a 64 anos",
-    "admissoes": 4156,
-    "demissoes": 4846,
-    "saldo": -690
-  },
-  {
-    "cadeia": "Silvicultura",
-    "faixa": "65 anos ou mais",
-    "admissoes": 97,
-    "demissoes": 310,
-    "saldo": -213
-  },
-  {
-    "cadeia": "Silvicultura",
-    "faixa": "Menor de 18",
-    "admissoes": 558,
-    "demissoes": 242,
-    "saldo": 316
-  },
-  {
-    "cadeia": "Silvicultura",
-    "faixa": "Não informado",
-    "admissoes": 6,
-    "demissoes": 3,
-    "saldo": 3
-  },
-  {
-    "cadeia": "Sojicultura",
-    "faixa": "18 a 24 anos",
-    "admissoes": 5398,
-    "demissoes": 4323,
-    "saldo": 1075
-  },
-  {
-    "cadeia": "Sojicultura",
-    "faixa": "25 a 29 anos",
-    "admissoes": 4076,
-    "demissoes": 3783,
-    "saldo": 293
-  },
-  {
-    "cadeia": "Sojicultura",
-    "faixa": "30 a 39 anos",
-    "admissoes": 6620,
-    "demissoes": 6627,
-    "saldo": -7
-  },
-  {
-    "cadeia": "Sojicultura",
-    "faixa": "40 a 49 anos",
-    "admissoes": 5311,
-    "demissoes": 5541,
-    "saldo": -230
-  },
-  {
-    "cadeia": "Sojicultura",
-    "faixa": "50 a 64 anos",
-    "admissoes": 3482,
-    "demissoes": 4484,
-    "saldo": -1002
-  },
-  {
-    "cadeia": "Sojicultura",
-    "faixa": "65 anos ou mais",
-    "admissoes": 213,
-    "demissoes": 507,
-    "saldo": -294
-  },
-  {
-    "cadeia": "Sojicultura",
-    "faixa": "Menor de 18",
-    "admissoes": 347,
-    "demissoes": 127,
-    "saldo": 220
-  },
-  {
-    "cadeia": "Sojicultura",
-    "faixa": "Não informado",
-    "admissoes": 6,
-    "demissoes": 0,
     "saldo": 6
   },
   {
+    "cadeia": "Silvicultura",
+    "faixa": "18 a 24 anos",
+    "admissoes": 14837,
+    "demissoes": 13954,
+    "saldo": 883
+  },
+  {
+    "cadeia": "Silvicultura",
+    "faixa": "25 a 29 anos",
+    "admissoes": 8607,
+    "demissoes": 8845,
+    "saldo": -238
+  },
+  {
+    "cadeia": "Silvicultura",
+    "faixa": "30 a 39 anos",
+    "admissoes": 12332,
+    "demissoes": 12560,
+    "saldo": -228
+  },
+  {
+    "cadeia": "Silvicultura",
+    "faixa": "40 a 49 anos",
+    "admissoes": 8701,
+    "demissoes": 8824,
+    "saldo": -123
+  },
+  {
+    "cadeia": "Silvicultura",
+    "faixa": "50 a 64 anos",
+    "admissoes": 4208,
+    "demissoes": 4903,
+    "saldo": -695
+  },
+  {
+    "cadeia": "Silvicultura",
+    "faixa": "65 anos ou mais",
+    "admissoes": 98,
+    "demissoes": 317,
+    "saldo": -219
+  },
+  {
+    "cadeia": "Silvicultura",
+    "faixa": "Menor de 18",
+    "admissoes": 562,
+    "demissoes": 245,
+    "saldo": 317
+  },
+  {
+    "cadeia": "Silvicultura",
+    "faixa": "Não informado",
+    "admissoes": 12,
+    "demissoes": 3,
+    "saldo": 9
+  },
+  {
+    "cadeia": "Sojicultura",
+    "faixa": "18 a 24 anos",
+    "admissoes": 5468,
+    "demissoes": 4379,
+    "saldo": 1089
+  },
+  {
+    "cadeia": "Sojicultura",
+    "faixa": "25 a 29 anos",
+    "admissoes": 4136,
+    "demissoes": 3851,
+    "saldo": 285
+  },
+  {
+    "cadeia": "Sojicultura",
+    "faixa": "30 a 39 anos",
+    "admissoes": 6704,
+    "demissoes": 6728,
+    "saldo": -24
+  },
+  {
+    "cadeia": "Sojicultura",
+    "faixa": "40 a 49 anos",
+    "admissoes": 5388,
+    "demissoes": 5619,
+    "saldo": -231
+  },
+  {
+    "cadeia": "Sojicultura",
+    "faixa": "50 a 64 anos",
+    "admissoes": 3540,
+    "demissoes": 4575,
+    "saldo": -1035
+  },
+  {
+    "cadeia": "Sojicultura",
+    "faixa": "65 anos ou mais",
+    "admissoes": 215,
+    "demissoes": 523,
+    "saldo": -308
+  },
+  {
+    "cadeia": "Sojicultura",
+    "faixa": "Menor de 18",
+    "admissoes": 352,
+    "demissoes": 129,
+    "saldo": 223
+  },
+  {
+    "cadeia": "Sojicultura",
+    "faixa": "Não informado",
+    "admissoes": 8,
+    "demissoes": 0,
+    "saldo": 8
+  },
+  {
     "cadeia": "Suinocultura",
     "faixa": "18 a 24 anos",
-    "admissoes": 5247,
-    "demissoes": 4414,
-    "saldo": 833
+    "admissoes": 5316,
+    "demissoes": 4476,
+    "saldo": 840
   },
   {
     "cadeia": "Suinocultura",
     "faixa": "25 a 29 anos",
-    "admissoes": 3245,
-    "demissoes": 3223,
-    "saldo": 22
+    "admissoes": 3288,
+    "demissoes": 3269,
+    "saldo": 19
   },
   {
     "cadeia": "Suinocultura",
     "faixa": "30 a 39 anos",
-    "admissoes": 4621,
-    "demissoes": 4523,
-    "saldo": 98
+    "admissoes": 4696,
+    "demissoes": 4603,
+    "saldo": 93
   },
   {
     "cadeia": "Suinocultura",
     "faixa": "40 a 49 anos",
-    "admissoes": 2904,
-    "demissoes": 2853,
-    "saldo": 51
+    "admissoes": 2949,
+    "demissoes": 2899,
+    "saldo": 50
   },
   {
     "cadeia": "Suinocultura",
     "faixa": "50 a 64 anos",
-    "admissoes": 1356,
-    "demissoes": 1457,
-    "saldo": -101
+    "admissoes": 1386,
+    "demissoes": 1480,
+    "saldo": -94
   },
   {
     "cadeia": "Suinocultura",
     "faixa": "65 anos ou mais",
     "admissoes": 41,
-    "demissoes": 95,
-    "saldo": -54
+    "demissoes": 97,
+    "saldo": -56
   },
   {
     "cadeia": "Suinocultura",
     "faixa": "Menor de 18",
-    "admissoes": 344,
-    "demissoes": 171,
-    "saldo": 173
+    "admissoes": 352,
+    "demissoes": 173,
+    "saldo": 179
   },
   {
     "cadeia": "Suinocultura",

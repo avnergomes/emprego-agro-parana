@@ -700,5 +700,14 @@
     "salario_mediana": 2105.34,
     "saldo": -903,
     "saldo_acumulado": 3750
+  },
+  {
+    "periodo": "2026-07",
+    "admissoes": 4259,
+    "demissoes": 4809,
+    "salario_medio": 2284.7402029113364,
+    "salario_mediana": 2105.34,
+    "saldo": -550,
+    "saldo_acumulado": 3200
   }
 ]

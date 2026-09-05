@@ -1,21 +1,21 @@
 {
-  "periodo_referencia": "2026-06",
+  "periodo_referencia": "2026-07",
   "ultimo_mes": {
-    "admissoes": 4346,
-    "demissoes": 5249,
-    "saldo": -903
+    "admissoes": 4259,
+    "demissoes": 4809,
+    "saldo": -550
   },
   "acumulado": {
-    "admissoes": 317036,
-    "demissoes": 313286,
-    "saldo": 3750
+    "admissoes": 321295,
+    "demissoes": 318095,
+    "saldo": 3200
   },
   "salario": {
-    "media": 1902.3,
-    "mediana": 1765.0
+    "media": 1907.72,
+    "mediana": 1776.44
   },
   "perfil": {
-    "pct_masculino": 77.7,
+    "pct_masculino": 77.6,
     "idade_media": 34.0
   }
 }

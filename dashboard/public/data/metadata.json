@@ -2,10 +2,10 @@
   "titulo": "Emprego Agrícola - Paraná",
   "subtitulo": "Movimentações de emprego formal na agropecuária paranaense",
   "fonte": "CAGED/MTE - Microdados do Novo CAGED",
-  "atualizacao": "2026-08-05",
+  "atualizacao": "2026-09-05",
   "periodo_inicial": "2020-01",
-  "periodo_final": "2026-06",
-  "total_registros": 630322,
+  "periodo_final": "2026-07",
+  "total_registros": 639390,
   "total_municipios": 398,
   "total_cadeias": 20,
   "total_subclasses": 100
