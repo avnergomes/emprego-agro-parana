@@ -10225,5 +10225,131 @@
     "admissoes": 270,
     "demissoes": 261,
     "saldo": 9
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Algodão",
+    "admissoes": 3,
+    "demissoes": 2,
+    "saldo": 1
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Apicultura",
+    "admissoes": 9,
+    "demissoes": 16,
+    "saldo": -7
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Aquicultura",
+    "admissoes": 50,
+    "demissoes": 51,
+    "saldo": -1
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Avicultura",
+    "admissoes": 782,
+    "demissoes": 781,
+    "saldo": 1
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Bovinocultura de Corte",
+    "admissoes": 448,
+    "demissoes": 487,
+    "saldo": -39
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Bovinocultura de Leite",
+    "admissoes": 207,
+    "demissoes": 212,
+    "saldo": -5
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Cafeicultura",
+    "admissoes": 16,
+    "demissoes": 17,
+    "saldo": -1
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Cana-de-açúcar",
+    "admissoes": 48,
+    "demissoes": 63,
+    "saldo": -15
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Fruticultura",
+    "admissoes": 200,
+    "demissoes": 328,
+    "saldo": -128
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Grãos",
+    "admissoes": 348,
+    "demissoes": 300,
+    "saldo": 48
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Horticultura",
+    "admissoes": 103,
+    "demissoes": 84,
+    "saldo": 19
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Outras Culturas Permanentes",
+    "admissoes": 16,
+    "demissoes": 44,
+    "saldo": -28
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Outros",
+    "admissoes": 123,
+    "demissoes": 158,
+    "saldo": -35
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Ovinocaprinocultura",
+    "admissoes": 17,
+    "demissoes": 21,
+    "saldo": -4
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Serviços Agrícolas",
+    "admissoes": 605,
+    "demissoes": 626,
+    "saldo": -21
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Silvicultura",
+    "admissoes": 607,
+    "demissoes": 587,
+    "saldo": 20
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Sojicultura",
+    "admissoes": 387,
+    "demissoes": 431,
+    "saldo": -44
+  },
+  {
+    "periodo": "2026-08",
+    "cadeia": "Suinocultura",
+    "admissoes": 265,
+    "demissoes": 247,
+    "saldo": 18
   }
 ]

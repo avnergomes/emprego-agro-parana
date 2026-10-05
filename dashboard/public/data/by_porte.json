@@ -6,7 +6,7 @@
     "salario_medio": 1562.9200609567004,
     "salario_mediana": 1666.0,
     "saldo": -1438,
-    "pct": 3.4
+    "pct": 3.3
   },
   {
     "porte": "De 1 a 4",
@@ -15,7 +15,7 @@
     "salario_medio": 1969.3256217192586,
     "salario_mediana": 1856.94,
     "saldo": -5639,
-    "pct": 14.0
+    "pct": 13.9
   },
   {
     "porte": "De 10 a 19",
@@ -24,7 +24,7 @@
     "salario_medio": 1940.7391470785253,
     "salario_mediana": 1856.8,
     "saldo": -1942,
-    "pct": 9.4
+    "pct": 9.3
   },
   {
     "porte": "De 100 a 249",
@@ -33,7 +33,7 @@
     "salario_medio": 1892.3835539914037,
     "salario_mediana": 1790.0,
     "saldo": -362,
-    "pct": 10.0
+    "pct": 9.8
   },
   {
     "porte": "De 20 a 49",
@@ -42,7 +42,7 @@
     "salario_medio": 1934.4959410850533,
     "salario_mediana": 1765.78,
     "saldo": -1383,
-    "pct": 11.1
+    "pct": 11.0
   },
   {
     "porte": "De 250 a 499",
@@ -60,7 +60,7 @@
     "salario_medio": 1964.1322303614959,
     "salario_mediana": 1856.94,
     "saldo": -1694,
-    "pct": 8.9
+    "pct": 8.7
   },
   {
     "porte": "De 50 a 99",
@@ -69,7 +69,7 @@
     "salario_medio": 1919.4975245352434,
     "salario_mediana": 1780.0,
     "saldo": -843,
-    "pct": 8.5
+    "pct": 8.4
   },
   {
     "porte": "De 500 a 999",
@@ -78,16 +78,16 @@
     "salario_medio": 1874.6259138785326,
     "salario_mediana": 1749.02,
     "saldo": -1146,
-    "pct": 6.9
+    "pct": 6.8
   },
   {
     "porte": "Não informado",
-    "admissoes": 7364,
-    "demissoes": 7047,
-    "salario_medio": 1594.1492582055375,
-    "salario_mediana": 1505.0,
-    "saldo": 317,
-    "pct": 2.3
+    "admissoes": 11598,
+    "demissoes": 11502,
+    "salario_medio": 1875.6500606060606,
+    "salario_mediana": 1650.0,
+    "saldo": 96,
+    "pct": 3.6
   },
   {
     "porte": "Zero",
@@ -96,6 +96,6 @@
     "salario_medio": 1940.799862742478,
     "salario_mediana": 1749.02,
     "saldo": 17432,
-    "pct": 22.6
+    "pct": 22.3
   }
 ]
