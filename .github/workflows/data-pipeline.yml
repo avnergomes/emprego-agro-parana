@@ -2,19 +2,19 @@ name: Data Pipeline - CAGED Agro
 
 on:
   schedule:
-    # Executa no dia 5 de cada mes as 8:00 UTC (5:00 BRT)
-    # Dados CAGED sao divulgados ~25 dias apos o mes de referencia
+    # Dia 5 de cada mês, 8:00 UTC. O último mês publicado é descoberto listando o FTP.
     - cron: '0 8 5 * *'
   workflow_dispatch:
     inputs:
       force_rebuild:
-        description: 'Forcar reconstrucao completa dos dados'
+        description: 'Reprocessar todos os arquivos do fato'
         required: false
         type: boolean
         default: false
 
 permissions:
   contents: write
+  actions: write  # disparar o deploy (push com GITHUB_TOKEN não dispara workflows)
 
 concurrency:
   group: "data-pipeline"
@@ -24,6 +24,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    env:
+      CAGED_CACHE_DIR: data/cache
 
     steps:
       - name: Checkout
@@ -37,35 +39,33 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Cache data files
-        id: cache-data
-        uses: actions/cache@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path: |
-            data/raw
-            data/processed
-          key: caged-data-${{ github.run_number }}
-          restore-keys: |
-            caged-data-
+          node-version: '20'
 
-      - name: Download CAGED data
-        working-directory: scripts
-        env:
-          FORCE_REBUILD: ${{ github.event.inputs.force_rebuild == 'true' }}
-        run: python download_caged_granular.py
+      # download incremental -> fato -> regionais -> cubo -> reconciliação -> testes Python
+      - name: Run pipeline
+        run: python scripts/run_pipeline.py ${{ github.event.inputs.force_rebuild == 'true' && '--force' || '' }}
 
-      - name: Process dashboard data
-        working-directory: scripts
-        run: python prepare_dashboard_granular.py
+      - name: Build agregado
+        run: node scripts/build_agregado.mjs
+
+      - name: Engine consistency tests
+        run: |
+          python scripts/tests/run_oracle.py "$RUNNER_TEMP/oracle.json"
+          node scripts/tests/run_engine.mjs scripts/tests/cases.json "$RUNNER_TEMP/engine.json"
+          python scripts/tests/compare.py "$RUNNER_TEMP/oracle.json" "$RUNNER_TEMP/engine.json"
 
       - name: Check for changes
         id: check
         run: |
-          git add -A
-          if git diff --cached --quiet; then
+          git add data/fact dashboard/public/data/v2 docs/RECONCILIACAO.md
+          # só dado novo conta: dims.version/agregado.atualizacao/RECONCILIACAO levam a data do run
+          if git diff --cached --quiet -- data/fact; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -77,14 +77,22 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update data"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
+
+      - name: Trigger deploy
+        if: steps.check.outputs.changed == 'true' && github.ref_name == 'main'
+        run: gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: Summary
+        if: always()
         run: |
           echo "## Data Pipeline Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **Data updated:** ${{ steps.check.outputs.changed }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Timestamp:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-          if [ -f "dashboard/public/data/aggregated_full.json" ]; then
-            echo "- **Data file:** dashboard/public/data/aggregated_full.json" >> $GITHUB_STEP_SUMMARY
-          fi
+          ls -la dashboard/public/data/v2/cubo >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
