@@ -62,3 +62,6 @@ dashboard/public/assets/mun_PR.json
 
 # Artefatos locais do understand-anything
 .understand-anything/
+
+# Cache de arquivos brutos do FTP do MTE (pipeline v2)
+data/cache/

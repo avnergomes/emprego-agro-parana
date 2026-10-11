@@ -1,0 +1,5415 @@
+[
+ {
+  "id": "a-meso-Centro",
+  "filters": {
+   "meso": "Centro"
+  }
+ },
+ {
+  "id": "a-meso-Centro Sul",
+  "filters": {
+   "meso": "Centro Sul"
+  }
+ },
+ {
+  "id": "a-meso-Metropolitana e Litoral",
+  "filters": {
+   "meso": "Metropolitana e Litoral"
+  }
+ },
+ {
+  "id": "a-meso-Noroeste",
+  "filters": {
+   "meso": "Noroeste"
+  }
+ },
+ {
+  "id": "a-meso-Norte",
+  "filters": {
+   "meso": "Norte"
+  }
+ },
+ {
+  "id": "a-meso-Oeste",
+  "filters": {
+   "meso": "Oeste"
+  }
+ },
+ {
+  "id": "a-meso-Sudoeste",
+  "filters": {
+   "meso": "Sudoeste"
+  }
+ },
+ {
+  "id": "a-reg-Apucarana",
+  "filters": {
+   "reg": "Apucarana"
+  }
+ },
+ {
+  "id": "a-reg-Campo Mourão",
+  "filters": {
+   "reg": "Campo Mourão"
+  }
+ },
+ {
+  "id": "a-reg-Cascavel",
+  "filters": {
+   "reg": "Cascavel"
+  }
+ },
+ {
+  "id": "a-reg-Cianorte",
+  "filters": {
+   "reg": "Cianorte"
+  }
+ },
+ {
+  "id": "a-reg-Cornélio Procópio",
+  "filters": {
+   "reg": "Cornélio Procópio"
+  }
+ },
+ {
+  "id": "a-reg-Curitiba",
+  "filters": {
+   "reg": "Curitiba"
+  }
+ },
+ {
+  "id": "a-reg-Dois Vizinhos",
+  "filters": {
+   "reg": "Dois Vizinhos"
+  }
+ },
+ {
+  "id": "a-reg-Francisco Beltrão",
+  "filters": {
+   "reg": "Francisco Beltrão"
+  }
+ },
+ {
+  "id": "a-reg-Guarapuava",
+  "filters": {
+   "reg": "Guarapuava"
+  }
+ },
+ {
+  "id": "a-reg-Irati",
+  "filters": {
+   "reg": "Irati"
+  }
+ },
+ {
+  "id": "a-reg-Ivaiporã",
+  "filters": {
+   "reg": "Ivaiporã"
+  }
+ },
+ {
+  "id": "a-reg-Laranjeiras do Sul",
+  "filters": {
+   "reg": "Laranjeiras do Sul"
+  }
+ },
+ {
+  "id": "a-reg-Londrina",
+  "filters": {
+   "reg": "Londrina"
+  }
+ },
+ {
+  "id": "a-reg-Maringá",
+  "filters": {
+   "reg": "Maringá"
+  }
+ },
+ {
+  "id": "a-reg-Paranaguá",
+  "filters": {
+   "reg": "Paranaguá"
+  }
+ },
+ {
+  "id": "a-reg-Paranavaí",
+  "filters": {
+   "reg": "Paranavaí"
+  }
+ },
+ {
+  "id": "a-reg-Pato Branco",
+  "filters": {
+   "reg": "Pato Branco"
+  }
+ },
+ {
+  "id": "a-reg-Pitanga",
+  "filters": {
+   "reg": "Pitanga"
+  }
+ },
+ {
+  "id": "a-reg-Ponta Grossa",
+  "filters": {
+   "reg": "Ponta Grossa"
+  }
+ },
+ {
+  "id": "a-reg-Santo Antonio da Platina",
+  "filters": {
+   "reg": "Santo Antonio da Platina"
+  }
+ },
+ {
+  "id": "a-reg-Toledo",
+  "filters": {
+   "reg": "Toledo"
+  }
+ },
+ {
+  "id": "a-reg-Umuarama",
+  "filters": {
+   "reg": "Umuarama"
+  }
+ },
+ {
+  "id": "a-reg-União da Vitória",
+  "filters": {
+   "reg": "União da Vitória"
+  }
+ },
+ {
+  "id": "a-cadeia-Grãos",
+  "filters": {
+   "cadeia": "Grãos"
+  }
+ },
+ {
+  "id": "a-cadeia-Sojicultura",
+  "filters": {
+   "cadeia": "Sojicultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Algodão e Fibras",
+  "filters": {
+   "cadeia": "Algodão e Fibras"
+  }
+ },
+ {
+  "id": "a-cadeia-Cana-de-açúcar",
+  "filters": {
+   "cadeia": "Cana-de-açúcar"
+  }
+ },
+ {
+  "id": "a-cadeia-Fumo",
+  "filters": {
+   "cadeia": "Fumo"
+  }
+ },
+ {
+  "id": "a-cadeia-Outras Lavouras Temporárias",
+  "filters": {
+   "cadeia": "Outras Lavouras Temporárias"
+  }
+ },
+ {
+  "id": "a-cadeia-Horticultura",
+  "filters": {
+   "cadeia": "Horticultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Fruticultura",
+  "filters": {
+   "cadeia": "Fruticultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Cafeicultura",
+  "filters": {
+   "cadeia": "Cafeicultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Outras Lavouras Permanentes",
+  "filters": {
+   "cadeia": "Outras Lavouras Permanentes"
+  }
+ },
+ {
+  "id": "a-cadeia-Sementes e Mudas",
+  "filters": {
+   "cadeia": "Sementes e Mudas"
+  }
+ },
+ {
+  "id": "a-cadeia-Bovinocultura de Corte",
+  "filters": {
+   "cadeia": "Bovinocultura de Corte"
+  }
+ },
+ {
+  "id": "a-cadeia-Bovinocultura de Leite",
+  "filters": {
+   "cadeia": "Bovinocultura de Leite"
+  }
+ },
+ {
+  "id": "a-cadeia-Ovinocaprinocultura",
+  "filters": {
+   "cadeia": "Ovinocaprinocultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Suinocultura",
+  "filters": {
+   "cadeia": "Suinocultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Avicultura",
+  "filters": {
+   "cadeia": "Avicultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Apicultura",
+  "filters": {
+   "cadeia": "Apicultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Outras Criações",
+  "filters": {
+   "cadeia": "Outras Criações"
+  }
+ },
+ {
+  "id": "a-cadeia-Serviços Agrícolas",
+  "filters": {
+   "cadeia": "Serviços Agrícolas"
+  }
+ },
+ {
+  "id": "a-cadeia-Serviços à Pecuária",
+  "filters": {
+   "cadeia": "Serviços à Pecuária"
+  }
+ },
+ {
+  "id": "a-cadeia-Silvicultura",
+  "filters": {
+   "cadeia": "Silvicultura"
+  }
+ },
+ {
+  "id": "a-cadeia-Extrativismo Florestal",
+  "filters": {
+   "cadeia": "Extrativismo Florestal"
+  }
+ },
+ {
+  "id": "a-cadeia-Pesca",
+  "filters": {
+   "cadeia": "Pesca"
+  }
+ },
+ {
+  "id": "a-cadeia-Aquicultura",
+  "filters": {
+   "cadeia": "Aquicultura"
+  }
+ },
+ {
+  "id": "a-ano-2020",
+  "filters": {
+   "ano": "2020"
+  }
+ },
+ {
+  "id": "a-ano-2021",
+  "filters": {
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "a-ano-2022",
+  "filters": {
+   "ano": "2022"
+  }
+ },
+ {
+  "id": "a-ano-2023",
+  "filters": {
+   "ano": "2023"
+  }
+ },
+ {
+  "id": "a-ano-2024",
+  "filters": {
+   "ano": "2024"
+  }
+ },
+ {
+  "id": "a-ano-2025",
+  "filters": {
+   "ano": "2025"
+  }
+ },
+ {
+  "id": "a-ano-2026",
+  "filters": {
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "a-sexo-Masculino",
+  "filters": {
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "a-sexo-Feminino",
+  "filters": {
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "a-sexo-Não informado",
+  "filters": {
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "a-faixa-Menor de 18",
+  "filters": {
+   "faixa": "Menor de 18"
+  }
+ },
+ {
+  "id": "a-faixa-18 a 24 anos",
+  "filters": {
+   "faixa": "18 a 24 anos"
+  }
+ },
+ {
+  "id": "a-faixa-25 a 29 anos",
+  "filters": {
+   "faixa": "25 a 29 anos"
+  }
+ },
+ {
+  "id": "a-faixa-30 a 39 anos",
+  "filters": {
+   "faixa": "30 a 39 anos"
+  }
+ },
+ {
+  "id": "a-faixa-40 a 49 anos",
+  "filters": {
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "a-faixa-50 a 64 anos",
+  "filters": {
+   "faixa": "50 a 64 anos"
+  }
+ },
+ {
+  "id": "a-faixa-65 anos ou mais",
+  "filters": {
+   "faixa": "65 anos ou mais"
+  }
+ },
+ {
+  "id": "a-faixa-Não informado",
+  "filters": {
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "a-escolaridade-Analfabeto",
+  "filters": {
+   "escolaridade": "Analfabeto"
+  }
+ },
+ {
+  "id": "a-escolaridade-Até 5ª Incompleto",
+  "filters": {
+   "escolaridade": "Até 5ª Incompleto"
+  }
+ },
+ {
+  "id": "a-escolaridade-5ª Completo Fundamental",
+  "filters": {
+   "escolaridade": "5ª Completo Fundamental"
+  }
+ },
+ {
+  "id": "a-escolaridade-6ª a 9ª Fundamental",
+  "filters": {
+   "escolaridade": "6ª a 9ª Fundamental"
+  }
+ },
+ {
+  "id": "a-escolaridade-Fundamental Completo",
+  "filters": {
+   "escolaridade": "Fundamental Completo"
+  }
+ },
+ {
+  "id": "a-escolaridade-Médio Incompleto",
+  "filters": {
+   "escolaridade": "Médio Incompleto"
+  }
+ },
+ {
+  "id": "a-escolaridade-Médio Completo",
+  "filters": {
+   "escolaridade": "Médio Completo"
+  }
+ },
+ {
+  "id": "a-escolaridade-Superior Incompleto",
+  "filters": {
+   "escolaridade": "Superior Incompleto"
+  }
+ },
+ {
+  "id": "a-escolaridade-Superior Completo",
+  "filters": {
+   "escolaridade": "Superior Completo"
+  }
+ },
+ {
+  "id": "a-escolaridade-Mestrado",
+  "filters": {
+   "escolaridade": "Mestrado"
+  }
+ },
+ {
+  "id": "a-escolaridade-Doutorado",
+  "filters": {
+   "escolaridade": "Doutorado"
+  }
+ },
+ {
+  "id": "a-escolaridade-Pós-Graduação completa",
+  "filters": {
+   "escolaridade": "Pós-Graduação completa"
+  }
+ },
+ {
+  "id": "a-escolaridade-Não informado",
+  "filters": {
+   "escolaridade": "Não informado"
+  }
+ },
+ {
+  "id": "a-porte-Zero",
+  "filters": {
+   "porte": "Zero"
+  }
+ },
+ {
+  "id": "a-porte-De 1 a 4",
+  "filters": {
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "a-porte-De 5 a 9",
+  "filters": {
+   "porte": "De 5 a 9"
+  }
+ },
+ {
+  "id": "a-porte-De 10 a 19",
+  "filters": {
+   "porte": "De 10 a 19"
+  }
+ },
+ {
+  "id": "a-porte-De 20 a 49",
+  "filters": {
+   "porte": "De 20 a 49"
+  }
+ },
+ {
+  "id": "a-porte-De 50 a 99",
+  "filters": {
+   "porte": "De 50 a 99"
+  }
+ },
+ {
+  "id": "a-porte-De 100 a 249",
+  "filters": {
+   "porte": "De 100 a 249"
+  }
+ },
+ {
+  "id": "a-porte-De 250 a 499",
+  "filters": {
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "a-porte-De 500 a 999",
+  "filters": {
+   "porte": "De 500 a 999"
+  }
+ },
+ {
+  "id": "a-porte-1000 ou mais",
+  "filters": {
+   "porte": "1000 ou mais"
+  }
+ },
+ {
+  "id": "a-porte-Não informado",
+  "filters": {
+   "porte": "Não informado"
+  }
+ },
+ {
+  "id": "a-mun-411760",
+  "filters": {
+   "mun": "411760"
+  }
+ },
+ {
+  "id": "a-mun-410480",
+  "filters": {
+   "mun": "410480"
+  }
+ },
+ {
+  "id": "a-mun-410940",
+  "filters": {
+   "mun": "410940"
+  }
+ },
+ {
+  "id": "a-mun-410490",
+  "filters": {
+   "mun": "410490"
+  }
+ },
+ {
+  "id": "a-mun-411840",
+  "filters": {
+   "mun": "411840"
+  }
+ },
+ {
+  "id": "a-mun-410465",
+  "filters": {
+   "mun": "410465"
+  }
+ },
+ {
+  "id": "a-mun-411730",
+  "filters": {
+   "mun": "411730"
+  }
+ },
+ {
+  "id": "a-mun-411990",
+  "filters": {
+   "mun": "411990"
+  }
+ },
+ {
+  "id": "a-mun-411850",
+  "filters": {
+   "mun": "411850"
+  }
+ },
+ {
+  "id": "a-mun-412770",
+  "filters": {
+   "mun": "412770"
+  }
+ },
+ {
+  "id": "a-mun-410770",
+  "filters": {
+   "mun": "410770"
+  }
+ },
+ {
+  "id": "a-mun-410655",
+  "filters": {
+   "mun": "410655"
+  }
+ },
+ {
+  "id": "a-mun-410950",
+  "filters": {
+   "mun": "410950"
+  }
+ },
+ {
+  "id": "a-mun-412120",
+  "filters": {
+   "mun": "412120"
+  }
+ },
+ {
+  "id": "a-mun-411040",
+  "filters": {
+   "mun": "411040"
+  }
+ },
+ {
+  "id": "a-mun-411160",
+  "filters": {
+   "mun": "411160"
+  }
+ },
+ {
+  "id": "a-mun-411900",
+  "filters": {
+   "mun": "411900"
+  }
+ },
+ {
+  "id": "a-mun-412382",
+  "filters": {
+   "mun": "412382"
+  }
+ },
+ {
+  "id": "a-mun-410730",
+  "filters": {
+   "mun": "410730"
+  }
+ },
+ {
+  "id": "a-mun-410895",
+  "filters": {
+   "mun": "410895"
+  }
+ },
+ {
+  "id": "a-mun-410810",
+  "filters": {
+   "mun": "410810"
+  }
+ },
+ {
+  "id": "a-mun-412610",
+  "filters": {
+   "mun": "412610"
+  }
+ },
+ {
+  "id": "a-mun-410315",
+  "filters": {
+   "mun": "410315"
+  }
+ },
+ {
+  "id": "a-mun-411915",
+  "filters": {
+   "mun": "411915"
+  }
+ },
+ {
+  "id": "a-mun-411995",
+  "filters": {
+   "mun": "411995"
+  }
+ },
+ {
+  "id": "a-mun-411005",
+  "filters": {
+   "mun": "411005"
+  }
+ },
+ {
+  "id": "a-mun-410765",
+  "filters": {
+   "mun": "410765"
+  }
+ },
+ {
+  "id": "a-mun-410275",
+  "filters": {
+   "mun": "410275"
+  }
+ },
+ {
+  "id": "a-mun-410855",
+  "filters": {
+   "mun": "410855"
+  }
+ },
+ {
+  "id": "a-mun-411570",
+  "filters": {
+   "mun": "411570"
+  }
+ },
+ {
+  "id": "a-mun-412010",
+  "filters": {
+   "mun": "412010"
+  }
+ },
+ {
+  "id": "a-mun-411390",
+  "filters": {
+   "mun": "411390"
+  }
+ },
+ {
+  "id": "a-mun-412020",
+  "filters": {
+   "mun": "412020"
+  }
+ },
+ {
+  "id": "a-mun-411370",
+  "filters": {
+   "mun": "411370"
+  }
+ },
+ {
+  "id": "a-mun-411120",
+  "filters": {
+   "mun": "411120"
+  }
+ },
+ {
+  "id": "a-mun-410240",
+  "filters": {
+   "mun": "410240"
+  }
+ },
+ {
+  "id": "a-mun-410170",
+  "filters": {
+   "mun": "410170"
+  }
+ },
+ {
+  "id": "a-mun-411440",
+  "filters": {
+   "mun": "411440"
+  }
+ },
+ {
+  "id": "a-mun-411950",
+  "filters": {
+   "mun": "411950"
+  }
+ },
+ {
+  "id": "a-mun-410165",
+  "filters": {
+   "mun": "410165"
+  }
+ },
+ {
+  "id": "a-mun-412790",
+  "filters": {
+   "mun": "412790"
+  }
+ },
+ {
+  "id": "a-mun-410070",
+  "filters": {
+   "mun": "410070"
+  }
+ },
+ {
+  "id": "a-mun-412853",
+  "filters": {
+   "mun": "412853"
+  }
+ },
+ {
+  "id": "a-mun-412710",
+  "filters": {
+   "mun": "412710"
+  }
+ },
+ {
+  "id": "a-mun-411380",
+  "filters": {
+   "mun": "411380"
+  }
+ },
+ {
+  "id": "a-mun-410845",
+  "filters": {
+   "mun": "410845"
+  }
+ },
+ {
+  "id": "a-mun-412665",
+  "filters": {
+   "mun": "412665"
+  }
+ },
+ {
+  "id": "a-mun-412450",
+  "filters": {
+   "mun": "412450"
+  }
+ },
+ {
+  "id": "a-mun-412150",
+  "filters": {
+   "mun": "412150"
+  }
+ },
+ {
+  "id": "a-mun-410500",
+  "filters": {
+   "mun": "410500"
+  }
+ },
+ {
+  "id": "a-mun-411920",
+  "filters": {
+   "mun": "411920"
+  }
+ },
+ {
+  "id": "a-mun-410115",
+  "filters": {
+   "mun": "410115"
+  }
+ },
+ {
+  "id": "a-mun-410020",
+  "filters": {
+   "mun": "410020"
+  }
+ },
+ {
+  "id": "a-mun-410890",
+  "filters": {
+   "mun": "410890"
+  }
+ },
+ {
+  "id": "a-mun-410965",
+  "filters": {
+   "mun": "410965"
+  }
+ },
+ {
+  "id": "a-mun-410620",
+  "filters": {
+   "mun": "410620"
+  }
+ },
+ {
+  "id": "a-mun-410755",
+  "filters": {
+   "mun": "410755"
+  }
+ },
+ {
+  "id": "a-mun-411500",
+  "filters": {
+   "mun": "411500"
+  }
+ },
+ {
+  "id": "a-mun-412862",
+  "filters": {
+   "mun": "412862"
+  }
+ },
+ {
+  "id": "a-mun-411820",
+  "filters": {
+   "mun": "411820"
+  }
+ },
+ {
+  "id": "a-cnae-0115600",
+  "filters": {
+   "cnae": "0115600"
+  }
+ },
+ {
+  "id": "a-cnae-0155505",
+  "filters": {
+   "cnae": "0155505"
+  }
+ },
+ {
+  "id": "a-cnae-0151201",
+  "filters": {
+   "cnae": "0151201"
+  }
+ },
+ {
+  "id": "a-cnae-0161099",
+  "filters": {
+   "cnae": "0161099"
+  }
+ },
+ {
+  "id": "a-cnae-0161003",
+  "filters": {
+   "cnae": "0161003"
+  }
+ },
+ {
+  "id": "a-cnae-0154700",
+  "filters": {
+   "cnae": "0154700"
+  }
+ },
+ {
+  "id": "a-cnae-0155502",
+  "filters": {
+   "cnae": "0155502"
+  }
+ },
+ {
+  "id": "a-cnae-0230600",
+  "filters": {
+   "cnae": "0230600"
+  }
+ },
+ {
+  "id": "a-cnae-0111399",
+  "filters": {
+   "cnae": "0111399"
+  }
+ },
+ {
+  "id": "a-cnae-0210103",
+  "filters": {
+   "cnae": "0210103"
+  }
+ },
+ {
+  "id": "a-cnae-0133409",
+  "filters": {
+   "cnae": "0133409"
+  }
+ },
+ {
+  "id": "a-cnae-0112101",
+  "filters": {
+   "cnae": "0112101"
+  }
+ },
+ {
+  "id": "a-cnae-0220903",
+  "filters": {
+   "cnae": "0220903"
+  }
+ },
+ {
+  "id": "a-cnae-0311604",
+  "filters": {
+   "cnae": "0311604"
+  }
+ },
+ {
+  "id": "a-cnae-0139305",
+  "filters": {
+   "cnae": "0139305"
+  }
+ },
+ {
+  "id": "a-cnae-0321305",
+  "filters": {
+   "cnae": "0321305"
+  }
+ },
+ {
+  "id": "a-cnae-0162802",
+  "filters": {
+   "cnae": "0162802"
+  }
+ },
+ {
+  "id": "a-cnae-0119901",
+  "filters": {
+   "cnae": "0119901"
+  }
+ },
+ {
+  "id": "a-cnae-0119908",
+  "filters": {
+   "cnae": "0119908"
+  }
+ },
+ {
+  "id": "a-cnae-0119902",
+  "filters": {
+   "cnae": "0119902"
+  }
+ },
+ {
+  "id": "a-cnae-0322105",
+  "filters": {
+   "cnae": "0322105"
+  }
+ },
+ {
+  "id": "a-cnae-0116403",
+  "filters": {
+   "cnae": "0116403"
+  }
+ },
+ {
+  "id": "a-cnae-0133408",
+  "filters": {
+   "cnae": "0133408"
+  }
+ },
+ {
+  "id": "a-cnae-0220905",
+  "filters": {
+   "cnae": "0220905"
+  }
+ },
+ {
+  "id": "a-cnae-0135100",
+  "filters": {
+   "cnae": "0135100"
+  }
+ },
+ {
+  "id": "a-cnae-0112102",
+  "filters": {
+   "cnae": "0112102"
+  }
+ },
+ {
+  "id": "a-cnae-0133401",
+  "filters": {
+   "cnae": "0133401"
+  }
+ },
+ {
+  "id": "a-cnae-0133403",
+  "filters": {
+   "cnae": "0133403"
+  }
+ },
+ {
+  "id": "a-cnae-0312401",
+  "filters": {
+   "cnae": "0312401"
+  }
+ },
+ {
+  "id": "a-cnae-0141502",
+  "filters": {
+   "cnae": "0141502"
+  }
+ },
+ {
+  "id": "a-cnae-0111303",
+  "filters": {
+   "cnae": "0111303"
+  }
+ },
+ {
+  "id": "a-cnae-0121102",
+  "filters": {
+   "cnae": "0121102"
+  }
+ },
+ {
+  "id": "a-cnae-0139303",
+  "filters": {
+   "cnae": "0139303"
+  }
+ },
+ {
+  "id": "a-cnae-0159899",
+  "filters": {
+   "cnae": "0159899"
+  }
+ },
+ {
+  "id": "a-cnae-0322102",
+  "filters": {
+   "cnae": "0322102"
+  }
+ },
+ {
+  "id": "a-cnae-0153901",
+  "filters": {
+   "cnae": "0153901"
+  }
+ },
+ {
+  "id": "a-cnae-0322199",
+  "filters": {
+   "cnae": "0322199"
+  }
+ },
+ {
+  "id": "a-cnae-0133407",
+  "filters": {
+   "cnae": "0133407"
+  }
+ },
+ {
+  "id": "a-cnae-0142300",
+  "filters": {
+   "cnae": "0142300"
+  }
+ },
+ {
+  "id": "a-cnae-0133499",
+  "filters": {
+   "cnae": "0133499"
+  }
+ },
+ {
+  "id": "a-periodo-2020-01",
+  "filters": {
+   "periodo": "2020-01"
+  }
+ },
+ {
+  "id": "a-periodo-2020-10",
+  "filters": {
+   "periodo": "2020-10"
+  }
+ },
+ {
+  "id": "a-periodo-2021-03",
+  "filters": {
+   "periodo": "2021-03"
+  }
+ },
+ {
+  "id": "a-periodo-2021-10",
+  "filters": {
+   "periodo": "2021-10"
+  }
+ },
+ {
+  "id": "a-periodo-2023-02",
+  "filters": {
+   "periodo": "2023-02"
+  }
+ },
+ {
+  "id": "a-periodo-2023-06",
+  "filters": {
+   "periodo": "2023-06"
+  }
+ },
+ {
+  "id": "a-periodo-2023-09",
+  "filters": {
+   "periodo": "2023-09"
+  }
+ },
+ {
+  "id": "a-periodo-2023-11",
+  "filters": {
+   "periodo": "2023-11"
+  }
+ },
+ {
+  "id": "a-periodo-2023-12",
+  "filters": {
+   "periodo": "2023-12"
+  }
+ },
+ {
+  "id": "a-periodo-2024-11",
+  "filters": {
+   "periodo": "2024-11"
+  }
+ },
+ {
+  "id": "a-periodo-2025-01",
+  "filters": {
+   "periodo": "2025-01"
+  }
+ },
+ {
+  "id": "a-periodo-2025-02",
+  "filters": {
+   "periodo": "2025-02"
+  }
+ },
+ {
+  "id": "a-periodo-2025-07",
+  "filters": {
+   "periodo": "2025-07"
+  }
+ },
+ {
+  "id": "a-periodo-2025-12",
+  "filters": {
+   "periodo": "2025-12"
+  }
+ },
+ {
+  "id": "a-periodo-2026-08",
+  "filters": {
+   "periodo": "2026-08"
+  }
+ },
+ {
+  "id": "b-meso-reg-0",
+  "filters": {
+   "reg": "Francisco Beltrão",
+   "meso": "Sudoeste"
+  }
+ },
+ {
+  "id": "b-meso-reg-1",
+  "filters": {
+   "reg": "Francisco Beltrão",
+   "meso": "Centro"
+  }
+ },
+ {
+  "id": "b-meso-reg-2",
+  "filters": {
+   "reg": "Cianorte",
+   "meso": "Norte"
+  }
+ },
+ {
+  "id": "b-meso-mun-0",
+  "filters": {
+   "mun": "411650",
+   "meso": "Noroeste"
+  }
+ },
+ {
+  "id": "b-meso-mun-1",
+  "filters": {
+   "mun": "412780",
+   "meso": "Centro Sul"
+  }
+ },
+ {
+  "id": "b-meso-mun-2",
+  "filters": {
+   "mun": "412720",
+   "meso": "Metropolitana e Litoral"
+  }
+ },
+ {
+  "id": "b-meso-cadeia-0",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "cadeia": "Outras Criações"
+  }
+ },
+ {
+  "id": "b-meso-cadeia-1",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "cadeia": "Horticultura"
+  }
+ },
+ {
+  "id": "b-meso-cadeia-2",
+  "filters": {
+   "meso": "Oeste",
+   "cadeia": "Bovinocultura de Leite"
+  }
+ },
+ {
+  "id": "b-meso-cnae-0",
+  "filters": {
+   "meso": "Oeste",
+   "cnae": "0220904"
+  }
+ },
+ {
+  "id": "b-meso-cnae-1",
+  "filters": {
+   "meso": "Oeste",
+   "cnae": "0116403"
+  }
+ },
+ {
+  "id": "b-meso-cnae-2",
+  "filters": {
+   "meso": "Centro",
+   "cnae": "0159802"
+  }
+ },
+ {
+  "id": "b-meso-ano-0",
+  "filters": {
+   "meso": "Centro",
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "b-meso-ano-1",
+  "filters": {
+   "meso": "Sudoeste",
+   "ano": "2024"
+  }
+ },
+ {
+  "id": "b-meso-ano-2",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "ano": "2024"
+  }
+ },
+ {
+  "id": "b-meso-periodo-0",
+  "filters": {
+   "meso": "Norte",
+   "periodo": "2025-12"
+  }
+ },
+ {
+  "id": "b-meso-periodo-1",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "periodo": "2021-12"
+  }
+ },
+ {
+  "id": "b-meso-periodo-2",
+  "filters": {
+   "meso": "Norte",
+   "periodo": "2024-11"
+  }
+ },
+ {
+  "id": "b-meso-sexo-0",
+  "filters": {
+   "meso": "Centro",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "b-meso-sexo-1",
+  "filters": {
+   "meso": "Sudoeste",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "b-meso-sexo-2",
+  "filters": {
+   "meso": "Noroeste",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "b-meso-faixa-0",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "faixa": "30 a 39 anos"
+  }
+ },
+ {
+  "id": "b-meso-faixa-1",
+  "filters": {
+   "meso": "Norte",
+   "faixa": "Menor de 18"
+  }
+ },
+ {
+  "id": "b-meso-faixa-2",
+  "filters": {
+   "meso": "Noroeste",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "b-meso-escolaridade-0",
+  "filters": {
+   "meso": "Centro",
+   "escolaridade": "Médio Incompleto"
+  }
+ },
+ {
+  "id": "b-meso-escolaridade-1",
+  "filters": {
+   "meso": "Sudoeste",
+   "escolaridade": "5ª Completo Fundamental"
+  }
+ },
+ {
+  "id": "b-meso-escolaridade-2",
+  "filters": {
+   "meso": "Sudoeste",
+   "escolaridade": "Médio Incompleto"
+  }
+ },
+ {
+  "id": "b-meso-porte-0",
+  "filters": {
+   "meso": "Noroeste",
+   "porte": "De 50 a 99"
+  }
+ },
+ {
+  "id": "b-meso-porte-1",
+  "filters": {
+   "meso": "Centro",
+   "porte": "De 100 a 249"
+  }
+ },
+ {
+  "id": "b-meso-porte-2",
+  "filters": {
+   "meso": "Oeste",
+   "porte": "De 10 a 19"
+  }
+ },
+ {
+  "id": "b-reg-mun-0",
+  "filters": {
+   "mun": "410880",
+   "reg": "Toledo"
+  }
+ },
+ {
+  "id": "b-reg-mun-1",
+  "filters": {
+   "mun": "411990",
+   "reg": "Pitanga"
+  }
+ },
+ {
+  "id": "b-reg-mun-2",
+  "filters": {
+   "mun": "410720",
+   "reg": "Paranaguá"
+  }
+ },
+ {
+  "id": "b-reg-cadeia-0",
+  "filters": {
+   "reg": "Paranavaí",
+   "cadeia": "Suinocultura"
+  }
+ },
+ {
+  "id": "b-reg-cadeia-1",
+  "filters": {
+   "reg": "Ponta Grossa",
+   "cadeia": "Avicultura"
+  }
+ },
+ {
+  "id": "b-reg-cadeia-2",
+  "filters": {
+   "reg": "Pato Branco",
+   "cadeia": "Bovinocultura de Corte"
+  }
+ },
+ {
+  "id": "b-reg-cnae-0",
+  "filters": {
+   "reg": "Dois Vizinhos",
+   "cnae": "0133404"
+  }
+ },
+ {
+  "id": "b-reg-cnae-1",
+  "filters": {
+   "reg": "Paranaguá",
+   "cnae": "0220904"
+  }
+ },
+ {
+  "id": "b-reg-cnae-2",
+  "filters": {
+   "reg": "Guarapuava",
+   "cnae": "0152103"
+  }
+ },
+ {
+  "id": "b-reg-ano-0",
+  "filters": {
+   "reg": "Santo Antonio da Platina",
+   "ano": "2025"
+  }
+ },
+ {
+  "id": "b-reg-ano-1",
+  "filters": {
+   "reg": "Dois Vizinhos",
+   "ano": "2022"
+  }
+ },
+ {
+  "id": "b-reg-ano-2",
+  "filters": {
+   "reg": "Irati",
+   "ano": "2025"
+  }
+ },
+ {
+  "id": "b-reg-periodo-0",
+  "filters": {
+   "reg": "Guarapuava",
+   "periodo": "2020-04"
+  }
+ },
+ {
+  "id": "b-reg-periodo-1",
+  "filters": {
+   "reg": "Dois Vizinhos",
+   "periodo": "2020-02"
+  }
+ },
+ {
+  "id": "b-reg-periodo-2",
+  "filters": {
+   "reg": "Paranavaí",
+   "periodo": "2023-12"
+  }
+ },
+ {
+  "id": "b-reg-sexo-0",
+  "filters": {
+   "reg": "Apucarana",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "b-reg-sexo-1",
+  "filters": {
+   "reg": "Irati",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "b-reg-sexo-2",
+  "filters": {
+   "reg": "Ivaiporã",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "b-reg-faixa-0",
+  "filters": {
+   "reg": "Pitanga",
+   "faixa": "50 a 64 anos"
+  }
+ },
+ {
+  "id": "b-reg-faixa-1",
+  "filters": {
+   "reg": "Ponta Grossa",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "b-reg-faixa-2",
+  "filters": {
+   "reg": "Maringá",
+   "faixa": "25 a 29 anos"
+  }
+ },
+ {
+  "id": "b-reg-escolaridade-0",
+  "filters": {
+   "reg": "Ponta Grossa",
+   "escolaridade": "Não informado"
+  }
+ },
+ {
+  "id": "b-reg-escolaridade-1",
+  "filters": {
+   "reg": "Londrina",
+   "escolaridade": "Não informado"
+  }
+ },
+ {
+  "id": "b-reg-escolaridade-2",
+  "filters": {
+   "reg": "Santo Antonio da Platina",
+   "escolaridade": "Não informado"
+  }
+ },
+ {
+  "id": "b-reg-porte-0",
+  "filters": {
+   "reg": "Laranjeiras do Sul",
+   "porte": "De 5 a 9"
+  }
+ },
+ {
+  "id": "b-reg-porte-1",
+  "filters": {
+   "reg": "Umuarama",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "b-reg-porte-2",
+  "filters": {
+   "reg": "Pitanga",
+   "porte": "De 5 a 9"
+  }
+ },
+ {
+  "id": "b-mun-cadeia-0",
+  "filters": {
+   "mun": "411480",
+   "cadeia": "Extrativismo Florestal"
+  }
+ },
+ {
+  "id": "b-mun-cadeia-1",
+  "filters": {
+   "mun": "410690",
+   "cadeia": "Avicultura"
+  }
+ },
+ {
+  "id": "b-mun-cadeia-2",
+  "filters": {
+   "mun": "412395",
+   "cadeia": "Bovinocultura de Leite"
+  }
+ },
+ {
+  "id": "b-mun-cnae-0",
+  "filters": {
+   "mun": "410337",
+   "cnae": "0111301"
+  }
+ },
+ {
+  "id": "b-mun-cnae-1",
+  "filters": {
+   "mun": "410110",
+   "cnae": "0121101"
+  }
+ },
+ {
+  "id": "b-mun-cnae-2",
+  "filters": {
+   "mun": "412395",
+   "cnae": "0155505"
+  }
+ },
+ {
+  "id": "b-mun-ano-0",
+  "filters": {
+   "mun": "411722",
+   "ano": "2025"
+  }
+ },
+ {
+  "id": "b-mun-ano-1",
+  "filters": {
+   "mun": "412020",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "b-mun-ano-2",
+  "filters": {
+   "mun": "411840",
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "b-mun-periodo-0",
+  "filters": {
+   "mun": "412050",
+   "periodo": "2021-11"
+  }
+ },
+ {
+  "id": "b-mun-periodo-1",
+  "filters": {
+   "mun": "412880",
+   "periodo": "2025-10"
+  }
+ },
+ {
+  "id": "b-mun-periodo-2",
+  "filters": {
+   "mun": "412680",
+   "periodo": "2022-11"
+  }
+ },
+ {
+  "id": "b-mun-sexo-0",
+  "filters": {
+   "mun": "412125",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "b-mun-sexo-1",
+  "filters": {
+   "mun": "412600",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "b-mun-sexo-2",
+  "filters": {
+   "mun": "411110",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "b-mun-faixa-0",
+  "filters": {
+   "mun": "410420",
+   "faixa": "18 a 24 anos"
+  }
+ },
+ {
+  "id": "b-mun-faixa-1",
+  "filters": {
+   "mun": "411000",
+   "faixa": "30 a 39 anos"
+  }
+ },
+ {
+  "id": "b-mun-faixa-2",
+  "filters": {
+   "mun": "412510",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "b-mun-escolaridade-0",
+  "filters": {
+   "mun": "411850",
+   "escolaridade": "Pós-Graduação completa"
+  }
+ },
+ {
+  "id": "b-mun-escolaridade-1",
+  "filters": {
+   "mun": "411585",
+   "escolaridade": "Doutorado"
+  }
+ },
+ {
+  "id": "b-mun-escolaridade-2",
+  "filters": {
+   "mun": "410390",
+   "escolaridade": "Mestrado"
+  }
+ },
+ {
+  "id": "b-mun-porte-0",
+  "filters": {
+   "mun": "410400",
+   "porte": "De 100 a 249"
+  }
+ },
+ {
+  "id": "b-mun-porte-1",
+  "filters": {
+   "mun": "411920",
+   "porte": "1000 ou mais"
+  }
+ },
+ {
+  "id": "b-mun-porte-2",
+  "filters": {
+   "mun": "412050",
+   "porte": "De 10 a 19"
+  }
+ },
+ {
+  "id": "b-cadeia-cnae-0",
+  "filters": {
+   "cnae": "0119905",
+   "cadeia": "Grãos"
+  }
+ },
+ {
+  "id": "b-cadeia-cnae-1",
+  "filters": {
+   "cnae": "0139306",
+   "cadeia": "Serviços Agrícolas"
+  }
+ },
+ {
+  "id": "b-cadeia-cnae-2",
+  "filters": {
+   "cnae": "0132600",
+   "cadeia": "Pesca"
+  }
+ },
+ {
+  "id": "b-cadeia-ano-0",
+  "filters": {
+   "cadeia": "Apicultura",
+   "ano": "2022"
+  }
+ },
+ {
+  "id": "b-cadeia-ano-1",
+  "filters": {
+   "cadeia": "Silvicultura",
+   "ano": "2023"
+  }
+ },
+ {
+  "id": "b-cadeia-ano-2",
+  "filters": {
+   "cadeia": "Pesca",
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "b-cadeia-periodo-0",
+  "filters": {
+   "cadeia": "Cafeicultura",
+   "periodo": "2024-05"
+  }
+ },
+ {
+  "id": "b-cadeia-periodo-1",
+  "filters": {
+   "cadeia": "Sojicultura",
+   "periodo": "2022-02"
+  }
+ },
+ {
+  "id": "b-cadeia-periodo-2",
+  "filters": {
+   "cadeia": "Serviços Agrícolas",
+   "periodo": "2024-12"
+  }
+ },
+ {
+  "id": "b-cadeia-sexo-0",
+  "filters": {
+   "cadeia": "Bovinocultura de Leite",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "b-cadeia-sexo-1",
+  "filters": {
+   "cadeia": "Outras Lavouras Temporárias",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "b-cadeia-sexo-2",
+  "filters": {
+   "cadeia": "Aquicultura",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "b-cadeia-faixa-0",
+  "filters": {
+   "cadeia": "Outras Lavouras Permanentes",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "b-cadeia-faixa-1",
+  "filters": {
+   "cadeia": "Ovinocaprinocultura",
+   "faixa": "65 anos ou mais"
+  }
+ },
+ {
+  "id": "b-cadeia-faixa-2",
+  "filters": {
+   "cadeia": "Serviços à Pecuária",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "b-cadeia-escolaridade-0",
+  "filters": {
+   "cadeia": "Outras Lavouras Permanentes",
+   "escolaridade": "Não informado"
+  }
+ },
+ {
+  "id": "b-cadeia-escolaridade-1",
+  "filters": {
+   "cadeia": "Ovinocaprinocultura",
+   "escolaridade": "Não informado"
+  }
+ },
+ {
+  "id": "b-cadeia-escolaridade-2",
+  "filters": {
+   "cadeia": "Suinocultura",
+   "escolaridade": "Analfabeto"
+  }
+ },
+ {
+  "id": "b-cadeia-porte-0",
+  "filters": {
+   "cadeia": "Ovinocaprinocultura",
+   "porte": "De 50 a 99"
+  }
+ },
+ {
+  "id": "b-cadeia-porte-1",
+  "filters": {
+   "cadeia": "Serviços à Pecuária",
+   "porte": "De 10 a 19"
+  }
+ },
+ {
+  "id": "b-cadeia-porte-2",
+  "filters": {
+   "cadeia": "Grãos",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "b-cnae-ano-0",
+  "filters": {
+   "cnae": "0311601",
+   "ano": "2020"
+  }
+ },
+ {
+  "id": "b-cnae-ano-1",
+  "filters": {
+   "cnae": "0133499",
+   "ano": "2024"
+  }
+ },
+ {
+  "id": "b-cnae-ano-2",
+  "filters": {
+   "cnae": "0161003",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "b-cnae-periodo-0",
+  "filters": {
+   "cnae": "0161099",
+   "periodo": "2022-08"
+  }
+ },
+ {
+  "id": "b-cnae-periodo-1",
+  "filters": {
+   "cnae": "0155505",
+   "periodo": "2025-09"
+  }
+ },
+ {
+  "id": "b-cnae-periodo-2",
+  "filters": {
+   "cnae": "0151202",
+   "periodo": "2022-03"
+  }
+ },
+ {
+  "id": "b-cnae-sexo-0",
+  "filters": {
+   "cnae": "0321302",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "b-cnae-sexo-1",
+  "filters": {
+   "cnae": "0210199",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "b-cnae-sexo-2",
+  "filters": {
+   "cnae": "0155501",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "b-cnae-faixa-0",
+  "filters": {
+   "cnae": "0119906",
+   "faixa": "25 a 29 anos"
+  }
+ },
+ {
+  "id": "b-cnae-faixa-1",
+  "filters": {
+   "cnae": "0321302",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "b-cnae-faixa-2",
+  "filters": {
+   "cnae": "0113000",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "b-cnae-escolaridade-0",
+  "filters": {
+   "cnae": "0220903",
+   "escolaridade": "Pós-Graduação completa"
+  }
+ },
+ {
+  "id": "b-cnae-escolaridade-1",
+  "filters": {
+   "cnae": "0116499",
+   "escolaridade": "Superior Incompleto"
+  }
+ },
+ {
+  "id": "b-cnae-escolaridade-2",
+  "filters": {
+   "cnae": "0210199",
+   "escolaridade": "Mestrado"
+  }
+ },
+ {
+  "id": "b-cnae-porte-0",
+  "filters": {
+   "cnae": "0119901",
+   "porte": "De 500 a 999"
+  }
+ },
+ {
+  "id": "b-cnae-porte-1",
+  "filters": {
+   "cnae": "0112101",
+   "porte": "De 50 a 99"
+  }
+ },
+ {
+  "id": "b-cnae-porte-2",
+  "filters": {
+   "cnae": "0151201",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "b-ano-sexo-0",
+  "filters": {
+   "ano": "2026",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "b-ano-sexo-1",
+  "filters": {
+   "ano": "2022",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "b-ano-sexo-2",
+  "filters": {
+   "ano": "2026",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "b-ano-faixa-0",
+  "filters": {
+   "ano": "2022",
+   "faixa": "30 a 39 anos"
+  }
+ },
+ {
+  "id": "b-ano-faixa-1",
+  "filters": {
+   "ano": "2020",
+   "faixa": "25 a 29 anos"
+  }
+ },
+ {
+  "id": "b-ano-faixa-2",
+  "filters": {
+   "ano": "2026",
+   "faixa": "Menor de 18"
+  }
+ },
+ {
+  "id": "b-ano-escolaridade-0",
+  "filters": {
+   "ano": "2020",
+   "escolaridade": "Doutorado"
+  }
+ },
+ {
+  "id": "b-ano-escolaridade-1",
+  "filters": {
+   "ano": "2021",
+   "escolaridade": "Até 5ª Incompleto"
+  }
+ },
+ {
+  "id": "b-ano-escolaridade-2",
+  "filters": {
+   "ano": "2024",
+   "escolaridade": "Superior Completo"
+  }
+ },
+ {
+  "id": "b-ano-porte-0",
+  "filters": {
+   "ano": "2024",
+   "porte": "De 100 a 249"
+  }
+ },
+ {
+  "id": "b-ano-porte-1",
+  "filters": {
+   "ano": "2024",
+   "porte": "De 100 a 249"
+  }
+ },
+ {
+  "id": "b-ano-porte-2",
+  "filters": {
+   "ano": "2022",
+   "porte": "De 500 a 999"
+  }
+ },
+ {
+  "id": "b-periodo-sexo-0",
+  "filters": {
+   "periodo": "2021-06",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "b-periodo-sexo-1",
+  "filters": {
+   "periodo": "2026-04",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "b-periodo-sexo-2",
+  "filters": {
+   "periodo": "2021-06",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "b-periodo-faixa-0",
+  "filters": {
+   "periodo": "2024-09",
+   "faixa": "18 a 24 anos"
+  }
+ },
+ {
+  "id": "b-periodo-faixa-1",
+  "filters": {
+   "periodo": "2023-10",
+   "faixa": "Menor de 18"
+  }
+ },
+ {
+  "id": "b-periodo-faixa-2",
+  "filters": {
+   "periodo": "2020-12",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "b-periodo-escolaridade-0",
+  "filters": {
+   "periodo": "2023-07",
+   "escolaridade": "Médio Incompleto"
+  }
+ },
+ {
+  "id": "b-periodo-escolaridade-1",
+  "filters": {
+   "periodo": "2024-05",
+   "escolaridade": "Mestrado"
+  }
+ },
+ {
+  "id": "b-periodo-escolaridade-2",
+  "filters": {
+   "periodo": "2024-10",
+   "escolaridade": "Médio Incompleto"
+  }
+ },
+ {
+  "id": "b-periodo-porte-0",
+  "filters": {
+   "periodo": "2026-06",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "b-periodo-porte-1",
+  "filters": {
+   "periodo": "2021-04",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "b-periodo-porte-2",
+  "filters": {
+   "periodo": "2023-11",
+   "porte": "1000 ou mais"
+  }
+ },
+ {
+  "id": "b-sexo-faixa-0",
+  "filters": {
+   "sexo": "Masculino",
+   "faixa": "30 a 39 anos"
+  }
+ },
+ {
+  "id": "b-sexo-faixa-1",
+  "filters": {
+   "sexo": "Feminino",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "b-sexo-faixa-2",
+  "filters": {
+   "sexo": "Feminino",
+   "faixa": "Menor de 18"
+  }
+ },
+ {
+  "id": "b-sexo-escolaridade-0",
+  "filters": {
+   "sexo": "Masculino",
+   "escolaridade": "Não informado"
+  }
+ },
+ {
+  "id": "b-sexo-escolaridade-1",
+  "filters": {
+   "sexo": "Masculino",
+   "escolaridade": "6ª a 9ª Fundamental"
+  }
+ },
+ {
+  "id": "b-sexo-escolaridade-2",
+  "filters": {
+   "sexo": "Feminino",
+   "escolaridade": "Mestrado"
+  }
+ },
+ {
+  "id": "b-sexo-porte-0",
+  "filters": {
+   "sexo": "Masculino",
+   "porte": "1000 ou mais"
+  }
+ },
+ {
+  "id": "b-sexo-porte-1",
+  "filters": {
+   "sexo": "Feminino",
+   "porte": "De 20 a 49"
+  }
+ },
+ {
+  "id": "b-sexo-porte-2",
+  "filters": {
+   "sexo": "Feminino",
+   "porte": "Não informado"
+  }
+ },
+ {
+  "id": "b-faixa-escolaridade-0",
+  "filters": {
+   "faixa": "65 anos ou mais",
+   "escolaridade": "Fundamental Completo"
+  }
+ },
+ {
+  "id": "b-faixa-escolaridade-1",
+  "filters": {
+   "faixa": "30 a 39 anos",
+   "escolaridade": "Médio Completo"
+  }
+ },
+ {
+  "id": "b-faixa-escolaridade-2",
+  "filters": {
+   "faixa": "40 a 49 anos",
+   "escolaridade": "Superior Completo"
+  }
+ },
+ {
+  "id": "b-faixa-porte-0",
+  "filters": {
+   "faixa": "65 anos ou mais",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "b-faixa-porte-1",
+  "filters": {
+   "faixa": "Menor de 18",
+   "porte": "1000 ou mais"
+  }
+ },
+ {
+  "id": "b-faixa-porte-2",
+  "filters": {
+   "faixa": "Não informado",
+   "porte": "1000 ou mais"
+  }
+ },
+ {
+  "id": "b-escolaridade-porte-0",
+  "filters": {
+   "escolaridade": "Pós-Graduação completa",
+   "porte": "De 5 a 9"
+  }
+ },
+ {
+  "id": "b-escolaridade-porte-1",
+  "filters": {
+   "escolaridade": "Médio Completo",
+   "porte": "De 500 a 999"
+  }
+ },
+ {
+  "id": "b-escolaridade-porte-2",
+  "filters": {
+   "escolaridade": "6ª a 9ª Fundamental",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "c-000",
+  "filters": {
+   "faixa": "50 a 64 anos",
+   "sexo": "Feminino",
+   "cadeia": "Serviços à Pecuária",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "c-001",
+  "filters": {
+   "sexo": "Feminino",
+   "cnae": "0312404",
+   "cadeia": "Pesca",
+   "faixa": "18 a 24 anos",
+   "meso": "Noroeste",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "c-002",
+  "filters": {
+   "reg": "Guarapuava",
+   "faixa": "Menor de 18",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-003",
+  "filters": {
+   "ano": "2020",
+   "porte": "De 50 a 99",
+   "mun": "410170",
+   "sexo": "Masculino",
+   "meso": "Norte"
+  }
+ },
+ {
+  "id": "c-004",
+  "filters": {
+   "cnae": "0161003",
+   "reg": "Cornélio Procópio",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-005",
+  "filters": {
+   "cnae": "0139399",
+   "reg": "Dois Vizinhos",
+   "faixa": "40 a 49 anos",
+   "sexo": "Feminino",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "c-006",
+  "filters": {
+   "ano": "2026",
+   "meso": "Centro",
+   "cnae": "0133409",
+   "escolaridade": "Não informado",
+   "sexo": "Feminino",
+   "porte": "Não informado"
+  }
+ },
+ {
+  "id": "c-007",
+  "filters": {
+   "periodo": "2021-10",
+   "escolaridade": "Não informado",
+   "faixa": "25 a 29 anos"
+  }
+ },
+ {
+  "id": "c-008",
+  "filters": {
+   "faixa": "40 a 49 anos",
+   "ano": "2026",
+   "cnae": "0119902",
+   "meso": "Norte",
+   "escolaridade": "Doutorado"
+  }
+ },
+ {
+  "id": "c-009",
+  "filters": {
+   "porte": "Não informado",
+   "meso": "Metropolitana e Litoral",
+   "reg": "Pato Branco",
+   "escolaridade": "5ª Completo Fundamental",
+   "cnae": "0151201",
+   "periodo": "2022-05"
+  }
+ },
+ {
+  "id": "c-010",
+  "filters": {
+   "sexo": "Masculino",
+   "cadeia": "Ovinocaprinocultura",
+   "mun": "411570",
+   "meso": "Metropolitana e Litoral",
+   "faixa": "25 a 29 anos",
+   "ano": "2020"
+  }
+ },
+ {
+  "id": "c-011",
+  "filters": {
+   "reg": "Cornélio Procópio",
+   "porte": "De 1 a 4",
+   "faixa": "30 a 39 anos",
+   "periodo": "2026-02",
+   "cadeia": "Pesca"
+  }
+ },
+ {
+  "id": "c-012",
+  "filters": {
+   "meso": "Oeste",
+   "reg": "Cascavel",
+   "mun": "412635"
+  }
+ },
+ {
+  "id": "c-013",
+  "filters": {
+   "faixa": "Menor de 18",
+   "meso": "Oeste",
+   "porte": "De 100 a 249",
+   "periodo": "2021-03",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-014",
+  "filters": {
+   "cadeia": "Silvicultura",
+   "meso": "Metropolitana e Litoral",
+   "escolaridade": "Não informado",
+   "cnae": "0210108"
+  }
+ },
+ {
+  "id": "c-015",
+  "filters": {
+   "periodo": "2024-10",
+   "meso": "Norte",
+   "faixa": "Não informado",
+   "porte": "De 1 a 4",
+   "escolaridade": "Médio Completo",
+   "cadeia": "Sojicultura"
+  }
+ },
+ {
+  "id": "c-016",
+  "filters": {
+   "mun": "411050",
+   "periodo": "2024-12",
+   "sexo": "Masculino",
+   "faixa": "40 a 49 anos",
+   "cadeia": "Outras Criações"
+  }
+ },
+ {
+  "id": "c-017",
+  "filters": {
+   "escolaridade": "Analfabeto",
+   "cnae": "0220904",
+   "faixa": "30 a 39 anos",
+   "meso": "Oeste"
+  }
+ },
+ {
+  "id": "c-018",
+  "filters": {
+   "cadeia": "Horticultura",
+   "cnae": "0119903",
+   "porte": "De 100 a 249",
+   "meso": "Centro Sul",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-019",
+  "filters": {
+   "mun": "410830",
+   "faixa": "65 anos ou mais",
+   "reg": "Cascavel",
+   "escolaridade": "Superior Incompleto",
+   "cnae": "0210101",
+   "sexo": "Masculino",
+   "ano": "2023"
+  }
+ },
+ {
+  "id": "c-020",
+  "filters": {
+   "cadeia": "Ovinocaprinocultura",
+   "reg": "Apucarana",
+   "mun": "410320",
+   "escolaridade": "6ª a 9ª Fundamental",
+   "periodo": "2020-09",
+   "faixa": "30 a 39 anos",
+   "cnae": "0159801"
+  }
+ },
+ {
+  "id": "c-021",
+  "filters": {
+   "mun": "410080",
+   "periodo": "2026-03",
+   "faixa": "30 a 39 anos"
+  }
+ },
+ {
+  "id": "c-022",
+  "filters": {
+   "cnae": "0119905",
+   "porte": "De 250 a 499",
+   "reg": "Irati"
+  }
+ },
+ {
+  "id": "c-023",
+  "filters": {
+   "faixa": "Não informado",
+   "mun": "412860",
+   "cnae": "0311604"
+  }
+ },
+ {
+  "id": "c-024",
+  "filters": {
+   "meso": "Noroeste",
+   "sexo": "Não informado",
+   "porte": "De 5 a 9",
+   "mun": "410560",
+   "reg": "Cianorte",
+   "ano": "2022"
+  }
+ },
+ {
+  "id": "c-025",
+  "filters": {
+   "periodo": "2025-10",
+   "cadeia": "Cafeicultura",
+   "cnae": "0134200",
+   "faixa": "50 a 64 anos",
+   "escolaridade": "Superior Completo"
+  }
+ },
+ {
+  "id": "c-026",
+  "filters": {
+   "sexo": "Masculino",
+   "reg": "Paranavaí",
+   "faixa": "40 a 49 anos",
+   "escolaridade": "Médio Incompleto",
+   "mun": "410090"
+  }
+ },
+ {
+  "id": "c-027",
+  "filters": {
+   "porte": "Zero",
+   "reg": "Londrina",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "c-028",
+  "filters": {
+   "escolaridade": "Médio Completo",
+   "sexo": "Não informado",
+   "periodo": "2022-01",
+   "cadeia": "Ovinocaprinocultura",
+   "cnae": "0155502",
+   "faixa": "Não informado",
+   "mun": "412240"
+  }
+ },
+ {
+  "id": "c-029",
+  "filters": {
+   "faixa": "18 a 24 anos",
+   "reg": "Pitanga",
+   "escolaridade": "Médio Completo",
+   "porte": "Não informado",
+   "mun": "411605",
+   "cadeia": "Aquicultura"
+  }
+ },
+ {
+  "id": "c-030",
+  "filters": {
+   "reg": "Dois Vizinhos",
+   "escolaridade": "Pós-Graduação completa",
+   "meso": "Centro",
+   "cadeia": "Outras Lavouras Temporárias"
+  }
+ },
+ {
+  "id": "c-031",
+  "filters": {
+   "mun": "411450",
+   "cadeia": "Avicultura",
+   "meso": "Centro",
+   "sexo": "Masculino",
+   "reg": "Pitanga",
+   "faixa": "65 anos ou mais",
+   "escolaridade": "Fundamental Completo"
+  }
+ },
+ {
+  "id": "c-032",
+  "filters": {
+   "porte": "De 10 a 19",
+   "faixa": "Não informado",
+   "reg": "Apucarana",
+   "cadeia": "Serviços Agrícolas",
+   "ano": "2022"
+  }
+ },
+ {
+  "id": "c-033",
+  "filters": {
+   "reg": "Guarapuava",
+   "meso": "Sudoeste",
+   "faixa": "Menor de 18",
+   "periodo": "2026-02",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "c-034",
+  "filters": {
+   "reg": "Cianorte",
+   "porte": "1000 ou mais",
+   "cadeia": "Bovinocultura de Corte",
+   "faixa": "65 anos ou mais"
+  }
+ },
+ {
+  "id": "c-035",
+  "filters": {
+   "reg": "Guarapuava",
+   "escolaridade": "Analfabeto",
+   "ano": "2026",
+   "sexo": "Não informado",
+   "meso": "Oeste"
+  }
+ },
+ {
+  "id": "c-036",
+  "filters": {
+   "periodo": "2021-10",
+   "escolaridade": "Até 5ª Incompleto",
+   "reg": "Londrina"
+  }
+ },
+ {
+  "id": "c-037",
+  "filters": {
+   "meso": "Norte",
+   "porte": "Não informado",
+   "cnae": "0134200"
+  }
+ },
+ {
+  "id": "c-038",
+  "filters": {
+   "porte": "De 50 a 99",
+   "ano": "2020",
+   "mun": "412460"
+  }
+ },
+ {
+  "id": "c-039",
+  "filters": {
+   "reg": "Curitiba",
+   "mun": "410345",
+   "sexo": "Masculino",
+   "cnae": "0162899",
+   "cadeia": "Ovinocaprinocultura",
+   "periodo": "2025-02"
+  }
+ },
+ {
+  "id": "c-040",
+  "filters": {
+   "mun": "411680",
+   "cadeia": "Fumo",
+   "porte": "Não informado"
+  }
+ },
+ {
+  "id": "c-041",
+  "filters": {
+   "escolaridade": "Não informado",
+   "porte": "Zero",
+   "cadeia": "Sojicultura",
+   "faixa": "30 a 39 anos",
+   "ano": "2025",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-042",
+  "filters": {
+   "meso": "Norte",
+   "ano": "2022",
+   "escolaridade": "Superior Completo"
+  }
+ },
+ {
+  "id": "c-043",
+  "filters": {
+   "escolaridade": "Até 5ª Incompleto",
+   "meso": "Norte",
+   "sexo": "Masculino",
+   "periodo": "2025-09",
+   "reg": "União da Vitória"
+  }
+ },
+ {
+  "id": "c-044",
+  "filters": {
+   "periodo": "2021-09",
+   "faixa": "50 a 64 anos",
+   "cnae": "0220903"
+  }
+ },
+ {
+  "id": "c-045",
+  "filters": {
+   "mun": "412270",
+   "reg": "Apucarana",
+   "cnae": "0111301",
+   "sexo": "Masculino",
+   "porte": "De 5 a 9",
+   "meso": "Norte"
+  }
+ },
+ {
+  "id": "c-046",
+  "filters": {
+   "faixa": "65 anos ou mais",
+   "ano": "2022",
+   "cadeia": "Algodão e Fibras",
+   "escolaridade": "Fundamental Completo",
+   "cnae": "0161099"
+  }
+ },
+ {
+  "id": "c-047",
+  "filters": {
+   "periodo": "2023-09",
+   "cadeia": "Sojicultura",
+   "meso": "Sudoeste",
+   "cnae": "0115600"
+  }
+ },
+ {
+  "id": "c-048",
+  "filters": {
+   "periodo": "2022-07",
+   "cnae": "0112199"
+  }
+ },
+ {
+  "id": "c-049",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "sexo": "Masculino",
+   "faixa": "30 a 39 anos",
+   "periodo": "2020-12",
+   "porte": "De 5 a 9",
+   "reg": "Cascavel"
+  }
+ },
+ {
+  "id": "c-050",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "cadeia": "Bovinocultura de Leite",
+   "periodo": "2020-09",
+   "mun": "411727",
+   "sexo": "Não informado",
+   "reg": "Paranaguá"
+  }
+ },
+ {
+  "id": "c-051",
+  "filters": {
+   "faixa": "Menor de 18",
+   "cnae": "0161002",
+   "mun": "410950",
+   "reg": "Paranaguá",
+   "escolaridade": "Superior Incompleto",
+   "meso": "Metropolitana e Litoral",
+   "ano": "2022"
+  }
+ },
+ {
+  "id": "c-052",
+  "filters": {
+   "cnae": "0155505",
+   "periodo": "2021-12",
+   "meso": "Oeste",
+   "mun": "411700",
+   "faixa": "18 a 24 anos",
+   "escolaridade": "Superior Completo",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-053",
+  "filters": {
+   "mun": "410110",
+   "faixa": "25 a 29 anos",
+   "escolaridade": "5ª Completo Fundamental",
+   "reg": "Cornélio Procópio",
+   "ano": "2022",
+   "porte": "De 20 a 49"
+  }
+ },
+ {
+  "id": "c-054",
+  "filters": {
+   "escolaridade": "Até 5ª Incompleto",
+   "cadeia": "Grãos",
+   "sexo": "Não informado",
+   "mun": "411170",
+   "periodo": "2020-11",
+   "faixa": "50 a 64 anos"
+  }
+ },
+ {
+  "id": "c-055",
+  "filters": {
+   "cnae": "0155502",
+   "porte": "De 250 a 499",
+   "mun": "412405",
+   "cadeia": "Avicultura",
+   "faixa": "Não informado",
+   "periodo": "2025-02",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-056",
+  "filters": {
+   "ano": "2020",
+   "escolaridade": "Superior Completo",
+   "faixa": "25 a 29 anos",
+   "meso": "Noroeste",
+   "cnae": "0119906",
+   "mun": "412450"
+  }
+ },
+ {
+  "id": "c-057",
+  "filters": {
+   "escolaridade": "6ª a 9ª Fundamental",
+   "porte": "De 500 a 999",
+   "cnae": "0321302",
+   "faixa": "65 anos ou mais",
+   "ano": "2022",
+   "mun": "410465"
+  }
+ },
+ {
+  "id": "c-058",
+  "filters": {
+   "faixa": "50 a 64 anos",
+   "sexo": "Não informado",
+   "cnae": "0210108",
+   "escolaridade": "Doutorado",
+   "cadeia": "Silvicultura",
+   "periodo": "2023-01",
+   "porte": "De 50 a 99"
+  }
+ },
+ {
+  "id": "c-059",
+  "filters": {
+   "meso": "Centro Sul",
+   "mun": "410965",
+   "reg": "Pato Branco",
+   "porte": "De 50 a 99",
+   "sexo": "Não informado",
+   "cadeia": "Ovinocaprinocultura"
+  }
+ },
+ {
+  "id": "c-060",
+  "filters": {
+   "periodo": "2020-04",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-061",
+  "filters": {
+   "cadeia": "Grãos",
+   "porte": "De 250 a 499",
+   "meso": "Centro",
+   "cnae": "0121102",
+   "periodo": "2022-07"
+  }
+ },
+ {
+  "id": "c-062",
+  "filters": {
+   "meso": "Centro Sul",
+   "sexo": "Feminino",
+   "periodo": "2026-06",
+   "reg": "Londrina",
+   "faixa": "18 a 24 anos",
+   "escolaridade": "Pós-Graduação completa"
+  }
+ },
+ {
+  "id": "c-063",
+  "filters": {
+   "ano": "2025",
+   "porte": "De 10 a 19",
+   "faixa": "65 anos ou mais",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-064",
+  "filters": {
+   "mun": "411450",
+   "periodo": "2023-04",
+   "cnae": "0311604",
+   "sexo": "Não informado",
+   "cadeia": "Pesca",
+   "meso": "Centro Sul"
+  }
+ },
+ {
+  "id": "c-065",
+  "filters": {
+   "periodo": "2020-01",
+   "faixa": "30 a 39 anos",
+   "cadeia": "Aquicultura",
+   "sexo": "Masculino",
+   "cnae": "0155502",
+   "porte": "De 20 a 49",
+   "reg": "Campo Mourão"
+  }
+ },
+ {
+  "id": "c-066",
+  "filters": {
+   "ano": "2021",
+   "sexo": "Feminino",
+   "mun": "411360",
+   "escolaridade": "Doutorado"
+  }
+ },
+ {
+  "id": "c-067",
+  "filters": {
+   "porte": "De 10 a 19",
+   "meso": "Norte",
+   "cnae": "0312404",
+   "escolaridade": "Mestrado",
+   "sexo": "Feminino",
+   "mun": "411270",
+   "cadeia": "Fumo"
+  }
+ },
+ {
+  "id": "c-068",
+  "filters": {
+   "escolaridade": "Fundamental Completo",
+   "cnae": "0210105",
+   "cadeia": "Serviços Agrícolas",
+   "reg": "Campo Mourão",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-069",
+  "filters": {
+   "mun": "411770",
+   "cnae": "0159899",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-070",
+  "filters": {
+   "ano": "2024",
+   "cadeia": "Pesca",
+   "cnae": "0321302",
+   "mun": "411460",
+   "reg": "Dois Vizinhos"
+  }
+ },
+ {
+  "id": "c-071",
+  "filters": {
+   "escolaridade": "6ª a 9ª Fundamental",
+   "meso": "Noroeste",
+   "mun": "410410",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-072",
+  "filters": {
+   "mun": "412640",
+   "faixa": "50 a 64 anos",
+   "meso": "Norte",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-073",
+  "filters": {
+   "faixa": "30 a 39 anos",
+   "mun": "412540",
+   "reg": "União da Vitória",
+   "escolaridade": "5ª Completo Fundamental",
+   "cnae": "0133404"
+  }
+ },
+ {
+  "id": "c-074",
+  "filters": {
+   "faixa": "65 anos ou mais",
+   "cnae": "0133407",
+   "escolaridade": "Pós-Graduação completa",
+   "porte": "Não informado",
+   "meso": "Noroeste"
+  }
+ },
+ {
+  "id": "c-075",
+  "filters": {
+   "reg": "Cascavel",
+   "periodo": "2023-11",
+   "porte": "De 20 a 49",
+   "sexo": "Não informado",
+   "meso": "Centro",
+   "cadeia": "Serviços à Pecuária"
+  }
+ },
+ {
+  "id": "c-076",
+  "filters": {
+   "ano": "2026",
+   "reg": "Cianorte",
+   "escolaridade": "Até 5ª Incompleto",
+   "sexo": "Feminino",
+   "faixa": "40 a 49 anos",
+   "porte": "Não informado"
+  }
+ },
+ {
+  "id": "c-077",
+  "filters": {
+   "porte": "De 500 a 999",
+   "mun": "411070",
+   "meso": "Centro Sul"
+  }
+ },
+ {
+  "id": "c-078",
+  "filters": {
+   "meso": "Sudoeste",
+   "porte": "De 250 a 499",
+   "periodo": "2021-09",
+   "reg": "Londrina"
+  }
+ },
+ {
+  "id": "c-079",
+  "filters": {
+   "faixa": "Menor de 18",
+   "ano": "2021",
+   "meso": "Centro",
+   "porte": "De 1 a 4",
+   "cnae": "0210105",
+   "reg": "Ivaiporã",
+   "cadeia": "Silvicultura"
+  }
+ },
+ {
+  "id": "c-080",
+  "filters": {
+   "faixa": "Menor de 18",
+   "sexo": "Não informado",
+   "periodo": "2020-01",
+   "cadeia": "Extrativismo Florestal"
+  }
+ },
+ {
+  "id": "c-081",
+  "filters": {
+   "cadeia": "Outras Criações",
+   "faixa": "30 a 39 anos",
+   "periodo": "2020-07",
+   "cnae": "0133407",
+   "mun": "411110",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-082",
+  "filters": {
+   "cadeia": "Grãos",
+   "reg": "União da Vitória",
+   "ano": "2026",
+   "sexo": "Feminino",
+   "meso": "Norte",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "c-083",
+  "filters": {
+   "sexo": "Masculino",
+   "ano": "2024",
+   "meso": "Oeste"
+  }
+ },
+ {
+  "id": "c-084",
+  "filters": {
+   "faixa": "40 a 49 anos",
+   "escolaridade": "Analfabeto",
+   "cadeia": "Pesca"
+  }
+ },
+ {
+  "id": "c-085",
+  "filters": {
+   "cadeia": "Serviços Agrícolas",
+   "cnae": "0161099",
+   "meso": "Centro",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-086",
+  "filters": {
+   "cadeia": "Serviços à Pecuária",
+   "sexo": "Não informado",
+   "faixa": "50 a 64 anos",
+   "ano": "2020",
+   "cnae": "0162801",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "c-087",
+  "filters": {
+   "ano": "2020",
+   "faixa": "50 a 64 anos",
+   "sexo": "Masculino",
+   "mun": "410440",
+   "meso": "Centro",
+   "escolaridade": "Médio Completo"
+  }
+ },
+ {
+  "id": "c-088",
+  "filters": {
+   "sexo": "Não informado",
+   "reg": "Paranavaí",
+   "cadeia": "Aquicultura",
+   "porte": "De 20 a 49",
+   "cnae": "0322199"
+  }
+ },
+ {
+  "id": "c-089",
+  "filters": {
+   "ano": "2025",
+   "cadeia": "Silvicultura",
+   "porte": "Não informado"
+  }
+ },
+ {
+  "id": "c-090",
+  "filters": {
+   "cadeia": "Bovinocultura de Corte",
+   "escolaridade": "Analfabeto",
+   "sexo": "Não informado",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "c-091",
+  "filters": {
+   "cadeia": "Avicultura",
+   "mun": "410300",
+   "cnae": "0155504",
+   "sexo": "Não informado",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "c-092",
+  "filters": {
+   "cadeia": "Cafeicultura",
+   "ano": "2024",
+   "mun": "410090"
+  }
+ },
+ {
+  "id": "c-093",
+  "filters": {
+   "reg": "Paranavaí",
+   "periodo": "2024-08",
+   "meso": "Noroeste",
+   "cnae": "0210108",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "c-094",
+  "filters": {
+   "ano": "2020",
+   "escolaridade": "Doutorado",
+   "reg": "Apucarana",
+   "cadeia": "Algodão e Fibras"
+  }
+ },
+ {
+  "id": "c-095",
+  "filters": {
+   "cnae": "0162802",
+   "periodo": "2021-01"
+  }
+ },
+ {
+  "id": "c-096",
+  "filters": {
+   "cadeia": "Suinocultura",
+   "ano": "2024",
+   "reg": "Toledo"
+  }
+ },
+ {
+  "id": "c-097",
+  "filters": {
+   "ano": "2026",
+   "escolaridade": "5ª Completo Fundamental",
+   "cadeia": "Grãos",
+   "cnae": "0111302",
+   "porte": "De 500 a 999",
+   "faixa": "18 a 24 anos"
+  }
+ },
+ {
+  "id": "c-098",
+  "filters": {
+   "cadeia": "Horticultura",
+   "porte": "De 20 a 49",
+   "reg": "Cornélio Procópio",
+   "meso": "Centro"
+  }
+ },
+ {
+  "id": "c-099",
+  "filters": {
+   "reg": "Santo Antonio da Platina",
+   "ano": "2020",
+   "escolaridade": "Médio Completo",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "c-100",
+  "filters": {
+   "cnae": "0142300",
+   "sexo": "Masculino",
+   "porte": "De 20 a 49",
+   "meso": "Centro",
+   "faixa": "18 a 24 anos",
+   "ano": "2024"
+  }
+ },
+ {
+  "id": "c-101",
+  "filters": {
+   "periodo": "2026-04",
+   "meso": "Metropolitana e Litoral",
+   "escolaridade": "Superior Completo",
+   "mun": "410480",
+   "faixa": "65 anos ou mais",
+   "reg": "Laranjeiras do Sul"
+  }
+ },
+ {
+  "id": "c-102",
+  "filters": {
+   "cadeia": "Pesca",
+   "cnae": "0139305",
+   "sexo": "Feminino",
+   "periodo": "2021-07"
+  }
+ },
+ {
+  "id": "c-103",
+  "filters": {
+   "mun": "412400",
+   "periodo": "2023-02",
+   "porte": "Zero"
+  }
+ },
+ {
+  "id": "c-104",
+  "filters": {
+   "escolaridade": "Superior Completo",
+   "reg": "Cornélio Procópio",
+   "sexo": "Não informado",
+   "periodo": "2020-10",
+   "porte": "De 1 a 4",
+   "faixa": "18 a 24 anos"
+  }
+ },
+ {
+  "id": "c-105",
+  "filters": {
+   "cadeia": "Serviços à Pecuária",
+   "ano": "2021",
+   "cnae": "0119903",
+   "reg": "Irati",
+   "faixa": "50 a 64 anos"
+  }
+ },
+ {
+  "id": "c-106",
+  "filters": {
+   "meso": "Centro",
+   "ano": "2024",
+   "escolaridade": "Fundamental Completo"
+  }
+ },
+ {
+  "id": "c-107",
+  "filters": {
+   "cnae": "0155503",
+   "meso": "Centro",
+   "escolaridade": "Fundamental Completo"
+  }
+ },
+ {
+  "id": "c-108",
+  "filters": {
+   "cadeia": "Outras Lavouras Temporárias",
+   "mun": "411721",
+   "reg": "Cornélio Procópio"
+  }
+ },
+ {
+  "id": "c-109",
+  "filters": {
+   "periodo": "2026-06",
+   "cadeia": "Ovinocaprinocultura",
+   "cnae": "0153902"
+  }
+ },
+ {
+  "id": "c-110",
+  "filters": {
+   "porte": "De 500 a 999",
+   "meso": "Metropolitana e Litoral",
+   "ano": "2026",
+   "reg": "Maringá",
+   "faixa": "65 anos ou mais"
+  }
+ },
+ {
+  "id": "c-111",
+  "filters": {
+   "ano": "2021",
+   "faixa": "18 a 24 anos",
+   "escolaridade": "Médio Completo",
+   "cnae": "0151203",
+   "cadeia": "Outras Criações",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "c-112",
+  "filters": {
+   "escolaridade": "Médio Incompleto",
+   "mun": "410753",
+   "cadeia": "Grãos",
+   "faixa": "25 a 29 anos",
+   "cnae": "0119905",
+   "periodo": "2023-08",
+   "porte": "De 20 a 49"
+  }
+ },
+ {
+  "id": "c-113",
+  "filters": {
+   "cadeia": "Fruticultura",
+   "reg": "Santo Antonio da Platina",
+   "periodo": "2023-04",
+   "meso": "Centro Sul",
+   "cnae": "0210103",
+   "faixa": "Menor de 18",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-114",
+  "filters": {
+   "cadeia": "Pesca",
+   "periodo": "2022-11",
+   "sexo": "Não informado",
+   "meso": "Oeste",
+   "reg": "Ponta Grossa"
+  }
+ },
+ {
+  "id": "c-115",
+  "filters": {
+   "faixa": "Menor de 18",
+   "reg": "Cornélio Procópio",
+   "meso": "Metropolitana e Litoral",
+   "cadeia": "Sementes e Mudas"
+  }
+ },
+ {
+  "id": "c-116",
+  "filters": {
+   "mun": "411240",
+   "meso": "Noroeste",
+   "periodo": "2026-07"
+  }
+ },
+ {
+  "id": "c-117",
+  "filters": {
+   "porte": "Não informado",
+   "reg": "Dois Vizinhos",
+   "ano": "2020",
+   "cnae": "0116401",
+   "faixa": "Menor de 18",
+   "cadeia": "Outras Lavouras Temporárias"
+  }
+ },
+ {
+  "id": "c-118",
+  "filters": {
+   "porte": "De 10 a 19",
+   "ano": "2023",
+   "faixa": "50 a 64 anos"
+  }
+ },
+ {
+  "id": "c-119",
+  "filters": {
+   "meso": "Norte",
+   "sexo": "Feminino",
+   "escolaridade": "6ª a 9ª Fundamental",
+   "periodo": "2021-09"
+  }
+ },
+ {
+  "id": "c-120",
+  "filters": {
+   "ano": "2025",
+   "reg": "Ivaiporã",
+   "cadeia": "Algodão e Fibras",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "c-121",
+  "filters": {
+   "porte": "Não informado",
+   "cnae": "0133409",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "c-122",
+  "filters": {
+   "cadeia": "Serviços à Pecuária",
+   "ano": "2024",
+   "meso": "Centro"
+  }
+ },
+ {
+  "id": "c-123",
+  "filters": {
+   "faixa": "18 a 24 anos",
+   "reg": "Curitiba",
+   "mun": "411950"
+  }
+ },
+ {
+  "id": "c-124",
+  "filters": {
+   "periodo": "2026-04",
+   "porte": "De 10 a 19",
+   "reg": "Ivaiporã"
+  }
+ },
+ {
+  "id": "c-125",
+  "filters": {
+   "mun": "411950",
+   "faixa": "40 a 49 anos",
+   "cnae": "0116401",
+   "escolaridade": "Médio Incompleto",
+   "reg": "Curitiba"
+  }
+ },
+ {
+  "id": "c-126",
+  "filters": {
+   "cnae": "0321301",
+   "ano": "2025",
+   "reg": "Dois Vizinhos",
+   "mun": "412300"
+  }
+ },
+ {
+  "id": "c-127",
+  "filters": {
+   "reg": "Cornélio Procópio",
+   "cnae": "0119907",
+   "cadeia": "Horticultura"
+  }
+ },
+ {
+  "id": "c-128",
+  "filters": {
+   "periodo": "2020-12",
+   "reg": "Paranaguá",
+   "faixa": "Não informado",
+   "cnae": "0132600"
+  }
+ },
+ {
+  "id": "c-129",
+  "filters": {
+   "mun": "412430",
+   "faixa": "40 a 49 anos",
+   "periodo": "2021-04",
+   "reg": "Cornélio Procópio",
+   "cadeia": "Sojicultura",
+   "porte": "De 10 a 19"
+  }
+ },
+ {
+  "id": "c-130",
+  "filters": {
+   "porte": "1000 ou mais",
+   "cadeia": "Grãos",
+   "mun": "411340"
+  }
+ },
+ {
+  "id": "c-131",
+  "filters": {
+   "escolaridade": "Fundamental Completo",
+   "cadeia": "Outras Lavouras Permanentes",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "c-132",
+  "filters": {
+   "escolaridade": "Fundamental Completo",
+   "sexo": "Masculino",
+   "faixa": "25 a 29 anos",
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "c-133",
+  "filters": {
+   "cadeia": "Outras Lavouras Temporárias",
+   "periodo": "2021-05",
+   "meso": "Centro Sul",
+   "cnae": "0311604"
+  }
+ },
+ {
+  "id": "c-134",
+  "filters": {
+   "sexo": "Masculino",
+   "ano": "2023",
+   "reg": "Cornélio Procópio",
+   "mun": "411970"
+  }
+ },
+ {
+  "id": "c-135",
+  "filters": {
+   "reg": "Laranjeiras do Sul",
+   "porte": "1000 ou mais",
+   "faixa": "Não informado",
+   "cadeia": "Sojicultura",
+   "mun": "412620"
+  }
+ },
+ {
+  "id": "c-136",
+  "filters": {
+   "cnae": "0321301",
+   "reg": "Dois Vizinhos",
+   "periodo": "2021-03"
+  }
+ },
+ {
+  "id": "c-137",
+  "filters": {
+   "faixa": "Menor de 18",
+   "cadeia": "Aquicultura",
+   "ano": "2022",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-138",
+  "filters": {
+   "cadeia": "Outras Lavouras Permanentes",
+   "reg": "Ponta Grossa",
+   "mun": "412625"
+  }
+ },
+ {
+  "id": "c-139",
+  "filters": {
+   "sexo": "Não informado",
+   "ano": "2020",
+   "meso": "Centro Sul",
+   "escolaridade": "Mestrado",
+   "faixa": "65 anos ou mais"
+  }
+ },
+ {
+  "id": "c-140",
+  "filters": {
+   "faixa": "18 a 24 anos",
+   "escolaridade": "Até 5ª Incompleto",
+   "periodo": "2025-12",
+   "cadeia": "Suinocultura",
+   "cnae": "0322199"
+  }
+ },
+ {
+  "id": "c-141",
+  "filters": {
+   "periodo": "2024-09",
+   "sexo": "Feminino",
+   "meso": "Noroeste",
+   "mun": "410970",
+   "cadeia": "Extrativismo Florestal",
+   "escolaridade": "Mestrado",
+   "cnae": "0113000"
+  }
+ },
+ {
+  "id": "c-142",
+  "filters": {
+   "escolaridade": "Pós-Graduação completa",
+   "ano": "2025",
+   "reg": "Francisco Beltrão",
+   "porte": "De 50 a 99",
+   "cadeia": "Silvicultura"
+  }
+ },
+ {
+  "id": "c-143",
+  "filters": {
+   "sexo": "Não informado",
+   "porte": "De 20 a 49",
+   "escolaridade": "Doutorado",
+   "reg": "Londrina",
+   "cadeia": "Apicultura",
+   "mun": "411550"
+  }
+ },
+ {
+  "id": "c-144",
+  "filters": {
+   "faixa": "25 a 29 anos",
+   "meso": "Noroeste",
+   "cnae": "0116403"
+  }
+ },
+ {
+  "id": "c-145",
+  "filters": {
+   "periodo": "2021-10",
+   "escolaridade": "Superior Completo",
+   "meso": "Centro Sul"
+  }
+ },
+ {
+  "id": "c-146",
+  "filters": {
+   "meso": "Sudoeste",
+   "ano": "2024",
+   "reg": "Guarapuava",
+   "cnae": "0111303",
+   "escolaridade": "Médio Completo",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-147",
+  "filters": {
+   "ano": "2021",
+   "faixa": "50 a 64 anos",
+   "cadeia": "Outras Criações"
+  }
+ },
+ {
+  "id": "c-148",
+  "filters": {
+   "escolaridade": "Não informado",
+   "faixa": "18 a 24 anos",
+   "porte": "Zero"
+  }
+ },
+ {
+  "id": "c-149",
+  "filters": {
+   "reg": "Paranaguá",
+   "periodo": "2023-02",
+   "sexo": "Masculino",
+   "faixa": "Menor de 18",
+   "escolaridade": "6ª a 9ª Fundamental"
+  }
+ },
+ {
+  "id": "c-150",
+  "filters": {
+   "sexo": "Masculino",
+   "cnae": "0114800",
+   "meso": "Norte",
+   "faixa": "Não informado",
+   "mun": "410350"
+  }
+ },
+ {
+  "id": "c-151",
+  "filters": {
+   "sexo": "Masculino",
+   "mun": "411520",
+   "porte": "De 1 a 4",
+   "faixa": "Menor de 18",
+   "escolaridade": "Superior Incompleto",
+   "meso": "Noroeste"
+  }
+ },
+ {
+  "id": "c-152",
+  "filters": {
+   "cadeia": "Suinocultura",
+   "reg": "Pato Branco",
+   "faixa": "50 a 64 anos"
+  }
+ },
+ {
+  "id": "c-153",
+  "filters": {
+   "faixa": "65 anos ou mais",
+   "cnae": "0161099",
+   "meso": "Norte",
+   "periodo": "2024-08",
+   "porte": "Zero",
+   "mun": "410850",
+   "escolaridade": "Superior Completo"
+  }
+ },
+ {
+  "id": "c-154",
+  "filters": {
+   "porte": "De 10 a 19",
+   "sexo": "Não informado",
+   "ano": "2020"
+  }
+ },
+ {
+  "id": "c-155",
+  "filters": {
+   "faixa": "18 a 24 anos",
+   "escolaridade": "Doutorado",
+   "meso": "Norte",
+   "cnae": "0134200"
+  }
+ },
+ {
+  "id": "c-156",
+  "filters": {
+   "reg": "Guarapuava",
+   "mun": "410440",
+   "periodo": "2022-09"
+  }
+ },
+ {
+  "id": "c-157",
+  "filters": {
+   "meso": "Centro",
+   "cnae": "0151201",
+   "reg": "Guarapuava",
+   "periodo": "2022-07",
+   "cadeia": "Algodão e Fibras",
+   "faixa": "18 a 24 anos"
+  }
+ },
+ {
+  "id": "c-158",
+  "filters": {
+   "mun": "411950",
+   "ano": "2023",
+   "cadeia": "Algodão e Fibras"
+  }
+ },
+ {
+  "id": "c-159",
+  "filters": {
+   "cadeia": "Cafeicultura",
+   "periodo": "2021-01",
+   "cnae": "0134200",
+   "reg": "Cornélio Procópio"
+  }
+ },
+ {
+  "id": "c-160",
+  "filters": {
+   "periodo": "2026-03",
+   "sexo": "Masculino",
+   "escolaridade": "Médio Completo",
+   "porte": "De 250 a 499",
+   "cadeia": "Extrativismo Florestal"
+  }
+ },
+ {
+  "id": "c-161",
+  "filters": {
+   "faixa": "25 a 29 anos",
+   "mun": "412410",
+   "meso": "Noroeste",
+   "periodo": "2024-10",
+   "escolaridade": "Não informado",
+   "reg": "Pitanga",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-162",
+  "filters": {
+   "escolaridade": "5ª Completo Fundamental",
+   "cadeia": "Bovinocultura de Leite",
+   "reg": "Santo Antonio da Platina",
+   "sexo": "Feminino",
+   "mun": "412180",
+   "meso": "Norte"
+  }
+ },
+ {
+  "id": "c-163",
+  "filters": {
+   "ano": "2021",
+   "faixa": "18 a 24 anos",
+   "cnae": "0119907"
+  }
+ },
+ {
+  "id": "c-164",
+  "filters": {
+   "porte": "De 20 a 49",
+   "ano": "2021",
+   "cnae": "0133411",
+   "mun": "410185"
+  }
+ },
+ {
+  "id": "c-165",
+  "filters": {
+   "faixa": "18 a 24 anos",
+   "cnae": "0111399",
+   "ano": "2020",
+   "cadeia": "Bovinocultura de Leite",
+   "mun": "412540",
+   "reg": "Santo Antonio da Platina"
+  }
+ },
+ {
+  "id": "c-166",
+  "filters": {
+   "mun": "412665",
+   "meso": "Metropolitana e Litoral",
+   "faixa": "Menor de 18",
+   "ano": "2024"
+  }
+ },
+ {
+  "id": "c-167",
+  "filters": {
+   "periodo": "2025-06",
+   "reg": "Dois Vizinhos",
+   "escolaridade": "Fundamental Completo",
+   "porte": "De 50 a 99",
+   "mun": "410950",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-168",
+  "filters": {
+   "porte": "Zero",
+   "reg": "Dois Vizinhos",
+   "cadeia": "Ovinocaprinocultura",
+   "ano": "2021",
+   "cnae": "0161002"
+  }
+ },
+ {
+  "id": "c-169",
+  "filters": {
+   "periodo": "2021-11",
+   "escolaridade": "Não informado",
+   "cnae": "0133407"
+  }
+ },
+ {
+  "id": "c-170",
+  "filters": {
+   "faixa": "50 a 64 anos",
+   "meso": "Noroeste",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "c-171",
+  "filters": {
+   "mun": "410770",
+   "cnae": "0119908",
+   "escolaridade": "Superior Incompleto"
+  }
+ },
+ {
+  "id": "c-172",
+  "filters": {
+   "reg": "Toledo",
+   "cadeia": "Outras Lavouras Temporárias",
+   "meso": "Centro Sul",
+   "cnae": "0116401",
+   "periodo": "2026-07",
+   "mun": "411680",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-173",
+  "filters": {
+   "periodo": "2021-11",
+   "reg": "Paranavaí",
+   "faixa": "Menor de 18",
+   "cnae": "0161003",
+   "escolaridade": "5ª Completo Fundamental"
+  }
+ },
+ {
+  "id": "c-174",
+  "filters": {
+   "ano": "2021",
+   "sexo": "Feminino",
+   "faixa": "Não informado",
+   "porte": "De 50 a 99",
+   "cadeia": "Serviços à Pecuária",
+   "meso": "Norte"
+  }
+ },
+ {
+  "id": "c-175",
+  "filters": {
+   "porte": "De 10 a 19",
+   "reg": "Campo Mourão",
+   "mun": "410130",
+   "meso": "Metropolitana e Litoral",
+   "cnae": "0161003"
+  }
+ },
+ {
+  "id": "c-176",
+  "filters": {
+   "mun": "412120",
+   "cnae": "0121101",
+   "ano": "2022",
+   "porte": "De 20 a 49",
+   "cadeia": "Horticultura"
+  }
+ },
+ {
+  "id": "c-177",
+  "filters": {
+   "faixa": "18 a 24 anos",
+   "mun": "411210",
+   "cnae": "0162801",
+   "porte": "De 50 a 99",
+   "meso": "Norte",
+   "escolaridade": "Mestrado"
+  }
+ },
+ {
+  "id": "c-178",
+  "filters": {
+   "ano": "2024",
+   "cadeia": "Cana-de-açúcar",
+   "meso": "Noroeste"
+  }
+ },
+ {
+  "id": "c-179",
+  "filters": {
+   "periodo": "2025-06",
+   "mun": "412788",
+   "escolaridade": "Não informado",
+   "cnae": "0119902",
+   "reg": "Pitanga",
+   "sexo": "Não informado",
+   "faixa": "Menor de 18"
+  }
+ },
+ {
+  "id": "c-180",
+  "filters": {
+   "escolaridade": "5ª Completo Fundamental",
+   "reg": "Francisco Beltrão",
+   "meso": "Noroeste",
+   "sexo": "Masculino",
+   "cnae": "0132600",
+   "ano": "2026",
+   "cadeia": "Fruticultura"
+  }
+ },
+ {
+  "id": "c-181",
+  "filters": {
+   "reg": "Londrina",
+   "faixa": "65 anos ou mais",
+   "escolaridade": "Superior Completo"
+  }
+ },
+ {
+  "id": "c-182",
+  "filters": {
+   "cadeia": "Avicultura",
+   "faixa": "18 a 24 anos",
+   "reg": "Ponta Grossa",
+   "escolaridade": "Não informado"
+  }
+ },
+ {
+  "id": "c-183",
+  "filters": {
+   "escolaridade": "Médio Incompleto",
+   "faixa": "30 a 39 anos",
+   "porte": "1000 ou mais",
+   "mun": "410190",
+   "cnae": "0220901",
+   "meso": "Norte"
+  }
+ },
+ {
+  "id": "c-184",
+  "filters": {
+   "mun": "410950",
+   "faixa": "30 a 39 anos",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "c-185",
+  "filters": {
+   "sexo": "Feminino",
+   "mun": "412033",
+   "faixa": "18 a 24 anos",
+   "cnae": "0155501"
+  }
+ },
+ {
+  "id": "c-186",
+  "filters": {
+   "cnae": "0311601",
+   "mun": "410040",
+   "faixa": "Menor de 18",
+   "periodo": "2023-09",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "c-187",
+  "filters": {
+   "escolaridade": "Não informado",
+   "cadeia": "Cafeicultura",
+   "reg": "Dois Vizinhos",
+   "meso": "Metropolitana e Litoral",
+   "mun": "411150",
+   "porte": "De 5 a 9"
+  }
+ },
+ {
+  "id": "c-188",
+  "filters": {
+   "periodo": "2020-05",
+   "cnae": "0153902",
+   "meso": "Sudoeste",
+   "mun": "411005",
+   "reg": "Pato Branco",
+   "escolaridade": "Médio Completo",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-189",
+  "filters": {
+   "mun": "411120",
+   "meso": "Sudoeste",
+   "porte": "Não informado",
+   "sexo": "Masculino",
+   "cnae": "0162801",
+   "periodo": "2024-05"
+  }
+ },
+ {
+  "id": "c-190",
+  "filters": {
+   "escolaridade": "Mestrado",
+   "periodo": "2021-11",
+   "reg": "Paranaguá"
+  }
+ },
+ {
+  "id": "c-191",
+  "filters": {
+   "faixa": "30 a 39 anos",
+   "reg": "Maringá",
+   "porte": "De 5 a 9",
+   "periodo": "2023-12",
+   "escolaridade": "Doutorado",
+   "mun": "410790"
+  }
+ },
+ {
+  "id": "c-192",
+  "filters": {
+   "cadeia": "Fumo",
+   "sexo": "Masculino",
+   "cnae": "0114800"
+  }
+ },
+ {
+  "id": "c-193",
+  "filters": {
+   "cadeia": "Grãos",
+   "porte": "Zero",
+   "reg": "Guarapuava",
+   "mun": "411020"
+  }
+ },
+ {
+  "id": "c-194",
+  "filters": {
+   "cnae": "0230600",
+   "ano": "2024"
+  }
+ },
+ {
+  "id": "c-195",
+  "filters": {
+   "mun": "412865",
+   "meso": "Centro",
+   "cadeia": "Extrativismo Florestal",
+   "reg": "Laranjeiras do Sul",
+   "periodo": "2024-02",
+   "cnae": "0220906",
+   "porte": "De 10 a 19"
+  }
+ },
+ {
+  "id": "c-196",
+  "filters": {
+   "porte": "De 50 a 99",
+   "cnae": "0161001",
+   "mun": "410730",
+   "faixa": "18 a 24 anos",
+   "periodo": "2023-04",
+   "meso": "Noroeste"
+  }
+ },
+ {
+  "id": "c-197",
+  "filters": {
+   "porte": "De 10 a 19",
+   "ano": "2021",
+   "escolaridade": "Doutorado",
+   "cnae": "0220902",
+   "reg": "Francisco Beltrão"
+  }
+ },
+ {
+  "id": "c-198",
+  "filters": {
+   "cnae": "0155502",
+   "ano": "2022",
+   "mun": "411400",
+   "porte": "De 100 a 249"
+  }
+ },
+ {
+  "id": "c-199",
+  "filters": {
+   "meso": "Centro",
+   "reg": "Toledo",
+   "faixa": "Menor de 18",
+   "escolaridade": "Médio Completo",
+   "cnae": "0220905",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-200",
+  "filters": {
+   "cnae": "0131800",
+   "escolaridade": "Superior Completo",
+   "meso": "Norte",
+   "ano": "2024",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-201",
+  "filters": {
+   "mun": "411300",
+   "porte": "De 250 a 499",
+   "escolaridade": "Analfabeto",
+   "reg": "Cianorte",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "c-202",
+  "filters": {
+   "cnae": "0170900",
+   "escolaridade": "6ª a 9ª Fundamental",
+   "cadeia": "Outras Criações",
+   "mun": "411580",
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "c-203",
+  "filters": {
+   "cnae": "0119901",
+   "periodo": "2024-04",
+   "cadeia": "Avicultura",
+   "porte": "1000 ou mais",
+   "sexo": "Masculino",
+   "faixa": "65 anos ou mais",
+   "reg": "Toledo"
+  }
+ },
+ {
+  "id": "c-204",
+  "filters": {
+   "escolaridade": "Fundamental Completo",
+   "ano": "2023"
+  }
+ },
+ {
+  "id": "c-205",
+  "filters": {
+   "sexo": "Feminino",
+   "cnae": "0115600",
+   "meso": "Sudoeste",
+   "porte": "De 5 a 9",
+   "escolaridade": "Superior Incompleto"
+  }
+ },
+ {
+  "id": "c-206",
+  "filters": {
+   "ano": "2024",
+   "porte": "De 1 a 4",
+   "cnae": "0312401",
+   "mun": "411490",
+   "reg": "Apucarana",
+   "faixa": "40 a 49 anos",
+   "cadeia": "Pesca"
+  }
+ },
+ {
+  "id": "c-207",
+  "filters": {
+   "sexo": "Feminino",
+   "cadeia": "Algodão e Fibras",
+   "ano": "2023"
+  }
+ },
+ {
+  "id": "c-208",
+  "filters": {
+   "mun": "411800",
+   "porte": "Não informado",
+   "faixa": "Menor de 18",
+   "escolaridade": "Fundamental Completo"
+  }
+ },
+ {
+  "id": "c-209",
+  "filters": {
+   "escolaridade": "Até 5ª Incompleto",
+   "meso": "Noroeste",
+   "periodo": "2020-05",
+   "sexo": "Feminino",
+   "cadeia": "Pesca",
+   "mun": "411480",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "c-210",
+  "filters": {
+   "cnae": "0155503",
+   "escolaridade": "6ª a 9ª Fundamental",
+   "cadeia": "Avicultura",
+   "faixa": "50 a 64 anos",
+   "meso": "Norte",
+   "reg": "Pitanga"
+  }
+ },
+ {
+  "id": "c-211",
+  "filters": {
+   "sexo": "Masculino",
+   "porte": "De 20 a 49",
+   "faixa": "30 a 39 anos",
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "c-212",
+  "filters": {
+   "porte": "De 10 a 19",
+   "sexo": "Não informado",
+   "meso": "Centro Sul",
+   "ano": "2020",
+   "faixa": "50 a 64 anos",
+   "reg": "Ponta Grossa"
+  }
+ },
+ {
+  "id": "c-213",
+  "filters": {
+   "cnae": "0161003",
+   "sexo": "Feminino",
+   "mun": "411880",
+   "reg": "Francisco Beltrão",
+   "periodo": "2021-04",
+   "escolaridade": "Analfabeto"
+  }
+ },
+ {
+  "id": "c-214",
+  "filters": {
+   "periodo": "2021-11",
+   "mun": "411729",
+   "meso": "Norte",
+   "sexo": "Masculino",
+   "faixa": "65 anos ou mais"
+  }
+ },
+ {
+  "id": "c-215",
+  "filters": {
+   "cnae": "0155503",
+   "ano": "2024",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "c-216",
+  "filters": {
+   "faixa": "18 a 24 anos",
+   "cadeia": "Serviços Agrícolas",
+   "reg": "Londrina",
+   "escolaridade": "Superior Incompleto",
+   "periodo": "2023-11",
+   "mun": "412545",
+   "porte": "De 10 a 19"
+  }
+ },
+ {
+  "id": "c-217",
+  "filters": {
+   "reg": "União da Vitória",
+   "porte": "De 50 a 99",
+   "meso": "Metropolitana e Litoral",
+   "cadeia": "Ovinocaprinocultura",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-218",
+  "filters": {
+   "porte": "Zero",
+   "cadeia": "Avicultura",
+   "faixa": "25 a 29 anos",
+   "meso": "Noroeste",
+   "mun": "411940",
+   "periodo": "2021-11"
+  }
+ },
+ {
+  "id": "c-219",
+  "filters": {
+   "porte": "De 5 a 9",
+   "faixa": "65 anos ou mais",
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "c-220",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "mun": "411320",
+   "escolaridade": "Fundamental Completo",
+   "porte": "De 100 a 249",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "c-221",
+  "filters": {
+   "meso": "Centro Sul",
+   "ano": "2024",
+   "porte": "De 5 a 9"
+  }
+ },
+ {
+  "id": "c-222",
+  "filters": {
+   "periodo": "2023-09",
+   "meso": "Metropolitana e Litoral",
+   "sexo": "Masculino",
+   "cnae": "0139302",
+   "faixa": "Não informado",
+   "escolaridade": "Superior Completo"
+  }
+ },
+ {
+  "id": "c-223",
+  "filters": {
+   "mun": "412405",
+   "reg": "Cascavel",
+   "periodo": "2020-02",
+   "meso": "Oeste",
+   "cnae": "0322106"
+  }
+ },
+ {
+  "id": "c-224",
+  "filters": {
+   "meso": "Oeste",
+   "reg": "Curitiba",
+   "faixa": "30 a 39 anos",
+   "escolaridade": "Superior Incompleto",
+   "periodo": "2021-04"
+  }
+ },
+ {
+  "id": "c-225",
+  "filters": {
+   "ano": "2024",
+   "porte": "De 10 a 19",
+   "cadeia": "Grãos",
+   "mun": "411721",
+   "cnae": "0119905"
+  }
+ },
+ {
+  "id": "c-226",
+  "filters": {
+   "porte": "De 100 a 249",
+   "cnae": "0161099",
+   "mun": "411520",
+   "sexo": "Feminino",
+   "faixa": "40 a 49 anos",
+   "reg": "Maringá"
+  }
+ },
+ {
+  "id": "c-227",
+  "filters": {
+   "escolaridade": "Não informado",
+   "meso": "Noroeste",
+   "reg": "Umuarama",
+   "cadeia": "Ovinocaprinocultura",
+   "mun": "412862"
+  }
+ },
+ {
+  "id": "c-228",
+  "filters": {
+   "escolaridade": "Mestrado",
+   "porte": "De 1 a 4",
+   "ano": "2025",
+   "meso": "Oeste"
+  }
+ },
+ {
+  "id": "c-229",
+  "filters": {
+   "cadeia": "Extrativismo Florestal",
+   "ano": "2020",
+   "escolaridade": "Superior Incompleto",
+   "cnae": "0220905",
+   "mun": "410570"
+  }
+ },
+ {
+  "id": "c-230",
+  "filters": {
+   "faixa": "Menor de 18",
+   "porte": "De 5 a 9",
+   "cadeia": "Outras Criações"
+  }
+ },
+ {
+  "id": "c-231",
+  "filters": {
+   "mun": "410470",
+   "porte": "De 500 a 999",
+   "meso": "Norte",
+   "faixa": "50 a 64 anos"
+  }
+ },
+ {
+  "id": "c-232",
+  "filters": {
+   "reg": "Paranavaí",
+   "sexo": "Masculino",
+   "periodo": "2024-06",
+   "faixa": "18 a 24 anos",
+   "meso": "Noroeste"
+  }
+ },
+ {
+  "id": "c-233",
+  "filters": {
+   "reg": "Campo Mourão",
+   "mun": "410750",
+   "periodo": "2025-03",
+   "escolaridade": "Superior Incompleto",
+   "cnae": "0119906",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "c-234",
+  "filters": {
+   "mun": "411007",
+   "cadeia": "Outras Lavouras Temporárias",
+   "cnae": "0119906",
+   "meso": "Metropolitana e Litoral",
+   "reg": "Cornélio Procópio"
+  }
+ },
+ {
+  "id": "c-235",
+  "filters": {
+   "mun": "410210",
+   "faixa": "25 a 29 anos",
+   "porte": "De 20 a 49",
+   "reg": "Maringá"
+  }
+ },
+ {
+  "id": "c-236",
+  "filters": {
+   "faixa": "Não informado",
+   "periodo": "2025-08",
+   "mun": "411721",
+   "escolaridade": "Médio Completo",
+   "cadeia": "Bovinocultura de Leite",
+   "cnae": "0151202"
+  }
+ },
+ {
+  "id": "c-237",
+  "filters": {
+   "sexo": "Feminino",
+   "meso": "Centro Sul",
+   "porte": "De 1 a 4",
+   "mun": "411730"
+  }
+ },
+ {
+  "id": "c-238",
+  "filters": {
+   "cadeia": "Bovinocultura de Leite",
+   "sexo": "Não informado",
+   "faixa": "25 a 29 anos"
+  }
+ },
+ {
+  "id": "c-239",
+  "filters": {
+   "meso": "Centro Sul",
+   "cnae": "0116403",
+   "mun": "410345",
+   "ano": "2022",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-240",
+  "filters": {
+   "porte": "De 100 a 249",
+   "cnae": "0112101",
+   "ano": "2024",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-241",
+  "filters": {
+   "sexo": "Masculino",
+   "periodo": "2023-08",
+   "reg": "Dois Vizinhos",
+   "cnae": "0139304",
+   "meso": "Centro"
+  }
+ },
+ {
+  "id": "c-242",
+  "filters": {
+   "porte": "Zero",
+   "mun": "411325",
+   "meso": "Centro",
+   "faixa": "Menor de 18",
+   "sexo": "Masculino",
+   "cadeia": "Bovinocultura de Leite",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "c-243",
+  "filters": {
+   "faixa": "25 a 29 anos",
+   "cnae": "0119909",
+   "periodo": "2024-11",
+   "porte": "De 20 a 49",
+   "escolaridade": "Doutorado",
+   "reg": "Apucarana",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-244",
+  "filters": {
+   "cnae": "0114800",
+   "porte": "Zero",
+   "faixa": "25 a 29 anos",
+   "reg": "União da Vitória",
+   "ano": "2022"
+  }
+ },
+ {
+  "id": "c-245",
+  "filters": {
+   "mun": "411680",
+   "periodo": "2022-09",
+   "cadeia": "Serviços Agrícolas",
+   "porte": "De 1 a 4"
+  }
+ },
+ {
+  "id": "c-246",
+  "filters": {
+   "cnae": "0141502",
+   "reg": "Ivaiporã",
+   "faixa": "40 a 49 anos",
+   "ano": "2025"
+  }
+ },
+ {
+  "id": "c-247",
+  "filters": {
+   "ano": "2026",
+   "reg": "Pitanga",
+   "meso": "Centro",
+   "escolaridade": "Doutorado",
+   "faixa": "Menor de 18"
+  }
+ },
+ {
+  "id": "c-248",
+  "filters": {
+   "faixa": "30 a 39 anos",
+   "reg": "Campo Mourão",
+   "porte": "De 1 a 4",
+   "cnae": "0210102",
+   "ano": "2020"
+  }
+ },
+ {
+  "id": "c-249",
+  "filters": {
+   "reg": "União da Vitória",
+   "mun": "412382",
+   "sexo": "Masculino",
+   "escolaridade": "6ª a 9ª Fundamental"
+  }
+ },
+ {
+  "id": "c-250",
+  "filters": {
+   "escolaridade": "Doutorado",
+   "meso": "Noroeste",
+   "reg": "Paranavaí",
+   "mun": "411350",
+   "faixa": "50 a 64 anos",
+   "porte": "Zero",
+   "ano": "2020"
+  }
+ },
+ {
+  "id": "c-251",
+  "filters": {
+   "cnae": "0142300",
+   "reg": "Londrina",
+   "periodo": "2023-11",
+   "faixa": "30 a 39 anos",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "c-252",
+  "filters": {
+   "sexo": "Masculino",
+   "periodo": "2021-03"
+  }
+ },
+ {
+  "id": "c-253",
+  "filters": {
+   "reg": "União da Vitória",
+   "cadeia": "Cana-de-açúcar",
+   "escolaridade": "Doutorado",
+   "meso": "Sudoeste",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-254",
+  "filters": {
+   "porte": "De 10 a 19",
+   "reg": "Dois Vizinhos",
+   "sexo": "Feminino",
+   "meso": "Norte",
+   "escolaridade": "Superior Incompleto",
+   "cadeia": "Avicultura"
+  }
+ },
+ {
+  "id": "c-255",
+  "filters": {
+   "meso": "Sudoeste",
+   "periodo": "2026-05",
+   "reg": "Irati",
+   "mun": "411220",
+   "porte": "De 10 a 19"
+  }
+ },
+ {
+  "id": "c-256",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "cadeia": "Outras Lavouras Temporárias",
+   "mun": "411870"
+  }
+ },
+ {
+  "id": "c-257",
+  "filters": {
+   "porte": "De 100 a 249",
+   "sexo": "Masculino",
+   "mun": "411200",
+   "reg": "União da Vitória"
+  }
+ },
+ {
+  "id": "c-258",
+  "filters": {
+   "meso": "Sudoeste",
+   "mun": "412400",
+   "cnae": "0112101",
+   "ano": "2026",
+   "reg": "Paranavaí",
+   "porte": "Não informado"
+  }
+ },
+ {
+  "id": "c-259",
+  "filters": {
+   "ano": "2023",
+   "meso": "Norte",
+   "porte": "De 500 a 999",
+   "faixa": "65 anos ou mais",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-260",
+  "filters": {
+   "meso": "Norte",
+   "periodo": "2021-02",
+   "cnae": "0210199",
+   "porte": "De 250 a 499",
+   "mun": "410510",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "c-261",
+  "filters": {
+   "reg": "Curitiba",
+   "sexo": "Feminino",
+   "escolaridade": "6ª a 9ª Fundamental",
+   "meso": "Metropolitana e Litoral",
+   "cadeia": "Apicultura",
+   "mun": "411320"
+  }
+ },
+ {
+  "id": "c-262",
+  "filters": {
+   "cnae": "0321305",
+   "cadeia": "Suinocultura",
+   "mun": "411330",
+   "periodo": "2020-03",
+   "faixa": "25 a 29 anos",
+   "escolaridade": "Analfabeto"
+  }
+ },
+ {
+  "id": "c-263",
+  "filters": {
+   "escolaridade": "Superior Completo",
+   "sexo": "Não informado",
+   "cnae": "0220901",
+   "mun": "411450",
+   "periodo": "2021-06"
+  }
+ },
+ {
+  "id": "c-264",
+  "filters": {
+   "periodo": "2025-05",
+   "meso": "Norte",
+   "reg": "Cornélio Procópio",
+   "porte": "De 10 a 19",
+   "cadeia": "Bovinocultura de Leite",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "c-265",
+  "filters": {
+   "escolaridade": "6ª a 9ª Fundamental",
+   "cadeia": "Outras Lavouras Permanentes",
+   "faixa": "Não informado",
+   "meso": "Noroeste",
+   "mun": "411040",
+   "ano": "2025",
+   "reg": "Cianorte"
+  }
+ },
+ {
+  "id": "c-266",
+  "filters": {
+   "reg": "União da Vitória",
+   "meso": "Metropolitana e Litoral",
+   "cadeia": "Outras Lavouras Temporárias",
+   "cnae": "0113000",
+   "mun": "410840",
+   "ano": "2021"
+  }
+ },
+ {
+  "id": "c-267",
+  "filters": {
+   "porte": "Zero",
+   "faixa": "65 anos ou mais",
+   "mun": "411090",
+   "cadeia": "Outras Lavouras Permanentes",
+   "meso": "Noroeste",
+   "escolaridade": "Mestrado",
+   "periodo": "2025-04"
+  }
+ },
+ {
+  "id": "c-268",
+  "filters": {
+   "porte": "De 10 a 19",
+   "faixa": "50 a 64 anos",
+   "cadeia": "Aquicultura",
+   "mun": "410754"
+  }
+ },
+ {
+  "id": "c-269",
+  "filters": {
+   "faixa": "50 a 64 anos",
+   "sexo": "Feminino",
+   "cnae": "0230600",
+   "mun": "412050",
+   "ano": "2025",
+   "cadeia": "Silvicultura"
+  }
+ },
+ {
+  "id": "c-270",
+  "filters": {
+   "porte": "De 250 a 499",
+   "periodo": "2023-02",
+   "faixa": "18 a 24 anos",
+   "meso": "Norte",
+   "reg": "Santo Antonio da Platina",
+   "cnae": "0155501"
+  }
+ },
+ {
+  "id": "c-271",
+  "filters": {
+   "cadeia": "Ovinocaprinocultura",
+   "periodo": "2026-02",
+   "meso": "Norte",
+   "porte": "De 100 a 249"
+  }
+ },
+ {
+  "id": "c-272",
+  "filters": {
+   "cnae": "0210101",
+   "periodo": "2022-04",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "c-273",
+  "filters": {
+   "escolaridade": "Mestrado",
+   "mun": "411270",
+   "ano": "2026",
+   "reg": "Cornélio Procópio",
+   "meso": "Norte",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "c-274",
+  "filters": {
+   "reg": "Francisco Beltrão",
+   "faixa": "40 a 49 anos",
+   "escolaridade": "Analfabeto",
+   "periodo": "2025-03",
+   "cnae": "0112199"
+  }
+ },
+ {
+  "id": "c-275",
+  "filters": {
+   "meso": "Oeste",
+   "sexo": "Não informado",
+   "reg": "Cornélio Procópio",
+   "cnae": "0114800",
+   "mun": "411760",
+   "porte": "De 1 a 4",
+   "faixa": "40 a 49 anos"
+  }
+ },
+ {
+  "id": "c-276",
+  "filters": {
+   "cadeia": "Cana-de-açúcar",
+   "faixa": "40 a 49 anos",
+   "escolaridade": "Mestrado",
+   "mun": "410645",
+   "porte": "Não informado",
+   "cnae": "0112199"
+  }
+ },
+ {
+  "id": "c-277",
+  "filters": {
+   "sexo": "Masculino",
+   "cnae": "0139399",
+   "meso": "Metropolitana e Litoral",
+   "reg": "Curitiba",
+   "cadeia": "Outras Lavouras Permanentes",
+   "mun": "410620"
+  }
+ },
+ {
+  "id": "c-278",
+  "filters": {
+   "porte": "De 100 a 249",
+   "reg": "Apucarana",
+   "sexo": "Não informado"
+  }
+ },
+ {
+  "id": "c-279",
+  "filters": {
+   "sexo": "Feminino",
+   "cadeia": "Sojicultura",
+   "cnae": "0121102"
+  }
+ },
+ {
+  "id": "c-280",
+  "filters": {
+   "meso": "Noroeste",
+   "periodo": "2024-11",
+   "porte": "1000 ou mais",
+   "faixa": "25 a 29 anos"
+  }
+ },
+ {
+  "id": "c-281",
+  "filters": {
+   "sexo": "Feminino",
+   "cadeia": "Aquicultura",
+   "cnae": "0322106",
+   "ano": "2025",
+   "escolaridade": "Mestrado",
+   "meso": "Noroeste"
+  }
+ },
+ {
+  "id": "c-282",
+  "filters": {
+   "cnae": "0210101",
+   "porte": "De 500 a 999",
+   "mun": "412400",
+   "cadeia": "Bovinocultura de Leite",
+   "sexo": "Masculino",
+   "reg": "Santo Antonio da Platina",
+   "meso": "Norte"
+  }
+ },
+ {
+  "id": "c-283",
+  "filters": {
+   "mun": "411727",
+   "reg": "Pitanga",
+   "ano": "2020",
+   "cadeia": "Sojicultura"
+  }
+ },
+ {
+  "id": "c-284",
+  "filters": {
+   "meso": "Oeste",
+   "reg": "Pitanga",
+   "mun": "410090",
+   "faixa": "65 anos ou mais",
+   "cadeia": "Cafeicultura"
+  }
+ },
+ {
+  "id": "c-285",
+  "filters": {
+   "sexo": "Feminino",
+   "periodo": "2025-11",
+   "mun": "412650",
+   "porte": "De 250 a 499"
+  }
+ },
+ {
+  "id": "c-286",
+  "filters": {
+   "cadeia": "Horticultura",
+   "reg": "Ivaiporã",
+   "escolaridade": "Doutorado",
+   "cnae": "0119902",
+   "sexo": "Feminino",
+   "ano": "2025",
+   "mun": "410685"
+  }
+ },
+ {
+  "id": "c-287",
+  "filters": {
+   "periodo": "2021-10",
+   "escolaridade": "Superior Completo",
+   "cnae": "0170900"
+  }
+ },
+ {
+  "id": "c-288",
+  "filters": {
+   "cnae": "0119999",
+   "periodo": "2023-05",
+   "faixa": "18 a 24 anos",
+   "cadeia": "Outras Lavouras Temporárias",
+   "escolaridade": "Pós-Graduação completa"
+  }
+ },
+ {
+  "id": "c-289",
+  "filters": {
+   "ano": "2020",
+   "porte": "De 250 a 499",
+   "meso": "Centro",
+   "faixa": "Não informado",
+   "cnae": "0131800",
+   "escolaridade": "Fundamental Completo"
+  }
+ },
+ {
+  "id": "c-290",
+  "filters": {
+   "porte": "De 50 a 99",
+   "mun": "412410",
+   "escolaridade": "Não informado",
+   "faixa": "40 a 49 anos",
+   "ano": "2023"
+  }
+ },
+ {
+  "id": "c-291",
+  "filters": {
+   "escolaridade": "Analfabeto",
+   "faixa": "50 a 64 anos",
+   "mun": "412500",
+   "cadeia": "Avicultura",
+   "sexo": "Feminino",
+   "periodo": "2022-08"
+  }
+ },
+ {
+  "id": "c-292",
+  "filters": {
+   "ano": "2021",
+   "meso": "Centro",
+   "reg": "Dois Vizinhos",
+   "escolaridade": "Doutorado"
+  }
+ },
+ {
+  "id": "c-293",
+  "filters": {
+   "sexo": "Feminino",
+   "reg": "Toledo",
+   "faixa": "Não informado"
+  }
+ },
+ {
+  "id": "c-294",
+  "filters": {
+   "meso": "Metropolitana e Litoral",
+   "escolaridade": "Fundamental Completo",
+   "ano": "2021",
+   "reg": "Maringá"
+  }
+ },
+ {
+  "id": "c-295",
+  "filters": {
+   "porte": "De 5 a 9",
+   "faixa": "18 a 24 anos",
+   "meso": "Noroeste",
+   "sexo": "Masculino"
+  }
+ },
+ {
+  "id": "c-296",
+  "filters": {
+   "cnae": "0139304",
+   "cadeia": "Outras Lavouras Permanentes",
+   "reg": "Maringá",
+   "periodo": "2021-03"
+  }
+ },
+ {
+  "id": "c-297",
+  "filters": {
+   "meso": "Centro Sul",
+   "cadeia": "Cafeicultura",
+   "periodo": "2021-05",
+   "reg": "Ponta Grossa",
+   "porte": "Zero"
+  }
+ },
+ {
+  "id": "c-298",
+  "filters": {
+   "reg": "Laranjeiras do Sul",
+   "meso": "Centro",
+   "cadeia": "Suinocultura",
+   "sexo": "Feminino",
+   "mun": "410754"
+  }
+ },
+ {
+  "id": "c-299",
+  "filters": {
+   "faixa": "Não informado",
+   "cadeia": "Horticultura",
+   "mun": "410105",
+   "cnae": "0121102",
+   "periodo": "2021-02",
+   "sexo": "Feminino"
+  }
+ },
+ {
+  "id": "d-vazio-cadeia-cnae",
+  "filters": {
+   "cadeia": "Grãos",
+   "cnae": "0115600"
+  }
+ },
+ {
+  "id": "d-porte-ultimo-nao-informado",
+  "filters": {
+   "porte": "Não informado",
+   "periodo": "2026-08"
+  }
+ },
+ {
+  "id": "d-porte-ultimo-1a4",
+  "filters": {
+   "porte": "De 1 a 4",
+   "periodo": "2026-08"
+  }
+ },
+ {
+  "id": "d-porte-1a4-ano-ultimo",
+  "filters": {
+   "porte": "De 1 a 4",
+   "ano": "2026"
+  }
+ },
+ {
+  "id": "d-mun-raro",
+  "filters": {
+   "mun": "411570"
+  }
+ },
+ {
+  "id": "d-mun-raro-cadeia",
+  "filters": {
+   "mun": "411570",
+   "cadeia": "Grãos"
+  }
+ },
+ {
+  "id": "d-todos-coerente",
+  "filters": {
+   "meso": "Sudoeste",
+   "reg": "Francisco Beltrão",
+   "mun": "410100",
+   "cadeia": "Grãos",
+   "cnae": "0111399",
+   "periodo": "2026-08",
+   "sexo": "Feminino",
+   "faixa": "18 a 24 anos",
+   "escolaridade": "Médio Completo",
+   "porte": "Não informado"
+  }
+ },
+ {
+  "id": "d-todos-aleatorio",
+  "filters": {
+   "meso": "Oeste",
+   "reg": "Toledo",
+   "mun": "411573",
+   "cadeia": "Cafeicultura",
+   "cnae": "0139399",
+   "periodo": "2026-01",
+   "sexo": "Feminino",
+   "faixa": "18 a 24 anos",
+   "escolaridade": "Médio Incompleto",
+   "porte": "Zero"
+  }
+ },
+ {
+  "id": "d-nenhum",
+  "filters": {}
+ },
+ {
+  "id": "d-periodo-inicial",
+  "filters": {
+   "periodo": "2020-01"
+  }
+ }
+]
