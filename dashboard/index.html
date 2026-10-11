@@ -187,7 +187,7 @@
           // Campos anonimizados - sem IP, cookies ou fingerprint (Art. 12 LGPD).
           // Da URL vão só location.pathname e o hostname do referrer (sem query/UTM).
           // origin (esquema + host do próprio painel) é exigido pela allowlist do
-          // Apps Script (google-apps-script-tracking.gs).
+          // Apps Script do controlpanel (server/proxy.gs).
           var data = {
             origin: window.location.origin,
             timestamp: new Date().toISOString(),
