@@ -1084,6 +1084,13 @@ window.__I18N_TEXT_MAP__ = (function () {
     ["IBGE - Censos Demográficos", "IBGE — Demographic Censuses", "IBGE — Censos Demográficos"],
     ["IBGE - Instituto Brasileiro de Geografia e Estatística", "IBGE — Brazilian Institute of Geography and Statistics", "IBGE — Instituto Brasileño de Geografía y Estadística"],
     ["Mostrando os primeiros 20 resultados", "Showing the first 20 results", "Mostrando los primeros 20 resultados"],
+    // ── emprego-agro: notas do cubo v2 (porte indisponível, ranking, LGPD) ──
+    ["Porte do estabelecimento não informado pelo MTE em", "Establishment size not reported by MTE in", "Tamaño del establecimiento no informado por el MTE en"],
+    [": com filtro de porte, essas competências ficam fora do recorte (KPIs e séries vão até o mês anterior).", ": with a size filter, these months are excluded from the selection (KPIs and series run up to the previous month).", ": con filtro de tamaño, esos meses quedan fuera del recorte (KPIs y series llegan hasta el mes anterior)."],
+    [": nessas competências tudo cai em \"Não informado\"; com filtro de porte elas ficam fora do recorte.", ": in these months everything falls under \"Not reported\"; with a size filter they are excluded from the selection.", ": en esos meses todo cae en \"No informado\"; con filtro de tamaño quedan fuera del recorte."],
+    ["Ranking indisponível com cadeia ou atividade filtrada; limpe o filtro para comparar cadeias.", "Ranking unavailable with a chain or activity filter; clear the filter to compare chains.", "Ranking no disponible con cadena o actividad filtrada; limpie el filtro para comparar cadenas."],
+    ["Dados públicos desidentificados do Novo CAGED/MTE. Medimos visitas de forma anônima, sem cookies (página, idioma, dispositivo), via Google Apps Script; fontes do Google Fonts. Nenhum dado identificável é armazenado (", "De-identified public data from Novo CAGED/MTE. We measure visits anonymously, without cookies (page, language, device), via Google Apps Script; fonts from Google Fonts. No identifiable data is stored (", "Datos públicos desidentificados del Novo CAGED/MTE. Medimos las visitas de forma anónima, sin cookies (página, idioma, dispositivo), mediante Google Apps Script; fuentes de Google Fonts. No se almacena ningún dato identificable ("],
+    ["LGPD, Lei 13.709/2018", "LGPD, Law 13,709/2018", "LGPD, Ley 13.709/2018"],
     ["Mostrando", "Showing", "Mostrando"],
     ["de", "of", "de"],
     ["atividades", "activities", "actividades"],

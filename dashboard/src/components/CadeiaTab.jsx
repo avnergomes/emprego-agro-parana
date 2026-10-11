@@ -130,7 +130,7 @@ function CadeiaTab({ agg, filters, onToggle, cores }) {
       {/* timeseriesCadeia aplica cadeia/cnae: com eles só sobra uma cadeia, sempre em #1 */}
       {filters.cadeia || filters.cnae ? (
         <Card title="Evolução do Ranking de Cadeias">
-          <div className="h-24 flex items-center justify-center text-neutral-500 text-sm text-center px-4">
+          <div className="h-24 flex items-center justify-center text-neutral-500 text-sm text-center px-4" data-i18n-translate>
             Ranking indisponível com cadeia ou atividade filtrada; limpe o filtro para comparar cadeias.
           </div>
         </Card>

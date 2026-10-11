@@ -346,7 +346,7 @@ function App() {
               </div>
             )}
             {filters.porte && dims.porte_indisponivel?.length > 0 && (
-              <div className="bg-sky-50 border border-sky-200 rounded-lg px-4 py-2.5 mb-4 text-sm text-sky-800" role="note">
+              <div className="bg-sky-50 border border-sky-200 rounded-lg px-4 py-2.5 mb-4 text-sm text-sky-800" role="note" data-i18n-translate>
                 Porte do estabelecimento não informado pelo MTE em {dims.porte_indisponivel.join(', ')}: com filtro de porte, essas competências ficam fora do recorte (KPIs e séries vão até o mês anterior).
               </div>
             )}

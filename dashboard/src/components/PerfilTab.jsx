@@ -129,7 +129,7 @@ function PerfilTab({ agg, filters, onToggle, porteIndisponivel = [] }) {
             />
           </div>
           {porteIndisponivel.length > 0 && (
-            <p className="text-xs text-neutral-500 mt-2">
+            <p className="text-xs text-neutral-500 mt-2" data-i18n-translate>
               Porte do estabelecimento não informado pelo MTE em {porteIndisponivel.join(', ')}: nessas competências tudo cai em "Não informado"; com filtro de porte elas ficam fora do recorte.
             </p>
           )}
