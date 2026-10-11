@@ -1,5 +1,7 @@
 // ATLAS-A11Y-HEX-SWEPT
-function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHoveredMun, mesoFilter, regIdrFilter, munFilter }) {
+// scope: Set de códigos dentro do recorte regional (null = estado inteiro);
+// selectedMun: município filtrado (contorno); onMunClick: alterna o filtro mun.
+function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHoveredMun, scope, selectedMun, onMunClick }) {
   const width = 800
   const height = 520
   const padding = 10
@@ -50,12 +52,8 @@ function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHove
         const value = munData ? munData[mapMetric] : 0
         const isHovered = hoveredMun?.codigo === codIbge
 
-        // Verificar se passa no filtro
-        const matchesMun = !munFilter || codIbge === munFilter
-        const matchesMeso = !mesoFilter || feat.properties.MesoIdr === mesoFilter
-        const matchesRegIdr = !regIdrFilter || feat.properties.RegIdr === regIdrFilter
-        const isFiltered = munFilter ? matchesMun : (matchesMeso && matchesRegIdr)
-        const hasFilter = mesoFilter || regIdrFilter || munFilter
+        const fora = scope !== null && !scope.has(codIbge)
+        const isSel = selectedMun === codIbge
 
         const pathD = geometryToPath(feat.geometry)
         const setHover = () => setHoveredMun(munData ? { ...munData, nome: feat.properties.Municipio, meso: feat.properties.MesoIdr, regIdr: feat.properties.RegIdr } : { nome: feat.properties.Municipio, codigo: codIbge, [mapMetric]: 0, meso: feat.properties.MesoIdr, regIdr: feat.properties.RegIdr })
@@ -64,13 +62,16 @@ function MapaSVG({ geoData, munDataMap, mapMetric, getColor, hoveredMun, setHove
           <path
             key={idx}
             d={pathD}
-            fill={isHovered ? '#e0b850' : (hasFilter && !isFiltered ? '#e5e7eb' : getColor(value))}
-            stroke={hasFilter && !isFiltered ? '#d1d5db' : '#fff'}
-            strokeWidth={0.5}
-            opacity={hasFilter && !isFiltered ? 0.5 : 1}
+            fill={isHovered ? '#e0b850' : fora ? '#e5e7eb' : getColor(value)}
+            stroke={isSel ? '#14110c' : fora ? '#d1d5db' : '#fff'}
+            strokeWidth={isSel ? 2.5 : 0.5}
+            opacity={fora ? 0.5 : 1}
             style={{ cursor: 'pointer', transition: 'fill 0.15s, opacity 0.15s' }}
             tabIndex={0}
             aria-label={`${feat.properties.Municipio}: ${value ?? 0}`}
+            aria-pressed={isSel}
+            onClick={() => onMunClick(codIbge)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onMunClick(codIbge) } }}
             onMouseEnter={setHover}
             onMouseLeave={() => setHoveredMun(null)}
             onFocus={setHover}

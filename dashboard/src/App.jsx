@@ -2,10 +2,10 @@ import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import {
   Users, TrendingUp, TrendingDown, DollarSign, Briefcase,
   BarChart3, Layers, Factory, MapPin, Info, Activity,
-  ChevronLeft, ChevronRight
+  ChevronLeft, ChevronRight,
 } from 'lucide-react'
+import { feature } from 'topojson-client'
 
-// Components
 import KpiCard from './components/KpiCard'
 import ActiveFilters from './components/ActiveFilters'
 import OverviewTab from './components/OverviewTab'
@@ -16,888 +16,178 @@ import SalarioTab from './components/SalarioTab'
 import GeoTab from './components/GeoTab'
 import TempoTab from './components/TempoTab'
 
-import { feature } from 'topojson-client'
-import { decodeBundle, resolvePartition } from './utils/granular-partitions'
+import { createLoader } from './engine/loader'
+import { isEmptyFilters } from './engine/index'
+import { EMPTY_FILTERS, setFilter, toggleFilter, activeFilters, hierarchyOptions } from './utils/filters'
+import { useSlice } from './utils/useSlice'
+import { formatNumber, formatCurrency, formatSigned, salTitle } from './utils/format'
 import './index.css'
 
-// Malha municipal: primeiro a versao reduzida self-hosted (~749 KB, mesmas
-// propriedades e object key 'municipalities'); em qualquer falha, o topojson
-// completo no jsdelivr como fallback.
+// Dados v2 (docs/CONTRATO-DADOS.md): dims.json + agregado.json + cubo/{regional}.json.
+// Toda métrica exibida sai do motor (src/engine); o App só escolhe o recorte.
+const loader = createLoader(import.meta.env.BASE_URL)
+
+// Malha municipal (só geometria do mapa; listas de meso/regional/município vêm
+// de dims.json). Primeiro a versão reduzida; em falha, o topojson completo no jsdelivr.
 const TOPO_URL = 'https://datageoparana.github.io/assets/parana-municipalities.min.topojson'
 const TOPO_URL_FALLBACK = 'https://cdn.jsdelivr.net/gh/datageoparana/datageoparana.github.io@main/assets/parana-municipalities.topojson'
 
-// Base dos bundles granulares particionados (regiao / cadeia / cube_all).
-const GRANULAR_BASE = `${import.meta.env.BASE_URL}data/granular/`
-
-// Busca o topojson na malha reduzida e, em qualquer falha (rede, res.ok falso,
-// bloqueio corporativo), tenta o fallback do jsdelivr antes de propagar o erro.
-// Preserva a semantica de erro/retry (geoError/retryTopo) ja existente: so
-// propaga a falha se AMBOS falharem (ou se o fetch foi abortado).
-async function fetchTopo(signal) {
+async function fetchTopo() {
   const load = async (url) => {
-    const res = await fetch(url, signal ? { signal } : undefined)
+    const res = await fetch(url)
     if (!res.ok) throw new Error('TopoJSON indisponível')
     return res.json()
   }
   try {
     return await load(TOPO_URL)
-  } catch (err) {
-    // Aborto nao deve cair no fallback: repropaga para o cleanup tratar.
-    if (signal && signal.aborted) throw err
+  } catch {
     return load(TOPO_URL_FALLBACK)
   }
 }
 
-// Formatadores
-const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
-const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
-const formatPercent = (n) => n == null ? '0%' : `${n.toFixed(1)}%`
+const formatData = (iso) => (iso ? String(iso).split('-').reverse().join('/') : '')
+
+const TABS = [
+  { id: 'overview', label: 'Visão Geral', icon: BarChart3 },
+  { id: 'cadeia', label: 'Cadeias Produtivas', icon: Layers },
+  { id: 'cnae', label: 'Atividades CNAE', icon: Factory },
+  { id: 'perfil', label: 'Perfil do Trabalhador', icon: Users },
+  { id: 'salario', label: 'Salários', icon: DollarSign },
+  { id: 'geo', label: 'Municípios', icon: MapPin },
+  { id: 'tempo', label: 'Evolução Temporal', icon: Activity },
+]
+
+const SELECT_CLS = 'px-3 py-2 text-base sm:text-sm min-h-[44px] border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500'
+
+// Carrega uma vez (e em "tentar novamente") o par dims + agregado inicial.
+function useBoot(attempt) {
+  const [state, setState] = useState({ attempt: -1, boot: null, error: null })
+  useEffect(() => {
+    let alive = true
+    Promise.all([loader.loadDims(), loader.loadAgregado()]).then(
+      ([dims, agregadoJson]) => {
+        const { metadata, ...agregado } = agregadoJson
+        if (alive) setState({ attempt, boot: { dims, agregado, metadata }, error: null })
+      },
+      (err) => alive && setState({ attempt, boot: null, error: err?.message || String(err) }),
+    )
+    return () => {
+      alive = false
+    }
+  }, [attempt])
+  return state.attempt === attempt ? state : { boot: null, error: null }
+}
+
+function useGeo(attempt) {
+  const [state, setState] = useState({ attempt: -1, geo: null, error: false })
+  useEffect(() => {
+    let alive = true
+    fetchTopo()
+      .then((topo) => feature(topo, topo.objects.municipalities))
+      .then(
+        (geo) => alive && setState({ attempt, geo, error: false }),
+        () => alive && setState({ attempt, geo: null, error: true }),
+      )
+    return () => {
+      alive = false
+    }
+  }, [attempt])
+  return state.attempt === attempt ? state : { geo: null, error: false }
+}
+
+function useTabScroll(ready) {
+  const ref = useRef(null)
+  const [edges, setEdges] = useState({ left: false, right: false })
+  const update = useCallback(() => {
+    const el = ref.current
+    if (!el) return
+    setEdges({ left: el.scrollLeft > 4, right: el.scrollLeft < el.scrollWidth - el.clientWidth - 4 })
+  }, [])
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return undefined
+    el.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    const t = setTimeout(update, 0)
+    return () => {
+      clearTimeout(t)
+      el.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
+    }
+  }, [update, ready])
+  const scrollBy = (dir) => ref.current?.scrollBy({ left: dir * 160, behavior: 'smooth' })
+  return { tabsRef: ref, canLeft: edges.left, canRight: edges.right, scrollTabs: scrollBy }
+}
+
+function Spinner({ label }) {
+  return (
+    <div className="flex flex-col items-center justify-center gap-3 py-24 text-neutral-600" role="status" data-i18n-translate>
+      <div className="animate-spin w-10 h-10 border-4 border-green-600 border-t-transparent rounded-full" aria-hidden="true" />
+      <p>{label}</p>
+    </div>
+  )
+}
+
+function ErrorPanel({ title, detail, onRetry }) {
+  return (
+    <div className="bg-red-50 border border-red-200 rounded-xl p-8 text-center max-w-lg mx-auto" role="alert" data-i18n-translate>
+      <Info className="w-12 h-12 text-red-500 mx-auto mb-3" />
+      <h2 className="text-lg font-semibold text-red-800 mb-2">{title}</h2>
+      {detail && <p className="text-sm text-red-700 mb-4 break-words" data-i18n-skip>{detail}</p>}
+      <button onClick={onRetry} className="px-4 py-2 min-h-[44px] rounded-lg bg-red-700 text-white hover:bg-red-800">
+        Tentar novamente
+      </button>
+    </div>
+  )
+}
 
 function App() {
-  const [data, setData] = useState(null)
-  const [geoData, setGeoData] = useState(null)
-  const [granularData, setGranularData] = useState(null)
-  const [granularDimensions, setGranularDimensions] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [isGranularLoading, setIsGranularLoading] = useState(false)
-  const [granularError, setGranularError] = useState(false)
-  const [geoError, setGeoError] = useState(false)
-  const [error, setError] = useState(null)
+  const [bootAttempt, setBootAttempt] = useState(0)
+  const [geoAttempt, setGeoAttempt] = useState(0)
+  const [sliceAttempt, setSliceAttempt] = useState(0)
+  const { boot, error: bootError } = useBoot(bootAttempt)
+  const { geo, error: geoError } = useGeo(geoAttempt)
+  const [filters, setFilters] = useState(EMPTY_FILTERS)
   const [activeTab, setActiveTab] = useState('overview')
-  const [selectedCadeia, setSelectedCadeia] = useState(null)
-
-  // Filtros globais (regionais)
-  const [mesoFilter, setMesoFilter] = useState('')
-  const [regIdrFilter, setRegIdrFilter] = useState('')
-  const [munFilter, setMunFilter] = useState('')
-
-  // Filtros interativos (por clique nos gráficos)
-  const [cadeiaFilter, setCadeiaFilter] = useState('')
-  const [sexoFilter, setSexoFilter] = useState('')
-  const [faixaFilter, setFaixaFilter] = useState('')
-  const [escolaridadeFilter, setEscolaridadeFilter] = useState('')
-  const [periodoFilter, setPeriodoFilter] = useState('')
-
-  useEffect(() => {
-    // AbortController para cancelar fetches se componente desmontar
-    const abortController = new AbortController()
-    const { signal } = abortController
-
-    // Carregar dados agregados e GeoJSON primeiro (essenciais)
-    Promise.all([
-      fetch(`${import.meta.env.BASE_URL}data/aggregated_full.json`, { signal }).then(res => {
-        if (!res.ok) throw new Error('Dados não encontrados')
-        return res.json()
-      }),
-      fetchTopo(signal)
-        .then(topo => feature(topo, topo.objects.municipalities))
-        .catch(() => {
-          // Primary self-hosted E fallback jsdelivr falharam (ou bloqueio
-          // corporativo): sinaliza o erro em vez de engolir, para a UI
-          // oferecer retry.
-          if (!signal.aborted) setGeoError(true)
-          return null
-        }),
-    ])
-      .then(([aggData, geo]) => {
-        if (signal.aborted) return
-        setData(aggData)
-        setGeoData(geo)
-        setLoading(false)
-      })
-      .catch(err => {
-        if (signal.aborted) return
-        setError(err.message)
-        setLoading(false)
-      })
-
-    // Cleanup: cancelar fetches pendentes ao desmontar
-    return () => {
-      abortController.abort()
-    }
-  }, [])
-
-  // Refaz o download do TopoJSON sem recarregar a página (falha do CDN)
-  const retryTopo = useCallback(() => {
-    setGeoError(false)
-    fetchTopo()
-      .then(topo => feature(topo, topo.objects.municipalities))
-      .then(geo => setGeoData(geo))
-      .catch(() => setGeoError(true))
-  }, [])
-
-  // Extrair regiões únicas do GeoJSON (hook deve vir ANTES de returns condicionais)
-  const { mesoRegioes, regIdrList, municipiosList } = useMemo(() => {
-    if (!geoData) {
-      // Fallback sem geodata: deriva a lista de municípios dos dados
-      // tabulares para a busca por município continuar funcionando.
-      // Meso/Regional dependem do TopoJSON e ficam com aviso na UI.
-      const municipios = (data?.byMunicipio || [])
-        .map(m => ({ codigo: m.codigo, nome: m.nome, meso: null, regIdr: null }))
-        .sort((a, b) => a.nome.localeCompare(b.nome))
-      return { mesoRegioes: [], regIdrList: [], municipiosList: municipios }
-    }
-    const meso = new Set()
-    const regIdr = new Set()
-    const municipios = []
-    geoData.features.forEach(f => {
-      if (f.properties.MesoIdr) meso.add(f.properties.MesoIdr)
-      if (f.properties.RegIdr) regIdr.add(f.properties.RegIdr)
-      municipios.push({
-        codigo: String(f.properties.CodIbge).slice(0, 6),
-        nome: f.properties.Municipio,
-        meso: f.properties.MesoIdr,
-        regIdr: f.properties.RegIdr
-      })
-    })
-    return {
-      mesoRegioes: [...meso].sort(),
-      regIdrList: [...regIdr].sort(),
-      municipiosList: municipios.sort((a, b) => a.nome.localeCompare(b.nome))
-    }
-  }, [geoData, data])
-
-  // Municípios filtrados por região (para o dropdown)
-  const filteredMunicipiosList = useMemo(() => {
-    if (!mesoFilter && !regIdrFilter) return municipiosList
-    return municipiosList.filter(m => {
-      const matchesMeso = !mesoFilter || m.meso === mesoFilter
-      const matchesRegIdr = !regIdrFilter || m.regIdr === regIdrFilter
-      return matchesMeso && matchesRegIdr
-    })
-  }, [municipiosList, mesoFilter, regIdrFilter])
-
-  // Mapeamento de código de município para região
-  const munRegionMap = useMemo(() => {
-    if (!geoData) return {}
-    const map = {}
-    geoData.features.forEach(f => {
-      const cod = String(f.properties.CodIbge).slice(0, 6)
-      map[cod] = {
-        meso: f.properties.MesoIdr,
-        regIdr: f.properties.RegIdr
-      }
-    })
-    return map
-  }, [geoData])
-
-  // Dados filtrados por município - agora também considera cadeiaFilter
-  const filteredByMunicipio = useMemo(() => {
-    if (!data) return []
-
-    const hasAnyFilter = mesoFilter || regIdrFilter || munFilter || cadeiaFilter
-
-    // Se não há filtros, retornar dados originais
-    if (!hasAnyFilter) return data.byMunicipio
-
-    // Se há filtro de cadeia, precisamos recalcular do granularData
-    if (cadeiaFilter && granularData) {
-      const munMap = {}
-      granularData.forEach(r => {
-        // Filtro de cadeia
-        if (r.cadeia !== cadeiaFilter) return
-        // Filtros regionais
-        if (munFilter && r.mun !== munFilter) return
-        if (mesoFilter || regIdrFilter) {
-          const region = munRegionMap[r.mun]
-          if (region) {
-            if (mesoFilter && region.meso !== mesoFilter) return
-            if (regIdrFilter && region.regIdr !== regIdrFilter) return
-          }
-        }
-
-        if (!munMap[r.mun]) {
-          munMap[r.mun] = { codigo: r.mun, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
-        }
-        munMap[r.mun].admissoes += r.admissoes
-        munMap[r.mun].demissoes += r.demissoes
-        munMap[r.mun].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
-        munMap[r.mun].count += r.admissoes + r.demissoes
-      })
-
-      // Buscar nomes dos municípios do data original
-      const munNames = {}
-      data.byMunicipio.forEach(m => { munNames[m.codigo] = m.nome })
-
-      return Object.values(munMap)
-        .map(m => ({
-          ...m,
-          nome: munNames[m.codigo] || m.codigo,
-          saldo: m.admissoes - m.demissoes,
-          salario_medio: m.count > 0 ? m.salario_total / m.count : 0,
-          cadeia_dominante: cadeiaFilter,
-        }))
-        .sort((a, b) => b.admissoes - a.admissoes)
-    }
-
-    // Apenas filtros regionais (sem cadeia)
-    return data.byMunicipio.filter(m => {
-      if (munFilter) return m.codigo === munFilter
-      const region = munRegionMap[m.codigo]
-      if (!region) return true
-      const matchesMeso = !mesoFilter || region.meso === mesoFilter
-      const matchesRegIdr = !regIdrFilter || region.regIdr === regIdrFilter
-      return matchesMeso && matchesRegIdr
-    })
-  }, [data, granularData, mesoFilter, regIdrFilter, munFilter, munRegionMap, cadeiaFilter])
-
-  const filteredTopMunicipios = useMemo(() => {
-    if (!data) return []
-
-    // Se tem cadeia filter, usar filteredByMunicipio (já filtrado)
-    if (cadeiaFilter) {
-      return filteredByMunicipio.slice(0, 20)
-    }
-
-    const topMunicipios = data.topMunicipios
-    if (!mesoFilter && !regIdrFilter && !munFilter) return topMunicipios
-    return topMunicipios.filter(m => {
-      if (munFilter) return m.codigo === munFilter
-      const region = munRegionMap[m.codigo]
-      if (!region) return true
-      const matchesMeso = !mesoFilter || region.meso === mesoFilter
-      const matchesRegIdr = !regIdrFilter || region.regIdr === regIdrFilter
-      return matchesMeso && matchesRegIdr
-    })
-  }, [data, filteredByMunicipio, mesoFilter, regIdrFilter, munFilter, munRegionMap, cadeiaFilter])
-
-  // KPIs recalculados com base nos filtros ativos
-  const filteredKpis = useMemo(() => {
-    if (!data) return null
-    const kpis = data.kpis
-
-    const hasAnyFilter = mesoFilter || regIdrFilter || munFilter || cadeiaFilter
-    if (!hasAnyFilter) return kpis
-
-    // Se apenas cadeiaFilter está ativo e não temos granularData, usar byCadeia
-    if (cadeiaFilter && !granularData && !mesoFilter && !regIdrFilter && !munFilter) {
-      const cadeiaData = data.byCadeia.find(c => c.cadeia === cadeiaFilter)
-      if (cadeiaData) {
-        return {
-          ...kpis,
-          acumulado: {
-            admissoes: cadeiaData.admissoes,
-            demissoes: cadeiaData.demissoes,
-            saldo: cadeiaData.saldo
-          },
-          salario: {
-            ...kpis.salario,
-            media: cadeiaData.salario_medio,
-            mediana: cadeiaData.salario_mediana
-          }
-        }
-      }
-    }
-
-    // Usar filteredByMunicipio para calcular KPIs
-    const admissoes = filteredByMunicipio.reduce((a, m) => a + (m.admissoes || 0), 0)
-    const demissoes = filteredByMunicipio.reduce((a, m) => a + (m.demissoes || 0), 0)
-    const saldo = admissoes - demissoes
-    // Média ponderada por headcount (corrige problema de mean-of-means);
-    // byMunicipio não tem campo count — usa admissões+demissões como peso.
-    const headcount = (m) => (m.count > 0 ? m.count : (m.admissoes || 0) + (m.demissoes || 0))
-    const municipiosComSalario = filteredByMunicipio.filter(m => m.salario_medio && headcount(m) > 0)
-    const totalSalario = municipiosComSalario.reduce((sum, m) => sum + (m.salario_medio * headcount(m)), 0)
-    const totalCount = municipiosComSalario.reduce((sum, m) => sum + headcount(m), 0)
-    const salarioMedia = totalCount > 0 ? totalSalario / totalCount : 0
-    return {
-      ...kpis,
-      acumulado: { admissoes, demissoes, saldo },
-      salario: { ...kpis.salario, media: salarioMedia }
-    }
-  }, [data, granularData, filteredByMunicipio, mesoFilter, regIdrFilter, munFilter, cadeiaFilter])
-
-  // Verificar se há filtros ativos
-  const hasRegionalFilter = mesoFilter || regIdrFilter || munFilter
-  const hasInteractiveFilter = cadeiaFilter || sexoFilter || faixaFilter || escolaridadeFilter || periodoFilter
-  const hasFilter = hasRegionalFilter || hasInteractiveFilter
-
-  // Cubos granulares particionados: em vez de baixar ~100 MB no 1º filtro,
-  // busca so o(s) bundle(s) compacto(s) que cobrem o filtro atual (superset
-  // dos registros que os filtros client-side selecionam). O index.json e
-  // cacheado em ref; cada bundle e cacheado por URL (nunca baixa 2x a mesma
-  // particao). Sem bundle aplicavel, a UI usa os pré-agregados.
-  const partitionIndexRef = useRef(null)          // index.json (cache)
-  const bundleCacheRef = useRef(new Map())        // file -> Promise<decoded>
-  const [granularRetry, setGranularRetry] = useState(0)
-
-  const loadIndex = useCallback(async () => {
-    if (partitionIndexRef.current) return partitionIndexRef.current
-    const res = await fetch(`${GRANULAR_BASE}index.json`)
-    if (!res.ok) throw new Error('Índice de partições indisponível')
-    const idx = await res.json()
-    partitionIndexRef.current = idx
-    return idx
-  }, [])
-
-  const fetchBundle = useCallback((file) => {
-    const cache = bundleCacheRef.current
-    if (cache.has(file)) return cache.get(file)
-    const p = fetch(`${GRANULAR_BASE}${file}`)
-      .then(res => {
-        if (!res.ok) throw new Error(`Bundle ${file} indisponível`)
-        return res.json()
-      })
-      .then(json => decodeBundle(json))
-      .catch(err => {
-        // Falha não deve envenenar o cache: remove para permitir retry.
-        cache.delete(file)
-        throw err
-      })
-    cache.set(file, p)
-    return p
-  }, [])
-
-  useEffect(() => {
-    let cancelled = false
-
-    // Sem nenhum filtro: garante estado limpo (usa pré-agregados).
-    if (!hasFilter) {
-      setGranularData(null)
-      setGranularDimensions(null)
-      setIsGranularLoading(false)
-      setGranularError(false)
-      return
-    }
-
-    const run = async () => {
-      let idx
-      try {
-        idx = await loadIndex()
-      } catch {
-        if (!cancelled) {
-          setIsGranularLoading(false)
-          setGranularError(true)
-        }
-        return
-      }
-      if (cancelled) return
-
-      const files = resolvePartition(
-        { munFilter, regIdrFilter, mesoFilter, cadeiaFilter, periodoFilter },
-        idx,
-      )
-
-      // Só sexo/faixa/escolaridade (highlight-only) ou nada aplicável:
-      // zera o estado detalhado e não baixa nada.
-      if (files.length === 0) {
-        setGranularData(null)
-        setGranularDimensions(null)
-        setIsGranularLoading(false)
-        setGranularError(false)
-        return
-      }
-
-      setGranularError(false)
-      setIsGranularLoading(true)
-      try {
-        const bundles = await Promise.all(files.map(fetchBundle))
-        if (cancelled) return
-        // Mesorregião resolve várias regionais (disjuntas por município):
-        // concatena cube e dimensões. SUBSTITUI o estado anterior (nunca
-        // faz merge entre eixos diferentes, evitando dupla contagem).
-        const cube = bundles.flatMap(b => b.cube)
-        let dims = null
-        for (const b of bundles) {
-          if (!b.dims) continue
-          if (!dims) dims = { bySexo: [], byFaixa: [], byEscolaridade: [], byPorte: [] }
-          for (const k of Object.keys(dims)) {
-            if (b.dims[k]) dims[k] = dims[k].concat(b.dims[k])
-          }
-        }
-        // Nenhum bundle trouxe dimensões (cube_all): mantém null.
-        if (dims && Object.values(dims).every(a => a.length === 0)) dims = null
-        setGranularData(cube)
-        setGranularDimensions(dims)
-      } catch {
-        if (!cancelled) setGranularError(true)
-      } finally {
-        if (!cancelled) setIsGranularLoading(false)
-      }
-    }
-
-    run()
-    return () => { cancelled = true }
-  }, [hasFilter, munFilter, regIdrFilter, mesoFilter, cadeiaFilter, periodoFilter,
-      granularRetry, loadIndex, fetchBundle])
-
-  // Permite tentar de novo após falha: limpa o cache dos bundles da partição
-  // atual e re-dispara o efeito. O index (se falhou) é re-buscado por loadIndex.
-  const retryGranular = useCallback(() => {
-    const files = resolvePartition(
-      { munFilter, regIdrFilter, mesoFilter, cadeiaFilter, periodoFilter },
-      partitionIndexRef.current,
-    )
-    files.forEach(f => bundleCacheRef.current.delete(f))
-    setGranularError(false)
-    setGranularRetry(n => n + 1)
-  }, [munFilter, regIdrFilter, mesoFilter, cadeiaFilter, periodoFilter])
-
-  // Mensagem do FilterIndicator enquanto os cubos detalhados não chegaram:
-  // sem ela, os gráficos com totais estaduais seriam rotulados como filtrados.
-  const filterMessage = hasFilter && !granularData
-    ? (isGranularLoading
-        ? 'Gráficos detalhados carregando; exibindo totais do Paraná.'
-        : (granularError ? 'Dados detalhados indisponíveis; alguns gráficos exibem totais do Paraná.' : undefined))
-    : undefined
-  const selectedMunName = munFilter ? municipiosList.find(m => m.codigo === munFilter)?.nome : null
-
-  // Limpar filtros interativos
-  const clearInteractiveFilters = () => {
-    setCadeiaFilter('')
-    setSexoFilter('')
-    setFaixaFilter('')
-    setEscolaridadeFilter('')
-    setPeriodoFilter('')
-  }
-
-  // Tab scroll indicators
-  const tabContainerRef = useRef(null)
-  const [scrollClasses, setScrollClasses] = useState('')
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(false)
-
-  const updateScrollIndicators = useCallback(() => {
-    const el = tabContainerRef.current
-    if (!el) return
-    const hasLeft = el.scrollLeft > 4
-    const hasRight = el.scrollLeft < el.scrollWidth - el.clientWidth - 4
-    setCanScrollLeft(hasLeft)
-    setCanScrollRight(hasRight)
-    const classes = [
-      hasLeft ? 'scroll-left' : '',
-      hasRight ? 'scroll-right' : '',
-    ].filter(Boolean).join(' ')
-    setScrollClasses(classes)
-  }, [])
-
-  const scrollTabs = useCallback((dir) => {
-    tabContainerRef.current?.scrollBy({ left: dir * 160, behavior: 'smooth' })
-  }, [])
-
-  useEffect(() => {
-    const el = tabContainerRef.current
-    if (!el) return
-    updateScrollIndicators()
-    el.addEventListener('scroll', updateScrollIndicators, { passive: true })
-    window.addEventListener('resize', updateScrollIndicators)
-    return () => {
-      el.removeEventListener('scroll', updateScrollIndicators)
-      window.removeEventListener('resize', updateScrollIndicators)
-    }
-  }, [updateScrollIndicators, loading])
-
-  // Dados filtrados do cubo granular
-  const filteredCube = useMemo(() => {
-    if (!granularData) return []
-    let filtered = granularData
-
-    // Aplicar filtros regionais
-    if (hasRegionalFilter) {
-      filtered = filtered.filter(r => {
-        if (munFilter) return r.mun === munFilter
-        const region = munRegionMap[r.mun]
-        if (!region) return true
-        const matchesMeso = !mesoFilter || region.meso === mesoFilter
-        const matchesRegIdr = !regIdrFilter || region.regIdr === regIdrFilter
-        return matchesMeso && matchesRegIdr
-      })
-    }
-
-    // Aplicar filtros interativos
-    if (cadeiaFilter) filtered = filtered.filter(r => r.cadeia === cadeiaFilter)
-    if (periodoFilter) {
-      // Filtro de 4 caracteres = ano inteiro (ex.: '2023'); senão, mês exato ('2023-01')
-      filtered = periodoFilter.length === 4
-        ? filtered.filter(r => r.periodo.startsWith(periodoFilter))
-        : filtered.filter(r => r.periodo === periodoFilter)
-    }
-
-    return filtered
-  }, [granularData, mesoFilter, regIdrFilter, munFilter, cadeiaFilter, periodoFilter, munRegionMap, hasRegionalFilter])
-
-  // Agregações calculadas a partir do cubo filtrado
-  const filteredAggregations = useMemo(() => {
-    if (!data) return null
-
-    // Se não há filtros, usar dados pré-agregados
-    if (!hasFilter) {
-      return {
-        timeseries: data.timeseries,
-        byCadeia: data.byCadeia,
-        bySexo: data.bySexo,
-        byFaixaEtaria: data.byFaixaEtaria,
-        byEscolaridade: data.byEscolaridade,
-        byPorte: data.byPorte,
-        seasonality: data.seasonality,
-        yearly: data.yearly,
-        timeseriesCadeia: data.timeseriesCadeia,
-        crossCadeiaSexo: data.crossCadeiaSexo,
-        salaryDistribution: data.salaryDistribution,
-        byCnae: data.byCnae,
-      }
-    }
-
-    // FALLBACK: Se granularData não está disponível, filtrar com dados existentes
-    if (!granularData) {
-      // Filtrar apenas por cadeia usando dados pré-agregados
-      const filteredByCadeia = cadeiaFilter
-        ? data.byCadeia.filter(c => c.cadeia === cadeiaFilter)
-        : data.byCadeia
-
-      const filteredByCnae = cadeiaFilter
-        ? data.byCnae.filter(c => c.cadeia === cadeiaFilter)
-        : data.byCnae
-
-      const filteredSalaryDist = cadeiaFilter
-        ? data.salaryDistribution.filter(s => s.cadeia === cadeiaFilter)
-        : data.salaryDistribution
-
-      const filteredTimeseriesCadeia = cadeiaFilter
-        ? data.timeseriesCadeia.filter(t => t.cadeia === cadeiaFilter)
-        : data.timeseriesCadeia
-
-      const filteredCrossCadeiaSexo = cadeiaFilter
-        ? data.crossCadeiaSexo.filter(c => c.cadeia === cadeiaFilter)
-        : data.crossCadeiaSexo
-
-      // Calcular timeseries da cadeia selecionada
-      let timeseries = data.timeseries
-      if (cadeiaFilter && filteredTimeseriesCadeia.length > 0) {
-        const tsMap = {}
-        filteredTimeseriesCadeia.forEach(t => {
-          if (!tsMap[t.periodo]) {
-            tsMap[t.periodo] = { periodo: t.periodo, admissoes: 0, demissoes: 0, saldo: 0 }
-          }
-          tsMap[t.periodo].admissoes += t.admissoes
-          tsMap[t.periodo].demissoes += t.demissoes
-          tsMap[t.periodo].saldo += t.saldo
-        })
-        timeseries = Object.values(tsMap).sort((a, b) => a.periodo.localeCompare(b.periodo))
-        let saldoAcum = 0
-        timeseries.forEach(t => {
-          saldoAcum += t.saldo
-          t.saldo_acumulado = saldoAcum
-        })
-      }
-
-      return {
-        timeseries,
-        byCadeia: filteredByCadeia,
-        bySexo: data.bySexo,
-        byFaixaEtaria: data.byFaixaEtaria,
-        byEscolaridade: data.byEscolaridade,
-        byPorte: data.byPorte,
-        seasonality: data.seasonality,
-        yearly: data.yearly,
-        timeseriesCadeia: filteredTimeseriesCadeia,
-        crossCadeiaSexo: filteredCrossCadeiaSexo,
-        salaryDistribution: filteredSalaryDist,
-        byCnae: filteredByCnae,
-      }
-    }
-
-    // Agregar timeseries do cubo filtrado
-    const timeseriesMap = {}
-    filteredCube.forEach(r => {
-      if (!timeseriesMap[r.periodo]) {
-        timeseriesMap[r.periodo] = { periodo: r.periodo, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
-      }
-      timeseriesMap[r.periodo].admissoes += r.admissoes
-      timeseriesMap[r.periodo].demissoes += r.demissoes
-      timeseriesMap[r.periodo].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
-      timeseriesMap[r.periodo].count += r.admissoes + r.demissoes
-    })
-    const timeseries = Object.values(timeseriesMap)
-      .sort((a, b) => a.periodo.localeCompare(b.periodo))
-      .map(t => ({
-        ...t,
-        saldo: t.admissoes - t.demissoes,
-        salario_medio: t.count > 0 ? t.salario_total / t.count : 0,
-      }))
-    // Calcular saldo_acumulado
-    let saldoAcum = 0
-    timeseries.forEach(t => {
-      saldoAcum += t.saldo
-      t.saldo_acumulado = saldoAcum
-    })
-
-    // Agregar por cadeia
-    const cadeiaMap = {}
-    filteredCube.forEach(r => {
-      if (!cadeiaMap[r.cadeia]) {
-        cadeiaMap[r.cadeia] = { cadeia: r.cadeia, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
-      }
-      cadeiaMap[r.cadeia].admissoes += r.admissoes
-      cadeiaMap[r.cadeia].demissoes += r.demissoes
-      cadeiaMap[r.cadeia].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
-      cadeiaMap[r.cadeia].count += r.admissoes + r.demissoes
-    })
-    const totalAdmissoes = Object.values(cadeiaMap).reduce((a, c) => a + c.admissoes, 0)
-    const byCadeia = Object.values(cadeiaMap)
-      .map(c => ({
-        ...c,
-        saldo: c.admissoes - c.demissoes,
-        salario_medio: c.count > 0 ? c.salario_total / c.count : 0,
-        pct_admissoes: totalAdmissoes > 0 ? (c.admissoes / totalAdmissoes * 100).toFixed(1) : 0,
-        cor: data.byCadeia.find(x => x.cadeia === c.cadeia)?.cor || '#808080',
-      }))
-      .sort((a, b) => b.admissoes - a.admissoes)
-
-    // Agregar por período (para filtro de período no gráfico)
-    const yearlyMap = {}
-    filteredCube.forEach(r => {
-      const ano = r.periodo.slice(0, 4)
-      if (!yearlyMap[ano]) {
-        yearlyMap[ano] = { ano: parseInt(ano), admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
-      }
-      yearlyMap[ano].admissoes += r.admissoes
-      yearlyMap[ano].demissoes += r.demissoes
-      yearlyMap[ano].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
-      yearlyMap[ano].count += r.admissoes + r.demissoes
-    })
-    const yearly = Object.values(yearlyMap)
-      .map(y => ({
-        ...y,
-        saldo: y.admissoes - y.demissoes,
-        salario_medio: y.count > 0 ? y.salario_total / y.count : 0,
-      }))
-      .sort((a, b) => a.ano - b.ano)
-
-    // Sazonalidade
-    const mesMeses = { 1: 'Jan', 2: 'Fev', 3: 'Mar', 4: 'Abr', 5: 'Mai', 6: 'Jun', 7: 'Jul', 8: 'Ago', 9: 'Set', 10: 'Out', 11: 'Nov', 12: 'Dez' }
-    const seasonMap = {}
-    filteredCube.forEach(r => {
-      const mes = parseInt(r.periodo.slice(5, 7))
-      if (!seasonMap[mes]) {
-        seasonMap[mes] = { mes, admissoes: 0, demissoes: 0 }
-      }
-      seasonMap[mes].admissoes += r.admissoes
-      seasonMap[mes].demissoes += r.demissoes
-    })
-    const seasonality = Object.values(seasonMap)
-      .map(s => ({
-        ...s,
-        mes_nome: mesMeses[s.mes],
-        saldo: s.admissoes - s.demissoes,
-      }))
-      .sort((a, b) => a.mes - b.mes)
-    const avgAdm = seasonality.reduce((a, s) => a + s.admissoes, 0) / 12
-    seasonality.forEach(s => {
-      s.indice = avgAdm > 0 ? (s.admissoes / avgAdm * 100).toFixed(1) : 100
-    })
-
-    // Agregar dimensões demográficas de granularDimensions
-    let bySexo = data.bySexo
-    let byFaixaEtaria = data.byFaixaEtaria
-    let byEscolaridade = data.byEscolaridade
-    let byPorte = data.byPorte
-
-    // Aplicar filtros às dimensões demográficas quando há filtro regional OU filtro de cadeia
-    const needsDimensionFiltering = hasRegionalFilter || cadeiaFilter
-    if (granularDimensions && needsDimensionFiltering) {
-      // Filtrar por região E cadeia
-      const filterRecords = (records) => {
-        return records.filter(r => {
-          // Filtro de cadeia
-          if (cadeiaFilter && r.cadeia !== cadeiaFilter) return false
-          // Filtros regionais
-          if (!hasRegionalFilter) return true
-          if (munFilter) return r.mun === munFilter
-          const region = munRegionMap[r.mun]
-          if (!region) return true
-          const matchesMeso = !mesoFilter || region.meso === mesoFilter
-          const matchesRegIdr = !regIdrFilter || region.regIdr === regIdrFilter
-          return matchesMeso && matchesRegIdr
-        })
-      }
-
-      // Agregar por sexo
-      if (granularDimensions.bySexo) {
-        const filteredSexo = filterRecords(granularDimensions.bySexo)
-        const sexoMap = {}
-        filteredSexo.forEach(r => {
-          if (!sexoMap[r.sexo]) sexoMap[r.sexo] = { sexo: r.sexo, admissoes: 0, demissoes: 0 }
-          sexoMap[r.sexo].admissoes += r.admissoes
-          sexoMap[r.sexo].demissoes += r.demissoes
-        })
-        const totalAdm = Object.values(sexoMap).reduce((a, s) => a + s.admissoes, 0)
-        bySexo = Object.values(sexoMap).map(s => ({
-          ...s,
-          saldo: s.admissoes - s.demissoes,
-          pct: totalAdm > 0 ? (s.admissoes / totalAdm * 100).toFixed(1) : 0,
-        }))
-      }
-
-      // Agregar por faixa etária
-      if (granularDimensions.byFaixa) {
-        const filteredFaixa = filterRecords(granularDimensions.byFaixa)
-        const faixaMap = {}
-        filteredFaixa.forEach(r => {
-          if (!faixaMap[r.faixa]) faixaMap[r.faixa] = { faixa: r.faixa, admissoes: 0, demissoes: 0 }
-          faixaMap[r.faixa].admissoes += r.admissoes
-          faixaMap[r.faixa].demissoes += r.demissoes
-        })
-        const totalAdm = Object.values(faixaMap).reduce((a, f) => a + f.admissoes, 0)
-        byFaixaEtaria = Object.values(faixaMap).map(f => ({
-          ...f,
-          saldo: f.admissoes - f.demissoes,
-          pct: totalAdm > 0 ? (f.admissoes / totalAdm * 100).toFixed(1) : 0,
-        }))
-      }
-
-      // Agregar por escolaridade
-      if (granularDimensions.byEscolaridade) {
-        const filteredEsc = filterRecords(granularDimensions.byEscolaridade)
-        const escMap = {}
-        filteredEsc.forEach(r => {
-          if (!escMap[r.escolaridade]) escMap[r.escolaridade] = { escolaridade: r.escolaridade, admissoes: 0, demissoes: 0, salario_total: 0, count: 0 }
-          escMap[r.escolaridade].admissoes += r.admissoes
-          escMap[r.escolaridade].demissoes += r.demissoes
-          escMap[r.escolaridade].salario_total += r.salario_medio * (r.admissoes + r.demissoes)
-          escMap[r.escolaridade].count += r.admissoes + r.demissoes
-        })
-        const totalAdm = Object.values(escMap).reduce((a, e) => a + e.admissoes, 0)
-        byEscolaridade = Object.values(escMap)
-          .map(e => ({
-            ...e,
-            saldo: e.admissoes - e.demissoes,
-            salario_medio: e.count > 0 ? e.salario_total / e.count : 0,
-            pct: totalAdm > 0 ? (e.admissoes / totalAdm * 100).toFixed(1) : 0,
-          }))
-          .sort((a, b) => b.admissoes - a.admissoes)
-      }
-
-      // Agregar por porte
-      if (granularDimensions.byPorte) {
-        const filteredPorte = filterRecords(granularDimensions.byPorte)
-        const porteMap = {}
-        filteredPorte.forEach(r => {
-          if (!porteMap[r.porte]) porteMap[r.porte] = { porte: r.porte, admissoes: 0, demissoes: 0 }
-          porteMap[r.porte].admissoes += r.admissoes
-          porteMap[r.porte].demissoes += r.demissoes
-        })
-        const totalAdm = Object.values(porteMap).reduce((a, p) => a + p.admissoes, 0)
-        byPorte = Object.values(porteMap).map(p => ({
-          ...p,
-          saldo: p.admissoes - p.demissoes,
-          pct: totalAdm > 0 ? (p.admissoes / totalAdm * 100).toFixed(1) : 0,
-        }))
-      }
-    }
-
-    // Calcular timeseriesCadeia a partir do cubo filtrado
-    const timeseriesCadeiaMap = {}
-    filteredCube.forEach(r => {
-      const key = `${r.periodo}_${r.cadeia}`
-      if (!timeseriesCadeiaMap[key]) {
-        timeseriesCadeiaMap[key] = { periodo: r.periodo, cadeia: r.cadeia, admissoes: 0, demissoes: 0 }
-      }
-      timeseriesCadeiaMap[key].admissoes += r.admissoes
-      timeseriesCadeiaMap[key].demissoes += r.demissoes
-    })
-    const timeseriesCadeia = Object.values(timeseriesCadeiaMap)
-      .map(t => ({ ...t, saldo: t.admissoes - t.demissoes }))
-      .sort((a, b) => a.periodo.localeCompare(b.periodo))
-
-    // Calcular crossCadeiaSexo a partir de granularDimensions
-    let crossCadeiaSexo = data.crossCadeiaSexo
-    if (granularDimensions?.bySexo && (hasRegionalFilter || cadeiaFilter)) {
-      const crossMap = {}
-      const filteredSexoData = granularDimensions.bySexo.filter(r => {
-        if (cadeiaFilter && r.cadeia !== cadeiaFilter) return false
-        if (!hasRegionalFilter) return true
-        if (munFilter) return r.mun === munFilter
-        const region = munRegionMap[r.mun]
-        if (!region) return true
-        return (!mesoFilter || region.meso === mesoFilter) && (!regIdrFilter || region.regIdr === regIdrFilter)
-      })
-      filteredSexoData.forEach(r => {
-        const key = `${r.cadeia}_${r.sexo}`
-        if (!crossMap[key]) {
-          crossMap[key] = { cadeia: r.cadeia, sexo: r.sexo, admissoes: 0, demissoes: 0 }
-        }
-        crossMap[key].admissoes += r.admissoes
-        crossMap[key].demissoes += r.demissoes
-      })
-      crossCadeiaSexo = Object.values(crossMap).map(c => ({
-        ...c,
-        saldo: c.admissoes - c.demissoes,
-        salario_medio: 0, // Não temos salário nesse cubo
-      }))
-    }
-
-    // Filtrar salaryDistribution por cadeia
-    let salaryDistribution = data.salaryDistribution
-    if (cadeiaFilter) {
-      salaryDistribution = data.salaryDistribution.filter(s => s.cadeia === cadeiaFilter)
-    }
-
-    // Filtrar byCnae por cadeia (byCnae já tem o campo cadeia)
-    let byCnae = data.byCnae
-    if (cadeiaFilter) {
-      byCnae = data.byCnae.filter(c => c.cadeia === cadeiaFilter)
-    }
-
-    return {
-      timeseries,
-      byCadeia,
-      bySexo,
-      byFaixaEtaria,
-      byEscolaridade,
-      byPorte,
-      seasonality,
-      yearly,
-      timeseriesCadeia,
-      crossCadeiaSexo,
-      salaryDistribution,
-      byCnae,
-    }
-  }, [data, granularData, granularDimensions, hasFilter, hasRegionalFilter, filteredCube, mesoFilter, regIdrFilter, munFilter, munRegionMap, cadeiaFilter])
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-neutral-100">
-        <div className="text-center">
-          <div className="animate-spin w-12 h-12 border-4 border-green-600 border-t-transparent rounded-full mx-auto mb-4" />
-          <p className="text-neutral-600">Carregando dados...</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
+  const slice = useSlice(loader, boot, filters, sliceAttempt)
+  const { tabsRef, canLeft, canRight, scrollTabs } = useTabScroll(Boolean(boot))
+
+  const dims = boot?.dims
+  const onToggle = useCallback((key, value) => setFilters((f) => toggleFilter(dims, f, key, value)), [dims])
+  const onSet = useCallback((key, value) => setFilters((f) => setFilter(dims, f, key, value)), [dims])
+  const clearAll = useCallback(() => setFilters(EMPTY_FILTERS), [])
+
+  const cores = useMemo(() => Object.fromEntries((dims?.cadeias || []).map((c) => [c.nome, c.cor])), [dims])
+  const cadeiaNomes = useMemo(() => (dims?.cadeias || []).map((c) => c.nome), [dims])
+  const options = useMemo(() => (dims ? hierarchyOptions(dims, filters) : null), [dims, filters])
+  const chips = useMemo(() => (dims ? activeFilters(dims, filters) : []), [dims, filters])
+
+  if (bootError) {
     return (
       <div className="min-h-screen flex items-center justify-center p-4 bg-neutral-100">
-        <div className="bg-red-50 rounded-xl p-8 text-center max-w-md">
-          <Info className="w-16 h-16 text-red-500 mx-auto mb-4" />
-          <h2 className="text-xl font-semibold text-red-800 mb-2">Erro ao carregar dados</h2>
-          <p className="text-red-600">{error}</p>
-        </div>
+        <ErrorPanel title="Erro ao carregar dados" detail={bootError} onRetry={() => setBootAttempt((n) => n + 1)} />
+      </div>
+    )
+  }
+  if (!boot) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-neutral-100">
+        <Spinner label="Carregando dados..." />
       </div>
     )
   }
 
-  const {
-    metadata, kpis, timeseries, byCadeia, timeseriesCadeia, byCnae,
-    byMunicipio, bySexo, byFaixaEtaria, byEscolaridade, byPorte,
-    seasonality, yearly, crossCadeiaSexo, crossCadeiaIdade,
-    salaryDistribution, topMunicipios
-  } = data
-
-  const tabs = [
-    { id: 'overview', label: 'Visão Geral', icon: BarChart3 },
-    { id: 'cadeia', label: 'Cadeias Produtivas', icon: Layers },
-    { id: 'cnae', label: 'Atividades CNAE', icon: Factory },
-    { id: 'perfil', label: 'Perfil do Trabalhador', icon: Users },
-    { id: 'salario', label: 'Salários', icon: DollarSign },
-    { id: 'geo', label: 'Municípios', icon: MapPin },
-    { id: 'tempo', label: 'Evolução Temporal', icon: Activity },
-  ]
+  const { metadata } = boot
+  const agg = slice.agg
+  const kpis = agg?.kpis
+  const loading = slice.loading
+  const movimentacoes = kpis ? kpis.acumulado.admissoes + kpis.acumulado.demissoes : null
+  const vazio = kpis && kpis.acumulado.admissoes === 0 && kpis.acumulado.demissoes === 0
+  const ref = kpis?.periodo_referencia || ''
+  const tabProps = { agg, filters, onToggle }
 
   return (
     <div className="min-h-screen bg-neutral-50">
-      {/* Header */}
       <header className="bg-gradient-to-r from-green-800 via-green-700 to-green-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -906,154 +196,93 @@ function App() {
                 <Briefcase className="w-8 h-8" />
               </div>
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold">{metadata.titulo}</h1>
-                <p className="text-green-100 text-sm">{metadata.subtitulo}</p>
+                <h1 className="text-2xl md:text-3xl font-bold">Emprego Agrícola - Paraná</h1>
+                <p className="text-green-100 text-sm">Movimentações de emprego formal na agropecuária paranaense</p>
               </div>
             </div>
-            <div className="flex flex-wrap gap-4 text-sm">
+            <div className="flex flex-wrap gap-3 text-sm" data-i18n-translate>
               <div className="bg-white/10 rounded-lg px-3 py-2">
                 <span className="text-green-200">Período:</span>{' '}
-                <span className="font-semibold">{metadata.periodo_inicial} a {metadata.periodo_final}</span>
+                <span className="font-semibold" data-i18n-skip>{metadata.periodo_inicial} a {metadata.periodo_final}</span>
+              </div>
+              <div className="bg-white/10 rounded-lg px-3 py-2" title="Admissões + desligamentos do recorte, com ajustes">
+                <span className="text-green-200">Movimentações:</span>{' '}
+                <span className="font-semibold" data-i18n-skip>{loading ? '…' : formatNumber(movimentacoes)}</span>
               </div>
               <div className="bg-white/10 rounded-lg px-3 py-2">
-                <span className="text-green-200">Registros:</span>{' '}
-                <span className="font-semibold">{formatNumber(metadata.total_registros)}</span>
+                <span className="text-green-200">Atualizado em</span>{' '}
+                <span className="font-semibold" data-i18n-skip>{formatData(metadata.atualizacao)}</span>
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Fallback data warning banner */}
-      {metadata.dados_reais === false && (
-        <div className="bg-amber-50 border-b border-amber-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div className="flex items-center gap-2 text-amber-800 text-sm">
-              <Info className="w-4 h-4 flex-shrink-0" />
-              <p>
-                <span className="font-semibold">Dados simulados:</span>{' '}
-                Este painel exibe dados de exemplo baseados em estatísticas reais do Paraná.
-                Para dados oficiais, consulte o{' '}
-                <a href="https://pdet.mte.gov.br" target="_blank" rel="noopener noreferrer" className="underline font-medium">PDET/MTE</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Filtros Globais */}
+      {/* Filtros regionais (hierárquicos, a partir de dims.json) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-3 mb-3">
         <div className="bg-white rounded-xl shadow-sm p-3 flex flex-wrap items-center gap-3">
           <span className="text-sm font-medium text-neutral-600">Filtrar por:</span>
-          <select
-            value={mesoFilter}
-            onChange={(e) => { setMesoFilter(e.target.value); setRegIdrFilter(''); setMunFilter('') }}
-            className="px-3 py-2 text-base sm:text-sm min-h-[44px] border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-          >
+          <select name="meso" value={filters.meso} onChange={(e) => onSet('meso', e.target.value)} className={SELECT_CLS} aria-label="Mesorregião">
             <option value="">Todas Mesorregiões</option>
-            {mesoRegioes.map(m => <option key={m} value={m}>{m}</option>)}
+            {options.mesos.map((m) => <option key={m} value={m}>{m}</option>)}
           </select>
-          <select
-            value={regIdrFilter}
-            onChange={(e) => { setRegIdrFilter(e.target.value); setMunFilter('') }}
-            className="px-3 py-2 text-base sm:text-sm min-h-[44px] border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-          >
+          <select name="reg" value={filters.reg} onChange={(e) => onSet('reg', e.target.value)} className={SELECT_CLS} aria-label="Regional IDR">
             <option value="">Todas Regionais IDR</option>
-            {regIdrList.map(r => <option key={r} value={r}>{r}</option>)}
+            {options.regs.map((r) => <option key={r.nome} value={r.nome}>{r.nome}</option>)}
           </select>
-          <select
-            value={munFilter}
-            onChange={(e) => setMunFilter(e.target.value)}
-            className="px-3 py-2 text-base sm:text-sm min-h-[44px] border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 max-w-[200px]"
-          >
-            <option value="">Todos Municípios ({filteredMunicipiosList.length})</option>
-            {filteredMunicipiosList.map(m => <option key={m.codigo} value={m.codigo}>{m.nome}</option>)}
+          <select name="mun" value={filters.mun} onChange={(e) => onSet('mun', e.target.value)} className={`${SELECT_CLS} max-w-[220px]`} aria-label="Município">
+            <option value="">Todos Municípios</option>
+            {options.muns.map((m) => <option key={m.cod} value={m.cod}>{m.nome}</option>)}
           </select>
-          {hasFilter && (
-            <>
-              <button
-                onClick={() => { setMesoFilter(''); setRegIdrFilter(''); setMunFilter('') }}
-                className="px-3 py-2 min-h-[44px] text-sm text-red-600 hover:bg-red-50 rounded-lg border border-red-200"
-              >
-                Limpar filtros
-              </button>
-              <span className="text-sm text-neutral-500">
-                {munFilter ? selectedMunName : `${filteredByMunicipio.length} de ${byMunicipio.length} municípios`}
-              </span>
-            </>
-          )}
-          {geoError && !geoData && (
-            <span className="text-sm text-amber-700 flex items-center gap-2" data-i18n-translate>
-              Filtros regionais indisponíveis: falha ao carregar a malha municipal.
-              <button onClick={retryTopo} className="underline font-medium hover:text-amber-900 py-2 px-1 min-h-[44px]">
-                Tentar novamente
-              </button>
-            </span>
+          {!isEmptyFilters(filters) && (
+            <button onClick={clearAll} className="px-3 py-2 min-h-[44px] text-sm text-red-600 hover:bg-red-50 rounded-lg border border-red-200">
+              Limpar filtros
+            </button>
           )}
         </div>
       </div>
 
-      {/* Status do carregamento dos cubos detalhados (baixados no 1º filtro) */}
-      {isGranularLoading && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3" data-i18n-translate>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2.5 text-sm text-blue-800 flex items-center gap-2" role="status">
-            <span className="animate-spin w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full flex-shrink-0" aria-hidden="true" />
-            <span>Carregando dados detalhados (download de até 3 MB). Até concluir, os gráficos exibem totais do Paraná.</span>
-          </div>
-        </div>
-      )}
-      {!isGranularLoading && granularError && hasFilter && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3" data-i18n-translate>
-          <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2.5 text-sm text-amber-800 flex flex-wrap items-center gap-3" role="alert">
-            <span>Não foi possível carregar os dados detalhados. Os gráficos podem exibir totais do Paraná.</span>
-            <button
-              onClick={retryGranular}
-              className="px-3 py-2 min-h-[44px] text-sm rounded-lg border border-amber-400 text-amber-800 hover:bg-amber-100"
-            >
-              Tentar novamente
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* KPIs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <KpiCard
             title="Admissões"
-            value={formatNumber(filteredKpis.acumulado.admissoes)}
-            subtitle={hasFilter ? `${filteredByMunicipio.length} municípios` : `${formatNumber(kpis.ultimo_mes.admissoes)} em ${kpis.periodo_referencia}`}
+            value={kpis && formatNumber(kpis.acumulado.admissoes)}
+            subtitle={kpis && `${formatNumber(kpis.ultimo_mes.admissoes)} em ${ref}`}
             icon={TrendingUp}
             color="sky"
+            loading={loading || !kpis}
           />
           <KpiCard
             title="Demissões"
-            value={formatNumber(filteredKpis.acumulado.demissoes)}
-            subtitle={hasFilter ? `${filteredByMunicipio.length} municípios` : `${formatNumber(kpis.ultimo_mes.demissoes)} em ${kpis.periodo_referencia}`}
+            value={kpis && formatNumber(kpis.acumulado.demissoes)}
+            subtitle={kpis && `${formatNumber(kpis.ultimo_mes.demissoes)} em ${ref}`}
             icon={TrendingDown}
             color="orange"
+            loading={loading || !kpis}
           />
           <KpiCard
             title="Saldo"
-            value={filteredKpis.acumulado.saldo >= 0 ? `+${formatNumber(filteredKpis.acumulado.saldo)}` : formatNumber(filteredKpis.acumulado.saldo)}
-            subtitle={hasFilter ? `Região selecionada` : `${kpis.ultimo_mes.saldo >= 0 ? '+' : ''}${formatNumber(kpis.ultimo_mes.saldo)} último mês`}
+            value={kpis && formatSigned(kpis.acumulado.saldo)}
+            subtitle={kpis && `${formatSigned(kpis.ultimo_mes.saldo)} em ${ref}`}
             icon={Users}
-            color={filteredKpis.acumulado.saldo >= 0 ? 'sky' : 'orange'}
+            color={kpis && kpis.acumulado.saldo < 0 ? 'orange' : 'sky'}
+            loading={loading || !kpis}
           />
           <KpiCard
             title="Salário Médio"
-            value={formatCurrency(filteredKpis.salario.media)}
-            subtitle="Ponderado por vínculos"
+            value={kpis && formatCurrency(kpis.salario.media)}
+            valueTitle={kpis && salTitle(kpis.salario.media)}
+            subtitle="Admissões, regra MTE"
             icon={DollarSign}
             color="amber"
+            loading={loading || !kpis}
           />
         </div>
       </div>
 
-      {/* Tabs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <div className="relative">
-          {canScrollLeft && (
+          {canLeft && (
             <button
               onClick={() => scrollTabs(-1)}
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-1 bg-white/90 backdrop-blur-sm rounded-full shadow-md border border-neutral-200 md:hidden"
@@ -1062,13 +291,8 @@ function App() {
               <ChevronLeft className="w-4 h-4 text-neutral-600" />
             </button>
           )}
-          <div
-            ref={tabContainerRef}
-            className="flex overflow-x-auto gap-2 pb-2 scrollbar-thin"
-            role="tablist"
-            aria-label="Seções do dashboard"
-          >
-            {tabs.map(tab => {
+          <div ref={tabsRef} className="flex overflow-x-auto gap-2 pb-2 scrollbar-thin" role="tablist" aria-label="Seções do dashboard">
+            {TABS.map((tab) => {
               const Icon = tab.icon
               const isActive = activeTab === tab.id
               return (
@@ -1080,9 +304,7 @@ function App() {
                   aria-controls={`tabpanel-${tab.id}`}
                   id={`tab-${tab.id}`}
                   className={`flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-lg font-medium whitespace-nowrap transition-all flex-shrink-0 ${
-                    isActive
-                      ? 'bg-green-600 text-white shadow-md'
-                      : 'bg-white text-neutral-600 hover:bg-green-50'
+                    isActive ? 'bg-green-600 text-white shadow-md' : 'bg-white text-neutral-600 hover:bg-green-50'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -1091,7 +313,7 @@ function App() {
               )
             })}
           </div>
-          {canScrollRight && (
+          {canRight && (
             <button
               onClick={() => scrollTabs(1)}
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-1 bg-white/90 backdrop-blur-sm rounded-full shadow-md border border-neutral-200 md:hidden"
@@ -1103,138 +325,53 @@ function App() {
         </div>
       </div>
 
-      {/* Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
-        {/* Indicador de filtros interativos */}
-        <ActiveFilters
-          filters={{
-            cadeia: cadeiaFilter,
-            sexo: sexoFilter,
-            faixa: faixaFilter,
-            escolaridade: escolaridadeFilter,
-            periodo: periodoFilter,
-          }}
-          onClear={(key) => {
-            if (key === 'cadeia') setCadeiaFilter('')
-            if (key === 'sexo') setSexoFilter('')
-            if (key === 'faixa') setFaixaFilter('')
-            if (key === 'escolaridade') setEscolaridadeFilter('')
-            if (key === 'periodo') setPeriodoFilter('')
-          }}
-          onClearAll={clearInteractiveFilters}
-        />
+      <main
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-[60vh]"
+        role="tabpanel"
+        id={`tabpanel-${activeTab}`}
+        aria-labelledby={`tab-${activeTab}`}
+        aria-busy={loading}
+      >
+        <ActiveFilters items={chips} onClear={(key) => onSet(key, '')} onClearAll={clearAll} />
 
-        {activeTab === 'overview' && (
-          <OverviewTab
-            timeseries={filteredAggregations?.timeseries || []}
-            byCadeia={filteredAggregations?.byCadeia || []}
-            bySexo={filteredAggregations?.bySexo || []}
-            byFaixaEtaria={filteredAggregations?.byFaixaEtaria || []}
-            seasonality={filteredAggregations?.seasonality || []}
-            hasFilter={hasRegionalFilter}
-            filterLabel={selectedMunName || mesoFilter || regIdrFilter}
-            filterMessage={filterMessage}
-            onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
-            onSexoClick={(sexo) => setSexoFilter(prev => prev === sexo ? '' : sexo)}
-            onFaixaClick={(faixa) => setFaixaFilter(prev => prev === faixa ? '' : faixa)}
-            cadeiaFilter={cadeiaFilter}
-            sexoFilter={sexoFilter}
-            faixaFilter={faixaFilter}
-          />
-        )}
-        {activeTab === 'cadeia' && (
-          <CadeiaTab
-            byCadeia={filteredAggregations?.byCadeia || []}
-            timeseriesCadeia={filteredAggregations?.timeseriesCadeia || []}
-            crossCadeiaSexo={filteredAggregations?.crossCadeiaSexo || []}
-            selectedCadeia={selectedCadeia}
-            setSelectedCadeia={setSelectedCadeia}
-            hasFilter={hasRegionalFilter}
-            filterLabel={selectedMunName || mesoFilter || regIdrFilter}
-            filterMessage={filterMessage}
-            onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
-            cadeiaFilter={cadeiaFilter}
-          />
-        )}
-        {activeTab === 'cnae' && (
-          <CnaeTab
-            byCnae={filteredAggregations?.byCnae || []}
-            byCadeia={filteredAggregations?.byCadeia || []}
-            hasFilter={hasRegionalFilter}
-            filterLabel={selectedMunName || mesoFilter || regIdrFilter}
-            filterMessage={filterMessage}
-            onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
-            cadeiaFilter={cadeiaFilter}
-          />
-        )}
-        {activeTab === 'perfil' && (
-          <PerfilTab
-            bySexo={filteredAggregations?.bySexo || []}
-            byFaixaEtaria={filteredAggregations?.byFaixaEtaria || []}
-            byEscolaridade={filteredAggregations?.byEscolaridade || []}
-            byPorte={filteredAggregations?.byPorte || []}
-            kpis={filteredKpis}
-            hasFilter={hasRegionalFilter}
-            filterLabel={selectedMunName || mesoFilter || regIdrFilter}
-            filterMessage={filterMessage}
-            onSexoClick={(sexo) => setSexoFilter(prev => prev === sexo ? '' : sexo)}
-            onFaixaClick={(faixa) => setFaixaFilter(prev => prev === faixa ? '' : faixa)}
-            onEscolaridadeClick={(esc) => setEscolaridadeFilter(prev => prev === esc ? '' : esc)}
-            sexoFilter={sexoFilter}
-            faixaFilter={faixaFilter}
-            escolaridadeFilter={escolaridadeFilter}
-          />
-        )}
-        {activeTab === 'salario' && (
-          <SalarioTab
-            salaryDistribution={filteredAggregations?.salaryDistribution || []}
-            byCadeia={filteredAggregations?.byCadeia || []}
-            byEscolaridade={filteredAggregations?.byEscolaridade || []}
-            hasFilter={hasRegionalFilter}
-            filterLabel={selectedMunName || mesoFilter || regIdrFilter}
-            filterMessage={filterMessage}
-            onCadeiaClick={(cadeia) => setCadeiaFilter(prev => prev === cadeia ? '' : cadeia)}
-            cadeiaFilter={cadeiaFilter}
-            onEscolaridadeClick={(esc) => setEscolaridadeFilter(prev => prev === esc ? '' : esc)}
-            escolaridadeFilter={escolaridadeFilter}
-          />
-        )}
-        {activeTab === 'geo' && (
-          <GeoTab
-            topMunicipios={filteredTopMunicipios}
-            byMunicipio={filteredByMunicipio}
-            metadata={metadata}
-            geoData={geoData}
-            geoError={geoError}
-            onRetryMap={retryTopo}
-            mesoFilter={mesoFilter}
-            regIdrFilter={regIdrFilter}
-            munFilter={munFilter}
-            cadeiaFilter={cadeiaFilter}
-            hasFilter={hasFilter}
-            filterLabel={cadeiaFilter || selectedMunName || mesoFilter || regIdrFilter}
-            filterMessage={filterMessage}
-          />
-        )}
-        {activeTab === 'tempo' && (
-          <TempoTab
-            timeseries={filteredAggregations?.timeseries || []}
-            yearly={filteredAggregations?.yearly || []}
-            seasonality={filteredAggregations?.seasonality || []}
-            hasFilter={hasRegionalFilter}
-            filterLabel={selectedMunName || mesoFilter || regIdrFilter}
-            filterMessage={filterMessage}
-            onPeriodoClick={(periodo) => setPeriodoFilter(prev => prev === periodo ? '' : periodo)}
-            periodoFilter={periodoFilter}
-          />
+        {loading ? (
+          <Spinner label="Calculando o recorte selecionado..." />
+        ) : slice.error ? (
+          <ErrorPanel title="Não foi possível carregar os dados do recorte." detail={slice.error} onRetry={() => setSliceAttempt((n) => n + 1)} />
+        ) : (
+          <>
+            {vazio && (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2.5 mb-4 text-sm text-amber-800" role="status" data-i18n-translate>
+                Nenhuma movimentação para a combinação de filtros selecionada.
+              </div>
+            )}
+            {filters.porte && dims.porte_indisponivel?.length > 0 && (
+              <div className="bg-sky-50 border border-sky-200 rounded-lg px-4 py-2.5 mb-4 text-sm text-sky-800" role="note">
+                Porte do estabelecimento não informado pelo MTE em {dims.porte_indisponivel.join(', ')}: com filtro de porte, essas competências ficam fora do recorte (KPIs e séries vão até o mês anterior).
+              </div>
+            )}
+            {activeTab === 'overview' && <OverviewTab {...tabProps} />}
+            {activeTab === 'cadeia' && <CadeiaTab {...tabProps} cores={cores} />}
+            {activeTab === 'cnae' && <CnaeTab {...tabProps} onSet={onSet} cadeias={cadeiaNomes} />}
+            {activeTab === 'perfil' && <PerfilTab {...tabProps} porteIndisponivel={dims.porte_indisponivel} />}
+            {activeTab === 'salario' && <SalarioTab {...tabProps} />}
+            {activeTab === 'geo' && (
+              <GeoTab
+                {...tabProps}
+                municipios={dims.municipios}
+                geoData={geo}
+                geoError={geoError}
+                onRetryMap={() => setGeoAttempt((n) => n + 1)}
+              />
+            )}
+            {activeTab === 'tempo' && <TempoTab {...tabProps} />}
+          </>
         )}
       </main>
 
-      {/* Footer */}
       <footer className="bg-neutral-800 text-neutral-300 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Fonte de Dados */}
             <div className="space-y-3">
               <h4 className="text-white font-semibold text-sm flex items-center gap-2">
                 <Briefcase className="w-4 h-4 text-indigo-400" />
@@ -1244,15 +381,16 @@ function App() {
                 <li>Novo CAGED - Cadastro Geral de Empregados e Desempregados (MTE)</li>
                 <li>MTE - Ministério do Trabalho e Emprego</li>
               </ul>
-              <div className="text-xs text-neutral-500 pt-2 border-t border-neutral-700">
-                {metadata.atualizacao && (
-                  <p>Dados atualizados em {String(metadata.atualizacao).split('-').reverse().join('/')}</p>
-                )}
+              <div className="text-xs text-neutral-500 pt-2 border-t border-neutral-700 space-y-1">
+                <p data-i18n-translate>
+                  <span>Nota metodológica:</span> <span>{metadata.nota_metodologica}</span>
+                </p>
+                <p>Salário médio: admissões, regra MTE (sem intermitentes, entre 0,3 e 150 salários mínimos); valores nominais.</p>
+                {metadata.atualizacao && <p>Dados atualizados em {formatData(metadata.atualizacao)}</p>}
                 <p>{metadata.total_cadeias} cadeias | {metadata.total_subclasses} atividades CNAE</p>
               </div>
             </div>
 
-            {/* Datageo Paraná */}
             <div className="space-y-3">
               <h4 className="text-white font-semibold text-sm">
                 <a
@@ -1274,11 +412,10 @@ function App() {
                 <a href="https://avnergomes.github.io/censo-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Censo Paraná</a>
                 <a href="https://avnergomes.github.io/credito-rural-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Crédito Rural</a>
                 <a href="https://avnergomes.github.io/saude-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Saúde Paraná</a>
-                <a href="https://avnergomes.github.io/seguranca-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Seguranca Parana</a>
+                <a href="https://avnergomes.github.io/seguranca-parana/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-2.5 py-1 text-[10px] rounded-full border border-neutral-600 text-neutral-300 hover:text-indigo-300 hover:border-indigo-400 transition-colors">Segurança Paraná</a>
               </div>
             </div>
 
-            {/* Developer */}
             <div className="space-y-3 flex flex-col items-start md:items-end">
               <a
                 href="https://avnergomes.github.io/portfolio"
@@ -1290,6 +427,10 @@ function App() {
                 <img
                   src={`${import.meta.env.BASE_URL}assets/logo.png`}
                   alt="Avner Gomes"
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                  decoding="async"
                   className="w-8 h-8 rounded-full opacity-80 group-hover:opacity-100 transition-opacity"
                 />
                 <span className="text-xs">Desenvolvido por Avner Gomes</span>
@@ -1297,11 +438,10 @@ function App() {
             </div>
           </div>
 
-          {/* Bottom */}
           <div className="mt-6 pt-4 border-t border-neutral-700 flex items-center justify-between text-[10px] text-neutral-500">
             <p>Emprego Agro Paraná · Dados públicos Novo CAGED/MTE</p>
             <span className="px-2 py-0.5 bg-indigo-900/50 text-indigo-300 rounded-full">
-              {metadata.total_municipios} municípios
+              {dims.municipios.length} municípios
             </span>
           </div>
         </div>

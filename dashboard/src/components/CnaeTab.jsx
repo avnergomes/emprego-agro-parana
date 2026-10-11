@@ -1,104 +1,84 @@
-import { useState, useMemo } from 'react'
 import Card from './Card'
-import FilterIndicator from './FilterIndicator'
+import SortTh from './SortTh'
+import { useSort, useStickyState } from '../utils/useSort'
+import { formatNumber, formatCurrency, formatSigned, salTitle, sortRows } from '../utils/format'
 
-// Formatadores
-const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
-const formatCurrency = (n) => n == null ? 'R$ 0,00' : `R$ ${n.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`
+const LIMITE = 100
 
-function CnaeTab({ byCnae, byCadeia, hasFilter, filterLabel, filterMessage, onCadeiaClick, cadeiaFilter: globalCadeiaFilter }) {
-  const [filter, setFilter] = useState('')
-  const [localCadeiaFilter, setLocalCadeiaFilter] = useState('')
-  // Use global filter if set, otherwise use local
-  const effectiveCadeiaFilter = globalCadeiaFilter || localCadeiaFilter
-  const [sortCol, setSortCol] = useState('admissoes')
-  const [sortDir, setSortDir] = useState('desc')
-
-  const filtered = useMemo(() => {
-    let data = byCnae.filter(c => {
-      const matchText = filter === '' || c.cnae.includes(filter) || c.cadeia.toLowerCase().includes(filter.toLowerCase())
-      const matchCadeia = effectiveCadeiaFilter === '' || c.cadeia === effectiveCadeiaFilter
-      return matchText && matchCadeia
-    })
-    data.sort((a, b) => {
-      let aVal = a[sortCol], bVal = b[sortCol]
-      if (sortCol === 'cnae' || sortCol === 'cadeia' || sortCol === 'descricao') return sortDir === 'asc' ? (aVal || '').localeCompare(bVal || '') : (bVal || '').localeCompare(aVal || '')
-      return sortDir === 'asc' ? (aVal || 0) - (bVal || 0) : (bVal || 0) - (aVal || 0)
-    })
-    return data
-  }, [byCnae, filter, effectiveCadeiaFilter, sortCol, sortDir])
-
-  const toggleSort = (col) => {
-    if (sortCol === col) setSortDir(sortDir === 'asc' ? 'desc' : 'asc')
-    else { setSortCol(col); setSortDir('desc') }
-  }
-
-  const SortTh = ({ col, label, align = 'left' }) => (
-    <th className={`py-3 px-2 cursor-pointer hover:bg-neutral-100 select-none ${align === 'right' ? 'text-right' : 'text-left'}`} onClick={() => toggleSort(col)}>
-      {label} {sortCol === col && <span className="text-green-600">{sortDir === 'asc' ? '↑' : '↓'}</span>}
-    </th>
+// byCnae ignora o próprio filtro cnae: a linha filtrada continua visível (destacada).
+function CnaeTab({ agg, filters, onToggle, onSet, cadeias }) {
+  const [busca, setBusca] = useStickyState('cnae:busca', '')
+  const sort = useSort('admissoes', 'desc', 'cnae')
+  const q = busca.trim().toLowerCase()
+  const filtered = agg.byCnae.filter(
+    (c) => !q || c.cnae.includes(q) || c.descricao.toLowerCase().includes(q) || c.cadeia.toLowerCase().includes(q),
   )
+  const rows = sortRows(filtered, sort.sortCol, sort.sortDir)
 
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
       <Card>
         <div className="flex flex-wrap gap-4 mb-4">
           <input
-            type="text"
-            placeholder="Buscar por código CNAE..."
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
+            type="search"
+            name="busca-cnae"
+            placeholder="Buscar por código, descrição ou cadeia..."
+            aria-label="Buscar atividade CNAE"
+            value={busca}
+            onChange={(e) => setBusca(e.target.value)}
             className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           />
           <select
-            value={effectiveCadeiaFilter}
-            onChange={(e) => {
-              setLocalCadeiaFilter(e.target.value)
-              // Se há um filtro global, usar o global
-              if (onCadeiaClick) onCadeiaClick(e.target.value || '')
-            }}
+            name="cadeia"
+            value={filters.cadeia}
+            onChange={(e) => onSet('cadeia', e.target.value)}
+            aria-label="Filtrar por cadeia"
             className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             <option value="">Todas as cadeias</option>
-            {byCadeia.map(c => (
-              <option key={c.cadeia} value={c.cadeia}>{c.cadeia}</option>
+            {cadeias.map((c) => (
+              <option key={c} value={c}>{c}</option>
             ))}
           </select>
+          <span className="text-xs text-neutral-500 self-center">Clique em uma linha para filtrar a atividade.</span>
         </div>
 
         <div className="overflow-x-auto max-h-[500px] overflow-y-auto">
           <table className="w-full text-sm">
             <thead className="sticky top-0 bg-neutral-50">
               <tr className="border-b border-neutral-200">
-                <SortTh col="cnae" label="CNAE" />
-                <SortTh col="descricao" label="Descrição" />
-                <SortTh col="cadeia" label="Cadeia" />
-                <SortTh col="admissoes" label="Admissões" align="right" />
-                <SortTh col="demissoes" label="Demissões" align="right" />
-                <SortTh col="saldo" label="Saldo" align="right" />
-                <SortTh col="salario_mediana" label="Mediana" align="right" />
+                <SortTh col="cnae" label="CNAE" {...sort} />
+                <SortTh col="descricao" label="Descrição" {...sort} />
+                <SortTh col="cadeia" label="Cadeia" {...sort} />
+                <SortTh col="admissoes" label="Admissões" align="right" {...sort} />
+                <SortTh col="demissoes" label="Demissões" align="right" {...sort} />
+                <SortTh col="saldo" label="Saldo" align="right" {...sort} />
+                <SortTh col="salario_mediana" label="Mediana (estimada)" align="right" {...sort} />
               </tr>
             </thead>
             <tbody>
-              {filtered.slice(0, 100).map(c => (
-                <tr key={c.cnae} className="border-b border-neutral-100 hover:bg-neutral-50">
+              {rows.slice(0, LIMITE).map((c) => (
+                <tr
+                  key={c.cnae}
+                  className={`border-b border-neutral-100 hover:bg-neutral-50 cursor-pointer ${c.cnae === filters.cnae ? 'bg-green-50 font-semibold' : ''}`}
+                  onClick={() => onToggle('cnae', c.cnae)}
+                  aria-selected={c.cnae === filters.cnae}
+                >
                   <td className="py-2 px-2 font-mono text-xs">{c.cnae}</td>
                   <td className="py-2 px-2 text-xs max-w-[250px] truncate" title={c.descricao}>{c.descricao}</td>
                   <td className="py-2 px-2 text-xs">{c.cadeia}</td>
-                  <td className="text-right py-2 px-2 text-green-600">{formatNumber(c.admissoes)}</td>
-                  <td className="text-right py-2 px-2 text-red-600">{formatNumber(c.demissoes)}</td>
-                  <td className={`text-right py-2 px-2 font-medium ${c.saldo >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                    {c.saldo >= 0 ? '+' : ''}{formatNumber(c.saldo)}
-                  </td>
-                  <td className="text-right py-2 px-2">{formatCurrency(c.salario_mediana)}</td>
+                  <td className="text-right py-2 px-2 text-sky-700">{formatNumber(c.admissoes)}</td>
+                  <td className="text-right py-2 px-2 text-orange-700">{formatNumber(c.demissoes)}</td>
+                  <td className={`text-right py-2 px-2 font-medium ${c.saldo >= 0 ? 'text-sky-700' : 'text-orange-700'}`}>{formatSigned(c.saldo)}</td>
+                  <td className="text-right py-2 px-2" title={salTitle(c.salario_mediana)}>{formatCurrency(c.salario_mediana)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          {filtered.length > 100 && (
+          {rows.length === 0 && <p className="text-sm text-neutral-400 py-6 text-center">Sem dados para exibir</p>}
+          {rows.length > LIMITE && (
             <p className="text-sm text-neutral-500 mt-4 text-center">
-              Mostrando 100 de {filtered.length} atividades
+              Mostrando {LIMITE} de {rows.length} atividades
             </p>
           )}
         </div>

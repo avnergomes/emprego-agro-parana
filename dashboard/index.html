@@ -154,10 +154,8 @@
     <script>
     (function() {
       var TRACKING_URL = '%VITE_TRACKING_URL%';
-      if (!TRACKING_URL || TRACKING_URL.indexOf('VITE_TRACKING_URL') !== -1) {
-        console.warn('[Tracking] URL not configured - tracking disabled');
-        return;
-      }
+      // Tracking desativado quando a URL não foi configurada no build
+      if (!TRACKING_URL || TRACKING_URL.indexOf('VITE_TRACKING_URL') !== -1) return;
 
       function getDeviceType() {
         var ua = navigator.userAgent;
@@ -173,15 +171,9 @@
         return 'unknown';
       }
 
-      function getUTMParams() {
-        var params = new URLSearchParams(window.location.search);
-        return {
-          utmSource: params.get('utm_source') || '',
-          utmMedium: params.get('utm_medium') || '',
-          utmCampaign: params.get('utm_campaign') || '',
-          utmTerm: params.get('utm_term') || '',
-          utmContent: params.get('utm_content') || ''
-        };
+      // Só o hostname do referrer: sem caminho, query nem UTM da página de origem.
+      function getReferrerHost() {
+        try { return document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) { return ''; }
       }
 
       function initTracking() {
@@ -192,28 +184,23 @@
             loadTime = Math.round(navEntry.loadEventEnd);
           }
 
-          var utmParams = getUTMParams();
-
-          // Campos anonimizados - sem IP, cookies ou fingerprint (Art. 12 LGPD)
+          // Campos anonimizados - sem IP, cookies ou fingerprint (Art. 12 LGPD).
+          // Da URL vão só location.pathname e o hostname do referrer (sem query/UTM).
+          // origin (esquema + host do próprio painel) é exigido pela allowlist do
+          // Apps Script (google-apps-script-tracking.gs).
           var data = {
             origin: window.location.origin,
             timestamp: new Date().toISOString(),
             timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
             timezoneOffset: new Date().getTimezoneOffset(),
-            page: window.location.href,
             pathname: window.location.pathname,
-            referrer: document.referrer || '',
+            referrer: getReferrerHost(),
             pageTitle: document.title,
             language: navigator.language,
             deviceType: getDeviceType(),
             screenOrientation: screen.orientation ? screen.orientation.type : 'unknown',
             connectionType: getConnectionType(),
             loadTime: loadTime > 0 ? loadTime : '',
-            utmSource: utmParams.utmSource,
-            utmMedium: utmParams.utmMedium,
-            utmCampaign: utmParams.utmCampaign,
-            utmTerm: utmParams.utmTerm,
-            utmContent: utmParams.utmContent,
             prefersColorScheme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
           };
 
@@ -222,14 +209,8 @@
             mode: 'no-cors',
             headers: { 'Content-Type': 'text/plain' },
             body: JSON.stringify(data)
-          }).then(function() {
-            console.log('[Tracking] Data sent (anonymous)');
-          }).catch(function(err) {
-            console.warn('[Tracking] Error:', err);
-          });
-        } catch (e) {
-          console.warn('[Tracking] Exception:', e);
-        }
+          }).catch(function() { /* falha de tracking não afeta o painel */ });
+        } catch (e) { /* idem */ }
       }
 
       // Tracking dispara sempre - dados anonimizados nao exigem consentimento
@@ -245,19 +226,21 @@
     <div id="lgpd-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:950;background:#14110c;color:#e3d6b6;border-top:1px solid #a8482c;padding:14px clamp(20px,4vw,40px);font-family:'IBM Plex Sans',system-ui,sans-serif;">
       <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
         <p style="margin:0;flex:1;min-width:280px;font-family:'Fraunces','Cormorant Garamond',Georgia,serif;font-size:0.95rem;line-height:1.5;color:#e3d6b6;">
-          Este site utiliza apenas dados públicos agregados. Nenhum dado pessoal é coletado ou armazenado.
-          Em conformidade com a <strong style="color:#f1e9d6;">LGPD (Lei 13.709/2018)</strong>, todos os indicadores são baseados em
-          estatísticas oficiais sem identificação individual.
+          Dados públicos desidentificados do Novo CAGED/MTE. Medimos visitas de forma anônima, sem cookies (página, idioma,
+          dispositivo), via Google Apps Script; fontes do Google Fonts. Nenhum dado identificável é armazenado
+          (<strong style="color:#f1e9d6;">LGPD, Lei 13.709/2018</strong>).
         </p>
         <button type="button"
-          onclick="document.getElementById('lgpd-banner').style.display='none';localStorage.setItem('lgpd-accepted','true')"
+          onclick="document.getElementById('lgpd-banner').style.display='none';try{localStorage.setItem('lgpd-accepted','true')}catch(e){}"
           style="flex-shrink:0;padding:10px 18px;min-height:44px;border:1px solid #f1e9d6;background:transparent;color:#f1e9d6;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.72rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;">
           Entendi
         </button>
       </div>
     </div>
     <script>
-      if (!localStorage.getItem('lgpd-accepted')) {
+      var seen = false;
+      try { seen = !!localStorage.getItem('lgpd-accepted'); } catch (e) {} // storage bloqueado: mostra o aviso
+      if (!seen) {
         var b = document.getElementById('lgpd-banner');
         if (b) b.style.display = 'block';
       }

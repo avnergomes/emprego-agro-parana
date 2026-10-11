@@ -1,16 +1,17 @@
-# React + Vite
+# Dashboard (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Front-end do Emprego Agro Paraná. Visão geral do projeto e metodologia: [../README.md](../README.md) e [../docs/CONTRATO-DADOS.md](../docs/CONTRATO-DADOS.md).
 
-Currently, two official plugins are available:
+```bash
+npm ci               # instala exatamente o package-lock.json (.npmrc: legacy-peer-deps, ver abaixo)
+npm run dev          # http://localhost:5173/emprego-agro-parana/
+npm test             # node --test: motor (src/engine) e utilitários (src/utils)
+npx eslint src       # deve terminar sem erros
+npm run build        # gera dist/ (base /emprego-agro-parana/)
+npx vite preview     # serve o build
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Dados lidos de `public/data/v2/` (`dims.json`, `agregado.json`, `cubo/*.json`), gerados pelo pipeline em `../scripts/`.
+- Toda métrica exibida vem de `src/engine` (`aggregate`); o App só mantém o estado de filtros (`src/utils/filters.js`).
+- Strings novas da interface precisam de entrada `[pt, en, es]` em `public/i18n/i18n-text-map.js` (o runtime traduz pelo texto PT exato).
+- `.npmrc` mantém `legacy-peer-deps=true` porque `lucide-react@0.294` declara peer `react` até 18 e o projeto usa React 19.

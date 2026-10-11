@@ -11,28 +11,34 @@ export default function LollipopChart({
   height = 450,
   metric = 'saldo', // 'admissoes', 'demissoes', 'saldo', 'salario_medio'
   limit = 12,
-  onCadeiaClick
+  onCadeiaClick,
+  selected = '', // cadeia filtrada: destacada, demais em cinza
 }) {
   const chartData = useMemo(() => {
     if (!data || data.length === 0) return null
 
     const sorted = [...data]
       .sort((a, b) => Math.abs(b[metric] || 0) - Math.abs(a[metric] || 0))
-      .slice(0, limit)
+    const top = sorted.slice(0, limit)
+    // a cadeia selecionada fica no gráfico mesmo fora do top N
+    if (selected && !top.some((d) => d.cadeia === selected)) {
+      const s = sorted.find((d) => d.cadeia === selected)
+      if (s) top.push(s)
+    }
 
-    const maxValue = Math.max(...sorted.map(d => Math.abs(d[metric] || 0)))
-    const minValue = Math.min(...sorted.map(d => d[metric] || 0))
+    const maxValue = Math.max(...top.map(d => Math.abs(d[metric] || 0)))
+    const minValue = Math.min(...top.map(d => d[metric] || 0))
     const hasNegative = minValue < 0
 
-    return { items: sorted, maxValue, minValue, hasNegative }
-  }, [data, metric, limit])
+    return { items: top, maxValue, minValue, hasNegative }
+  }, [data, metric, limit, selected])
 
   if (!chartData) {
     return (
       <div className="card p-6">
         <h3 className="text-lg font-semibold text-dark-700 mb-4">{title}</h3>
         <div className="h-64 flex items-center justify-center text-dark-400">
-          Sem dados disponiveis
+          Sem dados disponíveis
         </div>
       </div>
     )
@@ -69,16 +75,16 @@ export default function LollipopChart({
   }
 
   const metricLabels = {
-    admissoes: 'Admissoes',
-    demissoes: 'Demissoes',
+    admissoes: 'Admissões',
+    demissoes: 'Demissões',
     saldo: 'Saldo',
-    salario_medio: 'Salario Medio'
+    salario_medio: 'Salário Médio'
   }
 
   return (
     <div className="card p-6">
       <h3 className="text-lg font-semibold text-dark-700 mb-2">{title}</h3>
-      <p className="text-sm text-dark-500 mb-4">Metrica: {metricLabels[metric] || metric}</p>
+      <p className="text-sm text-dark-500 mb-4">Métrica: {metricLabels[metric] || metric}</p>
 
       <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto" style={{ display: 'block' }}>
         <g transform={`translate(${MARGIN.left}, ${MARGIN.top})`}>
@@ -122,11 +128,12 @@ export default function LollipopChart({
           ))}
 
           {/* Lollipops */}
-          {items.map((item, i) => {
+          {items.map((item) => {
             const value = item[metric] || 0
             const y = yScale(item.cadeia) + yScale.bandwidth() / 2
             const xEnd = xScale(value)
-            const color = item.cor || (value >= 0 ? '#0072B2' : '#D55E00')
+            const isSel = selected === item.cadeia
+            const color = selected && !isSel ? '#cbd5e1' : item.cor || (value >= 0 ? '#0072B2' : '#D55E00')
 
             return (
               <g
@@ -159,9 +166,9 @@ export default function LollipopChart({
                 <circle
                   cx={xEnd}
                   cy={y}
-                  r={7}
+                  r={isSel ? 9 : 7}
                   fill={color}
-                  stroke="white"
+                  stroke={isSel ? '#14110c' : 'white'}
                   strokeWidth={2}
                 >
                   <title>{`${item.cadeia}: ${formatValue(value)}`}</title>

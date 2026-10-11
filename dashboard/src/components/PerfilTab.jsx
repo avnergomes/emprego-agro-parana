@@ -1,136 +1,138 @@
 // ATLAS-A11Y-HEX-SWEPT
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
-  ResponsiveContainer, Cell
+  ResponsiveContainer, Cell,
 } from 'recharts'
 import Card from './Card'
-import FilterIndicator from './FilterIndicator'
+import EmptyChart from './EmptyChart'
+import { formatNumber, formatCurrency, formatPercent, salTitle, hlFill, hlStroke, clicked, selIn } from '../utils/format'
 
-// Formatadores
-const formatNumber = (n) => n?.toLocaleString('pt-BR') || '0'
-const formatCurrency = (n) => `R$ ${n?.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}` || 'R$ 0,00'
+const SEXO_COR = { Masculino: 'bg-[#0072B2]', Feminino: 'bg-[#CC79A7]' }
 
-function PerfilTab({ bySexo, byFaixaEtaria, byEscolaridade, byPorte, kpis, hasFilter, filterLabel, filterMessage, onSexoClick, onFaixaClick, onEscolaridadeClick, sexoFilter, faixaFilter, escolaridadeFilter }) {
+function Resumo({ label, value, color, title }) {
+  return (
+    <div className="bg-white rounded-xl p-4 shadow-sm">
+      <div className="text-sm text-neutral-500">{label}</div>
+      <div className={`text-2xl font-bold ${color}`} title={title}>{value}</div>
+    </div>
+  )
+}
+
+// Barras horizontais clicáveis de uma dimensão categórica (ordem de dims).
+function DimBars({ data, dim, filterValue, onClick, color, width = 110 }) {
+  if (!data.some((d) => d.admissoes > 0)) return <EmptyChart />
+  const sel = selIn(data, dim, filterValue) // selecionado sem linha no recorte: não acinzenta tudo
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart data={data} layout="vertical">
+        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+        <XAxis type="number" tick={{ fontSize: 11 }} />
+        <YAxis dataKey={dim} type="category" width={width} tick={{ fontSize: 10 }} interval={0} />
+        <Tooltip formatter={(v) => formatNumber(v)} />
+        <Bar dataKey="admissoes" name="Admissões" cursor="pointer" onClick={(d) => onClick(clicked(d, dim))}>
+          {data.map((entry) => (
+            <Cell key={entry[dim]} fill={hlFill(sel, entry[dim], color)} stroke={hlStroke(sel, entry[dim])} strokeWidth={2} />
+          ))}
+        </Bar>
+      </BarChart>
+    </ResponsiveContainer>
+  )
+}
+
+function PerfilTab({ agg, filters, onToggle, porteIndisponivel = [] }) {
+  const { kpis, bySexo, byFaixaEtaria, byEscolaridade, byPorte } = agg
+  const masc = kpis.perfil.pct_masculino
+  const idade = kpis.perfil.idade_media
+
   return (
     <div className="space-y-6">
-      <FilterIndicator hasFilter={hasFilter} filterLabel={filterLabel} message={filterMessage} />
-      {/* Resumo */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="text-sm text-neutral-500">% Masculino</div>
-          <div className="text-2xl font-bold text-blue-600">{kpis.perfil.pct_masculino}%</div>
-        </div>
-        <div className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="text-sm text-neutral-500">% Feminino</div>
-          <div className="text-2xl font-bold text-pink-600">{(100 - kpis.perfil.pct_masculino).toFixed(1)}%</div>
-        </div>
-        <div className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="text-sm text-neutral-500">Idade Média</div>
-          <div className="text-2xl font-bold text-purple-600">{kpis.perfil.idade_media} anos</div>
-        </div>
-        <div className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="text-sm text-neutral-500">Salário Médio</div>
-          <div className="text-2xl font-bold text-amber-600">{formatCurrency(kpis.salario.media)}</div>
-        </div>
+        <Resumo label="% Masculino" value={formatPercent(masc)} color="text-sky-700" />
+        <Resumo label="% Feminino" value={masc == null ? '—' : formatPercent(Math.round((100 - masc) * 10) / 10)} color="text-pink-700" />
+        <Resumo label="Idade média dos admitidos" value={idade == null ? '—' : `${idade.toLocaleString('pt-BR')} anos`} color="text-purple-700" />
+        <Resumo
+          label="Mediana salarial (estimada)"
+          value={formatCurrency(kpis.salario.mediana)}
+          title={salTitle(kpis.salario.mediana)}
+          color="text-amber-700"
+        />
       </div>
+      <p className="text-xs text-neutral-500 -mt-3">
+        Percentuais sobre admissões com sexo informado. Mediana estimada por interpolação nas faixas salariais.
+      </p>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Sexo - Clicável */}
         <Card title="Por Sexo (clique para filtrar)">
           <div className="space-y-4">
-            {bySexo.filter(s => s.sexo !== 'Não informado').map(s => (
-              <div
+            {bySexo.filter((s) => s.sexo !== 'Não informado').map((s) => (
+              <button
+                type="button"
                 key={s.sexo}
-                className={`flex items-center gap-4 cursor-pointer p-2 rounded-lg transition-colors ${s.sexo === sexoFilter ? 'bg-blue-50 ring-2 ring-blue-300' : 'hover:bg-neutral-50'}`}
-                onClick={() => onSexoClick && onSexoClick(s.sexo)}
+                className={`w-full flex items-center gap-4 cursor-pointer p-2 rounded-lg transition-colors text-left ${s.sexo === filters.sexo ? 'bg-blue-50 ring-2 ring-neutral-800' : 'hover:bg-neutral-50'}`}
+                onClick={() => onToggle('sexo', s.sexo)}
+                aria-pressed={s.sexo === filters.sexo}
               >
-                <div className="w-24 text-sm font-medium">{s.sexo}</div>
-                <div className="flex-1 bg-neutral-100 rounded-full h-6 overflow-hidden">
-                  <div
-                    className={`h-full ${s.sexo === 'Masculino' ? 'bg-blue-500' : 'bg-pink-500'}`}
+                <span className="w-24 text-sm font-medium">{s.sexo}</span>
+                <span className="flex-1 bg-neutral-100 rounded-full h-6 overflow-hidden">
+                  <span
+                    className={`block h-full ${filters.sexo && filters.sexo !== s.sexo ? 'bg-slate-300' : SEXO_COR[s.sexo]}`}
                     style={{ width: `${s.pct}%` }}
                   />
-                </div>
-                <div className="w-20 text-right text-sm">
-                  <span className="font-bold">{s.pct}%</span>
+                </span>
+                <span className="w-28 text-right text-sm">
+                  <span className="font-bold">{formatPercent(s.pct)}</span>
                   <span className="text-neutral-400 ml-1">({formatNumber(s.admissoes)})</span>
-                </div>
-              </div>
+                </span>
+              </button>
             ))}
+            {bySexo.length === 0 && <div className="h-24"><EmptyChart /></div>}
           </div>
         </Card>
 
-        {/* Faixa Etária - Clicável */}
         <Card title="Por Faixa Etária (clique para filtrar)">
           <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={byFaixaEtaria.filter(f => f.faixa !== 'Não informado')} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis type="number" tick={{ fontSize: 11 }} />
-                <YAxis dataKey="faixa" type="category" width={100} tick={{ fontSize: 11 }} />
-                <Tooltip formatter={(v) => formatNumber(v)} />
-                <Bar
-                  dataKey="admissoes"
-                  cursor="pointer"
-                  onClick={(data) => onFaixaClick && onFaixaClick(data.faixa)}
-                >
-                  {byFaixaEtaria.filter(f => f.faixa !== 'Não informado').map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={entry.faixa === faixaFilter ? '#6d28d9' : '#CC79A7'}
-                      stroke={entry.faixa === faixaFilter ? '#5b21b6' : 'none'}
-                      strokeWidth={entry.faixa === faixaFilter ? 2 : 0}
-                    />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            <DimBars
+              data={byFaixaEtaria.filter((f) => f.faixa !== 'Não informado')}
+              dim="faixa"
+              filterValue={filters.faixa}
+              onClick={(v) => onToggle('faixa', v)}
+              color="#CC79A7"
+              width={100}
+            />
           </div>
         </Card>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Escolaridade - Clicável */}
         <Card title="Por Escolaridade (clique para filtrar)">
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={byEscolaridade.slice(0, 8)} layout="vertical">
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis type="number" tick={{ fontSize: 11 }} />
-                <YAxis dataKey="escolaridade" type="category" width={130} tick={{ fontSize: 10 }} />
-                <Tooltip formatter={(v) => formatNumber(v)} />
-                <Bar
-                  dataKey="admissoes"
-                  cursor="pointer"
-                  onClick={(data) => onEscolaridadeClick && onEscolaridadeClick(data.escolaridade)}
-                >
-                  {byEscolaridade.slice(0, 8).map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={entry.escolaridade === escolaridadeFilter ? '#0891b2' : '#06b6d4'}
-                      stroke={entry.escolaridade === escolaridadeFilter ? '#0e7490' : 'none'}
-                      strokeWidth={entry.escolaridade === escolaridadeFilter ? 2 : 0}
-                    />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="h-80">
+            <DimBars
+              data={byEscolaridade}
+              dim="escolaridade"
+              filterValue={filters.escolaridade}
+              onClick={(v) => onToggle('escolaridade', v)}
+              color="#009E73"
+              width={140}
+            />
           </div>
         </Card>
 
-        {/* Porte da empresa */}
-        <Card title="Por Porte da Empresa">
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={byPorte}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="porte" tick={{ fontSize: 10 }} angle={-30} textAnchor="end" height={80} />
-                <YAxis tick={{ fontSize: 11 }} />
-                <Tooltip formatter={(v) => formatNumber(v)} />
-                <Bar dataKey="admissoes" fill="#c89b3c" />
-              </BarChart>
-            </ResponsiveContainer>
+        <Card title="Por Porte da Empresa (clique para filtrar)">
+          <div className="h-80">
+            <DimBars
+              data={byPorte}
+              dim="porte"
+              filterValue={filters.porte}
+              onClick={(v) => onToggle('porte', v)}
+              color="#c89b3c"
+              width={110}
+            />
           </div>
+          {porteIndisponivel.length > 0 && (
+            <p className="text-xs text-neutral-500 mt-2">
+              Porte do estabelecimento não informado pelo MTE em {porteIndisponivel.join(', ')}: nessas competências tudo cai em "Não informado"; com filtro de porte elas ficam fora do recorte.
+            </p>
+          )}
         </Card>
       </div>
     </div>

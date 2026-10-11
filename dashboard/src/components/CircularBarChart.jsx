@@ -6,44 +6,21 @@ const MONTHS = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', '
 
 export default function CircularBarChart({
   data,
-  title = "Padrao Sazonal de Emprego",
+  title = "Padrão Sazonal de Emprego",
   width = 400,
   height = 400,
   metric = 'saldo' // 'admissoes', 'demissoes', 'saldo'
 }) {
+  // data = seasonality do motor (médias mensais já calculadas); aqui só a geometria.
   const chartData = useMemo(() => {
     if (!data || data.length === 0) return null
-
-    // Group by month
-    const byMonth = {}
-    data.forEach(item => {
-      const month = parseInt(item.periodo?.split('-')[1], 10)
-      if (!month || month < 1 || month > 12) return
-
-      if (!byMonth[month]) {
-        byMonth[month] = { sum: 0, count: 0 }
-      }
-      byMonth[month].sum += item[metric] || 0
-      byMonth[month].count++
-    })
-
-    const monthlyData = MONTHS.map((name, i) => {
-      const monthNum = i + 1
-      const monthData = byMonth[monthNum]
-      return {
-        month: name,
-        monthNum,
-        value: monthData ? monthData.sum / monthData.count : 0
-      }
-    }).filter(d => d.value !== 0)
-
+    const monthlyData = data
+      .map((d) => ({ month: d.mes_nome || MONTHS[d.mes - 1], value: d[metric] || 0 }))
+      .filter((d) => d.value !== 0)
     if (monthlyData.length === 0) return null
-
     const avgValue = monthlyData.reduce((sum, d) => sum + d.value, 0) / monthlyData.length
-    const maxValue = Math.max(...monthlyData.map(d => Math.abs(d.value)))
-    const hasNegative = monthlyData.some(d => d.value < 0)
-
-    return { data: monthlyData, avgValue, maxValue, hasNegative }
+    const maxValue = Math.max(...monthlyData.map((d) => Math.abs(d.value)))
+    return { data: monthlyData, avgValue, maxValue }
   }, [data, metric])
 
   if (!chartData) {
@@ -51,13 +28,13 @@ export default function CircularBarChart({
       <div className="card p-6">
         <h3 className="text-lg font-semibold text-dark-700 mb-4">{title}</h3>
         <div className="h-64 flex items-center justify-center text-dark-400">
-          Sem dados sazonais disponiveis
+          Sem dados sazonais disponíveis
         </div>
       </div>
     )
   }
 
-  const { data: monthlyData, avgValue, maxValue, hasNegative } = chartData
+  const { data: monthlyData, avgValue, maxValue } = chartData
   const centerX = width / 2
   const centerY = height / 2
   const innerRadius = 50
@@ -135,7 +112,7 @@ export default function CircularBarChart({
           ))}
 
           {/* Bars */}
-          {monthlyData.map((d, i) => {
+          {monthlyData.map((d) => {
             const absValue = Math.abs(d.value)
             const arcPath = arcGenerator({
               innerRadius: innerRadius,
@@ -165,7 +142,7 @@ export default function CircularBarChart({
                   className="transition-all group-hover:fill-opacity-100"
                 >
                   <title>
-                    {`${d.month}\n${metric}: ${formatValue(d.value)}\n${isAboveAvg ? 'Acima' : 'Abaixo'} da media`}
+                    {`${d.month}\n${metric}: ${formatValue(d.value)}\n${isAboveAvg ? 'Acima' : 'Abaixo'} da média`}
                   </title>
                 </path>
 
@@ -194,7 +171,7 @@ export default function CircularBarChart({
             fontWeight="bold"
             textAnchor="middle"
           >
-            Media
+            Média
           </text>
           <text
             x={0}
@@ -212,11 +189,11 @@ export default function CircularBarChart({
       {/* Legend */}
       <div className="mt-4 flex justify-center gap-6 text-sm">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded bg-green-500" />
+          <div className="w-3 h-3 rounded bg-[#0072B2]" />
           <span className="text-dark-600">Positivo</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded bg-red-500" />
+          <div className="w-3 h-3 rounded bg-[#D55E00]" />
           <span className="text-dark-600">Negativo</span>
         </div>
       </div>

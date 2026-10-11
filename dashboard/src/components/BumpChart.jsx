@@ -6,11 +6,12 @@ const MARGIN = { top: 30, right: 120, bottom: 40, left: 50 }
 
 export default function BumpChart({
   data,
-  title = "Evolucao do Ranking de Cadeias",
+  title = "Evolução do Ranking de Cadeias",
   width = 800,
   height = 450,
   metric = 'saldo', // 'admissoes', 'demissoes', 'saldo'
-  topN = 10
+  topN = 10,
+  cores = {}, // cadeia -> cor (dims.cadeias); timeseriesCadeia do motor não traz cor
 }) {
   const [hoveredCadeia, setHoveredCadeia] = useState(null)
 
@@ -25,7 +26,7 @@ export default function BumpChart({
       byPeriod[period].push({
         cadeia: item.cadeia,
         value: item[metric] || 0,
-        cor: item.cor
+        cor: item.cor || cores[item.cadeia]
       })
     })
 
@@ -37,7 +38,7 @@ export default function BumpChart({
     const totalByCadeia = {}
     data.forEach(item => {
       if (!totalByCadeia[item.cadeia]) {
-        totalByCadeia[item.cadeia] = { total: 0, cor: item.cor }
+        totalByCadeia[item.cadeia] = { total: 0, cor: item.cor || cores[item.cadeia] }
       }
       totalByCadeia[item.cadeia].total += Math.abs(item[metric] || 0)
     })
@@ -63,14 +64,14 @@ export default function BumpChart({
     })
 
     return { rankings, periods, topCadeias }
-  }, [data, metric, topN])
+  }, [data, metric, topN, cores])
 
   if (!chartData) {
     return (
       <div className="card p-6">
         <h3 className="text-lg font-semibold text-dark-700 mb-4">{title}</h3>
         <div className="h-64 flex items-center justify-center text-dark-400">
-          Dados insuficientes para o grafico
+          Dados insuficientes para o gráfico
         </div>
       </div>
     )
